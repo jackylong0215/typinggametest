@@ -1,0 +1,14 @@
+{
+  "name": "cangjie-island",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "test": "node --test",
+    "export": "node export.js",
+    "build:colours": "python3 scripts/build-colour-library.py",
+    "build": "node scripts/build-site.cjs",
+    "prestart": "npm run build"
+  }
+}
