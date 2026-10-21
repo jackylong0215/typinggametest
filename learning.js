@@ -13,7 +13,7 @@ const VARIANTS = {
  c:{forms:'金、釒、八',example:'針 CJ · 分 CSH · 公 CI',note:'金字旁和向下分開的八形。不要把所有兩點都當作金。'},
  d:{forms:'木、朩',example:'林 DD · 本 DM · 村 DDI',note:'木的鉤腳或末筆在組字時可能縮短，仍按木形辨認。'},
  e:{forms:'水、氵、氺、又',example:'沐 ED · 友 KE · 支 JE',note:'又在友、支等字中作水的輔助字形；單字「又」本身輸入 NK。'},
- f:{forms:'火、灬、小、⺌',example:'炎 FF · 尖 FK · 秋 HDF',note:'四點底、小字形及小字頭，均須按所在位置辨認。'},
+ f:{forms:'火、灬、小、⺌',example:'炎 FF · 尖 FK · 秋 HDF',note:'四點底、小字形及小字頭，均須按所在位置辨認；「小」獨立輸入取 NC（弓、金），作為其他字的輔助形才取 F。'},
  g:{forms:'土、士',example:'吉 GR · 吐 RG · 杜 DG',note:'土與士的橫畫長短不同，在取碼時同屬土。'},
  h:{forms:'竹、⺮、丿、𠂆',example:'白 HA · 竹 H · 斤 HML',note:'竹字頭、斜撇與撇形。竹字頭也要按整字取碼規則處理。'},
  i:{forms:'戈、丶、厶、广',example:'去 GI · 公 CI · 玉 MGI',note:'包括點、私字旁及廣字頭；丶與亠是不同字形。'},

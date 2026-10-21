@@ -22,10 +22,10 @@ test('五代碼表完整保留用戶上傳的 20,840 個主碼', () => {
  const originalContext=vm.createContext({});vm.runInContext(read('code-data.js')+';globalThis.original=CODE_TABLES["5"]',originalContext);
  assert.deepEqual(JSON.parse(JSON.stringify(originalContext.original)),source5);
  const corrections=JSON.parse(JSON.stringify(course.USER_CODE_CORRECTIONS));
- for(const [char,code]of Object.entries({麽:'idhi',梁:'eid',詐:'yrhs',七:'ju',工:'mlm',亮:'yrbu',乙:'nu'}))assert.equal(corrections['5'][char],code);
+ for(const [char,code]of Object.entries({麽:'idhi',梁:'eid',詐:'yrhs',七:'ju',工:'mlm',亮:'yrbu',乙:'nu',小:'nc'}))assert.equal(corrections['5'][char],code);
  const shared=JSON.parse(read('data/colour-source.json')).shared_code_corrections['乍'].characters;
  for(const {char,from,to}of shared){assert.equal(source5[char],from);assert.equal(to,from.replace('os','hs'));assert.equal(corrections['5'][char],to)}
- assert.equal(Object.keys(corrections['5']).length,new Set(['麽','梁','詐','七','工','亮','乙',...shared.map(c=>c.char)]).size);
+ assert.equal(Object.keys(corrections['5']).length,new Set(['麽','梁','詐','七','工','亮','乙','小',...shared.map(c=>c.char)]).size);
  assert.deepEqual(JSON.parse(JSON.stringify(course.CODE_TABLES['5'])),{...source5,...corrections['5']});
  for(const [char,code]of Object.entries(course.USER_CODE_CORRECTIONS['5']))assert.ok(source3.get(char)?.has(code),char);
  for (const [char, code] of Object.entries(source5)) assert.match(code,/^[a-z]{1,5}$/,char);

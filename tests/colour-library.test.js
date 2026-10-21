@@ -119,3 +119,12 @@ test('乙右端上翹鉤尖完整取U；關右側亅不被裁成半條豎畫',()
  assert.equal(gate.below,1);assert.equal(gate.floor,undefined);
  const door=lib.SPLIT_VISUALS['門'].splitStrokes.find(s=>s.stroke===5);assert.equal(door.boundary,517);assert.equal(door.above,-1);assert.equal(door.below,1);
 });
+
+test('小獨立取NC；尖等字中的小形仍取F，字根練習不誤用整字模型',()=>{
+ assert.equal(lib.CODE_TABLES['5']['小'],'nc');assert.equal(lib.CODE_TABLES['3']['小'],'nc');
+ const v=lib.SPLIT_VISUALS['小'];assert.equal(v.parts.map(p=>p[1]).join(''),'nc');
+ assert.deepEqual(Array.from(v.parts[0][2]),[0]);assert.deepEqual(Array.from(v.parts[1][2]),[1,2]);
+ assert.equal(source.roots['小'],'f');assert.equal(lib.SPLIT_VISUALS['尖'].parts[0][1],'f');
+ assert.ok(lib.questionFor({char:'小',code:'nc'},'5'));
+ assert.equal(lib.questionFor({char:'小',code:'f',formId:'f-small'},'5'),undefined);
+});
