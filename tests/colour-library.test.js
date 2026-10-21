@@ -81,8 +81,8 @@ test('七與工獨立拆JU與MLM，用於切、紅等字仍保留P及M輔助形'
 });
 test('所有門部的N僅取下方亅，所有阝部的N僅取上方乛；上下省略區方向不同',()=>{
  let doors=0,ears=0;
- for(const [char,atoms]of Object.entries(audit.characters))for(const atom of atoms){if(atom.component==='門'&&atom.key==='n'){assert.ok(atom.regions.every(r=>r[3]==='x'&&r[1]>-200&&r[2]===1200&&Number.isFinite(r[4])),char);doors++}if(atom.component==='阝'&&atom.key==='n'){assert.ok(atom.regions.every(r=>r[1]>-200&&r[2]===1200),char);ears++}}
- assert.ok(doors>=5);assert.ok(ears>=5);const door=lib.SPLIT_VISUALS['關'].splitStrokes.find(r=>r.stroke===5);assert.equal(door.above,1);assert.equal(door.below,-1);assert.equal(door.axis,'x');assert.ok(Number.isFinite(door.floor));const ear=lib.SPLIT_VISUALS['那'].splitStrokes.find(r=>r.stroke===4);assert.equal(ear.above,2);assert.equal(ear.below,-1);
+ for(const [char,atoms]of Object.entries(audit.characters))for(const atom of atoms){if(atom.component==='門'&&atom.key==='n'){assert.ok(atom.regions.every(r=>r[1]===-200&&r[2]<1200&&(!r[3]||r[3]==='y')),char);doors++}if(atom.component==='阝'&&atom.key==='n'){assert.ok(atom.regions.every(r=>r[1]>-200&&r[2]===1200),char);ears++}}
+ assert.ok(doors>=5);assert.ok(ears>=5);const door=lib.SPLIT_VISUALS['關'].splitStrokes.find(r=>r.stroke===5);assert.equal(door.above,-1);assert.equal(door.below,1);assert.equal(door.boundary,615);assert.equal(door.axis,undefined);const ear=lib.SPLIT_VISUALS['那'].splitStrokes.find(r=>r.stroke===4);assert.equal(ear.above,2);assert.equal(ear.below,-1);
 });
 test('壯依參考把爿下方橫撇歸一，豎畫省略；所有爿的M均包含兩畫',()=>{
  const v=lib.SPLIT_VISUALS['壯'];assert.equal(v.parts.map(p=>p[1]).join(''),'vmg');assert.deepEqual(Array.from(v.parts[0][2]),[0]);assert.deepEqual(Array.from(v.parts[1][2]),[2,3]);assert.ok(v.ignored.includes(1));
@@ -115,6 +115,7 @@ test('乙右端上翹鉤尖完整取U；關右側亅不被裁成半條豎畫',()
  assert.equal(yi.axis,'x');assert.equal(yi.above,1);assert.equal(yi.below,0);
  assert.equal(yi.boundary,700);assert.equal(yi.floor,250);
  const gate=lib.SPLIT_VISUALS['關'].splitStrokes.find(s=>s.stroke===5);
- assert.equal(gate.axis,'x');assert.equal(gate.boundary,760);assert.equal(gate.above,1);
- assert.equal(gate.below,-1);assert.equal(gate.floor,300);
+ assert.equal(gate.axis,undefined);assert.equal(gate.boundary,615);assert.equal(gate.above,-1);
+ assert.equal(gate.below,1);assert.equal(gate.floor,undefined);
+ const door=lib.SPLIT_VISUALS['門'].splitStrokes.find(s=>s.stroke===5);assert.equal(door.boundary,517);assert.equal(door.above,-1);assert.equal(door.below,1);
 });
