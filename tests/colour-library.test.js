@@ -128,3 +128,27 @@ test('小獨立取NC；尖等字中的小形仍取F，字根練習不誤用整�
  assert.ok(lib.questionFor({char:'小',code:'nc'},'5'));
  assert.equal(lib.questionFor({char:'小',code:'f',formId:'f-small'},'5'),undefined);
 });
+
+test('也的左側橫段歸心，木只取中豎與右側橫折鉤；池同步分段',()=>{
+ const v=lib.SPLIT_VISUALS['也'];assert.equal(v.parts.map(p=>p[1]).join(''),'pd');
+ const split=v.splitStrokes.find(s=>s.stroke===0);assert.equal(split.axis,'x');assert.equal(split.boundary,350);assert.equal(split.above,1);assert.equal(split.below,0);
+ const pool=lib.SPLIT_VISUALS['池'].splitStrokes[0];assert.equal(pool.stroke,3);assert.equal(pool.above,2);assert.equal(pool.below,1);
+ for(const c of ['他','地','她']){const v=lib.SPLIT_VISUALS[c];assert.ok(v.splitStrokes.some(s=>s.axis==='x'&&s.above===2&&s.below===1),c)}
+});
+
+test('又與入獨立取NK及OH，部件仍取E及O',()=>{
+ for(const [char,code,component] of [['又','nk','e'],['入','oh','o']]){
+  assert.equal(lib.CODE_TABLES['5'][char],code);assert.equal(lib.CODE_TABLES['3'][char],code);
+  assert.equal(lib.SPLIT_VISUALS[char].parts.map(p=>p[1]).join(''),code);
+  assert.equal(source.roots[char],component);assert.ok(lib.questionFor({char,code},'5'));
+  assert.equal(lib.questionFor({char,code:component,formId:'aux-'+char},'5'),undefined);
+ }
+ assert.equal(lib.CODE_TABLES['5']['友'],'ke');assert.ok(lib.SPLIT_VISUALS['友'].parts.some(p=>p[1]==='e'));
+ assert.equal(lib.CODE_TABLES['5']['全'],'omg');
+});
+
+test('別的尸取右側橫折鉤，參的末碼竹只取最後一撇',()=>{
+ const v=lib.SPLIT_VISUALS['別'];assert.equal(v.parts.map(p=>p[1]).join(''),'rsln');assert.deepEqual(Array.from(v.parts[1][2]),[4]);assert.ok(v.ignored.includes(3));
+ assert.equal(v.splitStrokes[0].stroke,4);assert.equal(v.splitStrokes[0].below,-1);
+ const sam=lib.SPLIT_VISUALS['參'];assert.equal(sam.parts.map(p=>p[1]).join(''),'iiih');assert.deepEqual(Array.from(sam.parts[3][2]),[10]);assert.ok([6,7,8,9].every(i=>sam.ignored.includes(i)));
+});
