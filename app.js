@@ -1,7 +1,7 @@
 const ROOTS = {q:'手',w:'田',e:'水',r:'口',t:'廿',y:'卜',u:'山',i:'戈',o:'人',p:'心',a:'日',s:'尸',d:'木',f:'火',g:'土',h:'竹',j:'十',k:'大',l:'中',z:'重',x:'難',c:'金',v:'女',b:'月',n:'弓',m:'一'};
 const WORDS = [{char:'明',code:'ab'},{char:'林',code:'dd'},{char:'好',code:'vnd'},{char:'休',code:'od'},{char:'早',code:'aj'},{char:'旦',code:'am'},{char:'本',code:'dm'},{char:'杏',code:'dr'},{char:'呆',code:'rd'},{char:'森',code:'ddd'},{char:'昌',code:'aa'},{char:'炎',code:'ff'},{char:'男',code:'wks'},{char:'字',code:'jnd'},{char:'安',code:'jv'},{char:'尖',code:'fk'},{char:'品',code:'rrr'},{char:'晶',code:'aaa'},{char:'朋',code:'bb'},{char:'相',code:'dbu'}];
 WORDS.push(...BEGINNER_WORDS);
-const TITLES={colour:'彩色拆字教室',punct:'標點符號學堂',special:'難字形與特殊規則',roots:'字根森林',split:'拆字工房',rain:'生存挑戰',book:'錯字加強',speed:'極速航線'};
+const TITLES={colour:'彩色拆字教室',punct:'標點符號學堂',special:'難字形與特殊規則',roots:'字根森林',split:'拆字工房',rpg:'倉頡勇者傳',rain:'生存挑戰',book:'錯字加強',speed:'極速航線'};
 const $=id=>document.getElementById(id);
 let saved;try{saved=JSON.parse(localStorage.getItem('cangjie-island')||'{}')}catch{saved={}}let progress={stars:0,rounds:0,best:0,history:[],...saved};
 progress.notebook ||= {};progress.records ||= {};
@@ -15,7 +15,7 @@ function questionForVersion(word){
  return {...word,code,note};
 }
 let mode,item,score,combo,correct,attempts,remaining,tick,fall,active=false,lastCode='',round=0,wrongStreak=0,paused=false,practiceKeys=null,phase='idle',advanceTimer=null,advanceRemaining=0,advanceDeadline=0,demoTimer=null,demoStep=0;
-function persist(){try{localStorage.setItem('cangjie-island',JSON.stringify(progress))}catch{}$('total-stars').textContent=progress.stars;if($('book-count'))$('book-count').textContent=Object.keys(progress.notebook).length;if($('dash-stars'))$('dash-stars').textContent=progress.stars;if($('dash-book'))$('dash-book').textContent=Object.keys(progress.notebook).length;if($('dash-best'))$('dash-best').textContent=Math.max(0,...Object.entries(progress.records).filter(([k])=>k.startsWith('rain:')).map(([,v])=>v))+' 分'}
+function persist(){try{localStorage.setItem('cangjie-island',JSON.stringify(progress))}catch{}$('total-stars').textContent=progress.stars;if($('book-count'))$('book-count').textContent=Object.keys(progress.notebook).length;if($('dash-stars'))$('dash-stars').textContent=progress.stars;if($('dash-book'))$('dash-book').textContent=Object.keys(progress.notebook).length;if($('dash-best'))$('dash-best').textContent=Math.max(0,...Object.entries(progress.records).filter(([k])=>k.startsWith('rpg:')).map(([,v])=>v))+' 分'}
 persist();
 function keyboard(){
  $('keyboard').innerHTML=['qwertyuiop','asdfghjkl','zxcvbnm'].map(row=>'<div class="key-row">'+[...row].map(k=>`<button type="button" class="key" data-key="${k}" aria-label="${k.toUpperCase()} ${ROOTS[k]}">${k.toUpperCase()}<b>${ROOTS[k]}</b></button>`).join('')+'</div>').join('')+'<div class="key-row keyboard-controls"><button type="button" class="key action-key" data-action="delete" aria-label="刪除上一碼">⌫ 刪除</button><button type="button" class="key action-key space-key" data-action="submit">空白鍵 · 完成輸入</button></div>';
@@ -108,6 +108,7 @@ function updateChallengeStats(){
  $('challenge-best').textContent=['rain','speed'].includes(mode)?`本級最高 ${progress.records[recordKey(mode,currentVersion,gameDifficulty)]||0} 分`:'';
 }
 function start(which,forced,keys=null){
+ if(which==='rpg'){startRpg();return}
  if((which==='roots'||(which==='book'&&Object.values(progress.notebook).some(e=>e.version===currentVersion&&e.formId)))&&!referenceImage){openLesson('chart');$('lesson-content').querySelector('.reference-import').scrollIntoView({block:'start'});return}
  if(which==='book'&&!Object.values(progress.notebook).some(e=>e.version===currentVersion)){showPage('notebook');return}
  practiceKeys=which==='roots'?keys:null;gameDifficulty=difficulty;challengePool=buildChallengePool(CODE_TABLES[currentVersion],gameDifficulty,WORDS);roundMistakes={};
@@ -243,7 +244,7 @@ function renderColourClassroom(){
 }
 
 function renderDifficulties(){
- $('difficulty-options').innerHTML=DIFFICULTIES.map(level=>`<button class="difficulty-card ${level.id===difficulty?'selected':''}" data-difficulty="${level.id}" aria-pressed="${level.id===difficulty}"><span>${level.icon}</span><small>LEVEL 0${level.id}</small><b>${level.name}</b><p>${level.description}</p><em>生存 ${level.seconds} 秒／字 · ${level.lives} 顆生命</em></button>`).join('');
+ $('difficulty-options').innerHTML=DIFFICULTIES.map(level=>`<button class="difficulty-card ${level.id===difficulty?'selected':''}" data-difficulty="${level.id}" aria-pressed="${level.id===difficulty}"><span>${level.icon}</span><small>LEVEL 0${level.id}</small><b>${level.name}</b><p>${level.description}</p><em>${level.id===1?'RPG 選擇題 · 不限時':level.id===4?'RPG 14 秒／回合 · 敵方干擾':level.id===2?'RPG 25 秒／回合 · 字碼戰鬥':'RPG 18 秒／回合 · 進階拆字'}</em></button>`).join('');
  const pool=buildChallengePool(CODE_TABLES[currentVersion],difficulty,WORDS);$('pool-size').textContent=`本級題庫 ${pool.length.toLocaleString()} 字 · ${versionName()}`;
  $('difficulty-options').querySelectorAll('[data-difficulty]').forEach(button=>button.onclick=()=>{difficulty=Number(button.dataset.difficulty);try{localStorage.setItem('cangjie-difficulty',String(difficulty))}catch{}renderDifficulties()});
 }
