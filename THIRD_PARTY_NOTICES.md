@@ -27,9 +27,9 @@ https://github.com/chanind/hanzi-writer-data/tree/68d10a4b21150cae5e1ebbd223eed2
 `auxiliary-data.js` 僅保存用戶所示三代參考圖的取景座標。透過 SVG image viewport 顯示內建原圖的對應區域，完整原圖檢視保留原有來源標示及浮水印。網站以獨立圖片載入，離線匯出則內嵌相同原圖。
 
 
-## 4,884 字與 IDS 對應
+## 生成字庫與 IDS 對應
 
-`colour-library.js` 提供 4,884 字原始輪廓，與原有示範合計 5,000 字。來源：Make Me A Hanzi（https://github.com/skishore/makemeahanzi），2026-10-21 取得的 dictionary.txt／graphics.txt；完整來源檔 SHA-256 記錄於 `data/colour-source.json` 的 source 欄位。保留輪廓，只增加部件分組及 SVG 裁切標色。
+`colour-library.js` 提供 4,921 個生成模型，與原有示範合計 5,037 字。大部分輪廓來源如下；2026-10-22 新來源與重組字形另列於下節。來源：Make Me A Hanzi（https://github.com/skishore/makemeahanzi），2026-10-21 取得的 dictionary.txt／graphics.txt；完整來源檔 SHA-256 記錄於 `data/colour-source.json` 的 source 欄位。保留輪廓，只增加部件分組及 SVG 裁切標色。
 
 修改後的必要字形子集、IDS 結構與筆畫對應保存在 `data/colour-source.json`。dictionary.txt 衍生資料採 LGPL 3.0 或更新版本；graphics.txt 由 Arphic PL KaitiM GB／Arphic PL UKai 衍生，採 Arphic Public License。上游來源聲明、LGPL、GPL 與 Arphic 完整授權分別保留在 `licenses/MAKE_ME_A_HANZI.txt`、`licenses/LGPL-3.0.txt`、`licenses/GPL-3.0.txt`、`licenses/ARPHICPL.TXT`。生成腳本與部件對應可在本專案中取得。
 
@@ -47,3 +47,12 @@ wordfreq © 2022 Robyn Speer，https://github.com/rspeer/wordfreq 。詞頻資�
 ## 用戶提供的 ZX 符號表
 
 `data/punctuation-user-reference.json` 保存用戶在對話提供的 75 筆 `code`／`stroke`／`symbol` 原表；執行時的 `learning.js` 符號教材以該表為準，取代前版 20 筆 ibus-table 選例。特別保留同形異碼、原表空白、線段及字根名稱，不以其他符號來源覆蓋用戶資料。
+
+## AnimCJK 與重組字形（2026-10-22）
+
+喫、羣、溼、嚐、髏使用 AnimCJK 的 SVG 筆畫：
+https://github.com/parsimonhi/animCJK/tree/3e1253b341cc7be14c3540bb3c045e6163557777/svgsZhHant
+
+AnimCJK 2016–2026 Copyright FM-SH。這些筆畫由 Make Me A Hanzi 與 Arphic PL KaitiM GB／Big5 字型衍生，採 Arphic Public License。原 SVG（含原版權聲明）保存在 `data/reference-sources/`，授權全文見 `licenses/ARPHICPL.TXT`。處理僅將 SVG 向下的 Y 軸轉成本站向上的座標系，再加上分組及裁切標色。
+
+牀、峯、揹、緹、綾、譁使用 Make Me A Hanzi 同字型的部件輪廓，依用戶參考的字形佈局重組，屬本站修改後的衍生字形。各部件來源及仿射目標位置保存在 `data/colour-source.json` 的 `contour_adaptations`，同樣遵循 Arphic Public License。這些字不應被描述為未修改的完整原字輪廓。

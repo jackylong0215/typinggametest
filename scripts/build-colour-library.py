@@ -12,7 +12,7 @@ for overrides in [SOURCE.get('code_corrections',{}).get('5',{})]:C.update(overri
 # Preserve the individually edited examples, including the user's corrections.
 js = "const fs=require('fs'),vm=require('vm'),c=vm.createContext({});vm.runInContext(['learning.js','extra-colours.js'].map(p=>fs.readFileSync(p,'utf8')).join('\\n')+';globalThis.v=SPLIT_VISUALS',c);process.stdout.write(JSON.stringify(c.v))"
 V = json.loads(subprocess.check_output(['node','-e',js],cwd=ROOT))
-TARGET=5000
+TARGET=SOURCE.get('target',5000)
 used=set()
 
 def tree(text):
@@ -174,7 +174,14 @@ def compile_visual(char,atoms):
                 multiple.append({'stroke':stroke,'segments':[[-200,lo,-1],[lo,hi,part],[hi,1200,-1]],**axis_field})
         else:
             rs.sort(key=lambda r:r[1]);bottom,top=rs
-            if bottom[1]!=-200 or top[2]!=1200 or abs(bottom[2]-top[1])>.1:return None
+            if abs(bottom[2]-top[1])>.1:return None
+            if bottom[1]!=-200 or top[2]!=1200:
+                # Two taken regions may share a stroke with an untaken end (髏).
+                segments=([[-200,bottom[1],-1]] if bottom[1]>-200 else [])
+                segments += [[lo,hi,part] for part,lo,hi in rs]
+                if top[2]<1200:segments.append([top[2],1200,-1])
+                multiple.append({'stroke':stroke,'segments':segments,**axis_field})
+                continue
             splits.append({'stroke':stroke,'boundary':top[1],'above':top[0],'below':bottom[0],**axis_field})
     # A split-only part may have no owning path; it still has visible clipped regions.
     visual={'layout':'原字部件逐碼取形','parts':parts,'ignored':ignored,
