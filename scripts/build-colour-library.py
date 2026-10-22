@@ -48,7 +48,15 @@ def select(atoms,code):
         run.append(run_id)
     signatures={tuple(run[i] for i in solution) for solution in solutions}
     if len(signatures)!=1:return None
-    chosen=min(solutions,key=lambda indices:tuple(indices[:-1])+(-indices[-1],))
+    # When repeated 匕 shapes are shortened to one code (態、熊), take
+    # the last 匕 of that component, not the first one above it.
+    def selection_cost(indices):
+        costs=[]
+        for j,i in enumerate(indices):
+            repeated_bi=atoms[i]['component']=='匕' and sum(a['component']=='匕' and run[k]==run[i] for k,a in enumerate(atoms))>1
+            costs.append(-i if j==len(indices)-1 or repeated_bi else i)
+        return tuple(costs)
+    chosen=min(solutions,key=selection_cost)
     return [atoms[i] for i in chosen]
 
 

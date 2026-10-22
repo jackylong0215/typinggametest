@@ -152,3 +152,25 @@ test('別的尸取右側橫折鉤，參的末碼竹只取最後一撇',()=>{
  assert.equal(v.splitStrokes[0].stroke,4);assert.equal(v.splitStrokes[0].below,-1);
  const sam=lib.SPLIT_VISUALS['參'];assert.equal(sam.parts.map(p=>p[1]).join(''),'iiih');assert.deepEqual(Array.from(sam.parts[3][2]),[10]);assert.ok([6,7,8,9].every(i=>sam.ignored.includes(i)));
 });
+
+test('態與熊縮取能部時取最後一個匕，完整能仍保留兩個匕',()=>{
+ for(const c of ['態','熊']){const v=lib.SPLIT_VISUALS[c];assert.deepEqual(Array.from(v.parts[1][2]),[8,9],c);assert.ok([6,7].every(i=>v.ignored.includes(i)),c)}
+ const v=lib.SPLIT_VISUALS['能'];assert.deepEqual(Array.from(v.parts[2][2]),[6,7]);assert.deepEqual(Array.from(v.parts[3][2]),[8,9]);
+});
+test('半的火包含上方中豎，票的田只標外框，酸的酉不標內橫',()=>{
+ const half=lib.SPLIT_VISUALS['半'];assert.equal(half.splitStrokes[0].stroke,4);assert.equal(half.splitStrokes[0].above,0);assert.equal(half.splitStrokes[0].below,1);
+ const ticket=lib.SPLIT_VISUALS['票'];assert.deepEqual(Array.from(ticket.parts[1][2]),[1,2,5]);assert.ok([3,4].every(i=>ticket.ignored.includes(i)));
+ const acid=lib.SPLIT_VISUALS['酸'];assert.deepEqual(Array.from(acid.parts[1][2]),[1,2,6]);assert.ok(acid.ignored.includes(5));
+ for(const [char,atoms]of Object.entries(audit.characters))for(const a of atoms){if(a.component==='酉'&&a.key==='w')assert.equal(a.regions.length,3,char);if(a.component==='覀'&&a.key==='w')assert.equal(a.regions.length,3,char)}
+});
+test('黃取TMWC並將田形完整分色；鳥的卜不取下方橫折鉤，鳳的日不含延伸直豎',()=>{
+ assert.equal(lib.CODE_TABLES['5']['黃'],'tmwc');assert.equal(lib.SPLIT_VISUALS['黃'].parts.map(p=>p[1]).join(''),'tmwc');assert.deepEqual(Array.from(lib.SPLIT_VISUALS['黃'].parts[2][2]),[5,6,7,8,9]);
+ const bird=lib.SPLIT_VISUALS['鳥'];assert.deepEqual(Array.from(bird.parts[2][2]),[5]);assert.ok(bird.ignored.includes(6));assert.equal(bird.splitStrokes[0].stroke,1);assert.equal(bird.splitStrokes[0].above,1);assert.equal(bird.splitStrokes[0].below,2);
+ const phoenix=lib.SPLIT_VISUALS['鳳'].splitStrokes.find(s=>s.stroke===4);assert.equal(phoenix.above,3);assert.equal(phoenix.below,-1);
+});
+test('匕獨立UH、八獨立HO，部件分別仍取P及C',()=>{
+ for(const [char,code,root] of [['匕','uh','p'],['八','ho','c']]){
+  assert.equal(lib.CODE_TABLES['5'][char],code);assert.equal(lib.CODE_TABLES['3'][char],code);assert.equal(source.roots[char],root);
+  assert.equal(lib.SPLIT_VISUALS[char].parts.map(p=>p[1]).join(''),code);assert.equal(lib.questionFor({char,code:root,formId:'aux-'+char},'5'),undefined);
+ }
+});

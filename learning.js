@@ -10,7 +10,7 @@ const GROUPS = [
 const VARIANTS = {
  a:{forms:'日、曰',example:'明 AB · 昌 AA · 早 AJ',note:'扁日「曰」仍屬日。注意：目不是日，目取 BU。'},
  b:{forms:'月、冂、冖、爫、⺆',example:'朋 BB · 采 BD · 受 BBE',note:'包括月形、上包框、覆蓋形及爪字頭。相似外框要配合字形結構判斷。'},
- c:{forms:'金、釒、八',example:'針 CJ · 分 CSH · 公 CI',note:'金字旁和向下分開的八形。不要把所有兩點都當作金。'},
+ c:{forms:'金、釒、八',example:'針 CJ · 分 CSH · 公 CI',note:'金字旁和向下分開的八形。「八」獨立輸入取 HO，作部件才取 C。不要把所有兩點都當作金。'},
  d:{forms:'木、朩',example:'林 DD · 本 DM · 村 DDI',note:'木的鉤腳或末筆在組字時可能縮短，仍按木形辨認。'},
  e:{forms:'水、氵、氺、又',example:'沐 ED · 友 KE · 支 JE',note:'又在友、支等字中作水的輔助字形；單字「又」本身輸入 NK。'},
  f:{forms:'火、灬、小、⺌',example:'炎 FF · 尖 FK · 秋 HDF',note:'四點底、小字形及小字頭，均須按所在位置辨認；「小」獨立輸入取 NC（弓、金），作為其他字的輔助形才取 F。'},
