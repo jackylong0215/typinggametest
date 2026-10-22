@@ -1,6 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const read = name => fs.readFileSync(path.join(__dirname, name), 'utf8');
+const read = name => {const text=fs.readFileSync(path.join(__dirname,name),'utf8');return name==='auxiliary-data.js'?text.replace('./assets/cj-table-kll.png','data:image/png;base64,'+fs.readFileSync(path.join(__dirname,'assets/cj-table-kll.png')).toString('base64')):text};
 const output = path.resolve(process.argv[2] || path.join(__dirname, 'dist', '倉頡小島試玩.html'));
 const css = read('style.css').replace(/^@import[^\n]*\n/gm, '');
 const html = read('index.html')

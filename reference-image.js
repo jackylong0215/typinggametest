@@ -16,7 +16,11 @@ async function readReferenceFile(file){
 }
 async function downloadWithReference(){
  if(!referenceImage||!portableSourceHtml)return;
- const saved=JSON.stringify(referenceImage).replace(/</g,'\\u003c');
+ let portableReference=referenceImage;
+ if(!referenceImage.data.startsWith('data:')){
+  try{const response=await fetch(referenceImage.data);if(!response.ok)throw Error('原圖載入失敗');const blob=await response.blob();const data=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(Error('原圖讀取失敗'));reader.readAsDataURL(blob)});portableReference={...referenceImage,data}}catch(error){document.querySelectorAll('.reference-status').forEach(s=>s.textContent='匯出失敗：'+error.message);return}
+ }
+ const saved=JSON.stringify(portableReference).replace(/</g,'\\u003c');
  const snapshot=new DOMParser().parseFromString(portableSourceHtml,'text/html');snapshot.getElementById('embedded-reference')?.remove();let html=snapshot.documentElement.outerHTML;
  if(/<script[^>]+src=/.test(html)){
   try{
@@ -30,6 +34,6 @@ async function downloadWithReference(){
  const link=document.createElement('a');const url=URL.createObjectURL(new Blob(['<!doctype html>\n'+html],{type:'text/html;charset=utf-8'}));link.href=url;link.download='倉頡小島-原圖版.html';document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
 document.addEventListener('change',async event=>{if(!event.target.matches('[data-reference-file]'))return;const panel=event.target.closest('.reference-import');try{panel.querySelector('.reference-status').textContent='正在讀取原圖…';await readReferenceFile(event.target.files[0])}catch(error){panel.querySelector('.reference-status').textContent=error.message}});
-document.addEventListener('click',event=>{if(event.target.closest('[data-export-reference]'))downloadWithReference()});
+document.addEventListener('click',event=>{if(event.target.closest('[data-reset-reference]')){referenceImage=BUILTIN_REFERENCE;try{localStorage.removeItem('cangjie-reference-image')}catch{}refreshReferenceViews()}if(event.target.closest('[data-export-reference]'))downloadWithReference()});
 // A clean initial snapshot avoids serializing a live chart with the image repeated in every cell.
 window.addEventListener('DOMContentLoaded',()=>{portableSourceHtml=document.documentElement.outerHTML});

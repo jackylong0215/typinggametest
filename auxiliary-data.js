@@ -1573,7 +1573,8 @@ const AUXILIARY_FORMS={
   }
  ]
 };
-let referenceImage=null;
+const BUILTIN_REFERENCE={data:'./assets/cj-table-kll.png',width:2500,height:1100,name:'cj-table-kll.png'};
+let referenceImage=BUILTIN_REFERENCE;
 function auxiliaryForm(id){for(const forms of Object.values(AUXILIARY_FORMS)){const form=forms.find(f=>f.id===id);if(form)return form}return null}
 function auxiliarySvg(form){
  const title=`${form.key.toUpperCase()} ${form.label}（${form.id.toUpperCase()}）`;
@@ -1582,4 +1583,4 @@ function auxiliarySvg(form){
 }
 function auxiliaryFamily(key){return (AUXILIARY_FORMS[key]||[]).map(form=>`<button type="button" class="auxiliary-form" data-aux-form="${form.id}" title="${form.label} · ${form.id.toUpperCase()}">${auxiliarySvg(form)}<small>${form.id.toUpperCase()}</small></button>`).join('')}
 function auxiliaryOverview(){return `<div class="reference-overview">${GROUPS.filter(g=>g.color!=='special').map(group=>`<section class="reference-group ${group.color}"><h3>${group.name}</h3>${[...group.keys].map(key=>`<article class="reference-row" data-root-group="${group.color}" data-root-key="${key}"><div class="root-family-heading"><strong>${ROOTS[key]}</strong><span>${key.toUpperCase()}</span><small>${AUXILIARY_FORMS[key].length} 個字形</small></div><div class="reference-forms">${auxiliaryFamily(key)}${key==='r'?'<p class="frame-note">口：框內沒有其他筆畫。</p>':key==='w'?'<p class="frame-note">包圍框內有其他筆畫時，留意田組外框。</p>':''}</div></article>`).join('')}</section>`).join('')}</div><div class="reference-special"><span>X 難字形與 Z 輔助鍵另列於特殊組。</span><button class="text-button" data-root="x">練習難字形 →</button></div>`}
-function referenceControls(){return `<section class="reference-import"><h3>嚴格使用參考原圖</h3><p>選取你電腦上的 cj-table-kll.png。字形直接從原圖取景，保留原有筆畫，不再使用手繪近似圖。</p><div><label class="outline reference-file-label">${referenceImage?'更換原圖':'載入參考原圖'}<input type="file" data-reference-file accept="image/png,image/jpeg,image/webp"></label><button class="outline" data-export-reference ${referenceImage?'':'disabled'}>下載含原圖的試玩版</button></div><p class="reference-status" role="status">${referenceImage?'已載入原圖。所有圖鑑及字形題共用這份圖。':'尚未載入原圖，字形練習暫不顯示近似替代圖。'}</p>${referenceImage?`<details><summary>查看完整原圖（含來源標示）</summary><img class="original-reference" src="${referenceImage.data}" alt="hkcards 三代倉頡完整參考原圖"></details>`:''}</section>`}
+function referenceControls(){return `<section class="reference-import"><h3>嚴格使用參考原圖</h3><p>已內建完整 hkcards 三代倉頡參考圖，毋須上傳。字形按字根分組，直接從原圖取景。</p><div><label class="outline reference-file-label">更換參考圖（選用）<input type="file" data-reference-file accept="image/png,image/jpeg,image/webp"></label><button class="outline" data-reset-reference>使用內建原圖</button><button class="outline" data-export-reference ${referenceImage?'':'disabled'}>下載含原圖的試玩版</button></div><p class="reference-status" role="status">${referenceImage===BUILTIN_REFERENCE?'正在使用內建原圖。所有圖鑑及字形題均可直接使用。':'正在使用自選原圖。'}</p>${referenceImage?`<details><summary>查看完整原圖（含來源標示）</summary><img class="original-reference" src="${referenceImage.data}" alt="hkcards 三代倉頡完整參考原圖"></details>`:''}</section>`}

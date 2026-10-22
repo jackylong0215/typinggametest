@@ -22,9 +22,9 @@ https://github.com/chanind/hanzi-writer-data/tree/68d10a4b21150cae5e1ebbd223eed2
 
 ## 用戶提供的教學圖片
 
-原字配色示例及 hkcards 三代輔助字形表作為用戶提供的教學參考。網站沒有嵌入或移除該表浮水印來重新發布原圖。
+原字配色示例及 hkcards 三代輔助字形表作為用戶提供的教學參考。`assets/cj-table-kll.png` 是用戶提供的完整原圖，來源 hkcards 倉頡字典（https://www.hkcards.com/），保留原有來源標示及浮水印；原圖權利歸原權利人所有。
 
-`auxiliary-data.js` 僅保存用戶所示三代參考圖的取景座標。前版自行重繪的圖形已撤除；用戶在瀏覽器載入原圖後，透過 SVG image viewport 顯示原始圖像。完整原圖檢視保留原有來源標示及浮水印。原始圖片沒有被此雲端工作區取得或內嵌，原圖內嵌版本由用戶在瀏覽器載入後產生。
+`auxiliary-data.js` 僅保存用戶所示三代參考圖的取景座標。透過 SVG image viewport 顯示內建原圖的對應區域，完整原圖檢視保留原有來源標示及浮水印。網站以獨立圖片載入，離線匯出則內嵌相同原圖。
 
 
 ## 4,884 字與 IDS 對應

@@ -1,0 +1,12 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const {chromium}=require('/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+(async()=>{const browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']});
+try{for(const offline of [false,true]){const page=await browser.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
+if(!offline){await page.addInitScript(()=>{Storage.prototype.getItem=Storage.prototype.setItem=Storage.prototype.removeItem=()=>{throw Error('Storage blocked')}});await page.route('http://pages.test/typinggametest/**',async route=>{const relative=new URL(route.request().url()).pathname.replace('/typinggametest/','')||'index.html';const file=path.resolve(__dirname,'../site',relative);await route.fulfill({path:file,contentType:file.endsWith('.png')?'image/png':file.endsWith('.js')?'text/javascript':file.endsWith('.css')?'text/css':'text/html'})});await page.goto('http://pages.test/typinggametest/')}else {await page.route('**/*',r=>r.request().url()==='http://offline.test/'?r.fulfill({path:path.resolve(__dirname,'../dist/倉頡小島試玩.html'),contentType:'text/html'}):r.abort());await page.goto('http://offline.test/')}
+await page.locator('[data-page="roots"]').click();assert.equal(await page.locator('.reference-pending').count(),0);assert.equal(await page.locator('#extra [data-aux-form]:visible').count(),127);
+assert.match(await page.locator('#extra .reference-status').textContent(),/內建原圖/);
+const dimensions=await page.evaluate(async()=>{const image=new Image();image.src=referenceImage.data;await image.decode();return [image.naturalWidth,image.naturalHeight]});assert.deepEqual(dimensions,[2500,1100]);
+await page.locator('#extra [data-root-filter="b"]').click();assert.equal(await page.locator('#extra [data-root-group]:visible [data-aux-form]').count(),11);
+await page.locator('#extra [data-aux-form="b-01"]:visible').click();assert.ok(await page.locator('#game').isVisible());assert.equal(await page.locator('#game .original-crop').count(),1);assert.deepEqual(errors,[]);if(!offline)await page.screenshot({path:path.resolve(__dirname,'../dist/builtin-root-practice.png')});
+console.log(offline?'Offline embedded reference passed':'Fresh session, blocked storage, 127 crops, group filters, roots practice and Pages subpath passed');await page.close()}
+}finally{await browser.close()}})().catch(e=>{console.error(e);process.exitCode=1});
