@@ -12,7 +12,7 @@ for overrides in [SOURCE.get('code_corrections',{}).get('5',{})]:C.update(overri
 # Preserve the individually edited examples, including the user's corrections.
 js = "const fs=require('fs'),vm=require('vm'),c=vm.createContext({});vm.runInContext(['learning.js','extra-colours.js'].map(p=>fs.readFileSync(p,'utf8')).join('\\n')+';globalThis.v=SPLIT_VISUALS',c);process.stdout.write(JSON.stringify(c.v))"
 V = json.loads(subprocess.check_output(['node','-e',js],cwd=ROOT))
-TARGET=3500
+TARGET=5000
 used=set()
 
 def tree(text):

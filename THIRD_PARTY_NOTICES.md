@@ -27,9 +27,9 @@ https://github.com/chanind/hanzi-writer-data/tree/68d10a4b21150cae5e1ebbd223eed2
 `auxiliary-data.js` 僅保存用戶所示三代參考圖的取景座標。前版自行重繪的圖形已撤除；用戶在瀏覽器載入原圖後，透過 SVG image viewport 顯示原始圖像。完整原圖檢視保留原有來源標示及浮水印。原始圖片沒有被此雲端工作區取得或內嵌，原圖內嵌版本由用戶在瀏覽器載入後產生。
 
 
-## 3,384 字與 IDS 對應
+## 4,884 字與 IDS 對應
 
-`colour-library.js` 提供 3,384 字原始輪廓，與原有示範合計 3,500 字。來源：Make Me A Hanzi（https://github.com/skishore/makemeahanzi），2026-10-21 取得的 dictionary.txt／graphics.txt；完整來源檔 SHA-256 記錄於 `data/colour-source.json` 的 source 欄位。保留輪廓，只增加部件分組及 SVG 裁切標色。
+`colour-library.js` 提供 4,884 字原始輪廓，與原有示範合計 5,000 字。來源：Make Me A Hanzi（https://github.com/skishore/makemeahanzi），2026-10-21 取得的 dictionary.txt／graphics.txt；完整來源檔 SHA-256 記錄於 `data/colour-source.json` 的 source 欄位。保留輪廓，只增加部件分組及 SVG 裁切標色。
 
 修改後的必要字形子集、IDS 結構與筆畫對應保存在 `data/colour-source.json`。dictionary.txt 衍生資料採 LGPL 3.0 或更新版本；graphics.txt 由 Arphic PL KaitiM GB／Arphic PL UKai 衍生，採 Arphic Public License。上游來源聲明、LGPL、GPL 與 Arphic 完整授權分別保留在 `licenses/MAKE_ME_A_HANZI.txt`、`licenses/LGPL-3.0.txt`、`licenses/GPL-3.0.txt`、`licenses/ARPHICPL.TXT`。生成腳本與部件對應可在本專案中取得。
 
