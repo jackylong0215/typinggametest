@@ -175,14 +175,16 @@ test('匕獨立UH、八獨立HO，部件分別仍取P及C',()=>{
  }
 });
 
-test('擴充新增1500字，原有3500字的字碼、筆畫分組與裁切幾何全部保留',()=>{
+test('擴充新增1500字，既有幾何只允許逐字明訂的用戶修正',()=>{
  const crypto=require('node:crypto'),baseline=JSON.parse(read('data/colour-baseline-3500.json'));
  assert.equal(Object.keys(baseline).length,3500);
  assert.equal(Object.keys(lib.SPLIT_VISUALS).filter(c=>!baseline[c]).length,1500);
  for(const [c,expected] of Object.entries(baseline)){
   const v=lib.SPLIT_VISUALS[c];assert.ok(v,c);assert.equal(v.parts.map(p=>p[1]).join(''),expected.code,c);
   const shape={parts:v.parts.map(p=>[p[1],p[2]]),ignored:v.ignored||[],splits:v.splitStrokes||[],regions:v.strokeRegions||[]};
-  assert.equal(crypto.createHash('sha256').update(JSON.stringify(shape)).digest('hex'),expected.geometrySha256,c);
+  // 新：2026-10-22 用戶參考圖修正斤的 H/M 分組；其餘 3499 字保留原基準。
+  const corrected={新:'22b8f3d76eb82fefc82a5e98e8e098ded88e72c71eeb84f7de8e779b06911548'};
+  assert.equal(crypto.createHash('sha256').update(JSON.stringify(shape)).digest('hex'),corrected[c]||expected.geometrySha256,c);
  }
 });
 test('新車的共用中豎分三段，頁的月山分界與甫的省略區明確',()=>{
@@ -190,3 +192,5 @@ test('新車的共用中豎分三段，頁的月山分界與甫的省略區明�
  const page=lib.SPLIT_VISUALS['頁'];assert.equal(page.parts.map(p=>p[1]).join(''),'mbuc');assert.equal(page.splitStrokes.length,2);
  const fu=lib.SPLIT_VISUALS['甫'];assert.ok(fu.ignored.includes(3)&&fu.ignored.includes(4));assert.equal(fu.splitStrokes[0].below,-1);
 });
+
+test('新字的斤按參考分 HML：上撇與左撇同屬竹，橫畫單獨取一',()=>{const visual=lib.SPLIT_VISUALS['新'];assert.equal(visual.parts.map(p=>p[1]).join(''),'ydhml');assert.deepEqual(Array.from(visual.parts[2][2]),[9,10]);assert.deepEqual(Array.from(visual.parts[3][2]),[11]);assert.deepEqual(Array.from(visual.parts[4][2]),[12]);assert.deepEqual(Array.from(visual.ignored),[2,3,4]);for(const char of ['斤','近','所','斥','折','斬','斷'])for(const atom of audit.characters[char]||[])if(atom.component==='斤'&&atom.key==='m')assert.equal(atom.regions.length,1,char)});
