@@ -1,0 +1,19 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const {chromium}=require('/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+(async()=>{const browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']});try{
+ const page=await browser.newPage({viewport:{width:1100,height:900},reducedMotion:'no-preference'}),errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.route('http://turns.test/typinggametest/**',async route=>{const relative=new URL(route.request().url()).pathname.replace('/typinggametest/','')||'index.html',file=path.resolve(__dirname,'../site',relative);await route.fulfill({path:file,contentType:file.endsWith('.png')?'image/png':file.endsWith('.js')?'text/javascript':file.endsWith('.css')?'text/css':'text/html'})});
+ await page.goto('http://turns.test/typinggametest/');await page.locator('[data-mode="rpg"]').click();await page.locator('[data-rpg-begin]').click();
+ // Even the choice-based level has a deadline, expires once, and advances without a click.
+ await page.evaluate(()=>rpgState.seconds=.15);await page.waitForFunction(()=>rpgState.phase==='review');assert.match(await page.locator('#rpg-feedback').innerText(),/時間到/);assert.equal(await page.evaluate(()=>rpgState.attempts),1);assert.equal(await page.locator('#rpg-time-track').getAttribute('aria-valuenow'),'0');await page.waitForFunction(()=>rpgState.phase==='question'&&rpgState.turn===2);assert.ok(await page.evaluate(()=>rpgState.seconds>33));
+ // Check all three action effects with animations enabled, and let each auto advance.
+ for(const move of ['strike','burst','guard']){
+  await page.evaluate(()=>{rpgState.mana=3;rpgState.enemy.hp=200;rpgState.enemy.maxHp=200;rpgRenderBattle()});await page.locator(`[data-rpg-move="${move}"]`).click();const choice=await page.evaluate(()=>rpgOptions.indexOf(rpgQuestion.code)),turn=await page.evaluate(()=>rpgState.turn);await page.locator(`[data-rpg-option="${choice}"]`).click();assert.equal(await page.locator('.rpg-action-'+move).count(),1);
+  const animations=await page.locator('.rpg-action-animation').evaluate(el=>el.getAnimations({subtree:true}).map(a=>a.animationName));assert.ok(animations.some(name=>name==='rpg-projectile'));if(move==='guard')assert.ok(animations.includes('rpg-shield'));if(move==='burst')assert.equal(await page.locator('.rpg-action-trail i').count(),5);
+  if(move==='burst')await page.locator('.rpg-action-animation').screenshot({path:path.resolve(__dirname,'../dist/rpg-burst-animation.png'),animations:'allow'});
+  await page.waitForFunction(previous=>rpgState.phase==='question'&&rpgState.turn===previous+1,turn);assert.equal(await page.evaluate(()=>rpgState.attempts),turn);
+ }
+ // A loss also opens the result automatically; it must not keep attacking or save twice.
+ await page.evaluate(()=>{rpgState.hp=1;rpgState.seconds=.1});await page.waitForFunction(()=>rpgState.phase==='defeat');await page.waitForSelector('.rpg-results');assert.match(await page.locator('.rpg-results').innerText(),/先休息/);assert.equal(await page.evaluate(()=>progress.history.filter(h=>h.mode==='rpg').length),1);assert.deepEqual(errors,[]);
+ console.log(JSON.stringify({pass:true,beginnerTimeout:true,automaticNextRound:true,allActionAnimations:true,terminalAutoResults:true,errors},null,2));
+}finally{await browser.close()}})().catch(e=>{console.error(e);process.exitCode=1});

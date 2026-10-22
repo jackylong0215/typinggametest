@@ -244,7 +244,7 @@ function renderColourClassroom(){
 }
 
 function renderDifficulties(){
- $('difficulty-options').innerHTML=DIFFICULTIES.map(level=>`<button class="difficulty-card ${level.id===difficulty?'selected':''}" data-difficulty="${level.id}" aria-pressed="${level.id===difficulty}"><span>${level.icon}</span><small>LEVEL 0${level.id}</small><b>${level.name}</b><p>${level.description}</p><em>${level.id===1?'RPG 選擇題 · 不限時':level.id===4?'RPG 14 秒／回合 · 敵方干擾':level.id===2?'RPG 25 秒／回合 · 字碼戰鬥':'RPG 18 秒／回合 · 進階拆字'}</em></button>`).join('');
+ $('difficulty-options').innerHTML=DIFFICULTIES.map(level=>`<button class="difficulty-card ${level.id===difficulty?'selected':''}" data-difficulty="${level.id}" aria-pressed="${level.id===difficulty}"><span>${level.icon}</span><small>LEVEL 0${level.id}</small><b>${level.name}</b><p>${level.description}</p><em>${level.id===1?'RPG 選擇題 · 35 秒／回合':level.id===4?'RPG 14 秒／回合 · 敵方干擾':level.id===2?'RPG 25 秒／回合 · 字碼戰鬥':'RPG 18 秒／回合 · 進階拆字'}</em></button>`).join('');
  const pool=buildChallengePool(CODE_TABLES[currentVersion],difficulty,WORDS);$('pool-size').textContent=`本級題庫 ${pool.length.toLocaleString()} 字 · ${versionName()}`;
  $('difficulty-options').querySelectorAll('[data-difficulty]').forEach(button=>button.onclick=()=>{difficulty=Number(button.dataset.difficulty);try{localStorage.setItem('cangjie-difficulty',String(difficulty))}catch{}renderDifficulties()});
 }
