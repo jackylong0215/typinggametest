@@ -11,10 +11,16 @@ function buildChallengePool(dictionary,level,words){
  const chars=level===1?[...BASIC_CHARACTERS]:level===2?words.filter(w=>(dictionary[w.char]||'').length<=3).map(w=>w.char):[...words.map(w=>w.char),...COMMON_CHARACTERS];
  return [...new Set(chars)].filter(c=>dictionary[c]).map(char=>({char,code:dictionary[char],kind:'word'}));
 }
-function mistakeId(question,version){return `${version}:${question.kind||'word'}:${question.formId||question.char}`}
+function mistakeId(question,version){return `${version}:${question.kind||'word'}:${question.kind==='punct'?question.code.toLowerCase():question.formId||question.char}`}
 function addMistake(book,question,version,now){
  const id=mistakeId(question,version),old=book[id];
  book[id]={id,version,kind:question.kind||'word',char:question.char,code:question.code,formId:question.formId||null,correctCount:old?.correctCount||0,misses:(old?.misses||0)+1,lastWrong:now};return id;
+}
+function normalizePunctuationNotebook(book,reference){
+ const normalized={};for(const [oldId,entry]of Object.entries(book)){
+  const current=entry.kind==='punct'?reference.find(p=>p.code===String(entry.code).toLowerCase()):null;if(!current){normalized[oldId]=entry;continue}
+  const question={...entry,...current},id=mistakeId(question,entry.version),old=normalized[id];normalized[id]={...question,id,misses:(old?.misses||0)+(entry.misses||0),correctCount:Math.max(old?.correctCount||0,entry.correctCount||0),lastWrong:Math.max(old?.lastWrong||0,entry.lastWrong||0)};
+ }return normalized;
 }
 function creditMistake(book,question,version){const id=mistakeId(question,version);if(!book[id])return false;book[id].correctCount++;if(book[id].correctCount>=2){delete book[id];return true}return false}
 function recordKey(mode,version,difficulty){return `${mode}:${version}:${difficulty}`}

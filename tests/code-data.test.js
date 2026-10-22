@@ -66,12 +66,11 @@ test('每個原字標色步驟都對應正確取碼，筆畫分組無重複或�
   assert.deepEqual(Array.from(indices),Array.from({length:course.STROKE_DATA[char].length},(_,i)=>i),char);
  }
 });
-test('全部標點符號碼均與指定的 ibus-table 符號方案相符', () => {
- assert.equal(course.PUNCTUATION.length,20);
- for (const item of course.PUNCTUATION) {
-  assert.ok(source3.get(item.char)?.has(item.code),`${item.char} ${item.code}`);
-  assert.ok(item.sentence.includes(item.char));
- }
+test('75 筆符號完全保留用戶碼表的符號、字碼、原表字根與同形異碼', () => {
+ const reference=JSON.parse(read('data/punctuation-user-reference.json'));assert.equal(reference.length,75);assert.equal(course.PUNCTUATION.length,75);assert.equal(new Set(reference.map(p=>p.code)).size,75);
+ for(const [index,row]of reference.entries()){const item=course.PUNCTUATION[index];assert.equal(item.char,row.symbol);assert.equal(item.code,row.code.toLowerCase());assert.equal(item.stroke,row.stroke);assert.ok(item.name);assert.ok(item.sentence.includes(item.char));assert.equal(item.kind,'punct')}
+ const map=new Map(course.PUNCTUATION.map(p=>[p.code,p.char]));for(const [code,char]of Object.entries({zxaa:' ',zxbe:'(',zxbf:')',zxcd:'┌',zxce:'┘',zxaq:'‧',zxaw:'—',zxay:'──',zxap:'．',zxcy:'′'}))assert.equal(map.get(code),char);
+ assert.deepEqual(Array.from(course.PUNCTUATION.filter(p=>p.char==='．'),p=>p.code),['zxae','zxap']);assert.equal(course.PUNCTUATION.find(p=>p.code==='zxas').stroke,'Z難日戶');assert.equal(course.PUNCTUATION.find(p=>p.code==='zxat').stroke,'Z難日甘');
 });
 test('五個分組涵蓋 26 個鍵位，沒有重複', () => {
  const keys=course.GROUPS.flatMap(g=>[...g.keys]);

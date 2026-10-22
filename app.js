@@ -4,7 +4,7 @@ WORDS.push(...BEGINNER_WORDS);
 const TITLES={colour:'彩色拆字教室',punct:'標點符號學堂',special:'難字形與特殊規則',roots:'字根森林',split:'拆字工房',rpg:'倉頡勇者傳',rain:'生存挑戰',book:'錯字加強',speed:'極速航線'};
 const $=id=>document.getElementById(id);
 let saved;try{saved=JSON.parse(localStorage.getItem('cangjie-island')||'{}')}catch{saved={}}let progress={stars:0,rounds:0,best:0,history:[],...saved};
-progress.notebook ||= {};progress.records ||= {};
+progress.notebook=normalizePunctuationNotebook(progress.notebook||{},PUNCTUATION);progress.records ||= {};
 let difficulty=1;try{difficulty=Math.min(4,Math.max(1,Number(localStorage.getItem('cangjie-difficulty'))||1))}catch{}
 let gameDifficulty=1,lives=0,challengePool=[],roundMistakes={};
 let currentVersion;try{currentVersion=localStorage.getItem('cangjie-version')==='3'?'3':'5'}catch{currentVersion='5'}
@@ -103,17 +103,17 @@ async function next(forced){
  const guidance=practiceGuidance(),guided=['roots','colours'].includes(guidance);practiceWarmupExample=false;
  if(guided){const supported=pool.filter(knownColourQuestion);if(supported.length)pool=supported;else{pool=WORDS.filter(knownColourQuestion);practiceWarmupExample=true}if(forced&&!knownColourQuestion(forced))forced=undefined}
  if(!pool.length){finish('cleared');return}
- let choices=pool.filter(w=>(w.formId||w.char)!==(item?.formId||item?.char));if(!choices.length)choices=pool;item=forced||choices[Math.floor(Math.random()*choices.length)];if(item.kind==='punct')item={...PUNCTUATION.find(p=>p.char===item.char),...item};item={...item,kind:item.kind||(mode==='punct'?'punct':item.formId?'root':'word')};if(!item.formId&&item.kind!=='punct')item=questionForVersion(item);lastCode=item.code;
+ let choices=pool.filter(w=>(w.formId||(w.kind==='punct'?w.code:w.char))!==(item?.formId||(item?.kind==='punct'?item.code:item?.char)));if(!choices.length)choices=pool;item=forced||choices[Math.floor(Math.random()*choices.length)];if(item.kind==='punct')item={...item,...PUNCTUATION.find(p=>p.code===item.code)};item={...item,kind:item.kind||(mode==='punct'?'punct':item.formId?'root':'word')};if(!item.formId&&item.kind!=='punct')item=questionForVersion(item);lastCode=item.code;
  const pending=item;practiceGuideStep=-1;$('practice-guide').hidden=true;
  if(guided&&typeof loadColourCharacters==='function'&&!questionVisual()){
-  $('target').textContent=item.char;$('answer').readOnly=true;$('success-card').hidden=true;$('split-animation').hidden=true;$('feedback').textContent='正在準備五色圖，準備好才開始本回合作答。';$('keyboard').querySelectorAll('.key').forEach(k=>k.disabled=true);
+  $('target').textContent=displayCharacter(item);$('answer').readOnly=true;$('success-card').hidden=true;$('split-animation').hidden=true;$('feedback').textContent='正在準備五色圖，準備好才開始本回合作答。';$('keyboard').querySelectorAll('.key').forEach(k=>k.disabled=true);
   try{await loadColourCharacters([item.char])}catch{}
   if(!active||item!==pending)return;
  }else if(typeof loadColourCharacters==='function'&&!item.formId)loadColourCharacters([item.char]).catch(()=>{});
  if(!active||item!==pending)return;phase='answering';
  $('decomposition').innerHTML=item.formId?`<span class="family-caption">${ROOTS[item.code]}字根家族 · ${AUXILIARY_FORMS[item.code].length} 個字形</span>`:'';
- $('play-split').textContent=symbolQuestion()?'查閱符號用法':'▶ 看原字拆解';$('target').textContent=item.char;if(item.formId)$('target').innerHTML=auxiliarySvg(auxiliaryForm(item.formId));$('target').setAttribute('aria-label',item.char);$('target').classList.remove('target-success');$('answer').value='';$('answer').readOnly=false;$('success-card').hidden=true;$('split-animation').hidden=true;
- $('hint').textContent=symbolQuestion()?`${item.name||'標點符號'}：${item.note}`:item.formId?`「${item.char}」屬於「${ROOTS[item.code]}」字根家族，找找它的英文字母`:'想一想，這個字可以拆成哪些字根？';$('feedback').textContent='';$('feedback').className='';
+ $('play-split').textContent=symbolQuestion()?'查閱符號用法':'▶ 看原字拆解';$('target').textContent=displayCharacter(item);if(item.formId)$('target').innerHTML=auxiliarySvg(auxiliaryForm(item.formId));$('target').setAttribute('aria-label',item.kind==='punct'?item.name:item.char);$('target').classList.remove('target-success');$('answer').value='';$('answer').readOnly=false;$('success-card').hidden=true;$('split-animation').hidden=true;
+ $('hint').textContent=symbolQuestion()?`${item.name||'標點符號'}：${item.note} 原表字根：${item.stroke||''}`:item.formId?`「${item.char}」屬於「${ROOTS[item.code]}」字根家族，找找它的英文字母`:'想一想，這個字可以拆成哪些字根？';$('feedback').textContent='';$('feedback').className='';
  $('keyboard').querySelectorAll('.key').forEach(k=>{k.classList.remove('lit','key-pressed');k.disabled=false});
  $('target').classList.remove('rain-active');renderCodeProgress();paintPracticeGuide();if(practiceGuidance()==='independent'&&round===4)$('hint').textContent='五色熱身完成！現在收起顏色，試試自己辨認部件和取碼。';
  if(mode==='rain'){remaining=DIFFICULTIES[gameDifficulty-1].seconds;updateChallengeStats()}
@@ -149,7 +149,7 @@ function survivalMiss(entered){
  function afterMiss(){if(!active||phase!=='miss')return;if(paused){advanceTimer=setTimeout(afterMiss,150);return}next()}
  advanceTimer=setTimeout(afterMiss,1600);
 }
-function reviewMarkup(entries){return entries.length?`<section class="round-review"><h3>這次的錯題，現在一起看懂</h3><p>正確取碼已列在下方，並已加入錯字簿。</p>${entries.map(e=>`<article><strong>${e.formId?auxiliarySvg(auxiliaryForm(e.formId)):htmlEscape(e.char)}</strong><div><b>${htmlEscape(e.code.toUpperCase())}</b><div class="review-chips">${e.kind==='punct'?'符號碼，不按字形拆根':chips(e.code)}</div><small>你的輸入：${e.entered.map(htmlEscape).join('、')} · 錯誤 ${e.count} 次</small></div></article>`).join('')}</section>`:'<div class="perfect-round">✨ 這次沒有錯字，太棒了！</div>'}
+function reviewMarkup(entries){return entries.length?`<section class="round-review"><h3>這次的錯題，現在一起看懂</h3><p>正確取碼已列在下方，並已加入錯字簿。</p>${entries.map(e=>`<article><strong>${e.formId?auxiliarySvg(auxiliaryForm(e.formId)):htmlEscape(displayCharacter(e))}</strong><div><b>${htmlEscape(e.code.toUpperCase())}</b><div class="review-chips">${e.kind==='punct'?'符號碼，不按字形拆根':chips(e.code)}</div><small>你的輸入：${e.entered.map(htmlEscape).join('、')} · 錯誤 ${e.count} 次</small></div></article>`).join('')}</section>`:'<div class="perfect-round">✨ 這次沒有錯字，太棒了！</div>'}
 function finish(reason='completed'){
  if(!active)return;active=false;phase='idle';advanceRemaining=0;clearTimeout(advanceTimer);stopDemo();clearInterval(tick);clearTimeout(fall);
  const stars=Math.floor(score/10),key=recordKey(mode,currentVersion,gameDifficulty);progress.stars+=stars;progress.rounds++;progress.best=Math.max(progress.best,score);progress.records[key]=Math.max(progress.records[key]||0,score);
@@ -183,7 +183,7 @@ function submitAnswer(){
   progress.records[recordKey(mode,currentVersion,gameDifficulty)]=Math.max(progress.records[recordKey(mode,currentVersion,gameDifficulty)]||0,score);persist();updateChallengeStats();$('score').textContent=score;$('combo').textContent=combo;bounce($('score'),'score-pop');bounce($('target'),'target-success');
   $('target').classList.remove('rain-active');$('answer').readOnly=true;$('keyboard').querySelectorAll('.key').forEach(k=>k.disabled=true);
   $('feedback').textContent=`✓「${item.char}」答對了！＋${points} 分${combo>=3?' · '+combo+' 連擊！':''}${mastered?' · 錯字掌握，已移出錯字簿！':''}`;$('feedback').className='feedback-success';
-  $('success-card').hidden=false;$('success-card').querySelector('.success-badge').textContent=symbolQuestion()?'✓ 符號輸入成功！':'✓ 拆字成功！';$('success-detail').innerHTML=`<b>${item.formId?auxiliarySvg(auxiliaryForm(item.formId)):item.char}</b><span>＝</span>${displayCode(item.code)}<span class="earned-points">＋${points}</span>`;
+  $('success-card').hidden=false;$('success-card').querySelector('.success-badge').textContent=symbolQuestion()?'✓ 符號輸入成功！':'✓ 拆字成功！';$('success-detail').innerHTML=`<b>${item.formId?auxiliarySvg(auxiliaryForm(item.formId)):displayCharacter(item)}</b><span>＝</span>${displayCode(item.code)}<span class="earned-points">＋${points}</span>`;
   $('continue-game').textContent=['roots','split','special','punct','colour'].includes(mode)&&round>=10?'查看本次成績 →':'下一題 →';
   animateSplit();const delay=['rain','speed'].includes(mode)?2200:mode==='roots'?2000:mode==='punct'?2600:questionVisual()?questionVisual().parts.length*1100+1400:2200;scheduleAutoAdvance(delay);
  }else{
@@ -234,7 +234,7 @@ document.querySelectorAll('[data-page]').forEach(button=>button.onclick=()=>show
 $('book-home').onclick=()=>showPage('notebook');
 function renderNotebook(){
  const entries=Object.values(progress.notebook).filter(e=>e.version===currentVersion).sort((a,b)=>b.lastWrong-a.lastWrong);
- $('extra').innerHTML=`<div class="eyebrow">MISTAKES BECOME SUPERPOWERS</div><div class="notebook-heading"><div><h2>我的錯字簿 <span>${entries.length}</span></h2><p>每個字答對兩次，就能移出錯字簿。一般練習和挑戰中答對也會累計。</p><p>目前顯示 ${versionName()}；三代和五代分開記錄。</p></div><button class="primary" id="practice-book" ${entries.length?'':'disabled'}>開始錯字加強 →</button></div>${entries.length?`<div class="notebook-grid">${entries.map(e=>`<article class="notebook-card"><div class="notebook-character">${e.formId?auxiliarySvg(auxiliaryForm(e.formId)):htmlEscape(e.char)}</div><div class="mastery-dots">${[0,1].map(i=>`<span class="${e.correctCount>i?'filled':''}">✓</span>`).join('')}</div><b>${htmlEscape(e.code.toUpperCase())}</b><div class="review-chips">${e.kind==='punct'?'符號碼':chips(e.code)}</div><p>累計錯誤 ${e.misses} 次 · 再答對 ${2-e.correctCount} 次即可掌握</p></article>`).join('')}</div>`:'<div class="empty-notebook"><span>🌈</span><h3>這裡空空的，做得好！</h3><p>之後答錯或超時的字會自動收錄，讓你知道下一步練甚麼。</p><button class="outline" id="empty-book-home">回小島挑戰 →</button></div>'}`;
+ $('extra').innerHTML=`<div class="eyebrow">MISTAKES BECOME SUPERPOWERS</div><div class="notebook-heading"><div><h2>我的錯字簿 <span>${entries.length}</span></h2><p>每個字答對兩次，就能移出錯字簿。一般練習和挑戰中答對也會累計。</p><p>目前顯示 ${versionName()}；三代和五代分開記錄。</p></div><button class="primary" id="practice-book" ${entries.length?'':'disabled'}>開始錯字加強 →</button></div>${entries.length?`<div class="notebook-grid">${entries.map(e=>`<article class="notebook-card"><div class="notebook-character">${e.formId?auxiliarySvg(auxiliaryForm(e.formId)):htmlEscape(displayCharacter(e))}</div><div class="mastery-dots">${[0,1].map(i=>`<span class="${e.correctCount>i?'filled':''}">✓</span>`).join('')}</div><b>${htmlEscape(e.code.toUpperCase())}</b><div class="review-chips">${e.kind==='punct'?'符號碼':chips(e.code)}</div><p>累計錯誤 ${e.misses} 次 · 再答對 ${2-e.correctCount} 次即可掌握</p></article>`).join('')}</div>`:'<div class="empty-notebook"><span>🌈</span><h3>這裡空空的，做得好！</h3><p>之後答錯或超時的字會自動收錄，讓你知道下一步練甚麼。</p><button class="outline" id="empty-book-home">回小島挑戰 →</button></div>'}`;
  if(entries.length)$('practice-book').onclick=()=>start('book');else $('empty-book-home').onclick=()=>showPage('explore');
 }
 function colourThumb(char){return `<svg viewBox="0 0 1024 1024" aria-hidden="true"><g transform="translate(0,900) scale(1,-1)">${glyphPaths(char,true)}</g></svg>`}
@@ -305,9 +305,11 @@ document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>b.dataset.mode
 
 function openPunctuationLesson(){
  pauseAutoAdvance();paused=active;$('lesson-title').textContent='標點符號學堂 · 用途與輸入';$('lesson-content').innerHTML=punctuationGuide();if(!$('lesson').open)$('lesson').showModal();
+ let group='all';const search=$('punctuation-search');function filter(){let count=0;const query=search.value.trim().toLowerCase();$('lesson-content').querySelectorAll('[data-punctuation-card]').forEach(card=>{card.hidden=(group!=='all'&&card.dataset.punctuationGroup!==group)||(query&&!card.dataset.punctuationQuery.toLowerCase().includes(query));if(!card.hidden)count++});$('punctuation-count').textContent=`${count} / ${PUNCTUATION.length} 筆符號碼`;$('lesson-content').querySelectorAll('[data-punctuation-filter]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.punctuationFilter===group)))}search.addEventListener('input',filter);$('lesson-content').querySelectorAll('[data-punctuation-filter]').forEach(button=>button.onclick=()=>{group=button.dataset.punctuationFilter;filter()});
  $('punctuation-go').onclick=()=>{closeLesson();start('punct')};$('lesson-content').querySelectorAll('[data-punctuation]').forEach(button=>button.onclick=()=>{const selected=PUNCTUATION.find(p=>p.code===button.dataset.punctuation);closeLesson();start('punct',selected)});
 }
 
-function lookupCode(){const char=[...$('lookup-char').value.trim()][0];$('lookup-result').textContent=char?CODE_TABLES[currentVersion][char]?`${char} → ${CODE_TABLES[currentVersion][char].toUpperCase()} · ${versionName()}`:`此碼表未收錄「${char}」`:`${versionName()} · ${Object.keys(CODE_TABLES[currentVersion]).length.toLocaleString()} 字`}
+function lookupCode(){const raw=$('lookup-char').value,symbol=raw==='␠'?' ':raw,matched=PUNCTUATION.filter(p=>p.char===symbol);if(matched.length){$('lookup-result').textContent=`${symbol===' '?'␠':symbol} → ${matched.map(p=>p.code.toUpperCase()).join(' / ')} · 用戶符號表`;return}const char=[...raw.trim()][0];$('lookup-result').textContent=char?CODE_TABLES[currentVersion][char]?`${char} → ${CODE_TABLES[currentVersion][char].toUpperCase()} · ${versionName()}`:`此碼表未收錄「${char}」`:`${versionName()} · ${Object.keys(CODE_TABLES[currentVersion]).length.toLocaleString()} 字`}
+
 $('code-version').value=currentVersion;$('lookup-char').addEventListener('input',lookupCode);lookupCode();
 $('code-version').addEventListener('change',()=>{currentVersion=$('code-version').value;try{localStorage.setItem('cangjie-version',currentVersion)}catch{}lookupCode();renderDifficulties();if(!$('extra').hidden)document.querySelector('.nav.active').click()});

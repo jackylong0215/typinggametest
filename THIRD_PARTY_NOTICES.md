@@ -10,7 +10,7 @@
 
 https://github.com/kaio/ibus-table-chinese/blob/53a25b8b7e84b34bf1d14f16dd3a2761fadaa9cc/tables/cangjie/cangjie3.txt
 
-完整原檔位於 `data/cangjie3-source.txt`，保留原有檔頭。檔內授權聲明：`Freely redistributable without restriction`。標點練習採用此表的 Z 開頭符號碼，不代表每個作業系統的輸入法快捷方式。
+完整原檔位於 `data/cangjie3-source.txt`，保留原有檔頭。檔內授權聲明：`Freely redistributable without restriction`。前版標點選例曾取自此表；目前標點練習改依下方記錄的用戶 ZX 符號表。
 
 ## 原字筆畫輪廓
 
@@ -43,3 +43,7 @@ wordfreq © 2022 Robyn Speer，https://github.com/rspeer/wordfreq 。詞頻資�
 用戶新提供的十二字標色截圖只作取形參考，沒有直接貼圖或修改截圖。部件以同一批 Arphic 衍生 SVG 輪廓重建；巔的十頭真特別重組自巅的原始部件與巔的山、頁，完整逐筆來源保留於資料檔的 contour_adaptations 及 reference_original_graphics。其餘字保持整字原始輪廓。
 
 本輪新增部件參考同樣只用作取形依據，全部使用既有授權輪廓重建，不直接使用截圖。乙的輪廓取自同一 Make Me A Hanzi 原始資料；其獨立 NU 與部件 N 分別處理。
+
+## 用戶提供的 ZX 符號表
+
+`data/punctuation-user-reference.json` 保存用戶在對話提供的 75 筆 `code`／`stroke`／`symbol` 原表；執行時的 `learning.js` 符號教材以該表為準，取代前版 20 筆 ibus-table 選例。特別保留同形異碼、原表空白、線段及字根名稱，不以其他符號來源覆蓋用戶資料。

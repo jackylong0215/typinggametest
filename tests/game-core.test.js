@@ -1,6 +1,6 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
 const ctx=vm.createContext({});const read=f=>fs.readFileSync(path.join(__dirname,'..',f),'utf8');
-vm.runInContext(read('game-core.js')+';globalThis.core={DIFFICULTIES,buildChallengePool,addMistake,creditMistake,mistakeId,recordKey};',ctx);
+vm.runInContext(read('game-core.js')+';globalThis.core={DIFFICULTIES,buildChallengePool,addMistake,creditMistake,mistakeId,recordKey,normalizePunctuationNotebook};',ctx);
 const c=ctx.core,dict=JSON.parse(read('data/cangjie5_single_main.json')).chars;
 const words=[{char:'明'},{char:'林'},{char:'家'},{char:'想'},{char:'兒'}];
 test('四級題庫：入門只有基本字根，最高級逐字涵蓋全部 20,840 個主碼',()=>{
@@ -21,4 +21,9 @@ test('三代、五代、符號和輔助字形分別記錄，不會錯誤消除�
  c.addMistake(book,q,'3',1);c.addMistake(book,{...q,code:'hui'},'5',1);c.creditMistake(book,q,'3');c.creditMistake(book,q,'3');assert.equal(Object.keys(book).length,1);assert.ok(book['5:word:鬼']);
  assert.notEqual(c.mistakeId({char:'日',kind:'word'},'5'),c.mistakeId({char:'日',kind:'root',formId:'a-01'},'5'));
  assert.notEqual(c.recordKey('rain','5',1),c.recordKey('rain','5',4));assert.notEqual(c.recordKey('rain','5',1),c.recordKey('speed','5',1));
+});
+
+test('同形異碼符號分開記錄及掌握，舊符號錯題依字碼遷移而保留進度',()=>{
+ const book={},a={char:'．',code:'zxae',kind:'punct'},b={char:'．',code:'zxap',kind:'punct'};c.addMistake(book,a,'5',10);c.addMistake(book,b,'5',20);assert.equal(Object.keys(book).length,2);c.creditMistake(book,a,'5');c.creditMistake(book,a,'5');assert.equal(Object.keys(book).length,1);assert.ok(book['5:punct:zxap']);
+ const old={'5:punct:（':{version:'5',kind:'punct',char:'（',code:'zxbe',misses:3,correctCount:1,lastWrong:99},'5:word:明':{version:'5',kind:'word',char:'明',code:'ab',misses:1}};const updated=c.normalizePunctuationNotebook(old,[{char:'(',code:'zxbe',name:'開圓括號',stroke:'Z難月水',kind:'punct'}]);assert.equal(updated['5:punct:zxbe'].char,'(');assert.equal(updated['5:punct:zxbe'].correctCount,1);assert.equal(updated['5:punct:zxbe'].misses,3);assert.equal(updated['5:punct:zxbe'].lastWrong,99);assert.deepEqual(updated['5:word:明'],old['5:word:明']);
 });
