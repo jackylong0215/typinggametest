@@ -88,17 +88,34 @@ stopDemo();const visual=questionVisual();const strokes=STROKE_DATA[item.char];co
  if(!matchMedia('(prefers-reduced-motion: reduce)').matches)demoTimer=setInterval(()=>{if(!active){stopDemo();return}if(paused)return;if(demoStep>=visual.parts.length-1){clearInterval(demoTimer);demoTimer=null;return}showDemoStep(demoStep+1)},1100);
 }
 $('split-animation').addEventListener('click',event=>{const step=event.target.closest('[data-demo-step]');if(step){stopDemo();showDemoStep(Number(step.dataset.demoStep))}if(event.target.closest('[data-demo-replay]'))animateSplit()});
-function next(forced){
- clearTimeout(fall);clearTimeout(advanceTimer);stopDemo();advanceRemaining=0;phase='answering';wrongStreak=0;
+function knownColourQuestion(question){const code=CODE_TABLES[currentVersion][question.char];return !question.formId&&question.kind!=='punct'&&!!code&&(typeof COLOUR_CODES!=='undefined'?COLOUR_CODES[question.char]===code:SPLIT_VISUALS[question.char]?.parts.map(p=>p[1]).join('')===code)}
+function practiceGuidance(){if(mode==='book'&&!Object.values(progress.notebook).some(e=>e.version===currentVersion&&!e.formId&&e.kind!=='punct'))return 'none';return ['split','special','speed','book'].includes(mode)?round<2?'roots':round<4?'colours':'independent':'none'}
+let practiceGuideStep=-1,practiceWarmupExample=false;
+function paintPracticeGuide(){
+ const container=$('practice-guide'),guidance=practiceGuidance(),visual=questionVisual();container.hidden=!['roots','colours'].includes(guidance);if(!container.hidden&&!visual){container.innerHTML='<p class="rpg-guide-unavailable">本題五色圖暫時未能載入，先用原字練習；可按「看原字拆解」重試。</p>';return}if(container.hidden){container.innerHTML='';return}
+ const roots=guidance==='roots';container.innerHTML=`<section class="rpg-colour-guide"><div class="rpg-guide-heading"><b>🌈 ${roots?'五色字根引導':'看圖自己拆'} · 熱身 ${round+1} / 4</b></div>${practiceWarmupExample?'<p class="rpg-guide-rule">先用這個有五色圖的字熱身，之後回到本模式的題目。</p>':''}<div class="rpg-guide-body"><svg class="rpg-colour-glyph" viewBox="0 0 1024 1024" role="img" aria-label="${htmlEscape(item.char)}五色拆字圖"><g transform="translate(0,900) scale(1,-1)">${glyphPaths(item.char,true)}</g></svg><div class="rpg-guide-steps"><span class="rpg-guide-order">${roots?htmlEscape(visual.layout||'依部件順序取碼'):'觀察形狀 → 按順序找字根'}</span><div role="group" aria-label="取碼步驟">${visual.parts.map(([description,code],i)=>`<button data-practice-guide-step="${i}" style="--guide-colour:${(visual.colours||PART_COLOURS)[i%(visual.colours||PART_COLOURS).length]}" aria-pressed="false"><i></i>${i+1}${roots?' · '+[...code].map(k=>ROOTS[k]).join('・'):''}</button>`).join('')}<button data-practice-guide-step="-1" aria-pressed="true">全字</button></div><p id="practice-guide-note" role="status">按顏色辨認原字部件，然後依序輸入；需要線索可以點步驟。</p></div></div><p class="rpg-guide-rule">${roots?htmlEscape(visual.explanation||'取碼按部件順序，不是寫字筆順。灰色筆畫保留形狀，但不另取碼。'):'先看五色圖自己找字根，點步驟才揭開字根名稱。完成四題熱身後會收起圖片，改為獨立拆字。'}</p></section>`;practiceGuideStep=-1;
+}
+function selectPracticeGuide(index){const visual=questionVisual(),container=$('practice-guide');if(!visual||container.hidden)return;if(!$('practice-guide-note'))paintPracticeGuide();practiceGuideStep=index;container.querySelectorAll('[data-part-index]').forEach(path=>{const part=Number(path.dataset.partIndex);path.setAttribute('opacity',index===-1||part===index?'1':part===-1?'.6':'.22')});container.querySelectorAll('[data-practice-guide-step]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.practiceGuideStep)===index)));$('practice-guide-note').textContent=index===-1?'觀察完整五色圖，再按部件順序輸入。':`第 ${index+1} 碼：${visual.parts[index][0]} → ${[...visual.parts[index][1]].map(k=>ROOTS[k]).join('・')}。`}
+$('practice-guide').addEventListener('click',event=>{const button=event.target.closest('[data-practice-guide-step]');if(button)selectPracticeGuide(Number(button.dataset.practiceGuideStep))});
+async function next(forced){
+ clearTimeout(fall);clearTimeout(advanceTimer);stopDemo();advanceRemaining=0;phase='preparing';wrongStreak=0;
  let pool=mode==='colour'?colourCharacters().map(char=>({char,kind:'word'})):mode==='book'?Object.values(progress.notebook).filter(entry=>entry.version===currentVersion):mode==='punct'?PUNCTUATION:mode==='special'?SPECIAL_WORDS:mode==='roots'?Object.entries(AUXILIARY_FORMS).filter(([k])=>!practiceKeys||practiceKeys.includes(k)).flatMap(([code,forms])=>forms.map(form=>({code,char:form.label,formId:form.id,kind:'root',note:`這個輔助字形屬於「${ROOTS[code]}」字根，對應 ${code.toUpperCase()} 鍵；它不是獨立中文字。`}))):challengePool;
+ const guidance=practiceGuidance(),guided=['roots','colours'].includes(guidance);practiceWarmupExample=false;
+ if(guided){const supported=pool.filter(knownColourQuestion);if(supported.length)pool=supported;else{pool=WORDS.filter(knownColourQuestion);practiceWarmupExample=true}if(forced&&!knownColourQuestion(forced))forced=undefined}
  if(!pool.length){finish('cleared');return}
  let choices=pool.filter(w=>(w.formId||w.char)!==(item?.formId||item?.char));if(!choices.length)choices=pool;item=forced||choices[Math.floor(Math.random()*choices.length)];if(item.kind==='punct')item={...PUNCTUATION.find(p=>p.char===item.char),...item};item={...item,kind:item.kind||(mode==='punct'?'punct':item.formId?'root':'word')};if(!item.formId&&item.kind!=='punct')item=questionForVersion(item);lastCode=item.code;
- if(typeof loadColourCharacters==='function'&&!item.formId)loadColourCharacters([item.char]).catch(()=>{});
+ const pending=item;practiceGuideStep=-1;$('practice-guide').hidden=true;
+ if(guided&&typeof loadColourCharacters==='function'&&!questionVisual()){
+  $('target').textContent=item.char;$('answer').readOnly=true;$('success-card').hidden=true;$('split-animation').hidden=true;$('feedback').textContent='正在準備五色圖，準備好才開始本回合作答。';$('keyboard').querySelectorAll('.key').forEach(k=>k.disabled=true);
+  try{await loadColourCharacters([item.char])}catch{}
+  if(!active||item!==pending)return;
+ }else if(typeof loadColourCharacters==='function'&&!item.formId)loadColourCharacters([item.char]).catch(()=>{});
+ if(!active||item!==pending)return;phase='answering';
  $('decomposition').innerHTML=item.formId?`<span class="family-caption">${ROOTS[item.code]}字根家族 · ${AUXILIARY_FORMS[item.code].length} 個字形</span>`:'';
  $('play-split').textContent=symbolQuestion()?'查閱符號用法':'▶ 看原字拆解';$('target').textContent=item.char;if(item.formId)$('target').innerHTML=auxiliarySvg(auxiliaryForm(item.formId));$('target').setAttribute('aria-label',item.char);$('target').classList.remove('target-success');$('answer').value='';$('answer').readOnly=false;$('success-card').hidden=true;$('split-animation').hidden=true;
  $('hint').textContent=symbolQuestion()?`${item.name||'標點符號'}：${item.note}`:item.formId?`「${item.char}」屬於「${ROOTS[item.code]}」字根家族，找找它的英文字母`:'想一想，這個字可以拆成哪些字根？';$('feedback').textContent='';$('feedback').className='';
  $('keyboard').querySelectorAll('.key').forEach(k=>{k.classList.remove('lit','key-pressed');k.disabled=false});
- $('target').classList.remove('rain-active');renderCodeProgress();
+ $('target').classList.remove('rain-active');renderCodeProgress();paintPracticeGuide();if(practiceGuidance()==='independent'&&round===4)$('hint').textContent='五色熱身完成！現在收起顏色，試試自己辨認部件和取碼。';
  if(mode==='rain'){remaining=DIFFICULTIES[gameDifficulty-1].seconds;updateChallengeStats()}
  $('answer').focus();
 }
@@ -186,7 +203,7 @@ $('answer').addEventListener('input',event=>{
  if(event.isComposing||!active||paused||phase!=='answering')return;
  const input=$('answer');const position=input.selectionStart;const cleaned=input.value.replace(/[^a-z]/gi,'');
  if(cleaned!==input.value){input.value=cleaned;input.setSelectionRange(Math.min(position,cleaned.length),Math.min(position,cleaned.length))}
- renderCodeProgress();
+ renderCodeProgress();if(practiceGuidance()==='roots'&&questionVisual()){let n=0;while(n<input.value.length&&input.value[n]===item.code[n])n++;selectPracticeGuide(n<item.code.length?n:-1)}
 });
 $('answer').addEventListener('compositionend',()=>{$('input-status').textContent='請切換至英文鍵盤，再輸入倉頡英文字母。'});
 $('keyboard').addEventListener('mousedown',event=>{if(event.target.closest('button'))event.preventDefault()});
@@ -244,7 +261,7 @@ function renderColourClassroom(){
 }
 
 function renderDifficulties(){
- $('difficulty-options').innerHTML=DIFFICULTIES.map(level=>`<button class="difficulty-card ${level.id===difficulty?'selected':''}" data-difficulty="${level.id}" aria-pressed="${level.id===difficulty}"><span>${level.icon}</span><small>LEVEL 0${level.id}</small><b>${level.name}</b><p>${level.description}</p><em>${level.id===1?'RPG 選擇題 · 35 秒／回合':level.id===4?'RPG 14 秒／回合 · 敵方干擾':level.id===2?'RPG 25 秒／回合 · 字碼戰鬥':'RPG 18 秒／回合 · 進階拆字'}</em></button>`).join('');
+ $('difficulty-options').innerHTML=DIFFICULTIES.map(level=>`<button class="difficulty-card ${level.id===difficulty?'selected':''}" data-difficulty="${level.id}" aria-pressed="${level.id===difficulty}"><span>${level.icon}</span><small>LEVEL 0${level.id}</small><b>${level.name}</b><p>${level.description}</p><em>${level.id===1?'RPG 選擇題 · 35 秒／回合':level.id===4?'RPG 五色過渡 → 全字庫戰鬥':level.id===2?'RPG 25 秒／回合 · 五色圖引導':'RPG 五色過渡 → 獨立拆字'}</em></button>`).join('');
  const pool=buildChallengePool(CODE_TABLES[currentVersion],difficulty,WORDS);$('pool-size').textContent=`本級題庫 ${pool.length.toLocaleString()} 字 · ${versionName()}`;
  $('difficulty-options').querySelectorAll('[data-difficulty]').forEach(button=>button.onclick=()=>{difficulty=Number(button.dataset.difficulty);try{localStorage.setItem('cangjie-difficulty',String(difficulty))}catch{}renderDifficulties()});
 }
