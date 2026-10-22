@@ -6,6 +6,9 @@ import collections, functools, json, pathlib, subprocess
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SOURCE = json.loads((ROOT/'data/colour-source.json').read_text())
 D, G, T = SOURCE['dictionary'], SOURCE['graphics'], SOURCE['templates']
+COMPOSITIONS=json.loads((ROOT/'data/component-compositions.json').read_text()) if (ROOT/'data/component-compositions.json').exists() else {'characters':{}}
+for char,record in COMPOSITIONS['characters'].items():
+    D.setdefault(char,record['dictionary']);G.setdefault(char,record['graphics'])
 C = json.loads((ROOT/'data/cangjie5_single_main.json').read_text())['chars']
 R = SOURCE['roots']
 for overrides in [SOURCE.get('code_corrections',{}).get('5',{})]:C.update(overrides)
@@ -109,20 +112,26 @@ def transform_boundary(child,child_stroke,parent,parent_stroke,indices,boundary,
     return result if (-124<result<(1024 if axis=="x" else 900)) else None
 
 @functools.lru_cache(None)
-def derive(char,depth=0):
+def derive(char,depth=0,strategy='expanded'):
     if depth>16 or char not in D or char not in G:return None
     used.add(char)
     n=len(D[char]['matches'])
     if depth==0 and char in SOURCE.get('standalone_templates',{}):return from_template(char,SOURCE['standalone_templates'][char])
     if char in T:return from_template(char,T[char])
     if char in R:return [{'component':char,'name':char,'key':R[char],'regions':[[i,-200,1200] for i in range(n)]}]
+    if depth>0 and strategy=='known' and char in SOURCE.get('preserved_constructions',{}):return SOURCE['preserved_constructions'][char]
     if char in V and all(len(p[1])==1 for p in V[char]['parts']):return from_template(char,V[char])
     result=[]
     for path,leaf in leaves(tree(D[char]['decomposition'])):
         indices=[i for i,m in enumerate(D[char]['matches']) if m is not None and tuple(m[:len(path)])==path]
         if not indices:continue
         if leaf==char:return None
-        child=derive(leaf,depth+1)
+        if leaf in R and leaf not in T:
+            # A root variant may have a different stroke count (e.g. 艹).
+            # IDS identifies the whole root region; no child-stroke pairing is needed.
+            result.append({'component':leaf,'name':leaf,'key':R[leaf],'regions':[[i,-200,1200] for i in indices]})
+            continue
+        child=derive(leaf,depth+1,strategy)
         if child is None:
             result.append({'component':leaf,'name':leaf,'key':'?','regions':[[i,-200,1200] for i in indices]})
             continue
@@ -139,7 +148,7 @@ def derive(char,depth=0):
                 regions.append([indices[stroke],low,high,axis]+([floor]if floor is not None else []))
             result.append({**atom,'regions':regions})
     if not result:return None
-    return select(result,C[char]) if char in C else result
+    return select(result,C[char]) if (depth==0 or strategy=='reduced') and char in C else result
 
 def compile_visual(char,atoms):
     if ''.join(a['key'] for a in atoms)!=C[char]:return None
@@ -163,8 +172,13 @@ def compile_visual(char,atoms):
         if len(rs)==1 and rs[0][1:]==(-200,1200):continue
         if len(rs)>2:
             rs.sort(key=lambda r:r[1])
-            if any(abs(a[2]-b[1])>.1 for a,b in zip(rs,rs[1:])):return None
-            multiple.append({'stroke':stroke,'segments':[[lo,hi,part] for part,lo,hi in rs],**axis_field})
+            if any(a[2]>b[1]+.1 for a,b in zip(rs,rs[1:])):return None
+            segments=[];cursor=-200
+            for part,lo,hi in rs:
+                if lo>cursor:segments.append([cursor,lo,-1])
+                segments.append([lo,hi,part]);cursor=hi
+            if cursor<1200:segments.append([cursor,1200,-1])
+            multiple.append({'stroke':stroke,'segments':segments,**axis_field})
             continue
         if len(rs)==1:
             part,lo,hi=rs[0]
@@ -174,11 +188,13 @@ def compile_visual(char,atoms):
                 multiple.append({'stroke':stroke,'segments':[[-200,lo,-1],[lo,hi,part],[hi,1200,-1]],**axis_field})
         else:
             rs.sort(key=lambda r:r[1]);bottom,top=rs
-            if abs(bottom[2]-top[1])>.1:return None
-            if bottom[1]!=-200 or top[2]!=1200:
+            if bottom[2]>top[1]+.1:return None
+            if bottom[1]!=-200 or top[2]!=1200 or abs(bottom[2]-top[1])>.1:
                 # Two taken regions may share a stroke with an untaken end (髏).
                 segments=([[-200,bottom[1],-1]] if bottom[1]>-200 else [])
-                segments += [[lo,hi,part] for part,lo,hi in rs]
+                segments += [[bottom[1],bottom[2],bottom[0]]]
+                if top[1]>bottom[2]:segments.append([bottom[2],top[1],-1])
+                segments.append([top[1],top[2],top[0]])
                 if top[2]<1200:segments.append([top[2],1200,-1])
                 multiple.append({'stroke':stroke,'segments':segments,**axis_field})
                 continue
@@ -194,9 +210,16 @@ def compile_visual(char,atoms):
 selected={};proof={}
 for char in SOURCE['ranking']:
     if char in V or char not in C:continue
-    atoms=derive(char)
-    if not atoms:continue
-    visual=compile_visual(char,atoms)
+    atoms=SOURCE.get('preserved_constructions',{}).get(char)
+    if atoms:visual=compile_visual(char,atoms)
+    else:
+        # Each strategy uses the same explicit shapes and rejects ambiguous root selection.
+        # Existing validated child constructions can resolve ambiguity in expanded atoms.
+        visual=None
+        for strategy in ['expanded','known','reduced']:
+            atoms=derive(char,0,strategy)
+            visual=compile_visual(char,atoms) if atoms else None
+            if visual:break
     if not visual:continue
     selected[char]=visual;proof[char]=atoms
     if len(selected)+len(V)==TARGET:break
@@ -217,5 +240,5 @@ output+='const COLOUR_ORDER='+json.dumps(list(dict.fromkeys([c for c in SOURCE['
 output+='const COLOUR_REFERENCE_CHARS='+json.dumps(SOURCE.get('reference_chars',[]),ensure_ascii=False,separators=(',',':'))+';\n'
 output+='const COLOUR_CORRECTION_CHARS='+json.dumps(SOURCE.get('correction_chars',[]),ensure_ascii=False,separators=(',',':'))+';\n'
 (ROOT/'colour-library.js').write_text(output)
-(ROOT/'data/colour-audit.json').write_text(json.dumps({'total':TARGET,'new':len(selected),'method':'IDS stroke correspondence + explicit single-root templates + unique code selection; no proportional stroke colouring','source':SOURCE['source'],'code_corrections':SOURCE.get('code_corrections',{}),'references':SOURCE.get('reference_chars',[]),'contour_adaptations':SOURCE.get('contour_adaptations',{}),'characters':proof},ensure_ascii=False,separators=(',',':'))+'\n')
+(ROOT/'data/colour-audit.json').write_text(json.dumps({'total':TARGET,'new':len(selected),'method':'IDS stroke correspondence + explicit single-root templates + unique code selection; no proportional stroke colouring','source':SOURCE['source'],'code_corrections':SOURCE.get('code_corrections',{}),'references':SOURCE.get('reference_chars',[]),'contour_adaptations':SOURCE.get('contour_adaptations',{}),'reconstructed':list(COMPOSITIONS['characters']),'composition_source':COMPOSITIONS.get('source'),'characters':proof},ensure_ascii=False,separators=(',',':'))+'\n')
 print(f'Compiled {len(selected)} new glyphs; total {len(V)+len(selected)}. Output {len(output.encode()):,} bytes.')

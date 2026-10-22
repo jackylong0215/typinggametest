@@ -29,7 +29,7 @@ https://github.com/chanind/hanzi-writer-data/tree/68d10a4b21150cae5e1ebbd223eed2
 
 ## 生成字庫與 IDS 對應
 
-`colour-library.js` 提供 4,921 個生成模型，與原有示範合計 5,037 字。大部分輪廓來源如下；2026-10-22 新來源與重組字形另列於下節。來源：Make Me A Hanzi（https://github.com/skishore/makemeahanzi），2026-10-21 取得的 dictionary.txt／graphics.txt；完整來源檔 SHA-256 記錄於 `data/colour-source.json` 的 source 欄位。保留輪廓，只增加部件分組及 SVG 裁切標色。
+`colour-library.js` 提供 8,096 個生成模型，與原有示範合計 8,212 字。大部分輪廓來源如下；2026-10-22 新來源與重組字形另列於下節。來源：Make Me A Hanzi（https://github.com/skishore/makemeahanzi），2026-10-21 取得的 dictionary.txt／graphics.txt；完整來源檔 SHA-256 記錄於 `data/colour-source.json` 的 source 欄位。保留輪廓，只增加部件分組及 SVG 裁切標色。
 
 修改後的必要字形子集、IDS 結構與筆畫對應保存在 `data/colour-source.json`。dictionary.txt 衍生資料採 LGPL 3.0 或更新版本；graphics.txt 由 Arphic PL KaitiM GB／Arphic PL UKai 衍生，採 Arphic Public License。上游來源聲明、LGPL、GPL 與 Arphic 完整授權分別保留在 `licenses/MAKE_ME_A_HANZI.txt`、`licenses/LGPL-3.0.txt`、`licenses/GPL-3.0.txt`、`licenses/ARPHICPL.TXT`。生成腳本與部件對應可在本專案中取得。
 
@@ -56,3 +56,12 @@ https://github.com/parsimonhi/animCJK/tree/3e1253b341cc7be14c3540bb3c045e6163557
 AnimCJK 2016–2026 Copyright FM-SH。這些筆畫由 Make Me A Hanzi 與 Arphic PL KaitiM GB／Big5 字型衍生，採 Arphic Public License。原 SVG（含原版權聲明）保存在 `data/reference-sources/`，授權全文見 `licenses/ARPHICPL.TXT`。處理僅將 SVG 向下的 Y 軸轉成本站向上的座標系，再加上分組及裁切標色。
 
 牀、峯、揹、緹、綾、譁使用 Make Me A Hanzi 同字型的部件輪廓，依用戶參考的字形佈局重組，屬本站修改後的衍生字形。各部件來源及仿射目標位置保存在 `data/colour-source.json` 的 `contour_adaptations`，同樣遵循 Arphic Public License。這些字不應被描述為未修改的完整原字輪廓。
+
+## CJKVI／CHISE 結構與新增部件重製（2026-10-22）
+
+`data/component-compositions.json` 的 676 筆左右結構描述來自 CJKVI Database／CHISE IDS Database 的 `ids.txt`：
+https://github.com/cjkvi/cjkvi-ids/blob/86b4d16159f0079437870408f0ca186e529015db/ids.txt
+
+Copyright (c) 2014–2017 CJKVI Database. Based on CHISE IDS Database. 這些結構資料依上游所述 CHISE／GPLv2 條款分開歸屬，來源說明見 `licenses/CJKVI_IDS.md`，GPLv2 全文見 `licenses/GPL-2.0.txt`。來源檔 SHA-256、版本、IDS 描述、原部件及重製座標保存在資料檔內。
+
+重製輪廓由既有 Make Me A Hanzi／Arphic 同字型部件作仿射變換，沿用 Arphic Public License；座標保留至 0.01 單位。這些是本站修改的學習字形，不應視作未修改的完整原字筆畫。`scripts/rebuild-component-compositions.py` 提供可重現重組與核對；一般網站建置只使用凍結資料。使用的 FontTools 為 MIT 授權的開發工具，未作網站執行時依賴。
