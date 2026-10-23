@@ -55,6 +55,9 @@ function glyphPaths(char,allColoured=false){
   if(!split){const part=visual.parts.findIndex(p=>p[2].includes(stroke));return `<path data-stroke-index="${stroke}" data-part-index="${part}" d="${d}" fill="${fill(part)}"/>`}
   const topId=prefix+'-'+stroke+'-above',bottomId=prefix+'-'+stroke+'-below';
   return `<defs><clipPath id="${topId}" clipPathUnits="userSpaceOnUse">${glyphSplitRegion(split,true)}</clipPath><clipPath id="${bottomId}" clipPathUnits="userSpaceOnUse">${glyphSplitRegion(split,false)}</clipPath></defs><path data-stroke-index="${stroke}" data-part-index="${split.above}" data-stroke-region="above" data-stroke-axis="${split.axis||'y'}" d="${d}" clip-path="url(#${topId})" fill="${fill(split.above)}"/><path data-stroke-index="${stroke}" data-part-index="${split.below}" data-stroke-region="below" data-stroke-axis="${split.axis||'y'}" d="${d}" clip-path="url(#${bottomId})" fill="${fill(split.below)}"/>`;
+ }).join('')+(visual.sharedStrokeGuides||[]).map((guide,i)=>{
+  const id=prefix+'-shared-'+i,points=guide.median.map(p=>p.join(',')).join(' ');
+  return `<defs><mask id="${id}" maskUnits="userSpaceOnUse" x="-200" y="-200" width="1400" height="1400"><polyline points="${points}" fill="none" stroke="white" stroke-width="10" stroke-linecap="round" stroke-dasharray="18 14"/></mask></defs><path data-stroke-index="${guide.stroke}" data-part-index="${guide.part}" data-shared-stroke="true" d="${STROKE_DATA[char][guide.stroke]}" mask="url(#${id})" fill="${fill(guide.part)}"/>`;
  }).join('');
 }
 function showDemoStep(index){
@@ -62,7 +65,7 @@ function showDemoStep(index){
  demoStep=index;
  $('split-animation').querySelectorAll('[data-stroke-index]').forEach(path=>{
   const stroke=Number(path.dataset.strokeIndex);const partIndex=Number(path.dataset.partIndex);const seen=partIndex>=0&&(index===-1||partIndex<=index);const current=partIndex>=0&&(index===-1||partIndex===index);
-  path.setAttribute('fill',seen?(visual.colours||PART_COLOURS)[partIndex%(visual.colours||PART_COLOURS).length]:'#d5dbd0');path.setAttribute('opacity',seen&&!current?'0.48':'1');path.classList.toggle('active-stroke',current);
+  path.setAttribute('fill',seen?(visual.colours||PART_COLOURS)[partIndex%(visual.colours||PART_COLOURS).length]:'#d5dbd0');path.setAttribute('opacity',path.dataset.sharedStroke&&!seen?'0':seen&&!current?'0.48':'1');path.classList.toggle('active-stroke',current);
  });
  $('split-animation').querySelectorAll('[data-demo-step]').forEach(button=>{const selected=Number(button.dataset.demoStep)===index;button.classList.toggle('selected',selected);button.setAttribute('aria-pressed',String(selected))});
  if(index===-1){$('split-animation').querySelector('.split-explanation').innerHTML=`<b>完整字形：${item.char}</b><div class="demo-code">${visual.parts.map((p,i)=>componentChips(p[1],(visual.colours||PART_COLOURS)[i%(visual.colours||PART_COLOURS).length])).join('')}</div><span>每種顏色是一個部件，灰色是保留但不另取碼的筆畫。按步驟查看解說。</span>`;return}

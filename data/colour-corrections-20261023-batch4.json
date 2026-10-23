@@ -1,0 +1,365 @@
+{
+  "reason": "第四批參考圖及共用部件取形修正；所有既有輪廓保持不變。",
+  "characters": {
+    "出": {
+      "code": "uu",
+      "geometrySha256": "d80aaa476ba18d96b0680c6cdd62bc16026a0f342f2855df93d906a4a4a2ae5e"
+    },
+    "代": {
+      "code": "oip",
+      "geometrySha256": "86f730c99d028214c81e70bdc495e56282d41e7e48e2b931c972b753ddf9d4e0"
+    },
+    "式": {
+      "code": "ipm",
+      "geometrySha256": "fda222c27da5a4a8b5a9724dcb318fb946dcfbee3f3209064f8f25f18eceac7c"
+    },
+    "士": {
+      "code": "jm",
+      "geometrySha256": "018959a090f729fca52328850eed6bb562cd2d74eedb0d833fee6c6fd433ec90"
+    },
+    "試": {
+      "code": "yripm",
+      "geometrySha256": "7f21d9ba23d4e8b34c184bbcc91ae66fa8c9a7b77837bfae48f83dfdd164dff1"
+    },
+    "百": {
+      "code": "ma",
+      "geometrySha256": "656520cecdfb309f3701a386e09b28014a08187a86ff0b4f46afb84d4717b53e"
+    },
+    "武": {
+      "code": "mpylm",
+      "geometrySha256": "f01c0edd1ffec5be4365be53886a03b8f1811fd9355ceb868b143f24007d400a"
+    },
+    "殘": {
+      "code": "mnii",
+      "geometrySha256": "0ad6cc3d5860e6941f36f907ae3c548e952d3742d19cd2b2f5735ff830d2d98d"
+    },
+    "貸": {
+      "code": "opbuc",
+      "geometrySha256": "b12cea636ccfc0b7d9cb78e268c6ce1f1ea85ba39404f18064ec1ad8db71a041"
+    },
+    "悉": {
+      "code": "hdp",
+      "geometrySha256": "5cbcd85e82f12de5b872981618db4a6b474ea3ca6f751d75ed3d85d39329a244"
+    },
+    "賦": {
+      "code": "bcmpm",
+      "geometrySha256": "ea198e4f413574ab311b24d774d33f38b41edf9df9db299a6accdfe0c8e3dd27"
+    },
+    "秩": {
+      "code": "hdhqo",
+      "geometrySha256": "354701d66271e4ee497f97520b5920dd924dd5e4eba7d6e109965641fd20d289"
+    },
+    "袋": {
+      "code": "opyhv",
+      "geometrySha256": "912c8eac5974a6dc0a84bc39611fdd916c975169edd4eab6cc08698815581ab3"
+    },
+    "膩": {
+      "code": "bipc",
+      "geometrySha256": "d34910c04c4d8af250ef5237dcb998e5373218f5459ccb70137bb42d90bf9b5b"
+    },
+    "貳": {
+      "code": "ipmmc",
+      "geometrySha256": "00f2ab150a6ffe40224b1cd2ef0469f1686ec231c05c9888d69c902acf75890e"
+    },
+    "斌": {
+      "code": "ykmpm",
+      "geometrySha256": "6811f44997f9c3709bb2df0800326d2e2cfb02da33e441152d15945e935e3985"
+    },
+    "岱": {
+      "code": "opu",
+      "geometrySha256": "1ddb1f9a424c1480c7b12977cabd1f80057f222fd2778ed75e1768b86b95dec0"
+    },
+    "忒": {
+      "code": "ipp",
+      "geometrySha256": "8d7db3036b38f3604ca07a00220c64fc383d7373177c800fee6e40471f7421a3"
+    },
+    "拭": {
+      "code": "qipm",
+      "geometrySha256": "813dd651406ba9cc3d7b2c480c712c083370063035cfe508edbbb88938a384e4"
+    },
+    "弋": {
+      "code": "ip",
+      "geometrySha256": "303286c09a89f37d78b7b1786f29579ad5b9739da15f7ea7f31f2daa26eb391a"
+    },
+    "鳶": {
+      "code": "iphaf",
+      "geometrySha256": "d94fbdc78c41d687be452423ce6443ac2fe11d46d4f562303dc371cf3f52858f"
+    },
+    "玳": {
+      "code": "mgoip",
+      "geometrySha256": "f2bcc4af0e88e6192dedab15b21eb3857a332f6caef98508a736f66851c90100"
+    },
+    "甙": {
+      "code": "iptm",
+      "geometrySha256": "9e1816954b578f080d8be4df70cf3b878f1d7ffa20d9ac06947377636db5295a"
+    },
+    "牮": {
+      "code": "ophq",
+      "geometrySha256": "be0d8be48313f909107e315adbdc9ff6368490c082a9148868997eec2f14916e"
+    },
+    "弑": {
+      "code": "kdipm",
+      "geometrySha256": "8f9a609cad8f315c70ba32309f5bc498d5a0d433b8ca3e60b15fabcb21040d33"
+    },
+    "黛": {
+      "code": "opwgf",
+      "geometrySha256": "fa1bd07e11c7dda53a9b8b06ada723496ea50e76f07dda8b652c8e200e24f433"
+    },
+    "腻": {
+      "code": "bipo",
+      "geometrySha256": "bab649e1a0951efa008e4894e611c16601adb925b832a194ada56bf219d32305"
+    },
+    "试": {
+      "code": "ivipm",
+      "geometrySha256": "9021d792f70ceb5be7f579999439ec4d9cd38d21d6b158f2727384be19f0e316"
+    },
+    "贰": {
+      "code": "ipmmo",
+      "geometrySha256": "071ccfad590227e77b35b14f5ebe041f1e3128eeee974c985af69b3565862330"
+    },
+    "贷": {
+      "code": "opbo",
+      "geometrySha256": "1b4f3cf5e4d55b5f64c265f9f65b82c342b4eb6b611466a8436a2037946b072c"
+    },
+    "赋": {
+      "code": "bompm",
+      "geometrySha256": "88ad428071d881184cd1d5d4129c901a19fb15cdb71a2bc803ddae866a213537"
+    },
+    "铽": {
+      "code": "opipp",
+      "geometrySha256": "11776466c984a1a74664a4514d831ce963514ccf0dc57ba2794e0d3d59435844"
+    },
+    "無": {
+      "code": "otf",
+      "geometrySha256": "a49f1c31bd909b490c2a0e7a6675034d814e9af806288512e3124efdaaf696f3"
+    },
+    "建": {
+      "code": "nklq",
+      "geometrySha256": "f50dd0bafc6d2d9aa055c0fdbb5f7174cadec3f8dec2b3a34fe3c4844013777f"
+    },
+    "庭": {
+      "code": "inkg",
+      "geometrySha256": "812f6b298cfca984ad30ff616d0aae059c17cc4e42b36dd9b9a7492a3dfa2794"
+    },
+    "束": {
+      "code": "dl",
+      "geometrySha256": "f1bc5de6b56fd39fff7fcf2397a98b7520e259e205bdc72aa9b1974a1e29adc5"
+    },
+    "平": {
+      "code": "mfj",
+      "geometrySha256": "0284bf1e4ab83794e5a2bdec9f485e12727f1717a69ce3e0802c1c468581e3d1"
+    },
+    "評": {
+      "code": "yrmfj",
+      "geometrySha256": "f7f0b87b98081bf6be22118e1637e4dd80e8787e8634a248f4f20a224bb7ffca"
+    },
+    "挺": {
+      "code": "qnkg",
+      "geometrySha256": "0f7d5f18a2fe7c7ce062629840a22fd6fd45e0a30fa4ce1ec62c2203af89ef91"
+    },
+    "廷": {
+      "code": "nkhg",
+      "geometrySha256": "59ac28abaa03e98a2f213637e63dd6ae1c022d4a3158f8a5bdac4d10e2fb48f7"
+    },
+    "艇": {
+      "code": "hynkg",
+      "geometrySha256": "700691ccc397a1c12fbe8caee049b3f850af7c2b38a9ac43424fed344b9fc0a9"
+    },
+    "坪": {
+      "code": "gmfj",
+      "geometrySha256": "35c90f1741a2e1888680fa191990432b24ecf61dd497eff90299eee6b56c951f"
+    },
+    "抨": {
+      "code": "qmfj",
+      "geometrySha256": "672e39b575266b5b2cebacdb112a2c81f27b26526556eb0ee6e2c6627df43d16"
+    },
+    "撫": {
+      "code": "qotf",
+      "geometrySha256": "33f0fc5e855d333559892a6fa49ce0c6d011c3dba44f0f03f85bc9343c6d1160"
+    },
+    "砰": {
+      "code": "mrmfj",
+      "geometrySha256": "d24b2a4d6770696ea8d5ed5bc37c55b67c1ac60aa0811836fe6767e4f081fa0f"
+    },
+    "蕪": {
+      "code": "totf",
+      "geometrySha256": "28d9c8a6e4a54d13d9150ddccf29ffe1d8b0ddf0a403c60fa18ef84fbe9fc708"
+    },
+    "霆": {
+      "code": "mbnkg",
+      "geometrySha256": "11135e1a657dee702e48e0b08ffbe1efd4cd013e2e531a9befc54bb150ae3f81"
+    },
+    "秤": {
+      "code": "hdmfj",
+      "geometrySha256": "8ad8bd8621c25178383e9a7d46e4650d67380079385691a07df5665cd0810045"
+    },
+    "嫵": {
+      "code": "votf",
+      "geometrySha256": "143c2b321088bbc0f4450176bff821bb98c060f9bdac8beae4c6ecdf9de90edd"
+    },
+    "軾": {
+      "code": "jjipm",
+      "geometrySha256": "31093684c7a1d91d8bc62daf6742a484619ca9a54f7a4459e5e77ff3d2373dc5"
+    },
+    "蜓": {
+      "code": "linkg",
+      "geometrySha256": "f74e4ec71a6b145caee468d22afdc083d88c302314ee509f94e18ba69d3d07bf"
+    },
+    "枰": {
+      "code": "dmfj",
+      "geometrySha256": "f6e9bfd4e6af557f93995427a56d360870458757509e1567acb9cdd4724cbe04"
+    },
+    "廡": {
+      "code": "iotf",
+      "geometrySha256": "607ef55f33da5a72e6954777d23b8d63b6a129a15f63b053f287bfdaf49dc36e"
+    },
+    "萍": {
+      "code": "temj",
+      "geometrySha256": "72d87e70babbedf309fb7b071510a8105cb711b173642ecf3cf814a3918d199e"
+    },
+    "鋌": {
+      "code": "cnkg",
+      "geometrySha256": "c00dde9d5f6dcc11ed9945eae9a4defb4e31146963bd01408ca10b14c253c3f4"
+    },
+    "鮃": {
+      "code": "nfmfj",
+      "geometrySha256": "6d1d9c7f02c59ec8ac085cc34d49726e67c9f6b6d9dee50c2a70a1615e6cdbe2"
+    },
+    "嘸": {
+      "code": "rotf",
+      "geometrySha256": "2dd6a551872ef9dfbe6e3bcbe533547b1397e9dd25f67eac57cbbb761ca47976"
+    },
+    "怦": {
+      "code": "pmfj",
+      "geometrySha256": "e066c22923f089df6bf0599a0bc5009cbbdaf58c5fd37c7675ee7aa7706a8d0b"
+    },
+    "呯": {
+      "code": "rmfj",
+      "geometrySha256": "0df32fc55839b36b017f6be31bbc29ae0b973b6b6d01880f48d3f9a0746cd17d"
+    },
+    "鋱": {
+      "code": "cipp",
+      "geometrySha256": "9c0141559a4f795718c150f177d678370c4fa48600fe4df9a8eebbf8f6b8b304"
+    },
+    "栻": {
+      "code": "dipm",
+      "geometrySha256": "9ab09cb9384bc8e25719be3789d86ce4f9ce59dc1e149ebd78d926668bd986a4"
+    },
+    "梃": {
+      "code": "dnkg",
+      "geometrySha256": "2558a7fcda6893ddf8fdad875662cbece93f1cc7009b8f9f80379d07c7060aa2"
+    },
+    "珽": {
+      "code": "mgnkg",
+      "geometrySha256": "697f8049f466148346e1eb7729b67d58d513bcb97f973f66d5c13aed25683525"
+    },
+    "釴": {
+      "code": "cip",
+      "geometrySha256": "cd98ef92003f2101f617f42efca801fd6e0b066d410229362cf462bb6a80ff43"
+    },
+    "玶": {
+      "code": "mgmfj",
+      "geometrySha256": "0b61188f1d19dbbbdcb3f4edb73975161184943d30fece6a2813aa99dcf88422"
+    },
+    "碔": {
+      "code": "mrmpm",
+      "geometrySha256": "f24b4b4e5a31139c8941a63b3117416a399c7df3403168176018aaa79acce3c4"
+    },
+    "莛": {
+      "code": "tnkg",
+      "geometrySha256": "5aa58055ecc38b8cd7753f17f7f11b53dc75a810ef43840d88f90001235eea77"
+    },
+    "泙": {
+      "code": "emfj",
+      "geometrySha256": "0905a7e0809b01a0eb7e8df04c20a0acd44a8aa0ae50c81688578e12f2678aac"
+    },
+    "苹": {
+      "code": "tmfj",
+      "geometrySha256": "c61b02fa7c3c716d8a120e9cd1429b668de8d69ce2b285e04341870da242399d"
+    },
+    "评": {
+      "code": "ivmfj",
+      "geometrySha256": "7701fbf03416652c265299a5ec36026f4d924afa306e75e8735f227ab78d2603"
+    },
+    "轼": {
+      "code": "kqipm",
+      "geometrySha256": "e07abd745c15ecf0549e285c94ac0791ce6a3f339cb7fa6d5e0e95b8ffe67b65"
+    },
+    "铤": {
+      "code": "opnkg",
+      "geometrySha256": "4d92b9d05f1983b1d001cb5ff19ac3733db1d8c7afaac454cab47c39a7ae6ea5"
+    },
+    "鲆": {
+      "code": "nmmfj",
+      "geometrySha256": "21bcac03824758f10ac27f8ce44aa1176451bee78a91b33aa7e860791872f490"
+    },
+    "鸢": {
+      "code": "ippym",
+      "geometrySha256": "51c31fabcb2408aa3969a4ebf4eee531e2d705afb0920f9350c7dfa19901367f"
+    },
+    "潕": {
+      "code": "eotf",
+      "geometrySha256": "15efb0e44281900c6ad9c0f606f2b66b5968283a4eaf77c9247e84122fb17707"
+    },
+    "杙": {
+      "code": "dip",
+      "geometrySha256": "fbb4bbe49c1aacc05513951742615ec386a8cc7d92979fb570c1ffae9addc358"
+    },
+    "珷": {
+      "code": "mgmpm",
+      "geometrySha256": "eae39196541b77e096e32b5ac153ae652ee4930e4b13a02c499b177741685106"
+    },
+    "烶": {
+      "code": "fnkg",
+      "geometrySha256": "0f33d3c9c294c5e0b92a1f8add8147f7ad2f66e91d09672ce13f970e7d38a060"
+    },
+    "憮": {
+      "code": "potf",
+      "geometrySha256": "4f7a5b95c77673274a2992748ee6a139bc57985b991b7216859d8de3b4f8237a"
+    },
+    "頲": {
+      "code": "ngmbc",
+      "geometrySha256": "2d0d1278d1c50a690b166b8a461137f9b552af0b53434e6c3daf17c4efb7baca"
+    },
+    "侹": {
+      "code": "onkg",
+      "geometrySha256": "bfcf06359e4e29a7437a5a271f15b74ff12a40e55162249139c45bd9f5e7f2bd"
+    },
+    "伻": {
+      "code": "omfj",
+      "geometrySha256": "57d65635b02b982f4c9e8fc447ed396e42f79fcc5b9ef611ac1442613029d621"
+    },
+    "侙": {
+      "code": "oipm",
+      "geometrySha256": "50e8abaa2eeb429cd9ea3d3537510bc0ad40787d8205214ef99ade680151e109"
+    },
+    "倵": {
+      "code": "ompm",
+      "geometrySha256": "b7bb94435e2958441b81a14fb5477d7923fd4e31a717ed4c4df49963aea7c7e4"
+    },
+    "墲": {
+      "code": "gotf",
+      "geometrySha256": "74b67bd5a76e5d9171e30578e7dea5a8b87b62929a4f7949c574945cee71bd4f"
+    },
+    "娗": {
+      "code": "vnkg",
+      "geometrySha256": "ffc76f340fa6fc3662a6fa2295562c668059d9df372b5a7784b11a5517f12671"
+    },
+    "娬": {
+      "code": "vmpm",
+      "geometrySha256": "3fe196595942bf2c416f018856a5ff6492905d1bcf1353edc415e43c60833b4c"
+    },
+    "岼": {
+      "code": "umfj",
+      "geometrySha256": "e18ec919fdc7ca5c188c464b7f5eeee5c073639bc42153a38ddb3feb01de6ade"
+    },
+    "幠": {
+      "code": "lbotf",
+      "geometrySha256": "579c5a0c4627fd526a35c88c72280d3a0b9687ffbf468a6e93fe7fc314bfc8ea"
+    },
+    "恜": {
+      "code": "pipm",
+      "geometrySha256": "20c79fba8d067ae0ff5160c806163da3983e759d458c69735e23a441a4c44b9d"
+    }
+  }
+}

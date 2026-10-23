@@ -230,6 +230,13 @@ def build():
                 visual=compile_visual(char,atoms) if atoms else None
                 if visual:break
         if not visual:continue
+        guides=SOURCE.get('shared_stroke_guides',{}).get(char)
+        if guides:
+            for guide in guides:
+                assert 0<=guide['stroke']<len(G[char]['strokes']) and 0<=guide['part']<len(visual['parts']),char
+                assert guide['median']==G[char]['medians'][guide['stroke']],char
+            visual['sharedStrokeGuides']=guides
+            visual['explanation']+=' 虛線表示另一字根共用同一筆畫；底色保留原字根取形。'
         selected[char]=visual;proof[char]=atoms
         if len(selected)+len(V)==TARGET:break
     if len(selected)+len(V)!=TARGET:raise RuntimeError(f'Only {len(selected)+len(V)} verified constructions available')
