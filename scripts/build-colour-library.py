@@ -130,6 +130,22 @@ def derive(char,depth=0,strategy='expanded'):
         if variant and (variant['context']=='any' or (path==(0,) and D[char]['decomposition'].startswith('⿰' if variant['context']=='left' else '⿱'))):
             # Explicit same-stroke-count variants; e.g. 戠 shares one horizontal
             # in 織/識/職. These groups are checked against named reference forms.
+            if variant.get('splitStrokes') or variant.get('strokeRegions'):
+                # A shortened component keeps its own clipped contour (e.g. 馬 as SF).
+                if len(indices)!=len(G[leaf]['strokes']):return None
+                child=from_template(leaf,variant)
+                if child is None:return None
+                for atom in child:
+                    mapped=[]
+                    for region in atom['regions']:
+                        stroke,lo,hi=region[:3];axis=region[3] if len(region)>3 else 'y'
+                        low=transform_boundary(leaf,stroke,char,indices[stroke],indices,lo,axis)
+                        high=transform_boundary(leaf,stroke,char,indices[stroke],indices,hi,axis)
+                        floor=transform_boundary(leaf,stroke,char,indices[stroke],indices,region[4],'y') if len(region)>4 else None
+                        if low is None or high is None or (len(region)>4 and floor is None):return None
+                        mapped.append([indices[stroke],low,high,axis]+([floor] if floor is not None else []))
+                    result.append({**atom,'variant':str(len(indices)),'regions':mapped})
+                continue
             for name,key,strokes in variant['parts']:
                 result.append({'component':leaf,'name':name,'key':key,'variant':str(len(indices)),
                                'regions':[[indices[i],-200,1200]for i in strokes]})
