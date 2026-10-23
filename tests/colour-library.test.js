@@ -3,12 +3,13 @@ const root=path.join(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'
 const context=vm.createContext({});
 const helper=read('app.js').split('function splitVisual(char)')[1].split('function glyphPaths')[0];
 vm.runInContext(['code-data.js','stroke-data.js','learning.js','extra-colours.js','colour-library.js'].map(read).join('\n')+'\nlet currentVersion="5";let item;function splitVisual(char)'+helper+'\nglobalThis.library={SPLIT_VISUALS,STROKE_DATA,CODE_TABLES,COLOUR_ORDER,visualFor:(char,version)=>{currentVersion=version;return splitVisual(char)},questionFor:(word,version)=>{currentVersion=version;item=word;return questionVisual()}}',context);
+const corrections=JSON.parse(read('data/colour-corrections-20261023.json')).characters;
 const lib=context.library,source=JSON.parse(read('data/colour-source.json')),audit=JSON.parse(read('data/colour-audit.json'));
-test('五代標色教室恰好10000個不同字，包含常用字及所有既有修正',()=>{
- assert.equal(Object.keys(lib.SPLIT_VISUALS).length,10000);assert.equal(new Set(lib.COLOUR_ORDER).size,10000);assert.equal(audit.total,10000);assert.equal(Object.keys(audit.characters).length,9884);
+test('五代標色教室恰好10006個不同字，包含常用字及所有既有修正',()=>{
+ assert.equal(Object.keys(lib.SPLIT_VISUALS).length,10006);assert.equal(new Set(lib.COLOUR_ORDER).size,10006);assert.equal(audit.total,10006);assert.equal(Object.keys(audit.characters).length,9890);
  for(const char of '的是在不有了我國這個會們他來年上以要到時對麼能你就可地生發出也說於學後成與過行用多都沒作下得開經還法方而之民政看嗎所天新業全同定部最其進機美那當工關實裏小被自現動事前完池龍興')assert.ok(lib.visualFor(char,'5'),char);
 });
-test('全部10000字的每一步只取一碼；三代不顯示五代不同碼的標色',()=>{
+test('全部10006字的每一步只取一碼；三代不顯示五代不同碼的標色',()=>{
  for(const char of lib.COLOUR_ORDER){const visual=lib.visualFor(char,'5');assert.ok(visual,char);assert.ok(visual.parts.every(part=>part[1].length===1),char);const v3=lib.visualFor(char,'3');if(v3)assert.equal(v3.parts.map(p=>p[1]).join(''),lib.CODE_TABLES['3'][char],char);else assert.notEqual(visual.parts.map(p=>p[1]).join(''),lib.CODE_TABLES['3'][char],char)}
 });
 test('每個取碼步驟均有實際筆畫區域，跨根筆畫的各區域無重疊且完整覆蓋',()=>{
@@ -24,7 +25,7 @@ test('龍只取亠為卜，匕的橫與彎鉤同屬心；完的厂與乚清楚�
  const dragon=lib.SPLIT_VISUALS['龍'],complete=lib.SPLIT_VISUALS['完'];assert.deepEqual(Array.from(dragon.parts[0][2]),[0,1]);assert.deepEqual(Array.from(dragon.parts[4][2]),[15]);assert.ok([2,3,4,13,14].every(i=>dragon.ignored.includes(i)));assert.equal(dragon.splitStrokes[0].below,3);assert.equal(dragon.splitStrokes[1].stroke,12);assert.equal(dragon.splitStrokes[1].above,3);assert.equal(dragon.splitStrokes[1].below,4);
  assert.deepEqual(Array.from(complete.parts[2][2]),[4,5]);assert.deepEqual(Array.from(complete.parts[3][2]),[6]);assert.equal(complete.ignored,undefined);
 });
-test('9884個生成字的取碼區域均有明確部件來源，沒有按筆畫數平均分割',()=>{
+test('9890個生成字的取碼區域均有明確部件來源，沒有按筆畫數平均分割',()=>{
  for(const [char,atoms] of Object.entries(audit.characters)){
   assert.equal(atoms.map(a=>a.key).join(''),lib.CODE_TABLES['5'][char],char);
   for(const atom of atoms){assert.notEqual(atom.key,'?',char);assert.ok(source.dictionary[atom.component],char+atom.component);assert.ok(source.templates[atom.component]||source.roots[atom.component]||lib.SPLIT_VISUALS[atom.component],char+atom.component);assert.ok(atom.regions.length,char);for(const [stroke,lo,hi] of atom.regions){assert.ok(lib.STROKE_DATA[char][stroke],char);assert.ok(hi>lo,char)}}
@@ -175,16 +176,16 @@ test('匕獨立UH、八獨立HO，部件分別仍取P及C',()=>{
  }
 });
 
-test('擴充新增6500字，既有幾何只允許逐字明訂的用戶修正',()=>{
+test('擴充新增6506字，既有幾何只允許逐字明訂的用戶修正',()=>{
  const crypto=require('node:crypto'),baseline=JSON.parse(read('data/colour-baseline-3500.json'));
  assert.equal(Object.keys(baseline).length,3500);
- assert.equal(Object.keys(lib.SPLIT_VISUALS).filter(c=>!baseline[c]).length,6500);
+ assert.equal(Object.keys(lib.SPLIT_VISUALS).filter(c=>!baseline[c]).length,6506);
  for(const [c,expected] of Object.entries(baseline)){
-  const v=lib.SPLIT_VISUALS[c];assert.ok(v,c);assert.equal(v.parts.map(p=>p[1]).join(''),expected.code,c);
+  const v=lib.SPLIT_VISUALS[c];assert.ok(v,c);assert.equal(v.parts.map(p=>p[1]).join(''),(corrections[c]||expected).code,c);
   const shape={parts:v.parts.map(p=>[p[1],p[2]]),ignored:v.ignored||[],splits:v.splitStrokes||[],regions:v.strokeRegions||[]};
-  // 新：2026-10-22 用戶參考圖修正斤的 H/M 分組；其餘 3499 字保留原基準。
+  // 新：2026-10-22 修正斤 H/M；2026-10-23 共用部件修正另以逐字雜湊列明。
   const corrected={新:'22b8f3d76eb82fefc82a5e98e8e098ded88e72c71eeb84f7de8e779b06911548'};
-  assert.equal(crypto.createHash('sha256').update(JSON.stringify(shape)).digest('hex'),corrected[c]||expected.geometrySha256,c);
+  assert.equal(crypto.createHash('sha256').update(JSON.stringify(shape)).digest('hex'),corrections[c]?.geometrySha256||corrected[c]||expected.geometrySha256,c);
  }
 });
 test('新車的共用中豎分三段，頁的月山分界與甫的省略區明確',()=>{
@@ -196,7 +197,7 @@ test('新車的共用中豎分三段，頁的月山分界與甫的省略區明�
 test('新字的斤按參考分 HML：上撇與左撇同屬竹，橫畫單獨取一',()=>{const visual=lib.SPLIT_VISUALS['新'];assert.equal(visual.parts.map(p=>p[1]).join(''),'ydhml');assert.deepEqual(Array.from(visual.parts[2][2]),[9,10]);assert.deepEqual(Array.from(visual.parts[3][2]),[11]);assert.deepEqual(Array.from(visual.parts[4][2]),[12]);assert.deepEqual(Array.from(visual.ignored),[2,3,4]);for(const char of ['斤','近','所','斥','折','斬','斷'])for(const atom of audit.characters[char]||[])if(atom.component==='斤'&&atom.key==='m')assert.equal(atom.regions.length,1,char)});
 
 
-test('37張新參考明確取形，既有5000字的碼、輪廓及分色幾何完全保留',()=>{
+test('37張新參考明確取形，既有5000字只允許明訂的用戶分色修正',()=>{
  const crypto=require('node:crypto'),baseline=JSON.parse(read('data/colour-baseline-5000.json'));
  assert.equal(Object.keys(baseline).length,5000);
  const chars='將從更讓道界樣展世向劃候使織號網港喫羣牀峯溼嚐揹髏緹綾譁才真史決己元單片樂';
@@ -204,9 +205,9 @@ test('37張新參考明確取形，既有5000字的碼、輪廓及分色幾何�
  for(const c of chars){assert.ok(lib.visualFor(c,'5'),c);assert.ok(source.standalone_templates[c].reference,c);assert.ok(!baseline[c],c)}
  const hash=v=>crypto.createHash('sha256').update(JSON.stringify(v)).digest('hex');
  for(const [c,expected]of Object.entries(baseline)){
-  const v=lib.SPLIT_VISUALS[c];assert.equal(v.parts.map(p=>p[1]).join(''),expected.code,c);
+  const v=lib.SPLIT_VISUALS[c];assert.equal(v.parts.map(p=>p[1]).join(''),(corrections[c]||expected).code,c);
   const shape={parts:v.parts.map(p=>[p[1],p[2]]),ignored:v.ignored||[],splits:v.splitStrokes||[],regions:v.strokeRegions||[]};
-  assert.equal(hash(shape),expected.geometrySha256,c);assert.equal(hash(lib.STROKE_DATA[c]),expected.strokesSha256,c);
+  assert.equal(hash(shape),(corrections[c]||expected).geometrySha256,c);assert.equal(hash(lib.STROKE_DATA[c]),expected.strokesSha256,c);
  }
 });
 test('參考字省略留灰，共用長筆畫按部位裁切',()=>{
@@ -223,13 +224,13 @@ test('參考字省略留灰，共用長筆畫按部位裁切',()=>{
 });
 
 
-test('擴展保留已發佈5037字的取碼、標色幾何及所有輪廓',()=>{
+test('擴展保留已發佈5037字，取碼與標色只允許明訂修正',()=>{
  const crypto=require('node:crypto'),baseline=JSON.parse(read('data/colour-baseline-5037.json'));
  assert.equal(Object.keys(baseline).length,5037);assert.ok(audit.total>8000);
  const hash=x=>crypto.createHash('sha256').update(JSON.stringify(x)).digest('hex');
  for(const [c,e]of Object.entries(baseline)){
-  const v=lib.SPLIT_VISUALS[c];assert.equal(v.parts.map(p=>p[1]).join(''),e.code,c);
-  assert.equal(hash({parts:v.parts.map(p=>[p[1],p[2]]),ignored:v.ignored||[],splits:v.splitStrokes||[],regions:v.strokeRegions||[]}),e.geometrySha256,c);
+  const v=lib.SPLIT_VISUALS[c];assert.equal(v.parts.map(p=>p[1]).join(''),(corrections[c]||e).code,c);
+  assert.equal(hash({parts:v.parts.map(p=>[p[1],p[2]]),ignored:v.ignored||[],splits:v.splitStrokes||[],regions:v.strokeRegions||[]}),(corrections[c]||e).geometrySha256,c);
   assert.equal(hash(lib.STROKE_DATA[c]),e.strokesSha256,c);
  }
 });
@@ -257,13 +258,13 @@ test('便與運縮碼時，同一筆畫中未取的中段保持灰色，俺的�
 });
 
 
-test('一萬字擴展完整保留已發佈8212字的取碼、標色及輪廓',()=>{
+test('一萬字擴展保留已發佈8212字，取碼與標色只允許明訂修正',()=>{
  const crypto=require('node:crypto'),baseline=JSON.parse(read('data/colour-baseline-8212.json'));
- assert.equal(Object.keys(baseline).length,8212);assert.equal(audit.total,10000);
+ assert.equal(Object.keys(baseline).length,8212);assert.equal(audit.total,10006);
  const hash=x=>crypto.createHash('sha256').update(JSON.stringify(x)).digest('hex');
  for(const [c,e]of Object.entries(baseline)){
-  const v=lib.SPLIT_VISUALS[c];assert.equal(v.parts.map(p=>p[1]).join(''),e.code,c);
-  assert.equal(hash({parts:v.parts.map(p=>[p[1],p[2]]),ignored:v.ignored||[],splits:v.splitStrokes||[],regions:v.strokeRegions||[]}),e.geometrySha256,c);
+  const v=lib.SPLIT_VISUALS[c];assert.equal(v.parts.map(p=>p[1]).join(''),(corrections[c]||e).code,c);
+  assert.equal(hash({parts:v.parts.map(p=>[p[1],p[2]]),ignored:v.ignored||[],splits:v.splitStrokes||[],regions:v.strokeRegions||[]}),(corrections[c]||e).geometrySha256,c);
   assert.equal(hash(lib.STROKE_DATA[c]),e.strokesSha256,c);
  }
 });
@@ -282,4 +283,23 @@ test('足旁、羊部與戠的參考取形可用於跟路跑、議儀、識職�
  }
  assert.equal(lib.SPLIT_VISUALS['足'].parts.map(p=>p[1]).join(''),'ryo');
  assert.equal(lib.SPLIT_VISUALS['羊'].parts.map(p=>p[1]).join(''),'tq');
+});
+
+test('十月二十三日參考：欞取底橫，曲內廿外田，氐省豎提，東的中豎分三段',()=>{
+ const v=lib.SPLIT_VISUALS;
+ assert.equal(lib.CODE_TABLES['5']['欞'],'dmbm');assert.deepEqual(Array.from(v['欞'].parts[3][2]),[27]);
+ assert.deepEqual(Array.from(v['曲'].parts[0][2]),[2,3,4]);assert.deepEqual(Array.from(v['曲'].parts[1][2]),[0,1,5]);
+ assert.deepEqual(Array.from(v['禮'].parts[2][2]),[6,7,8]);assert.deepEqual(Array.from(v['禮'].parts[3][2]),[4,5,9]);
+ assert.deepEqual(Array.from(v['梁'].parts[1][2]),[6]);assert.deepEqual(Array.from(v['氏'].parts[1][2]),[1]);
+ assert.deepEqual(Array.from(v['氐'].ignored),[1]);assert.deepEqual(Array.from(v['氐'].parts[1][2]),[2,3]);
+ assert.equal(v['禮'].splitStrokes.find(s=>s.stroke===1).above,-1);
+ for(const [c,code] of Object.entries({東:'dw',凍:'imdw',棟:'ddw',腖:'bdw',陳:'nldw',鶇:'dwhaf'})){
+  assert.equal(v[c].parts.map(p=>p[1]).join(''),code,c);
+  const regions=v[c].strokeRegions;assert.ok(regions?.length,c);
+  const segment=regions.find(s=>s.segments.length===3).segments;
+  assert.equal(segment[0][2],segment[2][2],c);assert.notEqual(segment[0][2],segment[1][2],c);
+ }
+ for(const c of '低底抵牴詆砥柢'){
+  const part=audit.characters[c].find(a=>a.component==='氐'&&a.key==='p');assert.equal(part.regions.length,2,c);
+ }
 });

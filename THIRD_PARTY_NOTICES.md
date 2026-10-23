@@ -29,7 +29,7 @@ https://github.com/chanind/hanzi-writer-data/tree/68d10a4b21150cae5e1ebbd223eed2
 
 ## 生成字庫與 IDS 對應
 
-`colour-library.js` 提供 9,884 個生成模型，與原有示範合計 10,000 字。大部分輪廓來源如下；2026-10-22 新來源與重組字形另列於下節。來源：Make Me A Hanzi（https://github.com/skishore/makemeahanzi），2026-10-21 取得的 dictionary.txt／graphics.txt；完整來源檔 SHA-256 記錄於 `data/colour-source.json` 的 source 欄位。保留輪廓，只增加部件分組及 SVG 裁切標色。
+`colour-library.js` 提供 9,890 個生成模型，與原有示範合計 10,006 字。大部分輪廓來源如下；2026-10-22 新來源與重組字形另列於下節。來源：Make Me A Hanzi（https://github.com/skishore/makemeahanzi），2026-10-21 取得的 dictionary.txt／graphics.txt；完整來源檔 SHA-256 記錄於 `data/colour-source.json` 的 source 欄位。保留輪廓，只增加部件分組及 SVG 裁切標色。
 
 修改後的必要字形子集、IDS 結構與筆畫對應保存在 `data/colour-source.json`。dictionary.txt 衍生資料採 LGPL 3.0 或更新版本；graphics.txt 由 Arphic PL KaitiM GB／Arphic PL UKai 衍生，採 Arphic Public License。上游來源聲明、LGPL、GPL 與 Arphic 完整授權分別保留在 `licenses/MAKE_ME_A_HANZI.txt`、`licenses/LGPL-3.0.txt`、`licenses/GPL-3.0.txt`、`licenses/ARPHICPL.TXT`。生成腳本與部件對應可在本專案中取得。
 
@@ -71,3 +71,6 @@ Copyright (c) 2014–2017 CJKVI Database. Based on CHISE IDS Database. 這些結
 本批增加 154 個使用現有 Make Me A Hanzi 原字輪廓的模型，與 1,634 個由現有同字型部件重製的左右合體字。CJKVI／CHISE 結構版本未變，仍為 `86b4d16159f0079437870408f0ca186e529015db`；`data/component-compositions.json` 現累計 2,310 個方案，保留每字 IDS、原部件及目標座標。IDS 仍依前述 GPLv2 條款歸屬，修改後筆畫輪廓仍依 Arphic Public License。新增的重製字形不是取得的完整原字輪廓。
 
 擴展選字使用先前已列明的 wordfreq 3.1.1 與 OpenCC 0.1.7；FontTools 4.61.1 僅用於開發時重製輪廓，網站不載入這些依賴。原有用戶參考及所有來源標示保持不變。
+
+
+2026-10-23：新增東、凍、棟、陳、腖、鶇六個模型，均使用上述已凍結的 Make Me A Hanzi 原字筆畫與部件對應，沒有新增外部輪廓來源。欞及共用部件標色只調整分組與裁切，保留原輪廓。

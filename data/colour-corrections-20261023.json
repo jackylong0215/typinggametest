@@ -1,0 +1,349 @@
+{
+  "reason": "2026-10-23 用戶參考圖：欞DMBM；曲內廿外田；礻省上橫；氐省豎提。只允許所列字的分組修正，輪廓維持原基準。",
+  "characters": {
+    "欞": {
+      "code": "dmbm",
+      "geometrySha256": "9a2be7d3cc0b693e5364875fecebedbe9c2ebfb22a44916623b724f02c841893"
+    },
+    "社": {
+      "code": "ifg",
+      "geometrySha256": "2e158649246a2706b82388792cad505ba89dce05ef0d16a0ceb31f7dc1fde005"
+    },
+    "視": {
+      "code": "ifbuu",
+      "geometrySha256": "5cc2a1ba3b35e668fd7604b91e7b23387fb9cf266bc2e98e02443845854bb43c"
+    },
+    "福": {
+      "code": "ifmrw",
+      "geometrySha256": "035f2fed6f6fca1922893f8db66efe3d6df95341a340ccb4aa2ee2a2729449cb"
+    },
+    "祕": {
+      "code": "ifph",
+      "geometrySha256": "67c50fe66d47181cf503dcbf1228d09ffe0cb3c7d17a7d834f2036a603bd167a"
+    },
+    "祖": {
+      "code": "ifbm",
+      "geometrySha256": "731b67bd559eea1e7e0c115a68eac6b502d951ea89fa9381c4691059973b95df"
+    },
+    "祝": {
+      "code": "ifrhu",
+      "geometrySha256": "57b663a02218865ab86e40d14d367cb14afd940f52a2b5a81bd922cd8883c23f"
+    },
+    "祈": {
+      "code": "ifhml",
+      "geometrySha256": "cb313b2db0a8735a287a1e83cf5f6f815e778f65b0d7d1287f8b03a177ed0b06"
+    },
+    "禱": {
+      "code": "ifgni",
+      "geometrySha256": "cb1210acc797eb811b58a4dae710f479c3e4382f5a97d85205ac52f2f7cba19c"
+    },
+    "禍": {
+      "code": "ifbbr",
+      "geometrySha256": "80a115eebc8689aa4282163f51052d17f15ba4128592644aea36747790ba7cb0"
+    },
+    "祥": {
+      "code": "iftq",
+      "geometrySha256": "ba2f41d9f68212436586a2a57828d9a0f2eb636fc65695972ad20ac035b161b7"
+    },
+    "禎": {
+      "code": "ifybc",
+      "geometrySha256": "c4e2ce3e52fbe8894eecfefab5cb0f9660151a1d675b9720ace3200de08b049f"
+    },
+    "祁": {
+      "code": "ifnl",
+      "geometrySha256": "55fcd6106ed40db2cfbec563768dec1ba53cdef72b9dfcccb3e6afa975e65dac"
+    },
+    "祉": {
+      "code": "ifylm",
+      "geometrySha256": "57f6237abd93b885c68dfca32d5bb84a35cdad5af13ae691e6b086172cd3a463"
+    },
+    "祺": {
+      "code": "iftmc",
+      "geometrySha256": "7435e34ebbf0eb0f974648d410eff195677f20c4e57acba346191e7150245cef"
+    },
+    "祛": {
+      "code": "ifgi",
+      "geometrySha256": "69db82a129fcc72d9f33b0cac4ee34c02cdd5402a0c733a761fdd51e0a925dc6"
+    },
+    "祚": {
+      "code": "ifhs",
+      "geometrySha256": "89ed48cd1985eb79b0beeddaacedc0072add96305351434e2ff8ce4dbfbf85f8"
+    },
+    "祜": {
+      "code": "ifjr",
+      "geometrySha256": "6609733a921b5192beaeecba0d3282fcfc7884a511f26a586039c66728e60b45"
+    },
+    "祆": {
+      "code": "ifmk",
+      "geometrySha256": "620f7291d1a7266501711eb054f9b5eadf5a70a0befe9b395552e0e79bfd8bda"
+    },
+    "礼": {
+      "code": "ifu",
+      "geometrySha256": "10525b679a7e69afd87b1b407afdb39cf67e6fdab8f22ee770cba9f1ed8d823f"
+    },
+    "祢": {
+      "code": "ifnf",
+      "geometrySha256": "91fd874848cbc91208e9263da7a4a62d44ad8a9365a436586d1b87713e875d8f"
+    },
+    "祯": {
+      "code": "ifybo",
+      "geometrySha256": "0c7b310d6271e0e55b56b2cce47d58b91e74611668e918961838815e4773ad3c"
+    },
+    "视": {
+      "code": "ifbhu",
+      "geometrySha256": "6d9d89da090f912a0021c3126bb37600d0579262b75eb19e5006bd2e5b36534c"
+    },
+    "農": {
+      "code": "twmmv",
+      "geometrySha256": "cce043aff581ff5b695e55b32a93a28c9b35ea4688a24efb64f8b7f1fa279917"
+    },
+    "神": {
+      "code": "iflwl",
+      "geometrySha256": "bf85ac763a70a93802ec8d7cb91cb508260bf8136849b7457a22e1483c317676"
+    },
+    "低": {
+      "code": "ohpm",
+      "geometrySha256": "5e703e0f46bb76904bbf1aabc87f24086932864050bb743e1bc6863f49684c0b"
+    },
+    "底": {
+      "code": "ihpm",
+      "geometrySha256": "cf9673c923e6c864430a0150630165e68ec5e4078adc4b876cff54e916366555"
+    },
+    "曲": {
+      "code": "tw",
+      "geometrySha256": "6df04657a86222912fcd65e5d200e0a0695b1f0a7c837b05ee633fdf19b9970c"
+    },
+    "禮": {
+      "code": "iftwt",
+      "geometrySha256": "50ad8a420c95a703bbeca5bf52d0f0ff28299fd1218f68dc51fe9e635b951dc0"
+    },
+    "抵": {
+      "code": "qhpm",
+      "geometrySha256": "0d632547a982c7c2c2fc7caff5c1abae19c318400f8dd2a1317176c1cc53487c"
+    },
+    "濃": {
+      "code": "etwv",
+      "geometrySha256": "9bdf67e64e818f09dcdcf08af3d990048f90eda1dbe0381aca4bfd5fec636b9d"
+    },
+    "祀": {
+      "code": "ifru",
+      "geometrySha256": "0d3953340c8ee0425fe2c79e0069bac8285dc00ca3746d070807ecf9052da0e5"
+    },
+    "牴": {
+      "code": "hqhpm",
+      "geometrySha256": "5713cea4c0ca44f2a6523588c1d17d9f44a1ac053fede3a86ef6f5215dbb71ba"
+    },
+    "祂": {
+      "code": "ifpd",
+      "geometrySha256": "c3923ebefa8ab9a09707eae78cf15678e6ab099eb1b172b1e54dbba26ea315b6"
+    },
+    "禪": {
+      "code": "ifrrj",
+      "geometrySha256": "ebf3474e7daf5cbe23e2d64c6604ffedd933a84626c8f617c2d7a43488ed9945"
+    },
+    "詆": {
+      "code": "yrhpm",
+      "geometrySha256": "4c871360d9679fe03f54856eaed31c27a44740754c660cf76e58c68c07e312b4"
+    },
+    "禧": {
+      "code": "ifgrr",
+      "geometrySha256": "722a54bb3fcd1f4f01d744b03cd3a29a226728433f618cbd63b3cf02c14294a8"
+    },
+    "祿": {
+      "code": "ifvne",
+      "geometrySha256": "4ec7e49770e8746fc1fc9a8b8b5dc61c691e447e2fa5edc976a54fdc303ded1c"
+    },
+    "祠": {
+      "code": "ifsmr",
+      "geometrySha256": "0b7c4dd8978a9a5a133587499083022cd0772d137c7d45a3a638b8cf0ec43ff3"
+    },
+    "祇": {
+      "code": "ifhvp",
+      "geometrySha256": "608e4ea29089833dfe8df8bc86798615bae5aa68a10350e7fca6ad82f29fcdbb"
+    },
+    "儂": {
+      "code": "otwv",
+      "geometrySha256": "b1e86f429d57601b78629d44bf116f1853e266c3597a0b0bd6ded54786317f92"
+    },
+    "禕": {
+      "code": "ifdmq",
+      "geometrySha256": "6f23e0f6740543e3f400920605517db5de96cd78f3bb92aaf1b2efdaaee19f40"
+    },
+    "氐": {
+      "code": "hpm",
+      "geometrySha256": "7c9f915d6a6d331c839acb9a66b4bc66aef8d9d16881fffacf27b8aee70ad5dd"
+    },
+    "砥": {
+      "code": "mrhpm",
+      "geometrySha256": "f4eda8ecc646110e368216b434b7f0fbd97475c959bafdc73e42b9c60aeb07a7"
+    },
+    "醴": {
+      "code": "mwtwt",
+      "geometrySha256": "1bfd181c6988f648c50e421036638773f6f7c030e0f183889078d8e46b70361c"
+    },
+    "膿": {
+      "code": "btwv",
+      "geometrySha256": "acf5470751dc71f2f2ce35aec79d048ac545622d25c14d537ed628f4bd73f511"
+    },
+    "澧": {
+      "code": "etwt",
+      "geometrySha256": "82adb626650a496af477f2fe2d8cb2dc518fbcdd3f954edaa57cf92a3f8b03a8"
+    },
+    "噥": {
+      "code": "rtwv",
+      "geometrySha256": "287759ea657c7de7a277a14e837009c08080b00369d4d973132455acd6cdac49"
+    },
+    "祗": {
+      "code": "ifhpm",
+      "geometrySha256": "cfd4ce035a7771a820b8dee328609c40b084c4634b8879418eff780a2152dc20"
+    },
+    "禛": {
+      "code": "ifjbc",
+      "geometrySha256": "107134e8810ecfef2181e945de7ad473d8820d7106fda7169c8e7586477ae8ac"
+    },
+    "艶": {
+      "code": "ttnau",
+      "geometrySha256": "51529ab03c01a881803ec357d036e460e31396ba16fa15552b6ce0cd2c2cd87f"
+    },
+    "坻": {
+      "code": "ghpm",
+      "geometrySha256": "63ea691ad4888f3ecdab91ac5f63de9bd71ed3f3da897e356fbe43fc6e7142f3"
+    },
+    "蛐": {
+      "code": "litw",
+      "geometrySha256": "0fd867d1974072e5352697451e2fe524209df2a64543bc1be5ab94aada50386d"
+    },
+    "柢": {
+      "code": "dhpm",
+      "geometrySha256": "8f2eb06b9d028b4c5f5d26ff28266cbbd83f20271b1ecb61d8931fa9592c7e3d"
+    },
+    "禳": {
+      "code": "ifyrv",
+      "geometrySha256": "ddd3354c0fc41c7fb27f1d951665bf87820959834bd3f8a4ac0558843065e8af"
+    },
+    "胝": {
+      "code": "bhpm",
+      "geometrySha256": "b2078ba425c11933704777c6e3ce304fcb3c764dec7eeed5b2142ff204cc2811"
+    },
+    "禟": {
+      "code": "ifilr",
+      "geometrySha256": "70accd99529c7a773c6c16ee5849aa69851831023b35cc3545ace7629caa3416"
+    },
+    "鱧": {
+      "code": "nftwt",
+      "geometrySha256": "b6de73e074ba33b0d9136f2c3741a8b1f707c832920e41171123951b1ef90822"
+    },
+    "祙": {
+      "code": "ifjd",
+      "geometrySha256": "ce8e2d47b580e7a831ce34314eb79e73c94bc188e60b06a0c7bf15d8fef84f59"
+    },
+    "祧": {
+      "code": "iflmo",
+      "geometrySha256": "d82b2f1953fa379d86daf3604a5aa671f31fa9189621f3302239151f68ffe6d0"
+    },
+    "豊": {
+      "code": "twmrt",
+      "geometrySha256": "8b901f2c433904be1d15443a67f12cfd56e1167031815b2d041068ff7ddabea1"
+    },
+    "穠": {
+      "code": "hdtwv",
+      "geometrySha256": "385575f3950d614e065c25e959fd118afa4980dcb597a3b172af6bc4195da651"
+    },
+    "禊": {
+      "code": "ifqhk",
+      "geometrySha256": "214732d998764081afbf0333d2b610ecf7f76eed6bc2153be9b469c57b3ba2bf"
+    },
+    "羝": {
+      "code": "tqhpm",
+      "geometrySha256": "553310179d4b1a5b6bc8f31d823d3e8ffee860c5a9c69d0ef3831edd514741de"
+    },
+    "袛": {
+      "code": "lhpm",
+      "geometrySha256": "f9c68d80164206149fdeeb94a7e425be7476d6e6b9d33138007b522600d0359f"
+    },
+    "憹": {
+      "code": "ptwv",
+      "geometrySha256": "e50aba351643ad77edaa3274decdd9ee3baace61f79118e3472860b3d7513932"
+    },
+    "祎": {
+      "code": "ifqs",
+      "geometrySha256": "eb42f9e348cd66b80b217e6f1137e6fbf5edcc75369be6f9581b0c0282252a6d"
+    },
+    "祷": {
+      "code": "ifqki",
+      "geometrySha256": "c74da936ac1c8418791c000aa8ecf619d15b4f942aeb29d8c1e1534d410f82bf"
+    },
+    "祸": {
+      "code": "ifrob",
+      "geometrySha256": "42198c1c5129855f038fc3aa7ed451510d3bcdc70fc59d52c787969509ea7e4c"
+    },
+    "禄": {
+      "code": "ifnme",
+      "geometrySha256": "6848df1d27cd676d3569aa5e54cb8d7e4e9f3153f5ce58edb8dbeaaed8eb7e9d"
+    },
+    "禅": {
+      "code": "ifcwj",
+      "geometrySha256": "2cbc8eee0fbad675d5e23dc60f94d1c71d1457f5ef6a3328c0b02136002339e6"
+    },
+    "鳢": {
+      "code": "nmtwt",
+      "geometrySha256": "795380f01f2e7b88ba62d2c61f974628c2e7f428826e0839fed09a7d8af5f74a"
+    },
+    "禚": {
+      "code": "iftgf",
+      "geometrySha256": "89cf568856f6b34573a72c4c251c8f47f711d73b966a9fc6d118dff06e2166e8"
+    },
+    "禵": {
+      "code": "ifaoc",
+      "geometrySha256": "02d894df678af2e6b7bcc60628ed9e68cad58613b99d75f0e2b1dd3f6f474871"
+    },
+    "蚳": {
+      "code": "lihpm",
+      "geometrySha256": "8db444364f8d68313aac086abcbeaff6c891a2ae62ec753e26488f2b77ecff3f"
+    },
+    "觝": {
+      "code": "nbhpm",
+      "geometrySha256": "553283ac08d97ea06f235fcf6772073b1dae1c8fd3ff6bb47a5eec5272a6e4e5"
+    },
+    "軆": {
+      "code": "hhtwt",
+      "geometrySha256": "8b8472bcb9e94259ed960f0a24b52b1dc523e0cfa8869c1c36687f70db435afa"
+    },
+    "禆": {
+      "code": "ifhwj",
+      "geometrySha256": "f1848aa8625910fe9808ea729778e84df071013b5818015c7165c42863ab32b4"
+    },
+    "岻": {
+      "code": "uhpm",
+      "geometrySha256": "f1753ed6a1e56a2e29b12aba62b8df5462558f602ebdaa6f027e4a2647631d5e"
+    },
+    "粬": {
+      "code": "fdtw",
+      "geometrySha256": "b6196bbfee4c54d108b96e2074f1eeed88ad5f4f06d93b37ec51dae7fcb811f1"
+    },
+    "僼": {
+      "code": "otwt",
+      "geometrySha256": "a21fe24133dc56043bd8454c612a0f40f0f8313dea23d1b54801ed6705cd16ff"
+    },
+    "呧": {
+      "code": "rhpm",
+      "geometrySha256": "d6d8bfdcd72c02c955ab63bc6e63eed1d0a1b2665cc91729159cee0763a35bce"
+    },
+    "嶩": {
+      "code": "utwv",
+      "geometrySha256": "223acf707f0ca140882349fe5212f000b33a30f29fca0cea0b80b65903ee8806"
+    },
+    "弤": {
+      "code": "nhpm",
+      "geometrySha256": "05f7d309246630cf8f896d83491ef37b99334076cbc138dfb5813c5ac38b06d0"
+    },
+    "彽": {
+      "code": "hohpm",
+      "geometrySha256": "8b72e51301781966373a355085ea895b7d706fe1b4a2a8d6055030213ce6ba4f"
+    },
+    "怟": {
+      "code": "phpm",
+      "geometrySha256": "1142900d9e898efa1e9453d92a9dce335eb92c864b104a50d398741e33ebaa16"
+    }
+  }
+}
