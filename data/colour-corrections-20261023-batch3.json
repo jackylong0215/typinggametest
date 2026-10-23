@@ -1,0 +1,13 @@
+{
+  "reason": "食部擴展及第三批參考圖；籤的戈及寬的目省底橫。所有既有輪廓維持不變。",
+  "characters": {
+    "籤": {
+      "code": "hoim",
+      "geometrySha256": "dd5b0544573447b9540c4f10397ef747a233611e9e5961bcca00842f36aa53b4"
+    },
+    "寬": {
+      "code": "jtbi",
+      "geometrySha256": "8eef9908ba6c0af43356b127d2a28ef801c8cc1e5bafe436386d3c409e86c6b4"
+    }
+  }
+}
