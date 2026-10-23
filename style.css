@@ -71,3 +71,29 @@ body{background:#f5f8ff;color:#253557}header{background:#fff;border-bottom:0;max
  .rpg-command-heading{display:none}.rpg-fighter>*{margin:0!important}.rpg-fighter{line-height:1.2}.rpg-name{white-space:nowrap;font-size:9px;line-height:1.2}.rpg-fighter #rpg-hero-art,.rpg-fighter #rpg-enemy-art{line-height:0}.rpg-fighter svg{display:block;margin:auto}.rpg-fighter .rpg-energy,.rpg-enemy-trait{line-height:1.2}.rpg-question:has(#rpg-guide-picture:not([hidden])) .rpg-question-main{padding:0;min-height:0}#rpg-input-status:empty{display:none}
 }
 @media(max-width:799px){.rpg-battle{gap:3px}.rpg-question{padding:5px}.rpg-colour-guide{margin:3px 0}}
+
+/* Give the fighters more space; keep skills and inventory compact. */
+.rpg-arena{min-height:238px!important}
+.rpg-fighter svg{height:142px!important;width:174px!important}
+.rpg-command-panel{padding:6px;align-self:start}
+.rpg-command-heading{margin-bottom:3px;font-size:11px}
+.rpg-moves button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:4px 3px;text-align:center;border-radius:8px}
+.rpg-moves button>span{display:none}
+.rpg-moves button>b{font-size:11px;line-height:1.25}
+.rpg-moves button>small{font-size:10px;line-height:1.2}
+.rpg-bag{gap:3px;margin-top:4px}
+.rpg-bag button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:3px 2px;line-height:1.2}
+.rpg-bag small{margin:0;line-height:1.2}
+@media(max-width:799px){
+ .rpg-arena{min-height:120px!important;max-height:124px}
+ .rpg-fighter svg{height:66px!important;width:84px!important}
+ .rpg-command-panel{padding:3px}
+ .rpg-moves button{padding:2px;font-size:10px}
+ .rpg-moves button>b{font-size:10px}
+ .rpg-moves button>small{font-size:9px}
+ .rpg-bag button{font-size:10px;padding:2px;gap:0}
+ .rpg-bag small{font-size:9px}
+}
+@media(max-width:799px){.rpg-arena{min-height:112px!important;max-height:116px}.rpg-question{padding:4px}.rpg-question-top>#rpg-time{padding:2px 8px}.rpg-colour-guide{padding:3px}}
+.rpg-item-status{grid-row:7}
+@media(max-width:799px){.rpg-command-panel{align-self:stretch}}
