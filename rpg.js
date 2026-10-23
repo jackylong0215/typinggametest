@@ -36,7 +36,7 @@ function rpgNextQuestion(){
  const token=++rpgGuideToken;rpgPrepareQuestion(rpgState,rpgQuestion,token);
 }
 function rpgPrepareQuestion(state,question,token){
- const ready=()=>{if(rpgState!==state||rpgQuestion!==question||token!==rpgGuideToken||['ended','victory','defeat'].includes(state.phase)||!rpgEl('dialog').open)return;state.phase='question';rpgRenderBattle();rpgLastTime=performance.now();clearInterval(rpgClock);rpgClock=setInterval(rpgTick,100);if(state.difficulty!==1)rpgFocusAnswer();else rpgEl('content').querySelector('[data-rpg-option]').focus({preventScroll:true})};
+ const ready=()=>{if(rpgState!==state||rpgQuestion!==question||token!==rpgGuideToken||['ended','victory','defeat'].includes(state.phase)||!rpgEl('dialog').open)return;state.phase='question';rpgRenderBattle();rpgLastTime=performance.now();clearInterval(rpgClock);rpgClock=setInterval(rpgTick,100);if(state.difficulty!==1)rpgEl('answer')?.focus({preventScroll:true});else rpgEl('content').querySelector('[data-rpg-option]').focus({preventScroll:true})};
  if(state.difficulty===1||!rpgHasColour(question.char,state.version)||rpgGuideVisual()||rpgGuideUnavailable){ready();return}
  state.phase='preparing';rpgEl('content').innerHTML='<section class="rpg-guide-loading" aria-live="polite"><h2>🌈 正在準備五色拆字圖</h2><p>圖片準備好才開始本回合倒數。</p><button class="outline" data-rpg-end>結束並回顧</button></section>';
  Promise.resolve().then(()=>typeof loadColourCharacters==='function'?loadColourCharacters([question.char]):null).then(()=>{if(!rpgGuideVisual())throw Error('No matching glyph');ready()}).catch(()=>{
