@@ -3,13 +3,13 @@ const root=path.join(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'
 const context=vm.createContext({});
 const helper=read('app.js').split('function splitVisual(char)')[1].split('function glyphPaths')[0];
 vm.runInContext(['code-data.js','stroke-data.js','learning.js','extra-colours.js','colour-library.js'].map(read).join('\n')+'\nlet currentVersion="5";let item;function splitVisual(char)'+helper+'\nglobalThis.library={SPLIT_VISUALS,STROKE_DATA,CODE_TABLES,COLOUR_ORDER,visualFor:(char,version)=>{currentVersion=version;return splitVisual(char)},questionFor:(word,version)=>{currentVersion=version;item=word;return questionVisual()}}',context);
-const corrections={...JSON.parse(read('data/colour-corrections-20261023.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch2.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch3.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch4.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch5.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch6.json')).characters};
+const corrections={...JSON.parse(read('data/colour-corrections-20261023.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch2.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch3.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch4.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch5.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch6.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch7.json')).characters};
 const lib=context.library,source=JSON.parse(read('data/colour-source.json')),audit=JSON.parse(read('data/colour-audit.json'));
-test('五代標色教室恰好10249個不同字，包含常用字及所有既有修正',()=>{
- assert.equal(Object.keys(lib.SPLIT_VISUALS).length,10249);assert.equal(new Set(lib.COLOUR_ORDER).size,10249);assert.equal(audit.total,10249);assert.equal(Object.keys(audit.characters).length,10133);
+test('五代標色教室恰好10295個不同字，包含常用字及所有既有修正',()=>{
+ assert.equal(Object.keys(lib.SPLIT_VISUALS).length,10295);assert.equal(new Set(lib.COLOUR_ORDER).size,10295);assert.equal(audit.total,10295);assert.equal(Object.keys(audit.characters).length,10179);
  for(const char of '的是在不有了我國這個會們他來年上以要到時對麼能你就可地生發出也說於學後成與過行用多都沒作下得開經還法方而之民政看嗎所天新業全同定部最其進機美那當工關實裏小被自現動事前完池龍興')assert.ok(lib.visualFor(char,'5'),char);
 });
-test('全部10249字的每一步只取一碼；三代不顯示五代不同碼的標色',()=>{
+test('全部10295字的每一步只取一碼；三代不顯示五代不同碼的標色',()=>{
  for(const char of lib.COLOUR_ORDER){const visual=lib.visualFor(char,'5');assert.ok(visual,char);assert.ok(visual.parts.every(part=>part[1].length===1),char);const v3=lib.visualFor(char,'3');if(v3)assert.equal(v3.parts.map(p=>p[1]).join(''),lib.CODE_TABLES['3'][char],char);else assert.notEqual(visual.parts.map(p=>p[1]).join(''),lib.CODE_TABLES['3'][char],char)}
 });
 test('每個取碼步驟均有實際筆畫區域，跨根筆畫的各區域無重疊且完整覆蓋',()=>{
@@ -25,7 +25,7 @@ test('龍只取亠為卜，匕的橫與彎鉤同屬心；完的厂與乚清楚�
  const dragon=lib.SPLIT_VISUALS['龍'],complete=lib.SPLIT_VISUALS['完'];assert.deepEqual(Array.from(dragon.parts[0][2]),[0,1]);assert.deepEqual(Array.from(dragon.parts[4][2]),[15]);assert.ok([2,3,4,13,14].every(i=>dragon.ignored.includes(i)));assert.equal(dragon.splitStrokes[0].below,3);assert.equal(dragon.splitStrokes[1].stroke,12);assert.equal(dragon.splitStrokes[1].above,3);assert.equal(dragon.splitStrokes[1].below,4);
  assert.deepEqual(Array.from(complete.parts[2][2]),[4,5]);assert.deepEqual(Array.from(complete.parts[3][2]),[6]);assert.equal(complete.ignored,undefined);
 });
-test('10133個生成字的取碼區域均有明確部件來源，沒有按筆畫數平均分割',()=>{
+test('10179個生成字的取碼區域均有明確部件來源，沒有按筆畫數平均分割',()=>{
  for(const [char,atoms] of Object.entries(audit.characters)){
   assert.equal(atoms.map(a=>a.key).join(''),lib.CODE_TABLES['5'][char],char);
   for(const atom of atoms){assert.notEqual(atom.key,'?',char);assert.ok(source.dictionary[atom.component],char+atom.component);assert.ok(source.templates[atom.component]||source.roots[atom.component]||lib.SPLIT_VISUALS[atom.component],char+atom.component);assert.ok(atom.regions.length,char);for(const [stroke,lo,hi] of atom.regions){assert.ok(lib.STROKE_DATA[char][stroke],char);assert.ok(hi>lo,char)}}
@@ -176,10 +176,10 @@ test('匕獨立UH、八獨立HO，部件分別仍取P及C',()=>{
  }
 });
 
-test('擴充新增6749字，既有幾何只允許逐字明訂的用戶修正',()=>{
+test('擴充新增6795字，既有幾何只允許逐字明訂的用戶修正',()=>{
  const crypto=require('node:crypto'),baseline=JSON.parse(read('data/colour-baseline-3500.json'));
  assert.equal(Object.keys(baseline).length,3500);
- assert.equal(Object.keys(lib.SPLIT_VISUALS).filter(c=>!baseline[c]).length,6749);
+ assert.equal(Object.keys(lib.SPLIT_VISUALS).filter(c=>!baseline[c]).length,6795);
  for(const [c,expected] of Object.entries(baseline)){
   const v=lib.SPLIT_VISUALS[c];assert.ok(v,c);assert.equal(v.parts.map(p=>p[1]).join(''),(corrections[c]||expected).code,c);
   const shape={parts:v.parts.map(p=>[p[1],p[2]]),ignored:v.ignored||[],splits:v.splitStrokes||[],regions:v.strokeRegions||[]};
@@ -260,7 +260,7 @@ test('便與運縮碼時，同一筆畫中未取的中段保持灰色，俺的�
 
 test('一萬字擴展保留已發佈8212字，取碼與標色只允許明訂修正',()=>{
  const crypto=require('node:crypto'),baseline=JSON.parse(read('data/colour-baseline-8212.json'));
- assert.equal(Object.keys(baseline).length,8212);assert.equal(audit.total,10249);
+ assert.equal(Object.keys(baseline).length,8212);assert.equal(audit.total,10295);
  const hash=x=>crypto.createHash('sha256').update(JSON.stringify(x)).digest('hex');
  for(const [c,e]of Object.entries(baseline)){
   const v=lib.SPLIT_VISUALS[c];assert.equal(v.parts.map(p=>p[1]).join(''),(corrections[c]||e).code,c);
@@ -422,7 +422,7 @@ test('工頭敢與日本覧有獨立來源，原敢11筆字形可追溯',()=>{
  }
  assert.equal(lib.STROKE_DATA['敢'].length,12);assert.equal(source.reference_original_graphics['敢'].strokes.length,11);
  const baseline=JSON.parse(read('data/colour-baseline-8212.json'));assert.equal(hash(JSON.stringify(source.reference_original_graphics['敢'].strokes)),baseline['敢'].strokesSha256);
- const contourChanges=Object.keys(corrections).filter(c=>corrections[c].strokesSha256);assert.deepEqual(contourChanges,['敢']);
+ const batch6=JSON.parse(read('data/colour-corrections-20261023-batch6.json')).characters;const contourChanges=Object.keys(batch6).filter(c=>batch6[c].strokesSha256);assert.deepEqual(contourChanges,['敢']);
  assert.equal(lib.STROKE_DATA['覧'].length,17);assert.equal(lib.STROKE_DATA['覽'].length,21);
  assert.deepEqual(Array.from(lib.visualFor('覧','5').parts[0][2]),[0,1,6]);
  assert.deepEqual(Array.from(lib.visualFor('覽','5').parts[0][2]),[0,5]);
@@ -442,4 +442,48 @@ a=m.derive('橄');assert a and any(x.get('variant')=='11' and x['component']=='�
 assert len(m.G['敢']['strokes'])==12
 `;
  const r=require('node:child_process').spawnSync('python3',['-c',script],{cwd:root,encoding:'utf8'});assert.equal(r.status,0,r.stderr);
+});
+
+test('第七批21個參考與46個同結構新字可查碼及練習',()=>{
+ const rev=source.reference_revision_20261023_batch7;assert.equal(rev.references.length,21);assert.equal(rev.added.length,46);
+ for(const c of [...rev.references,...rev.added]){const v=lib.visualFor(c,'5');assert.ok(v,c);assert.equal(v.parts.map(p=>p[1]).join(''),lib.CODE_TABLES['5'][c],c)}
+ assert.deepEqual(Array.from(lib.visualFor('瓜','5').parts[0][2]),[0,1]);
+ assert.deepEqual(Array.from(lib.visualFor('聊','5').parts[4][2]),[10]);
+ const v=lib.visualFor('券','5'),g=v.sharedStrokeGuides[0];assert.equal(g.stroke,4);assert.equal(g.part,1);assert.ok(v.parts[0][2].includes(4));assert.deepEqual(JSON.parse(JSON.stringify(g.median)),source.graphics['券'].medians[4]);
+ for(const c of ['券','拳','卷','圈','倦','捲','蜷']){const v=lib.visualFor(c,'5');assert.ok(v.sharedStrokeGuides,c);assert.equal(v.parts[v.sharedStrokeGuides[0].part][1],'q',c)}
+ for(const c of '穫鑊蠟臘邋錶裱婊優擾惘魍')assert.ok(lib.visualFor(c,'5'),c);
+});
+test('全部2310個重製字控制間距、部件比例與上下對齊',()=>{
+ const records=JSON.parse(read('data/component-compositions.json')).characters,review=JSON.parse(read('data/colour-layout-review-20261023.json')).characters;
+ assert.equal(Object.keys(records).length,2310);assert.equal(Object.keys(review).length,2310);
+ for(const [c,r]of Object.entries(records)){
+  const [a,b]=r.components.map(p=>p.bounds),centre=x=>(x[1]+x[3])/2;
+  assert.ok(Math.abs(b[0]-a[2]-12)<.02,c);assert.ok(Math.abs(centre(a)-centre(b))<=80.02,c);
+  const ratio=(a[2]-a[0])/883;assert.ok(ratio>=.2199&&ratio<=.5801,c);
+  const height=Math.max(a[3],b[3])-Math.min(a[1],b[1]);assert.ok(height>=450&&height<=870,c);
+  assert.deepEqual(r.components.map(p=>p.bounds),review[c].newBounds,c);
+ }
+ const [mouth,ground]=records['哋'].components.map(p=>p.bounds);assert.ok(mouth[2]-mouth[0]<300);assert.ok(ground[2]-ground[0]>590);
+ const [mountain,blade]=records['屻'].components.map(p=>p.bounds);assert.ok(Math.abs((mountain[1]+mountain[3]-blade[1]-blade[3])/2)<80.02);
+ for(const c of ['孖','吅','幵']){const [a,b]=records[c].components.map(p=>p.bounds);assert.equal(a[1],b[1],c);assert.equal(a[3],b[3],c)}
+});
+test('排版只改有重製來源的輪廓，原形雜湊及敢變體版本保留',()=>{
+ const crypto=require('node:crypto'),hash=x=>crypto.createHash('sha256').update(JSON.stringify(x)).digest('hex');
+ const records=JSON.parse(read('data/component-compositions.json')).characters,review=JSON.parse(read('data/colour-layout-review-20261023.json')).characters,baseline=JSON.parse(read('data/colour-baseline-8212.json'));
+ const contourChanges=Object.keys(corrections).filter(c=>corrections[c].strokesSha256);assert.equal(contourChanges.length,2311);
+ for(const c of contourChanges)assert.ok(c==='敢'||review[c],c);
+ for(const [c,r]of Object.entries(review)){
+  assert.equal(hash(lib.STROKE_DATA[c]),r.newContoursSha256,c);assert.equal(corrections[c].strokesSha256,r.newContoursSha256,c);
+  if(baseline[c])assert.equal(r.oldContoursSha256,baseline[c].strokesSha256,c);
+  const parts=records[c].components;const expected=parts.reduce((n,p)=>n+(p.sourceVariant==='reference_original_graphics'?source.reference_original_graphics[p.character]:source.graphics[p.character]).strokes.length,0);
+  assert.equal(lib.STROKE_DATA[c].length,expected,c);
+ }
+ assert.equal(records['噉'].components[1].sourceVariant,'reference_original_graphics');assert.equal(lib.STROKE_DATA['噉'].length,14);
+});
+test('鏤的分色界線隨婁部排版作同一仿射變換',()=>{
+ const review=JSON.parse(read('data/colour-layout-review-20261023.json')).characters['鏤'],old=review.oldBounds[1],next=review.newBounds[1];
+ const expected=Math.round((next[1]+(734-old[1])*(next[3]-next[1])/(old[3]-old[1]))*100)/100;
+ assert.equal(lib.visualFor('鏤','5').splitStrokes.find(s=>s.stroke===15).boundary,expected);
+ assert.equal(source.standalone_templates['鏤'].splitStrokes[0].boundary,expected);
+ assert.equal(lib.CODE_TABLES['5']['哋'],'rgpd');assert.equal(lib.CODE_TABLES['5']['屻'],'ushi');
 });
