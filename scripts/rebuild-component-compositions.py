@@ -34,22 +34,25 @@ for c,d in D.items():
   ps=[p for i in indices for p in G[c]['medians'][i]]
   if not ps:continue
   placements[(ids[0],side,child)].append([70+885*(min(x for x,y in ps)-x0)/(x1-x0),20+820*(min(y for x,y in ps)-y0)/(y1-y0),70+885*(max(x for x,y in ps)-x0)/(x1-x0),20+820*(max(y for x,y in ps)-y0)/(y1-y0)])
-for c,record in data['characters'].items():
- op=record['dictionary']['decomposition'][0];paths=[];medians=[];matches=[]
- for side,part in enumerate(record['components']):
-  child=part['character'];box=list(part['bounds'])
-  if '--place' in sys.argv:
-   samples=placements[(op,side,child)]
-   if len(samples)>=3:
-    typical=[round(statistics.median(row[i]for row in samples),2)for i in range(4)]
-    axes=[1,3]if op=='⿰'else[0,2]
-    for i in axes:box[i]=typical[i]
-    part['bounds']=box;part['crossAxisPlacementSamples']=len(samples)
-  strokes,ms=fit(child,box);paths+=strokes;medians+=ms;matches += [[side]]*len(strokes)
- graphics={'character':c,'strokes':paths,'medians':medians}
- if '--check' in sys.argv:assert graphics==record['graphics'] and matches==record['dictionary']['matches'],c
- else:record['graphics']=graphics;record['dictionary']['matches']=matches
-if '--check' not in sys.argv:
- data['source']['layout']='Documented component bounds; cross-axis placement estimated from same-font original compounds when at least 3 examples exist; path coordinates rounded to 0.01 units.'
- file.write_text(json.dumps(data,ensure_ascii=False,separators=(',',':'))+'\n')
-print(('Checked'if '--check'in sys.argv else'Rebuilt'),len(data['characters']),'documented component compositions')
+def main():
+    for c,record in data['characters'].items():
+     op=record['dictionary']['decomposition'][0];paths=[];medians=[];matches=[]
+     for side,part in enumerate(record['components']):
+      child=part['character'];box=list(part['bounds'])
+      if '--place' in sys.argv:
+       samples=placements[(op,side,child)]
+       if len(samples)>=3:
+        typical=[round(statistics.median(row[i]for row in samples),2)for i in range(4)]
+        axes=[1,3]if op=='⿰'else[0,2]
+        for i in axes:box[i]=typical[i]
+        part['bounds']=box;part['crossAxisPlacementSamples']=len(samples)
+      strokes,ms=fit(child,box);paths+=strokes;medians+=ms;matches += [[side]]*len(strokes)
+     graphics={'character':c,'strokes':paths,'medians':medians}
+     if '--check' in sys.argv:assert graphics==record['graphics'] and matches==record['dictionary']['matches'],c
+     else:record['graphics']=graphics;record['dictionary']['matches']=matches
+    if '--check' not in sys.argv:
+     data['source']['layout']='Documented component bounds; cross-axis placement estimated from same-font original compounds when at least 3 examples exist; path coordinates rounded to 0.01 units.'
+     file.write_text(json.dumps(data,ensure_ascii=False,separators=(',',':'))+'\n')
+    print(('Checked'if '--check'in sys.argv else'Rebuilt'),len(data['characters']),'documented component compositions')
+
+if __name__=='__main__':main()
