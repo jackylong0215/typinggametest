@@ -1,0 +1,29 @@
+{
+  "reason": "用戶第二批九張參考；獨立字主碼與標色同步修正。原有複合字保留五代碼及輪廓。",
+  "characters": {
+    "盒": {
+      "code": "omrt",
+      "geometrySha256": "c5f7980dca4fba1946301ef20cb55aa69a19ca69704899903a02c8e3751856f7"
+    },
+    "兔": {
+      "code": "nui",
+      "geometrySha256": "349f53d3b9b221121c75d0c2c3058098bca1be2eff8717f08595d00571abe8ca"
+    },
+    "鬼": {
+      "code": "hi",
+      "geometrySha256": "6cf0d61544a90d8e197e4b3070eeee297185406763202d669a32752bb37444ac"
+    },
+    "冤": {
+      "code": "bnui",
+      "geometrySha256": "8b2805fd73956521035d1dd623ba7647a7c977ac80924e196f498498254a4bc7"
+    },
+    "卑": {
+      "code": "hhj",
+      "geometrySha256": "a5761876e1a54527614f12b42b3e4a921315b686ac4bed5dca02f9fbddebeb85"
+    },
+    "非": {
+      "code": "lmyyy",
+      "geometrySha256": "eb04f9fa5a979c02e295b64f5e38498b3ed16f4e58c3e0e57b43909f3c61fb87"
+    }
+  }
+}

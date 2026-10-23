@@ -11,7 +11,7 @@ let currentVersion;try{currentVersion=localStorage.getItem('cangjie-version')===
 function versionName(){return currentVersion==='5'?'倉頡五代':'倉頡三代'}
 function questionForVersion(word){
  const code=CODE_TABLES[currentVersion][word.char];if(!code)throw new Error('碼表缺少題目：'+word.char);
- let note=word.note;if(word.char==='鬼')note=currentVersion==='3'?'三代特殊字：竹、戈（HI）。五代是 HUI。':'五代取竹、山、戈（HUI）。三代是 HI。';
+ let note=word.note;if(word.char==='鬼')note='特殊字形：頂撇取竹，右下厶取戈（HI）；中間及彎鉤不另取碼。';
  return {...word,code,note};
 }
 let mode,item,score,combo,correct,attempts,remaining,tick,fall,active=false,lastCode='',round=0,wrongStreak=0,paused=false,practiceKeys=null,phase='idle',advanceTimer=null,advanceRemaining=0,advanceDeadline=0,demoTimer=null,demoStep=0;
@@ -233,7 +233,7 @@ function showPage(page){
 document.querySelectorAll('[data-page]').forEach(button=>button.onclick=()=>showPage(button.dataset.page));
 $('book-home').onclick=()=>showPage('notebook');
 function renderNotebook(){
- const entries=Object.values(progress.notebook).filter(e=>e.version===currentVersion).sort((a,b)=>b.lastWrong-a.lastWrong);
+ const entries=Object.values(progress.notebook).filter(e=>e.version===currentVersion).map(e=>e.formId||e.kind==='punct'?e:questionForVersion(e)).sort((a,b)=>b.lastWrong-a.lastWrong);
  $('extra').innerHTML=`<div class="eyebrow">MISTAKES BECOME SUPERPOWERS</div><div class="notebook-heading"><div><h2>我的錯字簿 <span>${entries.length}</span></h2><p>每個字答對兩次，就能移出錯字簿。一般練習和挑戰中答對也會累計。</p><p>目前顯示 ${versionName()}；三代和五代分開記錄。</p></div><button class="primary" id="practice-book" ${entries.length?'':'disabled'}>開始錯字加強 →</button></div>${entries.length?`<div class="notebook-grid">${entries.map(e=>`<article class="notebook-card"><div class="notebook-character">${e.formId?auxiliarySvg(auxiliaryForm(e.formId)):htmlEscape(displayCharacter(e))}</div><div class="mastery-dots">${[0,1].map(i=>`<span class="${e.correctCount>i?'filled':''}">✓</span>`).join('')}</div><b>${htmlEscape(e.code.toUpperCase())}</b><div class="review-chips">${e.kind==='punct'?'符號碼':chips(e.code)}</div><p>累計錯誤 ${e.misses} 次 · 再答對 ${2-e.correctCount} 次即可掌握</p></article>`).join('')}</div>`:'<div class="empty-notebook"><span>🌈</span><h3>這裡空空的，做得好！</h3><p>之後答錯或超時的字會自動收錄，讓你知道下一步練甚麼。</p><button class="outline" id="empty-book-home">回小島挑戰 →</button></div>'}`;
  if(entries.length)$('practice-book').onclick=()=>start('book');else $('empty-book-home').onclick=()=>showPage('explore');
 }

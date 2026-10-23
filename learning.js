@@ -46,7 +46,7 @@ const SPECIAL_WORDS = [
  {char:'兼',code:'txc',note:'兼屬特殊難字形，固定記作廿、難、金。不要逐筆硬拆。'},
  {char:'鹿',code:'ixp',note:'鹿的特殊字形取戈、難、心。'},
  {char:'門',code:'an',note:'特殊字形：記作日、弓，不按外觀重複取兩個日。'},
- {char:'鬼',code:'hi',note:'倉頡三代的特殊字：竹、戈（HI）。五代是 HUI，不混用。'},
+ {char:'鬼',code:'hi',note:'特殊字形：頂撇取竹，右下厶取戈（HI）；中間及彎鉤不另取碼。'},
  {char:'我',code:'hqi',note:'交連字形：取竹、手、戈。'},
  {char:'國',code:'wirm',note:'外框先取田；內部或取戈、口、一。'},
  {char:'想',code:'dup',note:'分成相和心；字首相只取首尾「木、山」，字身心取「心」。相單字則是 DBU。'},
