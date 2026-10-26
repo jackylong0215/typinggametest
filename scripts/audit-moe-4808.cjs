@@ -67,9 +67,9 @@ assert.equal(summary.colour3 + summary.missing3, summary.total);
 const output = path.join(root, 'reports');
 fs.mkdirSync(output, {recursive: true});
 const write = (name, value) => fs.writeFileSync(path.join(output, name), value);
-const csv = data => '\ufeff教育部字號,中文字,Unicode,倉頡五代,倉頡三代,五代彩色字形,三代彩色字形,缺少原因\n' + data.map(r =>
+const csv = data => '\ufeff' + ['教育部字號,中文字,Unicode,倉頡五代,倉頡三代,五代彩色字形,三代彩色字形,缺少原因', ...data.map(r =>
   [r.id, r.char, r.unicode, r.cj5.toUpperCase(), r.cj3.toUpperCase(), r.colour5 ? '有' : '缺', r.colour3 ? '有' : '缺',
-    r.colour5 ? '已有五代模型；取碼與三代不同' : '未收錄彩色模型'].join(',')).join('\n') + '\n';
+    r.colour5 ? '已有五代模型；取碼與三代不同' : '未收錄彩色模型'].join(','))].join('\n') + '\n';
 write('moe-4808-missing-five.csv', csv(missing5));
 write('moe-4808-three-only.csv', csv(threeOnly));
 write('moe-4808-summary.json', JSON.stringify(summary, null, 2) + '\n');
