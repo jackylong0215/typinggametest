@@ -1,0 +1,649 @@
+{
+  "references": [
+    "丈",
+    "侵",
+    "吏",
+    "后",
+    "而",
+    "戶",
+    "毛",
+    "九"
+  ],
+  "reason": "依使用者八字參考圖修正；字碼與數量不變，只有侵、浸的長中橫及戶的撇頭形狀調整輪廓；其餘字僅修正分色。",
+  "characters": {
+    "九": {
+      "code": "kn",
+      "geometrySha256": "2ca05b52b4fe080f1dc20b72439e9f6d5d98401f2e59d0f50d8420c2f1f8cb41",
+      "visualSha256": "1aa658b477d0b24ac5f3cf4ce84f259f1dc82e6a2a0eb07164dff9093cd07716",
+      "previousVisualSha256": "1d076691db2abd49f400bfcec8a8e240338159644cb0002d24b78411b73fed58"
+    },
+    "而": {
+      "code": "mbll",
+      "geometrySha256": "a3a8e73062a95f6c2a79b590a014dd33e0df2da8a5aa955cdee2641c1fe01d13",
+      "visualSha256": "50fcc7b0acb677ce1f5bd63de19301a477d4c7bcaf9cbce136894a070c59e4e2",
+      "previousVisualSha256": "a2700107d05cf62f5c06d7ed94e7751d7b6c1b5975d0bfd709d4ec3e7f793955"
+    },
+    "所": {
+      "code": "hshml",
+      "geometrySha256": "cf93be3ce57dce6e0e6e31f67413d66e19c14b858aab0f8a5a1f0ff066f95426",
+      "visualSha256": "14c1639cdb94064869d820497d11d09bc005265ccaba5f7d5a1c598a82d58ea6",
+      "previousVisualSha256": "257aafb15c04a639bccc2c6d94fef10a13bbaf6729dd84243ef3e89a528c88a1"
+    },
+    "究": {
+      "code": "jckn",
+      "geometrySha256": "8ae85ee791eba2d116be96b7c5a66dc444af30536bc055f233e79fd581777da6",
+      "visualSha256": "5a0f8eaa58702dc76d10a4e85fa4d5b650f509e623a8b08c083a358db6fdb935",
+      "previousVisualSha256": "9eac7e33df1dab8a9a8570ef1a75924903deae63e2124102f149905654764990"
+    },
+    "戶": {
+      "code": "hs",
+      "geometrySha256": "b3331c017e63eb08edde46d5cc2e41c1aefa72b9851947d5e4fbdec2b628ee21",
+      "visualSha256": "163a2bb8b9739946992ce6039903c8168eca4207e46b6ebd5ebbf19231b8435c",
+      "previousVisualSha256": "1044e1918daabf81fdc1aa04ca2045727f2ffa3b4b8cb1202417c4916e533622",
+      "strokesSha256": "c7d45ed18785b721ab65a5ef96941f4241bce50427ef11aafcdced7f04529050",
+      "previousStrokesSha256": "33bf889bedfcf431c555b0dcc34768783f4144b61e3cd3345eee8378ef8cce98"
+    },
+    "毛": {
+      "code": "hqu",
+      "geometrySha256": "e71f89ab8f77c4bb2f45ea1a6c6d045e2ab33e975d77b0f9e67c4f26f8250ecf",
+      "visualSha256": "46779c03ec762e3075afc96f5b5ceba0eb80b580bb8218fd4b85998bae946fc9",
+      "previousVisualSha256": "892d6c7126a66742eb0af2e6ceb0affeef727dd92566b442c505210d941f2a88"
+    },
+    "端": {
+      "code": "ytumb",
+      "geometrySha256": "f17937620cbf92dc61cc5bcfde3ce3b92a2dfe69a84309628b92b81f1002f384",
+      "visualSha256": "e76d6922f36702826058e1040279b55cce4e7499cc2d6708fead82f1d9da3707",
+      "previousVisualSha256": "f65783ff05d749c182e0cc0ba4920232660c70915b727ebbfd2d63098ecdffae"
+    },
+    "染": {
+      "code": "end",
+      "geometrySha256": "18335ba8bd0038b3bf8b90b0dc0fdfd83ca92fe30b87f3717d8f5ed08aa57565",
+      "visualSha256": "db5b4e5e5f50bd67df9d7c621219227f4a3c2abdbd119c9c5ab68b6be24c920e",
+      "previousVisualSha256": "71faa0f7afbdf2a11c01e4d49aa78b9a218d346e829ebf424b267a6f32c22dad"
+    },
+    "毫": {
+      "code": "yrbu",
+      "geometrySha256": "f0b3634718734e8ea45f65d60602ed38d9f7ec5ab9a224c18a50c6b9e66a0386",
+      "visualSha256": "2846af27e843d87431640ee35c5cb8a362fc3128007daf03bff099134cac4a8a",
+      "previousVisualSha256": "153d47c6e88158ae945c5519dbff410b8cbe80be1eecae51bed7b017d0fc4588"
+    },
+    "瑞": {
+      "code": "mgumb",
+      "geometrySha256": "a0fb715762c63f69a0ed51e59048361efa77f7942064b4515befc662015087cf",
+      "visualSha256": "b71c898449c5927e9c212f426bfcc15ee4ce1c0fcf0ef2878e0fd1860ec2d78f",
+      "previousVisualSha256": "95daeadbc5f6447b0eda11266ed3c334fa30f7d33f8d018a936edc3d3901de1f"
+    },
+    "尾": {
+      "code": "shqu",
+      "geometrySha256": "fd666878905d362e5453d2240ba76c33340a52b96ce2d75136d3335bf43e7dad",
+      "visualSha256": "97a97f32f7117c1742dde34ae4fd1be49f81e235d7cff30d53462a1a0ae6d5e0",
+      "previousVisualSha256": "327290baea59e6ea56131d9734674a9f1caf1be3af24e73e5ff9ec22c3d92cee"
+    },
+    "耐": {
+      "code": "mbdi",
+      "geometrySha256": "8549fe400f66d3791f175f16a8241904f9eb9cd94920854dfb31ceba69203bc5",
+      "visualSha256": "efabd5978bf100517094ddbb09eb6782e07380eee85346088085269fe3238036",
+      "previousVisualSha256": "3526674d7b546b076082d2c1980a309fb0afea07d7edf285c50750c6326e4e42"
+    },
+    "仇": {
+      "code": "okn",
+      "geometrySha256": "ad19c977243803b0ccb2fbcd9147c34dd52ba4a0c97793c95071a4c40c61b10c",
+      "visualSha256": "c51c7dabbb0d8055c12dbbcdc9f80afc3d10b8af6e08f16c209a1a37b0359151",
+      "previousVisualSha256": "e6589a690c31e305ba5331f485c69aab734da548360d4cdcba8660bfbf8520d2"
+    },
+    "需": {
+      "code": "mbmbl",
+      "geometrySha256": "aec544baed13b201b1af190e3c233bf8e7ddf46cfb1f99f620891c085176a809",
+      "visualSha256": "0020becdc61c88b8af5cb990e04476a6ff5e1fe0c09bc7e89cf23fed44c68ddc",
+      "previousVisualSha256": "e3698c706004845cb408935fab55c1de955a5665db0dd4b98713f168633c7db6"
+    },
+    "丸": {
+      "code": "kni",
+      "geometrySha256": "2289fceff487dc33c8cd48161e8d3aab608f92f46fa3f7a7dbd96ee8ba2e4d09",
+      "visualSha256": "f20c80211be7e5ff3b5224a8a96cef91dd1f24502bc33549dbdb7dd8383a0dcd",
+      "previousVisualSha256": "397e525168939e90ccf227c6262e90cec172bed369baf4825feef21fe1afe858"
+    },
+    "耍": {
+      "code": "mbv",
+      "geometrySha256": "a40923eb3b128a7aae767b70bd01bcb94cb8ab897cc3a47454671ba3b137185d",
+      "visualSha256": "f905b4dacafbfb7a28dbf3e542830379a4f2d4c0707ce60655c336c84b9d659f",
+      "previousVisualSha256": "8f0aa69a2bd3899599981a249dcd2b7c86af4234a22d8f5da978258312fc947d"
+    },
+    "喘": {
+      "code": "rumb",
+      "geometrySha256": "45bd604dfc57eb0580f64ee1f07df88cbe50b471af5c9aa912935091ec6fc542",
+      "visualSha256": "9a1860955da9eb9a3ecb3f5c3be782a21ec169aadb08b7aa8dfcfca0567fcfe4",
+      "previousVisualSha256": "3ae5f16e490fe3d181ffe2bab3a174a76a0c35a01feff83ea7f5f5064afcbc83"
+    },
+    "毯": {
+      "code": "huff",
+      "geometrySha256": "8c39e09f16fe9a389d97db7ee445ed6d714a3c6171d56b54c919f96e13412ce3",
+      "visualSha256": "6ca37c8730366bad642e8abb154be4e95d22727c44801647c10a9fdeffd4d76c",
+      "previousVisualSha256": "e52090503dfb4015bfad42aac1a2780f1605c5108363ea0294323b1af6b2b817"
+    },
+    "鳩": {
+      "code": "knhaf",
+      "geometrySha256": "54feb0a2db75c2fb338c344e9c16c54c7b3f5c16fa6fce4d0ebb96f98a39dfe4",
+      "visualSha256": "26aed7de13fef5af1b973d734f87a2015366fd6593eabda7e8dd1a2697eefe29",
+      "previousVisualSha256": "a4a6933bfa8e000961dbaac7a6b672c51ae4777270ad888837cf9d73e1956707"
+    },
+    "旭": {
+      "code": "kna",
+      "geometrySha256": "580006109f32e3643e2b35b7ad4f4843e2da5bc4dd00da2bfa4876b918ce51a3",
+      "visualSha256": "c9e29e4ba4b0950456d38d273e344883de98dfd1c1471570ede4ff6e0bf32157",
+      "previousVisualSha256": "b22935065acb0211e60165cb742df60ce42ceaae11ab3acdb1b0fc0969755bb8"
+    },
+    "揣": {
+      "code": "qumb",
+      "geometrySha256": "259d9a67ec4894b932ee4048b1adf166581441f17f3b82cdb67a871e2bb6e6c1",
+      "visualSha256": "25e5a47ac5ce5c2f59026b34a3d229321acd2346bce17854e38b45f1aacb7f10",
+      "previousVisualSha256": "e0a5631b9c033ae18bef013efba64c1f83d9ce58b863552b3518a8ebd242a55c"
+    },
+    "紈": {
+      "code": "vfkni",
+      "geometrySha256": "318cdadda65796c0051ac4a9a7d9b02ec812a126733fa2264d303e9cf4933c2d",
+      "visualSha256": "24c5dc9795e45978b9dfe6a80962559daa5121c2a9df0bc27a6fae5e1244be2c",
+      "previousVisualSha256": "d3064b5e256613789345ddcc5f07666200ca0afe89dd6deb4012d53a7294573a"
+    },
+    "孰": {
+      "code": "ydkni",
+      "geometrySha256": "8d86765ff0f8bf06e243f76ad1d7e787b5dacfded2b44e2e85d6b2434cb1bc14",
+      "visualSha256": "ee6d19194e59c7fdc4ef2217d9651b8df2849fe96b5fdc45f856986cbb63f980",
+      "previousVisualSha256": "922d3cd425409464a5fa5c7f8c28bf5521488eeb31e20d59c6a94fce21247176"
+    },
+    "氈": {
+      "code": "ymhqu",
+      "geometrySha256": "d107c68b2042170e153b1be30ade8e0b9eeb2a0237fceb54889c88a4e16d3451",
+      "visualSha256": "00677d54db9ee38362b5478dc43f277a69bd8dad4a0982cba7c72b684c3e1c35",
+      "previousVisualSha256": "422b4ff976170b642c2c4ffb88ec6328f41800452200be6b388b74732c605509"
+    },
+    "尻": {
+      "code": "skn",
+      "geometrySha256": "c31c80f7c448b8f4f29d5295d587ce86d6fcf45b366e0ddef608a78a1ed9e258",
+      "visualSha256": "e6ff6b90df9a905158f4444aa6d13adf2bb64312d20d14c811ce3cc3c8029c55",
+      "previousVisualSha256": "2ed2f45f70bef0d5f8f33d33ca7c5c6e6687de3e0f126bdf550df9df00ec4045"
+    },
+    "湍": {
+      "code": "eumb",
+      "geometrySha256": "aef3665a3187d0a039ad160916f2e01b7dee19a55120ae554eaa39be77f44b54",
+      "visualSha256": "f6c14cd9332d26cecbc32b2ebf9b483d678b0110c6a7658852323def1e9c3b0b",
+      "previousVisualSha256": "67d4ca417680cf01aaa9d7c6a047099b350b07a788844196bb0492b0dada822c"
+    },
+    "娓": {
+      "code": "vshu",
+      "geometrySha256": "9eb2393ead363507924814e98b9c45679bb0984a9f22bb9fdf116f280f836222",
+      "visualSha256": "97376e8d6500116ec6010c95fd8a1e6539098e4857373e9c74783dc9667365f5",
+      "previousVisualSha256": "d9c64f8ad8a593bdbdd9dcc93f29c335d51e390b82e4a7f5d6c2da0b75cc037e"
+    },
+    "芄": {
+      "code": "tkni",
+      "geometrySha256": "90f6f788f3ebddd6635075f77b2366fe51ab1f6be9e0fb64cdf06fe56c8739a7",
+      "visualSha256": "e516090a06fbe8daf09a4cca50e49f42cb7b8efc5a03f9d25c9c4949fcd7b6fe",
+      "previousVisualSha256": "8a54191fb2293f9be14a21927afaaf9408dc6e326724a6341582fdc17f80abda"
+    },
+    "惴": {
+      "code": "pumb",
+      "geometrySha256": "bfd943b491b48290eb6d56aea0bb30b1c7351d0977a76d98aae7891fc2d4d729",
+      "visualSha256": "4f64dd5a3848d9cc3a65b60894c35fb9a917dd04cd212b5578d9cf9786dd9324",
+      "previousVisualSha256": "7e63941d4862d348c16061f2b4602b5ee75b7f3a69c4e4f90314609d0c168a70"
+    },
+    "鴯": {
+      "code": "mbhaf",
+      "geometrySha256": "aca56433509cef74cf4e820cc3f258344f2dac754a92fc8e143b87353614809d",
+      "visualSha256": "b63fdd46b2bfdc3e8b93e1ceeaff261fb9e1eef4629d6c55adad48416b13b399",
+      "previousVisualSha256": "5d970a41b82d53302909186892bf856e9b092bdfdac42de1ee23c92073635fec"
+    },
+    "耄": {
+      "code": "jphqu",
+      "geometrySha256": "3659e8756b3c07048968f78fd2497afc131577b83c5fe817fc731996624401a8",
+      "visualSha256": "b19fb90c3b7075f5d7c260c2912abc029e5f887448a590f68aa149d28b535b57",
+      "previousVisualSha256": "ddd3474c95b3da63f689668151b76f78bb22c48a57733b7b531a47ccc0eec21c"
+    },
+    "旯": {
+      "code": "akn",
+      "geometrySha256": "78a461639c787bf6265284c3e1bcf0679d2d4681e00b27b7a06ad7d372fe4352",
+      "visualSha256": "5cb20c1bf82fb96599da9e8e04e32f496389ac33de596190e8f37d0029ff6943",
+      "previousVisualSha256": "e0552b69216192f960afdc6a6398b4dd2a42c21067db3121cb8e0856ca6c5405"
+    },
+    "旮": {
+      "code": "kna",
+      "geometrySha256": "b3f38e12641090913779f2900a220e223c9dc6d82b6813f96ff93bae767a3150",
+      "visualSha256": "fbc06462aa32590821533d1329303bec99f27fc2651636a5cf53ba5d63430906",
+      "previousVisualSha256": "10e733742181ed7ecaf6edd392017ab0f52326b2fe1662271dbb4a3f5f581d84"
+    },
+    "艽": {
+      "code": "tkn",
+      "geometrySha256": "90d5e0f0cd2c80e14bc59454c3109c0150158e79dac5c69a6eae9bc3e112403b",
+      "visualSha256": "aaa13f9192f069acb21425ccdf076db15c4c990b9940fb5c8ff2f343e5a50fa2",
+      "previousVisualSha256": "418a22e7b18e66283287d85736880a6cf884e01649ea315f8fb99dde780ca9a5"
+    },
+    "遄": {
+      "code": "yumb",
+      "geometrySha256": "73915be13fb2844c6c2c99f42a424c9ac6d22bf07734c1e9fc5592c2bcb2f9ca",
+      "visualSha256": "cb0404e52d8e91b8c0d6fc6a224926dff347f40d23ebf876eafc191c37251c4e",
+      "previousVisualSha256": "99004b2463915acdbafdaf452b73d207e591f59e5f7dbe0002f5bb285bb70dc0"
+    },
+    "耑": {
+      "code": "umbl",
+      "geometrySha256": "c9615597180c98f7ecd367f1a5329b3c6c8a4f73e537adfec455a281c70d5f6b",
+      "visualSha256": "5bbc43d6864030362218e09f14b1b6211310fb9776eb7bf5ee2b882990d06ad8",
+      "previousVisualSha256": "d11d448947e5b66620071c9753c3d0e971d6b8b5448d089d7ca8f5eea76d421b"
+    },
+    "宄": {
+      "code": "jkn",
+      "geometrySha256": "4e5426fa7f5bc5e6e91c25b0e51be2810551f73a8810d328c5228d2bdff8e86d",
+      "visualSha256": "f274076758de8c03db16f2fad6ed44c357d0afba262aee6225820fb0f703caf8",
+      "previousVisualSha256": "b331f38160be1325466efefd07c2532f8c4dc8e97b45e39fa7f8f135130b70b5"
+    },
+    "毳": {
+      "code": "huhuu",
+      "geometrySha256": "161abbee2c8963cb32ff5627edd02767d9127cd8804af4aad3dc19ca34ff3853",
+      "visualSha256": "5b1cd94ee7d2f841c6967a75a9dd2da2193f94a89ce501c69e3425d21c4303fd",
+      "previousVisualSha256": "79ab46a88e835532ab0d7cfa27f8904a6eeec30af09c8add01ce5c5f20c3aacd"
+    },
+    "埶": {
+      "code": "ggkni",
+      "geometrySha256": "ad4828aee115d921b78be07433f3b0b19f246349a7ed9f89f5f8eec517e305c1",
+      "visualSha256": "5de36064ca07231e129cd9a70f92b353d28961fa105c5e85a07811a986f810d9",
+      "previousVisualSha256": "6b9e57c8dccc5ae9037500701a4e4c6c3ed9da1281f9566cec3702cf8f2d191b"
+    },
+    "氿": {
+      "code": "ekn",
+      "geometrySha256": "bd525011555eb428fedc011ee8eff84caf713b37ed2ba89aeec910d65828856f",
+      "visualSha256": "9e6122ec8fb7d7f948a7b8f814d637b4afee94091659eae9d84084691c9dafc3",
+      "previousVisualSha256": "880a5ac3eec098ad724bf1118f8793d26412f4fbe5b83108de1a66830fdfef35"
+    },
+    "氆": {
+      "code": "hutca",
+      "geometrySha256": "a1b50df61cc0705c8dc08d258a9df1df7c20460f68e5f996efedb726e245c654",
+      "visualSha256": "4970c114ed0ce587134668b3aadc96d9c4935d834e27b11492db3ac5451423dd",
+      "previousVisualSha256": "d7e9e2f2fa3bb305d61caa2031ae02bb3c0002573267880f8372176791faae4b"
+    },
+    "氅": {
+      "code": "fkhqu",
+      "geometrySha256": "c7d8bf6aad5993e232fa3a6f3c32e68c34beed935da51708f35375a257e3875e",
+      "visualSha256": "71c38cbba81446faa729c44d769bcd4a4f32a5f5c4a5204f64fc0e9f645c0f6a",
+      "previousVisualSha256": "02da24413c3eb9ca9c1ed4539df3eab51df939d9ea543db3abc0aa3a347a9398"
+    },
+    "恧": {
+      "code": "mbp",
+      "geometrySha256": "87a624d40fe9cf904542603231150a8e29270ccacf4f8ccc5fb66118f9b02ad1",
+      "visualSha256": "20a2fdb3884cd3ecce94b1a7f5c7e5f7e5b9ffd14b0d0b48e7c72a37bfd6fc7f",
+      "previousVisualSha256": "16fbf764f55ce772326d0fa633094391c297a0b7c625f73998e75c9a09ce87dd"
+    },
+    "毹": {
+      "code": "onhqu",
+      "geometrySha256": "c5ddea5b686350e05357f2d926a9f60a70ec61a241cbc605cd5e7547c157f403",
+      "visualSha256": "5bc40a83b583cb4b330f1768e5a701fdacb5db8489721dd1e12778dd8c2cc54a",
+      "previousVisualSha256": "da3b7e19cc1b412b12eeab7588acc7887d71a9e52aa37383e9ba98052f611012"
+    },
+    "厹": {
+      "code": "kni",
+      "geometrySha256": "06ccf2646022a46ee797432cd2291b650e20411c35d302e4e50e2458b76f0458",
+      "visualSha256": "99b8348e7a9f58e970893310bcee2e43d27c42578dd2daa8ea6cba69c7120b66",
+      "previousVisualSha256": "4891974d67a34bb8ba1b2e112021bba8abc982ffe8724b6f2beb193d635a0538"
+    },
+    "毪": {
+      "code": "huihq",
+      "geometrySha256": "746c8743e97227d17b76ba96f0b3b9968a0db24f7d73ef5fdba432606520bc0b",
+      "visualSha256": "83436bef7b721c304644ea4722c44e72f089ef3e464b5b151297ca77177001e3",
+      "previousVisualSha256": "36c8dbdfd747f22e3062ea1e4a6453c7f68eecd01cc49244008dca1d2b7a3cd8"
+    },
+    "氂": {
+      "code": "jkmhu",
+      "geometrySha256": "60801de802f98fdd0443ab66e3513b4a8eec925ef796e30244e78939ba9ca63e",
+      "visualSha256": "db372947390cf2a53dd5d3c77166aaa6a4841dfddeb88d689caa86d690fda8dd",
+      "previousVisualSha256": "645c55f56e357ca523cee1b66875ececba0cd4bab5dab52c7c2bc71756927a5b"
+    },
+    "酕": {
+      "code": "mwhqu",
+      "geometrySha256": "5c3b9f8ad9e0f3390bc5686903b61e80738a2ddf9ee932b89d6563f68c8e3b17",
+      "visualSha256": "20d8176998145fb1f64c80818b69cf2a40b33963dc522284ba69fa14d9e1b57e",
+      "previousVisualSha256": "105f591395d712f1568d0de4af522c421578d5bf669561013cb3511b62bac85a"
+    },
+    "髦": {
+      "code": "shhqu",
+      "geometrySha256": "747f5f6f3d7e93b12328b2c28f633ad473db143a8566df050ae97354f19db77e",
+      "visualSha256": "bf44db599c8d2ce30dee1b5713650b53a844859c780d093fbe4d661bc59f924a",
+      "previousVisualSha256": "32e345165fd892ba4e3dd6dfdf3fd215dac880b9f9668b6a032296619aca212b"
+    },
+    "艉": {
+      "code": "hyshu",
+      "geometrySha256": "90e41425f0463fab171e0debedef6263ca143d499870fa26fc7bc0b987627752",
+      "visualSha256": "8a710e4fe7bda34bc3493981f29ae84a91760c990e65bc02d2509887be08206f",
+      "previousVisualSha256": "bbf6ab7a7b354dc03267ed1c4033eaf90419389544fd6a3827350d718d987e9d"
+    },
+    "执": {
+      "code": "qkni",
+      "geometrySha256": "755a7b78a97d80a911839cc220fe5c550ddd374516535706e9f638f9257316d9",
+      "visualSha256": "026d44c706ffb2782326971e483c80e837c662281c6a511706ad5c110ae2c46d",
+      "previousVisualSha256": "e0aecbbea194813038a2dab8b6aa6935049235ab850c16fa9e78818b743f9bac"
+    },
+    "抛": {
+      "code": "qkns",
+      "geometrySha256": "694c87b8e40bfe75cd0d064549a1c05aef07f57741dd4f16bb7313490d59bb5f",
+      "visualSha256": "6fa8490511c9b79cb23419a070575c33296fe11a6a369b418a371a949773ab9e",
+      "previousVisualSha256": "324d5608ab06741ab7b1f7dc9b4f3b1b87754de1ca54de7dcbea77cdab0bd48c"
+    },
+    "斋": {
+      "code": "ykmbl",
+      "geometrySha256": "ccdde86173ceefc0c2419e9824582f7bae65ffefdea5bf434626604b2589257a",
+      "visualSha256": "49beeda06faa82be6a6525d9a309ca9d5f062b740de0b93d8b032533c1339b8e",
+      "previousVisualSha256": "8ce3943fabe6d244412249a64eb465b47970610526aaa8a7ac23c6e2a4767dd5"
+    },
+    "杂": {
+      "code": "knd",
+      "geometrySha256": "f16904d0c10ae7e02930fbfc4d8eb68d044503068968531c67f1880a8e5da3ce",
+      "visualSha256": "a37151ee4f1bce408bb2a9c2ee97de6cecde1b06e5b0ce2014de91a30cea7390",
+      "previousVisualSha256": "2782b8e1253a2aa18c148c29d033d1d354315aa9d2461dfbd4265118da5ffc0d"
+    },
+    "毡": {
+      "code": "huyr",
+      "geometrySha256": "deb81ef9f7954d21109d959480b6288799f0c5b4ed674350427af388d4aede9f",
+      "visualSha256": "29402c221f8e9ce45ecc0d34a878767e7df9f76fe6c6b849a9c1c5e9356d76a6",
+      "previousVisualSha256": "fd69ab42a6c98323da7e9a0fbb7b23a548544c2a630b4c71220c74ea79d4c331"
+    },
+    "毵": {
+      "code": "ihhqu",
+      "geometrySha256": "a8b7d28b28098f87c4ce0bcccc442e08af9bc38e69c34dd9d55b710d02250025",
+      "visualSha256": "57ce369bd72512257843034df1d63f64ec60cc9552aa3ffd7ed1a98c82a92b13",
+      "previousVisualSha256": "cf5e6bb890d5349dff4c0526a8047a00bb6e4a2c617656d4242ed68e57adab45"
+    },
+    "氇": {
+      "code": "hunwa",
+      "geometrySha256": "f0fe61b386ad77e1e7ec7bffcfca5ad56f81674c39a632970598824b8b37e82f",
+      "visualSha256": "3d9b7449dea4f1743a5364dbf42270c9372384619f8e5d8df2c8c850c4fad538",
+      "previousVisualSha256": "79d8757f3358b3518607919de9bdefaaafc3c36bbc68b4319db0b3bc13a330ec"
+    },
+    "滗": {
+      "code": "ehhu",
+      "geometrySha256": "0866919ae4388ca5f8fea1583363d038efb8695b78c1dcd0482d58b6ed939ff6",
+      "visualSha256": "bf71918e444c93b28cb9d09ea6a3874813de100146f81260e76b9f940eddcf5c",
+      "previousVisualSha256": "9036e53aad717d706affc70d8f1c29377fc3c2dbc175bb511b3c6cf7cb4f81a0"
+    },
+    "牦": {
+      "code": "hqhqu",
+      "geometrySha256": "aea0820d4736b1312496baf251cdc4b78d864e52dc1ddca08631fa6810f2efb2",
+      "visualSha256": "7ad3dd20faf38762480b112b6dd6f7677ebe96daa320c3c54c953eeac8a5033b",
+      "previousVisualSha256": "01f091b533c53f0fa8b8db6f6996083131db120d9b3fcf4e603bbfc446c335d9"
+    },
+    "笔": {
+      "code": "hhqu",
+      "geometrySha256": "c956d9bdcc4ed04ef6bc30a2c78eb013555c72e44ebe761ce92533c2d48b6054",
+      "visualSha256": "50d2621b3470e5a63334054436f99f29b4867e05cc2aa654403cd756c71a6575",
+      "previousVisualSha256": "f34c8545dd0fa9ee22f0c363b87b194534811c233c647e0213951b44ec4791cf"
+    },
+    "蚝": {
+      "code": "lihqu",
+      "geometrySha256": "58f15f09571c154c2ff024fb00f08495835294033833c2415e8e934e24d4b008",
+      "visualSha256": "141a10439c031e54aae009fd0b0ef02a07b606290a694c661499db7adcf72a91",
+      "previousVisualSha256": "3ad464027b0de3992677a122ba1f78a8d821ce3917ca0602d6410a1a68b5be58"
+    },
+    "鲕": {
+      "code": "nmmbl",
+      "geometrySha256": "4c2f64feafdee65eee228e6e8ecdd176d475e18411f2d6a7667e9f238c25d00d",
+      "visualSha256": "8fac9900994f892344caf79feb0db2c0f16bb7aa7ae0cbfa3587dce0af48c9f9",
+      "previousVisualSha256": "af90a0356d3afd703401acd7019b87496b06ff525eb37c7194eeb42978161b5e"
+    },
+    "執": {
+      "code": "gjkni",
+      "geometrySha256": "fcffbdcb6ae6f66f6d9791d191d377a925867c61ea0dd5d62baf5ad689a3af7f",
+      "visualSha256": "18e5f0c58f076f8649543f9a53cb70e3ed094497dd6a8ed3852b1bde85f533ae",
+      "previousVisualSha256": "ab7c3bd9b015667acd4913f3b476066b2a85ad65837c90b9fbb1ce405ff3b9e4"
+    },
+    "軌": {
+      "code": "jjkn",
+      "geometrySha256": "30ad010519ad4f555ee20532da865a7c1e881630e2cdc95547ded673ddcf368c",
+      "visualSha256": "5e3ec91d5a0ec15d23f361869018671c5a7ea45aa31c7676001e5811ddae2078",
+      "previousVisualSha256": "a54b4d6f87ca4740c2c4738e4e30998b97988c07423d8f7deafa85fb9a8b8b78"
+    },
+    "耗": {
+      "code": "qdhqu",
+      "geometrySha256": "7e3cf5de762169c03a0c5dcf40f60aed74ed0a283b974d8a7b34f52801505678",
+      "visualSha256": "b762b3c72b57abc43bfefa8d5844fd07e1cbe10208ca7b1e075144e256c82bca",
+      "previousVisualSha256": "626a3834d84cc6e6aa3b729b7a40a46b546d8b347a7e0ed111b183a5ba7ad9d9"
+    },
+    "匭": {
+      "code": "sjjn",
+      "geometrySha256": "72b3e6476d62dad7a8e1d5b5d7e0115baf0b7de87b241124c6b8d15a4fdd0ae9",
+      "visualSha256": "f98012ff4c0c694e5e4d4aee56babcc507d077f75c31522cf5ca35c00ff6eeb8",
+      "previousVisualSha256": "642d34aaeb8c390a1aafea0c2185f93d45fd2f15e26ca9cfa03a1620db864ec7"
+    },
+    "毽": {
+      "code": "hunkq",
+      "geometrySha256": "aa57913e20887e5707b2f67b0ba58b1414230a097d1b67b64c8b6da361697d75",
+      "visualSha256": "56f8abd54b19d45d3cdcb3eb3d4f0affed322cc5071254c6a00b76bb0f39c47f",
+      "previousVisualSha256": "915bc51aa24b0d54b1ee06014243299f12a97f715579c850c6fd925c703b69a7"
+    },
+    "梶": {
+      "code": "dshu",
+      "geometrySha256": "7aedadd881c57a84f1b2c6874c3a18b8d71762dba9a7046368886928959775b1",
+      "visualSha256": "f09458432b657a958c360830cd1ad43aaa89661dc9811b870c1fa89d296d27e9",
+      "previousVisualSha256": "752dfe3fa8a5e32a8d990fadddb8f256dc90290221a59c32431e91c0f4bf6dc2",
+      "strokesSha256": "a93a118df1960bcb8ec5acb5c7e72bf690394d6635452c97442f52231cd38e31",
+      "inheritedContourHash": true
+    },
+    "粍": {
+      "code": "fdhqu",
+      "geometrySha256": "a232e57825830f7d6edeaa792915f9feeaa72c322e7bcfae1e30a49aa8636caa",
+      "visualSha256": "29b1b03fd1342f3747b2b04a3ff5a8811c94db78ce7548708ae2359d7b25899b",
+      "previousVisualSha256": "f2e8c1c6e940816f012a306ae655319f8324fafca9d8f7c815945a4fd904bffd",
+      "strokesSha256": "3d9d46cf5447bc31d908752453ed21ad0c0becb213ac44771c1b679c88387f8d",
+      "inheritedContourHash": true
+    },
+    "秏": {
+      "code": "hdhqu",
+      "geometrySha256": "7ea41b6e2f80859c4ba90bec3a01ccf0205ab901718457131e25327c083e184c",
+      "visualSha256": "76abe96747ba81f6078668a08f318e9315532f9ec36024a8d2246f08538cb0db",
+      "previousVisualSha256": "db34da8ad645ba4051990e99f23ef024fd2b4f5321ba7d609feb7d86c7833369",
+      "strokesSha256": "bf5497cb09d36b74ca332e4f2cb16653aa038c7a59979aea31c49bfb1dbfe9ee",
+      "inheritedContourHash": true
+    },
+    "鮞": {
+      "code": "nfmbl",
+      "geometrySha256": "4dc73a4533289ddf7c94712ef4c5b2a8fc7635231aa43ae0f6f03ae04a087e2b",
+      "visualSha256": "0328dbef6bf5a69e5b24fe3190bda3a0a19f52fc6a4fae2fdc3ab4782844ce3b",
+      "previousVisualSha256": "a95338b8816ef5d7a3b2636137d164b792e7af476950ad20e6d8ef4553acca2b",
+      "strokesSha256": "a9d5825fb57d0c9d34504074a998f57d0625bcc6d2b5962726eb15bfdf96981e",
+      "inheritedContourHash": true
+    },
+    "鼽": {
+      "code": "hlkn",
+      "geometrySha256": "0dc356c67a3b3953bdaf65b4ef2fd74a63c9d8d37094d2dfd4d045eee4982040",
+      "visualSha256": "15e0dce50af7e2be01d558d686b2eaaa40d2e4d5440d4c186ace0f4c43903ffa",
+      "previousVisualSha256": "9cfcc74e55785ad2430dbed63c7bd91e86de74ce60f49912595ea266c1a61519"
+    },
+    "匦": {
+      "code": "skqn",
+      "geometrySha256": "19016bcb6f79793a6610e8028f06f2e4d3a7420e9ad9034acd953f3e9f99d0b1",
+      "visualSha256": "7ac465a5723e5856959f4786be32ae714f50b317b836c6851ab9530901fc9db0",
+      "previousVisualSha256": "37a7cadc7f9e078d9fbc45260204723aa1ab28d387d2b7cf4130aa52de60235b"
+    },
+    "轨": {
+      "code": "kqkn",
+      "geometrySha256": "ab8dd00807d44282b0bc86016ccf8c74b9f1d85ce3cd5174836358974b2d09f4",
+      "visualSha256": "25e322cab1a121f553557c1a604b2acf6e9ff280dc34c05457a41508844a19e3",
+      "previousVisualSha256": "608efa186c2f8b41088c6f72f9cd409d06aa214202ea2913a2211a225ad4003a"
+    },
+    "鸠": {
+      "code": "knpym",
+      "geometrySha256": "3ec7b081379972450c392bc6b7697f92bfd8ffca2db95d3d8c7400b6e4732cbc",
+      "visualSha256": "03294969cb74a22048cbb4789b02a0c87c72f023d92f81fc2e8106b29b1359ca",
+      "previousVisualSha256": "624bee28666ac441bd1feb0bfd4d3217ccc70d4eb07b9951014302d01d25078f"
+    },
+    "鸸": {
+      "code": "mbpym",
+      "geometrySha256": "a98b07d3e7c248d8b5e2c728f65ab6702544249b2ce9a02c0e87b43408184275",
+      "visualSha256": "5922f02334af0c402acabff012b6aac0238af0b810d51d17e02974230bafd63b",
+      "previousVisualSha256": "662967d857205b1c01b9d1c007a2acc744c1c12ac3fb51623919b94cc2cda0db"
+    },
+    "踹": {
+      "code": "rmumb",
+      "geometrySha256": "2d043e0fd1ea6805f8181e732a9ab6c9ba9b61bd3ae48aed4d1101823027e535",
+      "visualSha256": "826d5a4cb39ce85b7b7ce2b4ebcd7d4d032ae4cf254b809d3adc28093bf78443",
+      "previousVisualSha256": "8236abc7382249d89024cfa36776d2ad1fe9334578ed7865063e02b6030bca1d"
+    },
+    "眊": {
+      "code": "buhqu",
+      "geometrySha256": "135ea261555538977bd31d81a4a5446904adb9e73a069b3041d9141348352492",
+      "visualSha256": "857045e30c842da4fb1ad689e061de4b29e3cc9b662bbac6a0331215f7f40098",
+      "previousVisualSha256": "822958731f92ce0d6ca7025af482c29d0e5af48d8b82aa6a676689dde06a2b51",
+      "strokesSha256": "594b5f966a046beafa0ccd60ceaf331303926378e287d7ac0948a661a83b286c",
+      "inheritedContourHash": true
+    },
+    "耏": {
+      "code": "mbhhh",
+      "geometrySha256": "8284059206d3e6106ee4ddd45ffd78df96147a0dc3b1e394dbc0cee72d5288ca",
+      "visualSha256": "64d168b48b10926662a6d8469cd10ac2bcef63d45a8753f01f4f776587f2d24e",
+      "previousVisualSha256": "79919278d1bfec323670a0c44f6bd523110fe4e153f7b687bc6faa7512a4e3d6",
+      "strokesSha256": "cf6a2ade0ab692cd3851225515f224fd2efc8daf3ecdf108c1686923d29dce09",
+      "inheritedContourHash": true
+    },
+    "毦": {
+      "code": "sjhqu",
+      "geometrySha256": "f33be2c53f1ceaeddc26903184d680395de42f814f8e8459838039890d442df0",
+      "visualSha256": "b8442b74580545f739b39651125f00d47db82d78f27760ba8d205e4b0c97daf2",
+      "previousVisualSha256": "f0f99a16019ee41d60d78c6111b7de922bfe81ce8586be40f91c8cb1c374c3b8",
+      "strokesSha256": "a40e0bade67a066f5988c1d36369ce463d631d9d7db2cafd35de0f99b68efe89",
+      "inheritedContourHash": true
+    },
+    "雑": {
+      "code": "kdog",
+      "geometrySha256": "df92187ce3e10ca58e80d21dbd829427aedc4a1a625cc918096bb01b425788a5",
+      "visualSha256": "4b857459675842e689cc1ae848d1b39e508a01da80dc2cf045b85b781c6b050a",
+      "previousVisualSha256": "5279ae5f358720f4126f491668f7c707c4849c4938027cb4cbe4bfbd0f3ecb07",
+      "strokesSha256": "b46329310aaae02cc4dd77f5d20a23d7fdc5171eb51579853e64b3164cb1faa9",
+      "inheritedContourHash": true
+    },
+    "浘": {
+      "code": "eshu",
+      "geometrySha256": "e43751dc65fc0fc4ad6f3f78491d41915f6328bb27f366f786d65f6b4203436a",
+      "visualSha256": "225826a4ced5adede40b3bd7b0b102e9f6b6f9da5c4ffee19629923b2c36a279",
+      "previousVisualSha256": "95b54d4e0c673325b6a61fc506116768f2da7b65d28089ef049e877015068be2",
+      "strokesSha256": "f3c3547b7116e79055fb0e1feab0f1d9b1e3d2a398831bf090650c2b3e1f94ea",
+      "inheritedContourHash": true
+    },
+    "侕": {
+      "code": "ombl",
+      "geometrySha256": "242b15db64911469c672026d2c8e9cfac115c55afa9ed82036ae4e992c16bef8",
+      "visualSha256": "46f039a1eb070f3cbc7c0040a5d637833595e5c17b1bc17bef72e975059884e0",
+      "previousVisualSha256": "bd77d5a55f2451fac4d39d302f7432e2c1f3f4b98bed1ec6d5701a28fd06f5fb",
+      "strokesSha256": "55188c36a81c16d18853447fee00b59cdb3b0041a29bfbe3660044152e2c2333",
+      "inheritedContourHash": true
+    },
+    "偳": {
+      "code": "oumb",
+      "geometrySha256": "25cdde18f6a38f332fcdb0ca004df8ee0d705e5cb7052deaac449116ead1dd2c",
+      "visualSha256": "8a8d44dbe868c59e461efca3a2420343d45f0482f4a52806ac9ec08e8258f2e0",
+      "previousVisualSha256": "1cd7ae3474061df1dc86a0d0a08103770bd58d3e366b31686ed73fc8209af9b2",
+      "strokesSha256": "1d7b5ad0d7e1201609eb56ce2da8a896f8fc34e8ba60782052c30e97275431c3",
+      "inheritedContourHash": true
+    },
+    "媏": {
+      "code": "vumb",
+      "geometrySha256": "dc4d717e04fe4601505e28f2ba917acc28b9cbadda0ead73ce74806289fb6ce0",
+      "visualSha256": "36759aa81ad240cc810fa0de35284ddcf88fa0f4c25d193c2e36d34b28bbfae5",
+      "previousVisualSha256": "cf2b38a0b16e1bb70b5fba294b1df7e27101cda8c2b288a1ea0f5c479da6ddf4",
+      "strokesSha256": "0a809b744a173857c74712904b9c15966a125cd4a47d4535043cea54bbadbae6",
+      "inheritedContourHash": true
+    },
+    "媣": {
+      "code": "vend",
+      "geometrySha256": "156054a37d2cb5b90f2c028d815a331e3f38ec5d840e0c7b634aa61e2d5a8ecc",
+      "visualSha256": "d2de4ecd33eca5edf5308d222ae7e5b90bdb82c361035d3fdcf8a7fc74408d08",
+      "previousVisualSha256": "33a8aa83d20bb6caf1e307a97ce646e8863d1fe661ef10404dc83af448653763",
+      "strokesSha256": "f5caaa25a4a559bb2fe2a1d0f1b98051fb3f4271cf3c3b48c0239a461f0f545c",
+      "inheritedContourHash": true
+    },
+    "峏": {
+      "code": "umbl",
+      "geometrySha256": "c9615597180c98f7ecd367f1a5329b3c6c8a4f73e537adfec455a281c70d5f6b",
+      "visualSha256": "5bbc43d6864030362218e09f14b1b6211310fb9776eb7bf5ee2b882990d06ad8",
+      "previousVisualSha256": "d11d448947e5b66620071c9753c3d0e971d6b8b5448d089d7ca8f5eea76d421b",
+      "strokesSha256": "d62790580a2f07c75b7a30c353572efd5e852324ea2c63d47cbbfe8d1f50b36b",
+      "inheritedContourHash": true
+    },
+    "犰": {
+      "code": "khkn",
+      "geometrySha256": "b29fbdeeb2041f01d19fcc5a2247c93ea54976de571480bf013eb7eb8cbdb99f",
+      "visualSha256": "7031b3088d09abfb4e967e80c179b589525973da8ae783cf9c20580da598ef65",
+      "previousVisualSha256": "d27fabc6b1cdd09294e1d843a1aa61a996cdb36294e23aa10fa7408357e4ba88"
+    },
+    "丈": {
+      "code": "jk",
+      "geometrySha256": "bfa5baf2dea9c28885e5a6f67da395b0d558a959bcd55992c5233ed5420ed279",
+      "visualSha256": "4734d1c2a8a5a82239059fad4e3347afa78e33b771f4f1b7e3db4f3b4027927f",
+      "previousVisualSha256": "7f4e1413c2619f0ecc95ed68915befb877ea6fc26f056bdf10e5df4344dad2ce"
+    },
+    "仗": {
+      "code": "ojk",
+      "geometrySha256": "9627fdf650cb74c75d05294dbafa56922eb67be2576ecbf5d1d8ab9656421680",
+      "visualSha256": "bfb51ba8d4b2926468ea529d8697a439cea0a8f070c2d14f49da9563c3c264bc",
+      "previousVisualSha256": "1459a05bfcb382d55993af08bafa4dcbc769c7aecb6d2aefed590b8dee967c35"
+    },
+    "侵": {
+      "code": "osme",
+      "geometrySha256": "67067ccdb7ff0c45a545d70d811d7283ac3812b67244e1a73a6bba0cf067b548",
+      "visualSha256": "033cd7a25e73abfac6e2b9d6fd6ebb3b10803a7df3760226196d4583e23a67a7",
+      "previousVisualSha256": "05b292a52df168969bb4991d117612a4af16edbdc1fc13df64612c1226e0d5ea",
+      "strokesSha256": "91915536440501aaec93dbcc16d6443149e1f661976769fc3541d144e308eaa5",
+      "previousStrokesSha256": "8ae994a3f47f2038bdf8ac4c8ce2bc0e9ddec61fc364d4b9ef3f7b70d61014ec"
+    },
+    "后": {
+      "code": "hmr",
+      "geometrySha256": "dea0f10358db15f8736e2a6303acf8461555a52954c046057c9108bd1427ea28",
+      "visualSha256": "b335b90409131916ce35c4247d7888c579cb80d44cd07fbb54f6b6e24a0a4ed7",
+      "previousVisualSha256": "134af9e5d0b34b88741f4ae4c37da18367f79483c04ab4603945b0870ce341c0"
+    },
+    "垢": {
+      "code": "ghmr",
+      "geometrySha256": "a3982702242e303dea2bd94edee7e7183400982042ea886c5c96a50c648af7d7",
+      "visualSha256": "ae15ebe9de12c15a5f5f9476007330a057ad5f42b35c2ec5ae6e50208589b401",
+      "previousVisualSha256": "14de392fa6047cadbea5f9c71b7fe47a84b0101646730ab8c7cda65bbcadf80b"
+    },
+    "撬": {
+      "code": "qhuu",
+      "geometrySha256": "39167227cfa74aa11ed2ab1867f87c1fe2b563d158afaeddebd09d3296563941",
+      "visualSha256": "016de7bd610f19da38304e6530925100184e1845c33b3afd2d2232f6be4a1e73",
+      "previousVisualSha256": "5694450301bfbf6841ccf1729ea28599534ffa50680d93f34f70da16b30c2375"
+    },
+    "杖": {
+      "code": "djk",
+      "geometrySha256": "92139897ca5db897aab8fda96b51601c8e998bb6d91aa808aac9c7e873301e66",
+      "visualSha256": "d27104fe5f75f788119de13ab52c3889df2e67da0167248e9a1be05282700876",
+      "previousVisualSha256": "b7fa4ece96175f6da6f3a20a7d554edf188c5c4538c1f6de47ce90a7f5a40e6b"
+    },
+    "橇": {
+      "code": "dhuu",
+      "geometrySha256": "738b33985e3a2425cf897619e9be374c47b95f5252dee8b67dc13dde7dc30f02",
+      "visualSha256": "7c925f17f038f47b1014017e43aa018a3c8bd451ed74ee37a965144c9e10170d",
+      "previousVisualSha256": "626fee92cdb54ed0f17ef03691fb4436182585e47d27cd5c8e478acba2639fbb"
+    },
+    "浸": {
+      "code": "esme",
+      "geometrySha256": "aaa393d4b25fd268420c6663318a5f7893f8b15e8b397b6864d8e5b0ecd4f7a9",
+      "visualSha256": "47977e69d7ad0c8bd1ca76234501fcccbd631520d751b8c3111c99308d334ba1",
+      "previousVisualSha256": "73ebe1d9ecbe1d6cd8585773f20787f936ca8c63783cb85b705b9e23f1b1220e",
+      "strokesSha256": "1e5bec9879fb8d271f53fbf90c9d5be0a42ddf10426469a532b9d64d8702ef0f",
+      "previousStrokesSha256": "202ff8c1b169539c783208b48ab8296e4c1b30c0eb706de10c0b25f36426abc9"
+    },
+    "詬": {
+      "code": "yrhmr",
+      "geometrySha256": "065611d6504efa87e4ffc708f588644a7f88d5971825fa475a6dd5d192b41ce1",
+      "visualSha256": "196f4e329ac4deae6ebb223870dc550c13769f1e14425d43685b177013a1cce9",
+      "previousVisualSha256": "0125fab58b4b949f6fb5ef2f9b58a7a10ea780feaf9b3188ef2c1f044de30965"
+    },
+    "逅": {
+      "code": "yhmr",
+      "geometrySha256": "79dd3afe7285d34365ca2b86e5ab00d988b9bea9bd2e792e9d87642b1094b328",
+      "visualSha256": "6db8a2ca798e8df656c92f29bceedf81d7070e1458ce486e92d8714400d230c7",
+      "previousVisualSha256": "7f6e177aefb93694ca4449e7bc9fd997282afa52046439151ba7ac331fdd0675"
+    },
+    "麾": {
+      "code": "ichqu",
+      "geometrySha256": "2aaa5cbfd4b46f5a022c01b71aa396a54639f52b6282a2186a2c7cbcdce9fd33",
+      "visualSha256": "f6a29971a7ff3eb6543573c00b4fb1f9bb661d97f8685a0049db846277b63dbd",
+      "previousVisualSha256": "29c9e21ed99bfb1f00f33edcce15cdc7b905c78f30386a60283086845c72346e"
+    }
+  }
+}

@@ -43,6 +43,7 @@ function questionVisual(){const visual=splitVisual(item.char);return !item.formI
 function glyphClipRect(lo,hi,axis='y'){return axis==='x'?`<rect x="${lo}" y="-200" width="${hi-lo}" height="1400"/>`:`<rect x="-200" y="${lo}" width="1400" height="${hi-lo}"/>`}
 function glyphSplitRegion(split,upper){
  if(split.axis==='x'&&Number.isFinite(split.floor))return upper?`<rect x="${split.boundary}" y="${split.floor}" width="${1200-split.boundary}" height="${1200-split.floor}"/><rect x="-200" y="-200" width="1400" height="${split.floor+200}"/>`:`<rect x="-200" y="${split.floor}" width="${split.boundary+200}" height="${1200-split.floor}"/>`;
+ if(split.axis!=='x'&&Number.isFinite(split.xLimit))return upper?`<rect x="-200" y="${split.boundary}" width="${split.xLimit+200}" height="${1200-split.boundary}"/>`:`<rect x="-200" y="-200" width="1400" height="${split.boundary+200}"/><rect x="${split.xLimit}" y="${split.boundary}" width="${1200-split.xLimit}" height="${1200-split.boundary}"/>`;
  return upper?glyphClipRect(split.boundary,1200,split.axis):glyphClipRect(-200,split.boundary,split.axis);
 }
 function glyphPaths(char,allColoured=false){

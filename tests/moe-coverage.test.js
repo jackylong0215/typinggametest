@@ -9,6 +9,7 @@ const read = f => fs.readFileSync(path.join(root, f), 'utf8');
 const reference = JSON.parse(read('data/moe-common-4808.json'));
 const completion = JSON.parse(read('data/moe-colour-completion-20261026.json'));
 const baseline = JSON.parse(read('data/colour-baseline-10317.json'));
+const referenceCorrections = JSON.parse(read('data/colour-corrections-20261026-batch2.json')).characters;
 const context = vm.createContext({});
 vm.runInContext(['code-data.js', 'stroke-data.js', 'learning.js', 'extra-colours.js', 'colour-library.js'].map(read).join('\n') +
   ';globalThis.library={SPLIT_VISUALS,STROKE_DATA,CODE_TABLES,COLOUR_ORDER};', context);
@@ -29,7 +30,7 @@ test('教育部甲表4808個不同字全部可在五代彩色教室使用', () =
   }
 });
 
-test('恰好新增625字，原有10317字的兩代字碼、整份標色模型與輪廓全部保留', () => {
+test('恰好新增625字；原有10317字只接受逐字列明的用戶參考修正', () => {
   assert.equal(Object.keys(baseline).length, 10317);
   assert.equal(completion.added.length, 625);
   assert.equal(new Set(completion.added).size, 625);
@@ -38,8 +39,8 @@ test('恰好新增625字，原有10317字的兩代字碼、整份標色模型與
   for (const [char, expected] of Object.entries(baseline)) {
     assert.equal(lib.CODE_TABLES['5'][char], expected.code5, char);
     assert.equal(lib.CODE_TABLES['3'][char], expected.code3, char);
-    assert.equal(hash(lib.SPLIT_VISUALS[char]), expected.visualSha256, char);
-    assert.equal(hash(lib.STROKE_DATA[char]), expected.strokesSha256, char);
+    assert.equal(hash(lib.SPLIT_VISUALS[char]), referenceCorrections[char]?.visualSha256 || expected.visualSha256, char);
+    assert.equal(hash(lib.STROKE_DATA[char]), referenceCorrections[char]?.strokesSha256 || expected.strokesSha256, char);
   }
 });
 

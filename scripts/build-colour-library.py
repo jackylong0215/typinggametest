@@ -78,7 +78,7 @@ def from_template(char,template):
                     if owner>=0:atoms[owner]['regions'].append([stroke,lo,hi])
             elif split:
                 for side,lo,hi in [('above',split['boundary'],1200),('below',-200,split['boundary'])]:
-                    if split[side]>=0:atoms[split[side]]['regions'].append([stroke,lo,hi,split.get('axis','y')]+([split['floor']] if 'floor' in split else []))
+                    if split[side]>=0:atoms[split[side]]['regions'].append([stroke,lo,hi,split.get('axis','y')]+([split.get('floor')] if 'floor' in split or 'xLimit' in split else [])+([split['xLimit']] if 'xLimit' in split else []))
             else:atoms[part]['regions'].append([stroke,-200,1200])
     return atoms if all(a['regions'] for a in atoms) else None
 
@@ -141,9 +141,10 @@ def derive(char,depth=0,strategy='expanded'):
                         stroke,lo,hi=region[:3];axis=region[3] if len(region)>3 else 'y'
                         low=transform_boundary(leaf,stroke,char,indices[stroke],indices,lo,axis)
                         high=transform_boundary(leaf,stroke,char,indices[stroke],indices,hi,axis)
-                        floor=transform_boundary(leaf,stroke,char,indices[stroke],indices,region[4],'y') if len(region)>4 else None
-                        if low is None or high is None or (len(region)>4 and floor is None):return None
-                        mapped.append([indices[stroke],low,high,axis]+([floor] if floor is not None else []))
+                        floor=transform_boundary(leaf,stroke,char,indices[stroke],indices,region[4],'y') if len(region)>4 and region[4] is not None else None
+                        limit=transform_boundary(leaf,stroke,char,indices[stroke],indices,region[5],'x') if len(region)>5 else None
+                        if low is None or high is None or (len(region)>4 and region[4] is not None and floor is None) or (len(region)>5 and limit is None):return None
+                        mapped.append([indices[stroke],low,high,axis]+([floor] if floor is not None or limit is not None else [])+([limit] if limit is not None else []))
                     result.append({**atom,'variant':str(len(indices)),'regions':mapped})
                 continue
             for name,key,strokes in variant['parts']:
@@ -167,9 +168,10 @@ def derive(char,depth=0,strategy='expanded'):
                 low=transform_boundary(leaf,stroke,char,indices[stroke],indices,lo,axis)
                 high=transform_boundary(leaf,stroke,char,indices[stroke],indices,hi,axis)
                 if low is None or high is None:return None
-                floor=transform_boundary(leaf,stroke,char,indices[stroke],indices,region[4],'y') if len(region)>4 else None
-                if len(region)>4 and floor is None:return None
-                regions.append([indices[stroke],low,high,axis]+([floor]if floor is not None else []))
+                floor=transform_boundary(leaf,stroke,char,indices[stroke],indices,region[4],'y') if len(region)>4 and region[4] is not None else None
+                limit=transform_boundary(leaf,stroke,char,indices[stroke],indices,region[5],'x') if len(region)>5 else None
+                if (len(region)>4 and region[4] is not None and floor is None) or (len(region)>5 and limit is None):return None
+                regions.append([indices[stroke],low,high,axis]+([floor]if floor is not None or limit is not None else [])+([limit]if limit is not None else []))
             result.append({**atom,'regions':regions})
     if not result:return None
     return select(result,C[char]) if (depth==0 or strategy=='reduced') and char in C else result
@@ -182,14 +184,16 @@ def compile_visual(char,atoms):
     for part,atom in enumerate(atoms):
         for region in atom['regions']:
             stroke,lo,hi=region[:3];axis=region[3] if len(region)>3 else 'y'
-            regions[stroke].append((part,lo,hi,axis,region[4]if len(region)>4 else None))
+            regions[stroke].append((part,lo,hi,axis,region[4]if len(region)>4 else None,region[5]if len(region)>5 else None))
     ignored=[];splits=[];multiple=[]
     for stroke in range(len(G[char]['strokes'])):
         rs=regions[stroke]
         if not rs:ignored.append(stroke);continue
-        axis=rs[0][3];floor=rs[0][4];axis_field={'axis':axis} if axis!='y' else {}
+        axis=rs[0][3];floor=rs[0][4];limit=rs[0][5];axis_field={'axis':axis} if axis!='y' else {}
         if floor is not None:axis_field['floor']=floor
+        if limit is not None:axis_field['xLimit']=limit
         if any(r[4]!=floor for r in rs):return None
+        if any(r[5]!=limit for r in rs):return None
         if any(r[3]!=axis for r in rs):return None
         rs=[r[:3]for r in rs]
         parts[rs[0][0]][2].append(stroke)

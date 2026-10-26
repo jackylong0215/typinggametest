@@ -51,3 +51,14 @@ for char in completion['importedOriginalContours']:
     assert paths == source['graphics'][char]['strokes'], char
 
 print(f"PASS {len(completion['compositionPlans'])} glyph plans and {len(completion['importedOriginalContours'])} original SVGs")
+
+revision = source.get('reference_revision_20261026_batch2', {})
+for char, plan in revision.get('contourPlans', {}).items():
+    donor = source['graphics'][plan['sourceCharacter']]
+    part = {'strokes': [donor['strokes'][i] for i in plan['sourceStrokeIndices']],
+            'medians': [donor['medians'][i] for i in plan['sourceStrokeIndices']]}
+    paths, medians = geometry.fit(plan['sourceCharacter'], plan['bounds'], part)
+    actual = source['graphics'][char]
+    for i, p, m in zip(plan['targetStrokeIndices'], paths, medians):
+        assert actual['strokes'][i] == p and actual['medians'][i] == m, char
+print(f"PASS {len(revision.get('contourPlans', {}))} latest reference contour adaptations")

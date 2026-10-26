@@ -1503,7 +1503,7 @@
       "char": "侵",
       "unicode": "U+4FB5",
       "code": "osme",
-      "contours": "existing_original",
+      "contours": "reference_adapted",
       "strokes": 9
     },
     {
@@ -3169,7 +3169,7 @@
       "char": "浸",
       "unicode": "U+6D78",
       "code": "esme",
-      "contours": "existing_original",
+      "contours": "reference_adapted",
       "strokes": 10
     },
     {

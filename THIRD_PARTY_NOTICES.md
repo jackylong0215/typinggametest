@@ -94,3 +94,6 @@ Copyright (c) 2014–2017 CJKVI Database. Based on CHISE IDS Database. 這些結
 其中 39 字補用 AnimCJK 固定版本 `3e1253b341cc7be14c3540bb3c045e6163557777` 的完整原筆畫；原 SVG（含 FM-SH 2016–2026 版權及 Arphic Public License 聲明）保存於 `data/reference-sources/moe-20261026/`，逐字來源目錄、SHA-256 與 y→900−y 座標轉換記於 `additional_graphics_sources`。來源含 svgsZhHant 與 svgsJa，逐字檢查其所需漢字部件及筆畫。
 
 22 字由現有同字體部件重組；另有 10 個未發佈的原始候選字修正字形部件，如呂中間一撇、吳、彥、勻、產及㕣的八形。重組、替換前原輪廓、原部件、目標邊界與方法記於 `moe_completion_20261026.compositionPlans` 及 `moe_original_graphics`。這些屬修改後的 Arphic 衍生學習字形；其餘字沿用既有完整原字筆畫。所有原有 10,317 個公開模型、字碼、輪廓及標色均按雜湊保留。
+
+
+2026-10-26 下午參考修正：侵、浸的彐長中橫沿用既有尹的中橫輪廓；戶使用既有所字左側完整四筆戶形，按原筆畫角色重新排序及整體縮放。全部使用既有 Make Me A Hanzi／Arphic 衍生輪廓，沒有新增外部圖像。原輪廓、捐贈筆畫及目標邊界記於 `reference_revision_20261026_batch2`，以 `scripts/check-moe-compositions.py` 驗證。其餘字只調整分色，不改輪廓。
