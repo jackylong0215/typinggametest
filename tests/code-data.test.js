@@ -103,7 +103,7 @@ test('池春家米想宇守完字子村朵李逐碼分色，不再把多碼部�
  assert.deepEqual(Array.from(course.SPLIT_VISUALS['子'].parts[1][2]),[1,2]);
  assert.deepEqual(Array.from(course.SPLIT_VISUALS['想'].ignored),[6,7]);
 });
-test('春米跨字根筆畫分段，想省略的月形保留灰色；分段引用有效原始輪廓',()=>{
+test('春保留分段、米改共用中豎虛線，想省略的月形保留灰色；分段引用有效原始輪廓',()=>{
  for(const [char,visual] of Object.entries(course.SPLIT_VISUALS)){
   const split=new Set();for(const region of visual.splitStrokes||[]){
    assert.ok(!split.has(region.stroke),char);split.add(region.stroke);
@@ -111,7 +111,8 @@ test('春米跨字根筆畫分段，想省略的月形保留灰色；分段引�
    assert.ok(region.above>=-1&&region.above<visual.parts.length);assert.ok(region.below>=-1&&region.below<visual.parts.length);assert.notEqual(region.above,region.below);
   }
  }
- for(const char of ['春','米']){const segment=course.SPLIT_VISUALS[char].splitStrokes[0];assert.equal(segment.stroke,3);assert.equal(segment.above,0);assert.equal(segment.below,1)}
+ for(const char of ['春']){const segment=course.SPLIT_VISUALS[char].splitStrokes[0];assert.equal(segment.stroke,3);assert.equal(segment.above,0);assert.equal(segment.below,1)}
+ assert.equal(course.SPLIT_VISUALS['米'].sharedStrokeGuides[0].part,0);assert.equal(course.SPLIT_VISUALS['米'].splitStrokes,undefined);
  assert.ok(course.SPLIT_VISUALS['想'].splitStrokes.every(segment=>segment.above===-1&&segment.below===1));
 });
 

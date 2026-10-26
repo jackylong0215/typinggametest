@@ -3,7 +3,7 @@ const root=path.join(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'
 const context=vm.createContext({});
 const helper=read('app.js').split('function splitVisual(char)')[1].split('function glyphPaths')[0];
 vm.runInContext(['code-data.js','stroke-data.js','learning.js','extra-colours.js','colour-library.js'].map(read).join('\n')+'\nlet currentVersion="5";let item;function splitVisual(char)'+helper+'\nglobalThis.library={SPLIT_VISUALS,STROKE_DATA,CODE_TABLES,COLOUR_ORDER,visualFor:(char,version)=>{currentVersion=version;return splitVisual(char)},questionFor:(word,version)=>{currentVersion=version;item=word;return questionVisual()}}',context);
-const corrections={...JSON.parse(read('data/colour-corrections-20261023.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch2.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch3.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch4.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch5.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch6.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch7.json')).characters,...JSON.parse(read('data/colour-corrections-20261026.json')).characters,...JSON.parse(read('data/colour-corrections-20261026-batch2.json')).characters};
+const corrections={...JSON.parse(read('data/colour-corrections-20261023.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch2.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch3.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch4.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch5.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch6.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch7.json')).characters,...JSON.parse(read('data/colour-corrections-20261026.json')).characters,...JSON.parse(read('data/colour-corrections-20261026-batch2.json')).characters,...JSON.parse(read('data/colour-corrections-20261026-shared.json')).characters};
 const lib=context.library,source=JSON.parse(read('data/colour-source.json')),audit=JSON.parse(read('data/colour-audit.json'));
 test('五代標色教室恰好10942個不同字，包含常用字及所有既有修正',()=>{
  assert.equal(Object.keys(lib.SPLIT_VISUALS).length,10942);assert.equal(new Set(lib.COLOUR_ORDER).size,10942);assert.equal(audit.total,10942);assert.equal(Object.keys(audit.characters).length,10826);
@@ -285,7 +285,7 @@ test('足旁、羊部與戠的參考取形可用於跟路跑、議儀、識職�
  assert.equal(lib.SPLIT_VISUALS['羊'].parts.map(p=>p[1]).join(''),'tq');
 });
 
-test('十月二十三日參考：欞取底橫，曲內廿外田，氐省豎提，東的中豎分三段',()=>{
+test('十月二十三日參考：欞取底橫，曲內廿外田，氐省豎提，東的中豎依束保留完整木形',()=>{
  const v=lib.SPLIT_VISUALS;
  assert.equal(lib.CODE_TABLES['5']['欞'],'dmbm');assert.deepEqual(Array.from(v['欞'].parts[3][2]),[27]);
  assert.deepEqual(Array.from(v['曲'].parts[0][2]),[2,3,4]);assert.deepEqual(Array.from(v['曲'].parts[1][2]),[0,1,5]);
@@ -295,9 +295,9 @@ test('十月二十三日參考：欞取底橫，曲內廿外田，氐省豎提�
  assert.equal(v['禮'].splitStrokes.find(s=>s.stroke===1).above,-1);
  for(const [c,code] of Object.entries({東:'dw',凍:'imdw',棟:'ddw',腖:'bdw',陳:'nldw',鶇:'dwhaf'})){
   assert.equal(v[c].parts.map(p=>p[1]).join(''),code,c);
-  const regions=v[c].strokeRegions;assert.ok(regions?.length,c);
-  const segment=regions.find(s=>s.segments.length===3).segments;
-  assert.equal(segment[0][2],segment[2][2],c);assert.notEqual(segment[0][2],segment[1][2],c);
+  const guide=v[c].sharedStrokeGuides[0];assert.equal(v[c].parts[guide.part][1],'w',c);
+  assert.ok(v[c].parts.find(p=>p[1]==='d'&&p[2].includes(guide.stroke)),c);
+  assert.ok(!v[c].strokeRegions?.some(r=>r.stroke===guide.stroke),c);
  }
  for(const c of '低底抵牴詆砥柢'){
   const part=audit.characters[c].find(a=>a.component==='氐'&&a.key==='p');assert.equal(part.regions.length,2,c);

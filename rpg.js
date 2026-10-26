@@ -30,7 +30,7 @@ function rpgHasColour(char,version){
 function rpgGuideVisual(){const visual=SPLIT_VISUALS[rpgQuestion?.char];return visual&&STROKE_DATA[rpgQuestion.char]&&visual.parts.map(p=>p[1]).join('')===rpgQuestion.code?visual:null}
 function rpgNextQuestion(){
  clearInterval(rpgClock);const guide=RPG.guidance(rpgState.difficulty,rpgState.stage),guided=guide!=='none'&&guide!=='independent',colourPool=guided?rpgPool.filter(q=>rpgHasColour(q.char,rpgState.version)):rpgPool,pool=colourPool.length?colourPool:rpgPool,candidates=pool.filter(q=>q.char!==rpgQuestion?.char);if(!pool.length){rpgResults();return}
- rpgQuestion={...(candidates.length?candidates:pool)[Math.floor(Math.random()*(candidates.length||pool.length))]};
+ rpgQuestion={...pickPracticeQuestion(candidates.length?candidates:pool)};
  rpgState.questionLevel=rpgLevels[rpgQuestion.char]||rpgState.difficulty;rpgGuideStep=-1;rpgGuideShown=RPG.guidance(rpgState.difficulty,rpgState.stage)!=='independent';rpgGuideUnavailable=false;
  rpgOptions=RPG.options(rpgQuestion.code,rpgPool);rpgInputPrefix=0;rpgReviewTime=0;rpgFogTime=rpgState.spell==='fog'?5:0;
  const token=++rpgGuideToken;rpgPrepareQuestion(rpgState,rpgQuestion,token);

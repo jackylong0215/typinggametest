@@ -1,6 +1,6 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
 const ctx=vm.createContext({});const read=f=>fs.readFileSync(path.join(__dirname,'..',f),'utf8');
-vm.runInContext(read('game-core.js')+';globalThis.core={DIFFICULTIES,buildChallengePool,addMistake,creditMistake,mistakeId,recordKey,normalizePunctuationNotebook};',ctx);
+vm.runInContext(read('script-preferences.js')+read('game-core.js')+';globalThis.core={DIFFICULTIES,buildChallengePool,addMistake,creditMistake,mistakeId,recordKey,normalizePunctuationNotebook,practiceQuestionWeight,pickPracticeQuestion};',ctx);
 const c=ctx.core,dict=JSON.parse(read('data/cangjie5_single_main.json')).chars;
 const words=[{char:'明'},{char:'林'},{char:'家'},{char:'想'},{char:'兒'}];
 test('四級題庫：入門只有基本字根，最高級逐字涵蓋全部 20,840 個主碼',()=>{
@@ -26,4 +26,18 @@ test('三代、五代、符號和輔助字形分別記錄，不會錯誤消除�
 test('同形異碼符號分開記錄及掌握，舊符號錯題依字碼遷移而保留進度',()=>{
  const book={},a={char:'．',code:'zxae',kind:'punct'},b={char:'．',code:'zxap',kind:'punct'};c.addMistake(book,a,'5',10);c.addMistake(book,b,'5',20);assert.equal(Object.keys(book).length,2);c.creditMistake(book,a,'5');c.creditMistake(book,a,'5');assert.equal(Object.keys(book).length,1);assert.ok(book['5:punct:zxap']);
  const old={'5:punct:（':{version:'5',kind:'punct',char:'（',code:'zxbe',misses:3,correctCount:1,lastWrong:99},'5:word:明':{version:'5',kind:'word',char:'明',code:'ab',misses:1}};const updated=c.normalizePunctuationNotebook(old,[{char:'(',code:'zxbe',name:'開圓括號',stroke:'Z難月水',kind:'punct'}]);assert.equal(updated['5:punct:zxbe'].char,'(');assert.equal(updated['5:punct:zxbe'].correctCount,1);assert.equal(updated['5:punct:zxbe'].misses,3);assert.equal(updated['5:punct:zxbe'].lastWrong,99);assert.deepEqual(updated['5:word:明'],old['5:word:明']);
+});
+
+test('簡體專用字權重為繁體字的十分之一，共用字形與教育部4808字維持原權重',()=>{
+ for(const char of '汉语国风爱')assert.equal(c.practiceQuestionWeight({char}),0.1,char);
+ for(const char of '漢語國風愛后里云臺')assert.equal(c.practiceQuestionWeight({char}),1,char);
+ for(const char of JSON.parse(read('data/moe-common-4808.json')).characters)assert.equal(c.practiceQuestionWeight({char}),1,char);
+ assert.equal(c.practiceQuestionWeight({char:'汉',kind:'punct'}),1);
+ assert.equal(c.practiceQuestionWeight({char:'汉',formId:'aux'}),1);
+ const pool=[{char:'漢'},{char:'汉'}],counts={漢:0,汉:0};
+ for(let i=0;i<1100;i++)counts[c.pickPracticeQuestion(pool,true,()=>(i+0.5)/1100).char]++;
+ assert.deepEqual(counts,{漢:1000,汉:100});
+ assert.equal(c.pickPracticeQuestion(pool,false,()=>.75).char,'汉','彩色教室及錯字練習可等權抽取');
+ assert.equal(c.pickPracticeQuestion([{char:'汉'}],true,()=>.99).char,'汉','簡體字仍可出題');
+ assert.equal(c.pickPracticeQuestion([],true),undefined);
 });

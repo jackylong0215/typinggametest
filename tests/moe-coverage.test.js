@@ -9,7 +9,7 @@ const read = f => fs.readFileSync(path.join(root, f), 'utf8');
 const reference = JSON.parse(read('data/moe-common-4808.json'));
 const completion = JSON.parse(read('data/moe-colour-completion-20261026.json'));
 const baseline = JSON.parse(read('data/colour-baseline-10317.json'));
-const referenceCorrections = JSON.parse(read('data/colour-corrections-20261026-batch2.json')).characters;
+const referenceCorrections = {...JSON.parse(read('data/colour-corrections-20261026-batch2.json')).characters,...JSON.parse(read('data/colour-corrections-20261026-shared.json')).characters};
 const context = vm.createContext({});
 vm.runInContext(['code-data.js', 'stroke-data.js', 'learning.js', 'extra-colours.js', 'colour-library.js'].map(read).join('\n') +
   ';globalThis.library={SPLIT_VISUALS,STROKE_DATA,CODE_TABLES,COLOUR_ORDER};', context);

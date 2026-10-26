@@ -1,12 +1,12 @@
 {
   "date": "2026-10-26",
-  "dataRevisionSha256": "b21aafd3031dbd15db58c12c501e6b7606d197c906058a8cb4f8cdd46c63d3e8",
+  "dataRevisionSha256": "5b643f5c50b4452e2884d1765b35cc2c209284079ad9593a2bf32e9911eead5b",
   "inputHashes": {
     "code-data.js": "a070421d802e07d9a54b7ba38d4e0e3e3461e632f673cb2358111061f7f91e2a",
     "stroke-data.js": "7a01190a660c31651fe6d79337d2a4e10a3adc0ebeebed874863f5f75bf020bf",
-    "learning.js": "22e31bf75d9b8f62508a0d16bd0a3e049942bf8b1833d4a8777d2e8ceb95f328",
-    "extra-colours.js": "3d9840179d2cb6770fefe9bc2f8dc12c64886da92a975f06399e825353dd190e",
-    "colour-library.js": "b21aafd3031dbd15db58c12c501e6b7606d197c906058a8cb4f8cdd46c63d3e8"
+    "learning.js": "c10cf16cd378f96e91a8286472a59e8e8b81985d29f043475e89dbe7670aa4e7",
+    "extra-colours.js": "3cece3fd9687175cc83f58f260b946184898fabc90be2afac759f262b544e03d",
+    "colour-library.js": "5b643f5c50b4452e2884d1765b35cc2c209284079ad9593a2bf32e9911eead5b"
   },
   "source": {
     "title": "教育部《常用國字標準字體表》：民國71年9月1日公告，4808字",

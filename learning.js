@@ -38,7 +38,7 @@ const VARIANTS = {
 const EXTRA_WORDS = `白 ha 百 ma 自 hbu 目 bu 且 bm 古 jr 吉 gr 吐 rg 如 vr 叫 rvl 吃 ron 只 rc 兄 rhu 召 shr 加 ksr 力 ks 刀 sh 分 csh 公 ci 六 yc 交 yck 文 yk 王 mg 玉 mgi 主 yg 去 gi 云 mmi 友 ke 又 nk 支 je 皮 dhe 石 mr 右 kr 左 km 工 mlm 丁 mn 打 qmn 扣 qr 拍 qha 拉 qyt 把 qau 沐 ed 江 em 河 emnr 汗 emj 汁 ej 池 epd 泳 eine 油 elw 洋 etq 住 oyg 何 omnr 伸 olwl 信 oymr 付 odi 代 oip 化 op 花 top 草 taj 苗 tw 茶 tod 芬 tcsh 芳 tyhs 芒 tyv 忙 pyv 怕 pha 情 pqmb 快 pdk 念 oinp 忘 yvp 忠 lp 思 wp 想 dup 家 jmso 守 jdi 宋 jd 宇 jmd 完 jmmu 定 jmyo 子 nd 孔 ndu 孟 ndbt 了 nn 出 uu 回 wr 困 wd 因 wk 固 wjr 采 bd 朵 hnd 李 dnd 村 ddi 杜 dg 果 wd 米 fd 秋 hdf 和 hdr 香 hda 年 oq 春 qka 青 qmb 音 yta 立 yt`.split(' ');
 const BEGINNER_WORDS=[];for(let i=0;i<EXTRA_WORDS.length;i+=2)BEGINNER_WORDS.push({char:EXTRA_WORDS[i],code:EXTRA_WORDS[i+1]});
 const SPECIAL_WORDS = [
- {char:'倉',code:'oiar',note:'取人、戈、日、口；長撇保留在字形中，依取碼規則不另取碼。'},
+ {char:'倉',code:'oiar',note:'取人、戈、日、口；日形左邊與長撇共用，以虛線表示；長撇其餘部分保留灰色。'},
  {char:'臼',code:'hx',note:'臼的上方取「竹」，難以用基本字根完整表示的凹形部分取「難」。'},
  {char:'兒',code:'hxhu',note:'上方「臼」取竹、難；下方彎腳取竹、山，全碼 HXHU。'},
  {char:'舀',code:'bhx',note:'上方爫是「月」的輔助字形；下方臼取竹、難。'},
@@ -58,7 +58,7 @@ function rootChart(){return `<section class="root-chart" data-filter="all">${ref
 
 // Stroke indices follow the pinned Hanzi Writer Data contours; all indices remain in the original glyph.
 const SPLIT_VISUALS = {
- '倉':{layout:'人 → 戈 → 日 → 口',ignored:[6],colours:['#59615a','#e9852d','#1483ba','#79b92d'],parts:[['上方的人形','o',[0,1]],['中間的點，取戈','i',[2]],['中間的日形','a',[3,4,5]],['下方的口','r',[7,8,9]]]},
+ '倉':{layout:'人 → 戈 → 日 → 口',ignored:[6],colours:['#59615a','#e9852d','#1483ba','#79b92d'],parts:[['上方的人形','o',[0,1]],['中間的點，取戈','i',[2]],['中間的日形','a',[3,4,5]],['下方的口','r',[7,8,9]]],sharedStrokeGuides:[{"stroke":6,"part":2,"median":[[379,506],[406,477],[411,459],[388,314],[360,211],[312,118],[287,86],[202,15],[167,0]],"lo":270,"hi":530}],explanation:'日形左邊與長撇共用；虛線補出日形左側，完整長撇仍留在原位。'},
  '明':{layout:'先左後右',parts:[['左邊的日','a',[0,1,2,3]],['右邊的月','b',[4,5,6,7]]]},
  '林':{layout:'先左後右',parts:[['左邊的木','d',[0,1,2,3]],['右邊的木','d',[4,5,6,7]]]},
  '休':{layout:'先左後右',parts:[['亻是人的變形','o',[0,1]],['右邊的木','d',[2,3,4,5]]]},

@@ -11,6 +11,15 @@ function buildChallengePool(dictionary,level,words){
  const chars=level===1?[...BASIC_CHARACTERS]:level===2?words.filter(w=>(dictionary[w.char]||'').length<=3).map(w=>w.char):[...words.map(w=>w.char),...COMMON_CHARACTERS];
  return [...new Set(chars)].filter(c=>dictionary[c]).map(char=>({char,code:dictionary[char],kind:'word'}));
 }
+const SIMPLIFIED_ONLY_SET=new Set(SIMPLIFIED_ONLY_CHARACTERS);
+function practiceQuestionWeight(question){return !question.formId&&question.kind!=='punct'&&SIMPLIFIED_ONLY_SET.has(question.char)?0.1:1}
+function pickPracticeQuestion(pool,preferTraditional=true,random=Math.random){
+ if(!pool.length)return undefined;
+ if(!preferTraditional)return pool[Math.min(pool.length-1,Math.floor(random()*pool.length))];
+ const total=pool.reduce((sum,q)=>sum+practiceQuestionWeight(q),0);let cursor=random()*total;
+ for(const question of pool){cursor-=practiceQuestionWeight(question);if(cursor<0)return question}
+ return pool[pool.length-1];
+}
 function mistakeId(question,version){return `${version}:${question.kind||'word'}:${question.kind==='punct'?question.code.toLowerCase():question.formId||question.char}`}
 function addMistake(book,question,version,now){
  const id=mistakeId(question,version),old=book[id];

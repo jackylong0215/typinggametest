@@ -57,8 +57,8 @@ function glyphPaths(char,allColoured=false){
   const topId=prefix+'-'+stroke+'-above',bottomId=prefix+'-'+stroke+'-below';
   return `<defs><clipPath id="${topId}" clipPathUnits="userSpaceOnUse">${glyphSplitRegion(split,true)}</clipPath><clipPath id="${bottomId}" clipPathUnits="userSpaceOnUse">${glyphSplitRegion(split,false)}</clipPath></defs><path data-stroke-index="${stroke}" data-part-index="${split.above}" data-stroke-region="above" data-stroke-axis="${split.axis||'y'}" d="${d}" clip-path="url(#${topId})" fill="${fill(split.above)}"/><path data-stroke-index="${stroke}" data-part-index="${split.below}" data-stroke-region="below" data-stroke-axis="${split.axis||'y'}" d="${d}" clip-path="url(#${bottomId})" fill="${fill(split.below)}"/>`;
  }).join('')+(visual.sharedStrokeGuides||[]).map((guide,i)=>{
-  const id=prefix+'-shared-'+i,points=guide.median.map(p=>p.join(',')).join(' ');
-  return `<defs><mask id="${id}" maskUnits="userSpaceOnUse" x="-200" y="-200" width="1400" height="1400"><polyline points="${points}" fill="none" stroke="white" stroke-width="10" stroke-linecap="round" stroke-dasharray="18 14"/></mask></defs><path data-stroke-index="${guide.stroke}" data-part-index="${guide.part}" data-shared-stroke="true" d="${STROKE_DATA[char][guide.stroke]}" mask="url(#${id})" fill="${fill(guide.part)}"/>`;
+  const id=prefix+'-shared-'+i,points=guide.median.map(p=>p.join(',')).join(' '),bounded=Number.isFinite(guide.lo)&&Number.isFinite(guide.hi);
+  return `<defs>${bounded?`<clipPath id="${id}-clip" clipPathUnits="userSpaceOnUse">${glyphClipRect(guide.lo,guide.hi,guide.axis)}</clipPath>`:''}<mask id="${id}" maskUnits="userSpaceOnUse" x="-200" y="-200" width="1400" height="1400"><polyline points="${points}" fill="none" stroke="white" stroke-width="10" stroke-linecap="round" stroke-dasharray="18 14"/></mask></defs><path data-stroke-index="${guide.stroke}" data-part-index="${guide.part}" data-shared-stroke="true" d="${STROKE_DATA[char][guide.stroke]}" mask="url(#${id})"${bounded?` clip-path="url(#${id}-clip)"`:''} fill="${fill(guide.part)}"/>`;
  }).join('');
 }
 function showDemoStep(index){
@@ -107,7 +107,7 @@ async function next(forced){
  const guidance=practiceGuidance(),guided=['roots','colours'].includes(guidance);practiceWarmupExample=false;
  if(guided&&!pool.some(w=>w.formId)){const supported=pool.filter(knownColourQuestion);if(supported.length)pool=supported;else{pool=WORDS.filter(knownColourQuestion);practiceWarmupExample=true}if(forced&&!knownColourQuestion(forced))forced=undefined}
  if(!pool.length){finish('cleared');return}
- let choices=pool.filter(w=>(w.formId||(w.kind==='punct'?w.code:w.char))!==(item?.formId||(item?.kind==='punct'?item.code:item?.char)));if(!choices.length)choices=pool;item=forced||choices[Math.floor(Math.random()*choices.length)];if(item.kind==='punct')item={...item,...PUNCTUATION.find(p=>p.code===item.code)};item={...item,kind:item.kind||(mode==='punct'?'punct':item.formId?'root':'word')};if(!item.formId&&item.kind!=='punct')item=questionForVersion(item);lastCode=item.code;
+ let choices=pool.filter(w=>(w.formId||(w.kind==='punct'?w.code:w.char))!==(item?.formId||(item?.kind==='punct'?item.code:item?.char)));if(!choices.length)choices=pool;item=forced||pickPracticeQuestion(choices,!['colour','book'].includes(mode));if(item.kind==='punct')item={...item,...PUNCTUATION.find(p=>p.code===item.code)};item={...item,kind:item.kind||(mode==='punct'?'punct':item.formId?'root':'word')};if(!item.formId&&item.kind!=='punct')item=questionForVersion(item);lastCode=item.code;
  const pending=item;practiceGuideStep=-1;$('practice-guide').hidden=true;
  if(guided&&typeof loadColourCharacters==='function'&&!questionVisual()){
   $('target').textContent=displayCharacter(item);$('answer').readOnly=true;$('success-card').hidden=true;$('split-animation').hidden=true;$('feedback').textContent='正在準備五色圖，準備好才開始本回合作答。';$('keyboard').querySelectorAll('.key').forEach(k=>k.disabled=true);

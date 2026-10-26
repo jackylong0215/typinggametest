@@ -97,3 +97,10 @@ Copyright (c) 2014–2017 CJKVI Database. Based on CHISE IDS Database. 這些結
 
 
 2026-10-26 下午參考修正：侵、浸的彐長中橫沿用既有尹的中橫輪廓；戶使用既有所字左側完整四筆戶形，按原筆畫角色重新排序及整體縮放。全部使用既有 Make Me A Hanzi／Arphic 衍生輪廓，沒有新增外部圖像。原輪廓、捐贈筆畫及目標邊界記於 `reference_revision_20261026_batch2`，以 `scripts/check-moe-compositions.py` 驗證。其餘字只調整分色，不改輪廓。
+
+## 簡體專用字抽題辨識
+
+OpenCC（Open Chinese Convert）`STCharacters.txt`，Apache License 2.0，固定版本 `a806b775d038f9fa7c061f50d270115e7ad7da5b`：
+https://github.com/BYVoid/OpenCC/blob/a806b775d038f9fa7c061f50d270115e7ad7da5b/data/dictionary/STCharacters.txt
+
+原表保存在 `data/reference-sources/opencc/STCharacters.txt`，授權全文見 `licenses/OPENCC-LICENSE.txt`。`script-preferences.js` 是本專案修改、篩選後的抽題用清單：從簡體鍵排除所有繁體候選字與教育部常用字，只降低隨機抽題權重，不轉換使用者輸入或題目文字。來源 SHA-256 與篩選方式記於 `data/script-preferences.json`。
