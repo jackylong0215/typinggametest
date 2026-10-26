@@ -1,17 +1,24 @@
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),crypto=require('node:crypto'),zlib=require('node:zlib');
 const root=path.resolve(__dirname,'..'),out=path.join(root,'site'),read=f=>fs.readFileSync(path.join(root,f),'utf8');
+// A clean build matches an actual Pages deployment; stale files must not hide failures.
+fs.rmSync(out,{recursive:true,force:true});
 fs.mkdirSync(path.join(out,'colours'),{recursive:true});
 const c=vm.createContext({});vm.runInContext(['code-data.js','stroke-data.js','learning.js','extra-colours.js','colour-library.js'].map(read).join('\n')+'\nglobalThis.data={STROKE_DATA,SPLIT_VISUALS,COLOUR_ORDER,COLOUR_REFERENCE_CHARS,COLOUR_CORRECTION_CHARS,USER_CODE_CORRECTIONS}',c);const d=c.data;
 const base=vm.createContext({});vm.runInContext(['learning.js','extra-colours.js'].map(read).join('\n')+';globalThis.chars=Object.keys(SPLIT_VISUALS)',base);const existing=new Set(base.chars);
 const hash=s=>crypto.createHash('sha256').update(s).digest('hex').slice(0,12);
-function write(file,text){const p=path.join(out,file);fs.writeFileSync(p,text);if(/\.(js|css|html)$/.test(file)){fs.writeFileSync(p+'.gz',zlib.gzipSync(text,{level:9}));fs.writeFileSync(p+'.br',zlib.brotliCompressSync(text))}return file}
+function write(file,text){const p=path.join(out,file);fs.writeFileSync(p,text);if(/\.(js|css|html|json)$/.test(file)){fs.writeFileSync(p+'.gz',zlib.gzipSync(text,{level:9}));fs.writeFileSync(p+'.br',zlib.brotliCompressSync(text))}return file}
 function asset(name,text){return write(name.replace(/(\.[^.]+)$/,'.'+hash(text)+'$1'),text)}
 const chunkFor={};const unloaded=d.COLOUR_ORDER.filter(c=>!existing.has(c));
-for(let start=0;start<unloaded.length;start+=48){const chars=unloaded.slice(start,start+48),strokes={},visuals={};for(const char of chars){strokes[char]=d.STROKE_DATA[char];visuals[char]=d.SPLIT_VISUALS[char]}const file=asset('colours/group-'+String(start/48+1).padStart(2,'0')+'.js','Object.assign(STROKE_DATA,'+JSON.stringify(strokes)+');\nObject.assign(SPLIT_VISUALS,'+JSON.stringify(visuals)+');\n');for(const char of chars)chunkFor[char]=file}
+for(let start=0;start<unloaded.length;start+=48){const chars=unloaded.slice(start,start+48),strokes={},visuals={};for(const char of chars){strokes[char]=d.STROKE_DATA[char];visuals[char]=d.SPLIT_VISUALS[char]}const file=asset('colours/group-'+String(start/48+1).padStart(2,'0')+'.json',JSON.stringify({strokes,visuals}));for(const char of chars)chunkFor[char]=file}
+// Initial examples normally need no request, but can also recover missing visual data.
+const initial=d.COLOUR_ORDER.filter(c=>existing.has(c)),initialData={strokes:{},visuals:{}};
+for(const char of initial){initialData.strokes[char]=d.STROKE_DATA[char];initialData.visuals[char]=d.SPLIT_VISUALS[char]}
+const initialFile=asset('colours/initial.json',JSON.stringify(initialData));for(const char of initial)chunkFor[char]=initialFile;
+const colourCodes=Object.fromEntries(d.COLOUR_ORDER.map(c=>[c,d.SPLIT_VISUALS[c].parts.map(p=>p[1]).join('')]));
+const revision=hash(JSON.stringify({files:chunkFor,codes:colourCodes}));
+write('colour-manifest.json',JSON.stringify({revision,files:chunkFor,codes:colourCodes}));
 let metadata='const USER_CODE_CORRECTIONS='+JSON.stringify(d.USER_CODE_CORRECTIONS)+';for(const [v,c]of Object.entries(USER_CODE_CORRECTIONS))Object.assign(CODE_TABLES[v],c);\n';for(const key of ['COLOUR_ORDER','COLOUR_REFERENCE_CHARS','COLOUR_CORRECTION_CHARS'])metadata+='const '+key+'='+JSON.stringify(d[key])+';\n';metadata+='const COLOUR_CODES='+JSON.stringify(Object.fromEntries(d.COLOUR_ORDER.map(c=>[c,d.SPLIT_VISUALS[c].parts.map(p=>p[1]).join('')])))+';\nconst COLOUR_CHUNKS='+JSON.stringify(chunkFor)+';\n';
-metadata+=`const colourAssetBase=new URL('.',document.currentScript.src),colourRequests=new Map();
-function loadColourCharacters(chars){const urls=[...new Set(chars.filter(c=>COLOUR_CHUNKS[c]&&!STROKE_DATA[c]).map(c=>COLOUR_CHUNKS[c]))];return Promise.all(urls.map(file=>{if(!colourRequests.has(file)){const promise=new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=new URL(file,colourAssetBase);script.onload=()=>{script.remove();resolve()};script.onerror=()=>{script.remove();colourRequests.delete(file);reject(new Error('字形載入失敗'))};document.head.append(script)});colourRequests.set(file,promise)}return colourRequests.get(file)}))}
-`;
+metadata+='const COLOUR_BUILD='+JSON.stringify(revision)+';\n'+read('colour-loader.js');
 fs.mkdirSync(path.join(out,'assets'),{recursive:true});
 const reference=fs.readFileSync(path.join(root,'assets/cj-table-kll.png'));const referenceAsset=asset('assets/cj-table-kll.png',reference);
 const loader=asset('colour-index.js',metadata);let html=read('index.html');let initialBytes=Buffer.byteLength(html);

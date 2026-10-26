@@ -97,3 +97,5 @@ body{background:#f5f8ff;color:#253557}header{background:#fff;border-bottom:0;max
 @media(max-width:799px){.rpg-arena{min-height:112px!important;max-height:116px}.rpg-question{padding:4px}.rpg-question-top>#rpg-time{padding:2px 8px}.rpg-colour-guide{padding:3px}}
 .rpg-item-status{grid-row:7}
 @media(max-width:799px){.rpg-command-panel{align-self:stretch}}
+
+.colour-loading-status{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px;color:#647397;margin:18px 0;text-align:center}.colour-loading-status:empty{display:none}.colour-loading-status button{width:auto;max-width:100%;white-space:normal}

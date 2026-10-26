@@ -76,7 +76,7 @@ function animateSplit(){
  if(!active||paused)return;
  if(typeof loadColourCharacters==='function'&&!item.formId&&COLOUR_CODES[item.char]===item.code&&!questionVisual()){
   const pending=item;const section=$('split-animation');section.hidden=false;section.querySelector('.split-caption').textContent='正在準備這個字的彩色地圖…';section.querySelector('.split-stage').textContent='';section.querySelector('.split-note').textContent='';
-  loadColourCharacters([item.char]).then(()=>{if(active&&item===pending)animateSplit()}).catch(()=>{if(active&&item===pending)section.querySelector('.split-caption').textContent='暫時未能載入，請按「看原字拆解」重試。'});return;
+  loadColourCharacters([item.char]).then(()=>{if(active&&item===pending)animateSplit()}).catch(error=>{if(active&&item===pending)section.querySelector('.split-caption').textContent=error.needsRefresh?'字形資料已更新，請重新整理頁面。':'暫時未能載入，請按「看原字拆解」重試。'});return;
  }
 stopDemo();const visual=questionVisual();const strokes=STROKE_DATA[item.char];const section=$('split-animation');section.hidden=false;
  section.querySelector('.split-caption').textContent=symbolQuestion()?`${item.char} · ${item.name||'標點符號'}`:visual?`${item.char} · 原字部件逐步標色 · ${visual.layout}`:`${item.char} · 已核對的取碼順序`;
@@ -228,6 +228,7 @@ function close(){active=false;phase='idle';advanceRemaining=0;clearTimeout(advan
 $('close-game').onclick=close;$('game').addEventListener('cancel',close);
 document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>start(b.dataset.mode));$('begin').onclick=()=>openLesson('intro');$('warehouse-demo').onclick=()=>showPage('colours');$('try-tip').onclick=()=>start('split',WORDS[0]);
 function showPage(page){
+ colourRetryHandler=null;
  colourViewRevision++;
  document.querySelectorAll('.nav').forEach(n=>n.classList.toggle('active',n.dataset.page===page));$('home').hidden=page!=='explore';$('extra').hidden=page==='explore';
  if(page==='roots'){$('extra').innerHTML='<div class="eyebrow">ROOT FAMILIES</div><h2>字根圖鑑 · 找到每個字形的家</h2>'+rootChart();bindRoots($('extra'))}
@@ -242,28 +243,39 @@ function renderNotebook(){
  if(entries.length)$('practice-book').onclick=()=>start('book');else $('empty-book-home').onclick=()=>showPage('explore');
 }
 function colourThumb(char){return `<svg viewBox="0 0 1024 1024" aria-hidden="true"><g transform="translate(0,900) scale(1,-1)">${glyphPaths(char,true)}</g></svg>`}
-let colourSearch='',colourPage=0,colourViewRevision=0;
+let colourSearch='',colourPage=0,colourViewRevision=0,colourRetryHandler=null;
+window.addEventListener('online',()=>{if(colourRetryHandler)colourRetryHandler()});
 function renderColourClassroom(){
  const chars=colourCharacters();
- $('extra').innerHTML=`<div class="eyebrow">COLOUR LAB · 看見漢字的秘密</div><h2>${chars.length.toLocaleString()} 張彩色地圖，一起拆字探險</h2><p>目前版本收錄 ${chars.length.toLocaleString()} 個原字標色示範，常用字優先排列。灰色是保留但不另取碼的筆畫。</p><div class="colour-toolbar"><label for="colour-search">找字或字碼<input id="colour-search" type="search" placeholder="例如：學、龍、HBND" autocomplete="off"></label><button class="outline" id="colour-references">查看新參考字</button><button class="outline" id="colour-corrections">查看本次修正</button><span id="colour-count" role="status"></span></div><div class="colour-library" id="colour-results"></div><div class="colour-pagination"><button class="outline" id="colour-prev">← 上一頁</button><span id="colour-page-number"></span><button class="outline" id="colour-next">下一頁 →</button></div>`;
+ $('extra').innerHTML=`<div class="eyebrow">COLOUR LAB · 看見漢字的秘密</div><h2>${chars.length.toLocaleString()} 張彩色地圖，一起拆字探險</h2><p>目前版本收錄 ${chars.length.toLocaleString()} 個原字標色示範，常用字優先排列。灰色是保留但不另取碼的筆畫。</p><div class="colour-toolbar"><label for="colour-search">找字或字碼<input id="colour-search" type="search" placeholder="例如：學、龍、HBND" autocomplete="off"></label><button class="outline" id="colour-references">查看新參考字</button><button class="outline" id="colour-corrections">查看本次修正</button><span id="colour-count" role="status"></span></div><div class="colour-library" id="colour-results"></div><div class="colour-loading-status" id="colour-load-status" role="status" aria-live="polite"></div><div class="colour-pagination"><button class="outline" id="colour-prev">← 上一頁</button><span id="colour-page-number"></span><button class="outline" id="colour-next">下一頁 →</button></div>`;
  const input=$('colour-search');input.value=colourSearch;
  function update(){
   const revision=++colourViewRevision;
   const query=colourSearch.trim().toLowerCase();const filtered=chars.filter(c=>!query||query.includes(c)||CODE_TABLES[currentVersion][c].includes(query));const pages=Math.max(1,Math.ceil(filtered.length/48));colourPage=Math.min(colourPage,pages-1);
   const visible=filtered.slice(colourPage*48,(colourPage+1)*48);
+  const current=()=>revision===colourViewRevision&&!!$('colour-results');
+  const missing=()=>visible.filter(c=>!splitVisual(c));
+  function loadingStatus(){if(current())$('colour-load-status').textContent=missing().length?`正在載入 ${missing().length} 個字形…`:''}
   function paint(){
   $('colour-results').innerHTML=visible.map(c=>`<button class="colour-character" data-colour-char="${c}" title="${c} · ${CODE_TABLES[currentVersion][c].toUpperCase()}">${splitVisual(c)?colourThumb(c):`<span class="glyph-placeholder" aria-hidden="true">${c}</span>`}<span>${c}<small>${CODE_TABLES[currentVersion][c].toUpperCase()}</small></span></button>`).join('')||'<p class="colour-empty">找不到這個字，試試其他中文字或倉頡字碼。</p>';
   $('colour-count').textContent=`${filtered.length.toLocaleString()} 字 · ${versionName()}`;$('colour-page-number').textContent=`${colourPage+1} / ${pages}`;$('colour-prev').disabled=colourPage===0;$('colour-next').disabled=colourPage>=pages-1;
   $('colour-results').querySelectorAll('[data-colour-char]').forEach(button=>button.onclick=()=>{start('colour',{char:button.dataset.colourChar});animateSplit()});
   }
   paint();
+  $('colour-load-status').textContent='';
+  $('colour-results').setAttribute('aria-busy','false');
   if(typeof loadColourCharacters==='function'&&visible.some(c=>!splitVisual(c))){
    $('colour-results').setAttribute('aria-busy','true');
-   loadColourCharacters(visible).then(()=>{if(revision===colourViewRevision&&$('colour-results')){paint();$('colour-results').setAttribute('aria-busy','false')}}).catch(()=>{if(revision===colourViewRevision&&$('colour-results')){$('colour-results').setAttribute('aria-busy','false');const retry=document.createElement('button');retry.className='outline';retry.textContent='部分字形未能載入，點此重試';retry.onclick=update;$('colour-results').append(retry)}});
+   loadingStatus();
+   loadColourCharacters(visible,{onProgress:()=>{if(current()){paint();loadingStatus()}}}).then(()=>{if(current()){paint();$('colour-results').setAttribute('aria-busy','false');$('colour-load-status').textContent=''}}).catch(error=>{if(current()){
+    paint();$('colour-results').setAttribute('aria-busy','false');const status=$('colour-load-status');status.textContent=error.needsRefresh?'字形資料已更新，重新整理後即可繼續。':`仍有 ${missing().length} 個字形暫時未能載入。`;
+    const retry=document.createElement('button');retry.className='outline';retry.textContent=error.needsRefresh?'重新整理頁面':'重試未載入字形';retry.onclick=error.needsRefresh?()=>location.reload():update;status.append(retry);
+   }});
   }
  }
- input.oninput=()=>{colourSearch=input.value;colourPage=0;update()};$('colour-references').onclick=()=>{colourSearch=COLOUR_REFERENCE_CHARS.join('');input.value=colourSearch;colourPage=0;update()};$('colour-corrections').onclick=()=>{colourSearch=COLOUR_CORRECTION_CHARS.join('');input.value=colourSearch;colourPage=0;update()};$('colour-prev').onclick=()=>{colourPage--;update()};$('colour-next').onclick=()=>{colourPage++;update()};update();
+ input.oninput=()=>{colourSearch=input.value;colourPage=0;update()};$('colour-references').onclick=()=>{colourSearch=COLOUR_REFERENCE_CHARS.join('');input.value=colourSearch;colourPage=0;update()};$('colour-corrections').onclick=()=>{colourSearch=COLOUR_CORRECTION_CHARS.join('');input.value=colourSearch;colourPage=0;update()};$('colour-prev').onclick=()=>{colourPage--;update()};$('colour-next').onclick=()=>{colourPage++;update()};colourRetryHandler=()=>{if($('colour-results')&&missingVisibleColourCharacters())update()};update();
 }
+function missingVisibleColourCharacters(){return [...document.querySelectorAll('[data-colour-char]')].some(button=>!splitVisual(button.dataset.colourChar))}
 
 function renderDifficulties(){
  $('difficulty-options').innerHTML=DIFFICULTIES.map(level=>`<button class="difficulty-card ${level.id===difficulty?'selected':''}" data-difficulty="${level.id}" aria-pressed="${level.id===difficulty}"><span>${level.icon}</span><small>LEVEL 0${level.id}</small><b>${level.name}</b><p>${level.description}</p><em>${level.id===1?'RPG 選擇題 · 35 秒／回合':level.id===4?'RPG 五色過渡 → 全字庫戰鬥':level.id===2?'RPG 25 秒／回合 · 五色圖引導':'RPG 五色過渡 → 獨立拆字'}</em></button>`).join('');
