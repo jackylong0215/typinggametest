@@ -29,7 +29,7 @@ https://github.com/chanind/hanzi-writer-data/tree/68d10a4b21150cae5e1ebbd223eed2
 
 ## 生成字庫與 IDS 對應
 
-`colour-library.js` 提供 10,179 個生成模型，與原有示範合計 10,295 字。大部分輪廓來源如下；2026-10-22 新來源與重組字形另列於下節。來源：Make Me A Hanzi（https://github.com/skishore/makemeahanzi），2026-10-21 取得的 dictionary.txt／graphics.txt；完整來源檔 SHA-256 記錄於 `data/colour-source.json` 的 source 欄位。保留輪廓，只增加部件分組及 SVG 裁切標色。
+`colour-library.js` 提供 10,201 個生成模型，與原有示範合計 10,317 字。大部分輪廓來源如下；2026-10-22 新來源與重組字形另列於下節。來源：Make Me A Hanzi（https://github.com/skishore/makemeahanzi），2026-10-21 取得的 dictionary.txt／graphics.txt；完整來源檔 SHA-256 記錄於 `data/colour-source.json` 的 source 欄位。保留輪廓，只增加部件分組及 SVG 裁切標色。
 
 修改後的必要字形子集、IDS 結構與筆畫對應保存在 `data/colour-source.json`。dictionary.txt 衍生資料採 LGPL 3.0 或更新版本；graphics.txt 由 Arphic PL KaitiM GB／Arphic PL UKai 衍生，採 Arphic Public License。上游來源聲明、LGPL、GPL 與 Arphic 完整授權分別保留在 `licenses/MAKE_ME_A_HANZI.txt`、`licenses/LGPL-3.0.txt`、`licenses/GPL-3.0.txt`、`licenses/ARPHICPL.TXT`。生成腳本與部件對應可在本專案中取得。
 
@@ -83,3 +83,5 @@ Copyright (c) 2014–2017 CJKVI Database. Based on CHISE IDS Database. 這些結
 2026-10-23 第六批：新增日本新字體覧（17 筆），來源 https://github.com/parsimonhi/animCJK/blob/master/svgsJa/35239.svg ；敢按使用者參考改用工字頭形式（12 筆），來源 https://github.com/parsimonhi/animCJK/blob/master/svgsZhHant/25954.svg 。原 SVG 保留於 `data/reference-sources/animcjk-35239.svg`、`animcjk-25954.svg`，內含 AnimCJK 2016–2026 FM-SH 版權聲明，適用 Arphic Public License。均只作 y→900−y 座標轉換；來源 SHA-256、轉換及原敢 11 筆字形備份記於 `data/colour-source.json`。其他既有輪廓不變。
 
 2026-10-23 第七批：對既有 2,310 個重製左右字調整部件寬度、間距及垂直對齊，仍使用原有 Make Me A Hanzi／Arphic 部件輪廓作仿射轉換，並非新取得的完整原字輪廓。來源部件與目標座標保留於 `data/component-compositions.json`；改前、改後座標與輪廓雜湊另記於 `data/colour-layout-review-20261023.json`。噉保留原本 11 筆敢部件來源，與獨立敢的 12 筆 AnimCJK 字形分開記錄。新增參考字與同結構字均沿用既有凍結來源，沒有新增外部筆畫來源。
+
+2026-10-26：新偽標色模型使用與使用者點字頭參考相符的 AnimCJK 原筆畫（11 筆），來源 https://github.com/parsimonhi/animCJK/blob/master/svgsJa/20605.svg 。原檔保留於 `data/reference-sources/animcjk-20605.svg`，內含 AnimCJK 2016–2026 FM-SH 版權與 Arphic Public License 聲明，授權全文見 `licenses/ARPHICPL.TXT`。僅作 y→900−y 座標轉換；原檔 SHA-256、轉換與舊14筆爫頭資料備份保存在 `data/colour-source.json`。其他新增模型沿用既有凍結原字筆畫，既有模型輪廓與重製字排版不變。
