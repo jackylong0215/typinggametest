@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-26",
+  "dataRevisionSha256": "4c6190fa6f38fb91f794aaecc9b1057c5a3bd478014b608ab18f37d6197d3fe0",
+  "inputHashes": {
+    "code-data.js": "a070421d802e07d9a54b7ba38d4e0e3e3461e632f673cb2358111061f7f91e2a",
+    "stroke-data.js": "7a01190a660c31651fe6d79337d2a4e10a3adc0ebeebed874863f5f75bf020bf",
+    "learning.js": "22e31bf75d9b8f62508a0d16bd0a3e049942bf8b1833d4a8777d2e8ceb95f328",
+    "extra-colours.js": "3d9840179d2cb6770fefe9bc2f8dc12c64886da92a975f06399e825353dd190e",
+    "colour-library.js": "4c6190fa6f38fb91f794aaecc9b1057c5a3bd478014b608ab18f37d6197d3fe0"
+  },
+  "source": {
+    "title": "教育部《常用國字標準字體表》：民國71年9月1日公告，4808字",
+    "official": "https://language.moe.gov.tw/result.aspx?classify_sn=23&subclassify_sn=437&content_sn=46",
+    "reference": "https://github.com/irvin/moe-common-phrases-of-zhtw/blob/08977555e16c27f5d198551dc99e9395810a3e77/教育部1982常用字/教育部4808常用字.txt",
+    "referenceSha256": "f8ed2e0bae517d27c73e3fd5d2b2d6fe08b45f9d1f6c3745361162593c33137e",
+    "crossCheck": "https://github.com/TraditionalChinese/TW-ABCN/blob/39e40cedd439de994a0344b6ac996011b5783c24/臺灣TW-ABCN正字甲乙丙表.xlsx",
+    "crossCheckSha256": "239a0fb2f4fa4ed176eb38c85f81df5dc3c28f15011bc0bc45564e99d3262595",
+    "crossCheckResult": "A常用字4808 工作表的全部字號、字元及順序一致；此交叉核對於本次稽核時另行執行。",
+    "accessNote": "本環境未能直接存取教育部網站；使用附教育部原始說明的固定版本鏡像，並與獨立甲表整理交叉核對。"
+  },
+  "total": 4808,
+  "catalogueTotal": 10942,
+  "cj5Codes": 4808,
+  "cj3Codes": 4808,
+  "colour5": 4808,
+  "colour3": 4673,
+  "missing5": 0,
+  "missing3": 135,
+  "threeOnly": 135,
+  "missingFiveCharacters": "",
+  "threeOnlyCharacters": "丟修俾假倏傀兕冢凳勻吞啤唬啻嘛嘍囑埤塊墀墟壢婁婢嬴嬤宛害屢屬彥怵愧應拔拐拿捏摟摩撐暇曆槐樓歷毋氯沉涵潸瀝炭犀珊琥瑕瑰瑩璜產痺瘟睥矚碌碑碳磨磺窗簍簧粱糜縷羋羸翕聚脾腐膺蒐蘑虎彪虞蜈蝦螻蠢裨褫褸諺諮資贗跋跚述逸遐遲邸醜重鈞鏟鏤陴隙難霞靂靈靡韭顰餽髏魂魄魏魔魘鷹麩麴麵麻麼麾鼙"
+}

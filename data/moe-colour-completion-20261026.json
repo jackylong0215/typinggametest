@@ -1,0 +1,5822 @@
+{
+  "date": "2026-10-26",
+  "before": 10317,
+  "added": [
+    "丈",
+    "丐",
+    "串",
+    "尹",
+    "互",
+    "仗",
+    "仰",
+    "侃",
+    "侵",
+    "俸",
+    "偺",
+    "倏",
+    "備",
+    "傘",
+    "傭",
+    "傷",
+    "僭",
+    "儘",
+    "儐",
+    "償",
+    "儷",
+    "兕",
+    "具",
+    "凹",
+    "凸",
+    "刁",
+    "制",
+    "剎",
+    "割",
+    "剷",
+    "剽",
+    "勝",
+    "勸",
+    "匆",
+    "升",
+    "卅",
+    "協",
+    "南",
+    "卮",
+    "印",
+    "即",
+    "卵",
+    "卸",
+    "卿",
+    "叢",
+    "叼",
+    "叫",
+    "吏",
+    "后",
+    "君",
+    "命",
+    "咎",
+    "哀",
+    "哉",
+    "唧",
+    "啣",
+    "啻",
+    "喚",
+    "嗇",
+    "嗚",
+    "嗡",
+    "嘩",
+    "嘰",
+    "噢",
+    "嚎",
+    "嚮",
+    "嚶",
+    "嚼",
+    "囁",
+    "囪",
+    "坼",
+    "垢",
+    "埠",
+    "塞",
+    "塌",
+    "塭",
+    "塊",
+    "塢",
+    "墅",
+    "墀",
+    "壕",
+    "壑",
+    "壙",
+    "壞",
+    "壺",
+    "夔",
+    "奉",
+    "奏",
+    "奐",
+    "套",
+    "姊",
+    "姬",
+    "婦",
+    "媼",
+    "媲",
+    "嬝",
+    "嬴",
+    "嬰",
+    "嬪",
+    "孀",
+    "孑",
+    "孓",
+    "存",
+    "孱",
+    "孵",
+    "宏",
+    "宛",
+    "寒",
+    "寨",
+    "尋",
+    "屏",
+    "岡",
+    "崁",
+    "嶺",
+    "州",
+    "巽",
+    "帚",
+    "帥",
+    "帶",
+    "幻",
+    "幾",
+    "庚",
+    "庸",
+    "廊",
+    "弄",
+    "弒",
+    "彌",
+    "往",
+    "徙",
+    "循",
+    "忝",
+    "怵",
+    "恭",
+    "患",
+    "悠",
+    "悽",
+    "惠",
+    "慌",
+    "慇",
+    "慣",
+    "慶",
+    "慕",
+    "憩",
+    "憊",
+    "懊",
+    "懲",
+    "懷",
+    "懸",
+    "懼",
+    "戎",
+    "戢",
+    "截",
+    "戴",
+    "戳",
+    "抑",
+    "拔",
+    "拆",
+    "拜",
+    "拽",
+    "掖",
+    "捷",
+    "捧",
+    "掃",
+    "捨",
+    "掣",
+    "揉",
+    "揆",
+    "揍",
+    "換",
+    "摒",
+    "搗",
+    "摩",
+    "撰",
+    "撒",
+    "撬",
+    "撻",
+    "攆",
+    "攫",
+    "攪",
+    "散",
+    "斥",
+    "斷",
+    "旅",
+    "族",
+    "旋",
+    "旌",
+    "旎",
+    "旗",
+    "旖",
+    "昂",
+    "晝",
+    "曳",
+    "勗",
+    "替",
+    "朗",
+    "朮",
+    "杖",
+    "柔",
+    "枴",
+    "梳",
+    "桌",
+    "栽",
+    "梔",
+    "條",
+    "梟",
+    "棒",
+    "棲",
+    "榔",
+    "榛",
+    "榷",
+    "榻",
+    "槌",
+    "樁",
+    "樺",
+    "橘",
+    "橇",
+    "檄",
+    "櫛",
+    "檳",
+    "櫂",
+    "櫝",
+    "櫻",
+    "權",
+    "欖",
+    "歌",
+    "歡",
+    "歲",
+    "歸",
+    "歿",
+    "殤",
+    "殯",
+    "段",
+    "殷",
+    "殺",
+    "殼",
+    "毅",
+    "毋",
+    "毓",
+    "氾",
+    "汙",
+    "沛",
+    "沿",
+    "泰",
+    "洲",
+    "流",
+    "派",
+    "浸",
+    "液",
+    "添",
+    "淵",
+    "淒",
+    "涵",
+    "湊",
+    "湃",
+    "渙",
+    "滾",
+    "漢",
+    "滯",
+    "滌",
+    "潛",
+    "潺",
+    "濁",
+    "澳",
+    "激",
+    "濱",
+    "濠",
+    "濛",
+    "濯",
+    "澀",
+    "瀚",
+    "瀰",
+    "灌",
+    "灑",
+    "灤",
+    "烈",
+    "烏",
+    "煥",
+    "熙",
+    "燧",
+    "燭",
+    "燬",
+    "燻",
+    "爨",
+    "爵",
+    "牆",
+    "犀",
+    "犖",
+    "犛",
+    "獅",
+    "獰",
+    "獺",
+    "玀",
+    "率",
+    "班",
+    "琉",
+    "琵",
+    "琶",
+    "琴",
+    "瑯",
+    "璣",
+    "璽",
+    "瓊",
+    "瓢",
+    "甩",
+    "畢",
+    "疏",
+    "疑",
+    "痲",
+    "瘧",
+    "瘍",
+    "瘉",
+    "瘓",
+    "瘠",
+    "癸",
+    "皺",
+    "盥",
+    "睫",
+    "睽",
+    "瞿",
+    "矇",
+    "矜",
+    "硫",
+    "碘",
+    "確",
+    "磐",
+    "磨",
+    "磯",
+    "祐",
+    "禦",
+    "禹",
+    "秉",
+    "秦",
+    "穗",
+    "穡",
+    "窘",
+    "窗",
+    "竄",
+    "竅",
+    "竊",
+    "算",
+    "範",
+    "簑",
+    "篛",
+    "篩",
+    "簍",
+    "篾",
+    "簪",
+    "籐",
+    "粵",
+    "糜",
+    "糢",
+    "糾",
+    "絃",
+    "絨",
+    "綑",
+    "綰",
+    "綱",
+    "緇",
+    "緬",
+    "緞",
+    "綞",
+    "縑",
+    "縲",
+    "繅",
+    "繁",
+    "繫",
+    "繩",
+    "繽",
+    "纓",
+    "罐",
+    "羌",
+    "羋",
+    "善",
+    "羸",
+    "羿",
+    "翁",
+    "翌",
+    "翎",
+    "翠",
+    "翟",
+    "翰",
+    "翼",
+    "耀",
+    "耜",
+    "聚",
+    "聾",
+    "肉",
+    "肱",
+    "胤",
+    "脈",
+    "脊",
+    "腋",
+    "腎",
+    "腆",
+    "臏",
+    "臥",
+    "臧",
+    "臨",
+    "臻",
+    "舂",
+    "舔",
+    "舞",
+    "船",
+    "艱",
+    "范",
+    "荒",
+    "荔",
+    "荐",
+    "莒",
+    "萋",
+    "華",
+    "菴",
+    "葵",
+    "萵",
+    "蓆",
+    "蓀",
+    "蒐",
+    "蔬",
+    "蔑",
+    "蕙",
+    "薔",
+    "薛",
+    "薰",
+    "藤",
+    "蘑",
+    "蘗",
+    "虐",
+    "虱",
+    "螂",
+    "蠅",
+    "蠔",
+    "蠶",
+    "蠹",
+    "衍",
+    "術",
+    "街",
+    "衙",
+    "衝",
+    "衢",
+    "衰",
+    "衷",
+    "袁",
+    "袞",
+    "裂",
+    "裙",
+    "裊",
+    "裹",
+    "製",
+    "褒",
+    "褫",
+    "褻",
+    "襖",
+    "襪",
+    "覺",
+    "觴",
+    "觸",
+    "訴",
+    "詬",
+    "誤",
+    "誥",
+    "諍",
+    "諺",
+    "謊",
+    "謄",
+    "謨",
+    "譎",
+    "譏",
+    "譴",
+    "讚",
+    "豁",
+    "豎",
+    "豐",
+    "豪",
+    "貓",
+    "貫",
+    "賊",
+    "賓",
+    "賢",
+    "質",
+    "賴",
+    "賽",
+    "贅",
+    "贊",
+    "贓",
+    "赧",
+    "赳",
+    "越",
+    "跋",
+    "跼",
+    "踫",
+    "蹂",
+    "蹋",
+    "躅",
+    "躂",
+    "載",
+    "輦",
+    "轂",
+    "轅",
+    "輿",
+    "轟",
+    "轡",
+    "辨",
+    "迆",
+    "迎",
+    "述",
+    "迺",
+    "追",
+    "逅",
+    "遂",
+    "達",
+    "遁",
+    "遠",
+    "遣",
+    "遞",
+    "遷",
+    "遲",
+    "邀",
+    "邇",
+    "邐",
+    "邸",
+    "郎",
+    "鄉",
+    "鄒",
+    "鄹",
+    "酉",
+    "酬",
+    "醜",
+    "醺",
+    "釁",
+    "釐",
+    "釜",
+    "鈣",
+    "鈞",
+    "鉛",
+    "銜",
+    "鋁",
+    "鋼",
+    "錚",
+    "錨",
+    "鍛",
+    "鎢",
+    "鏟",
+    "鏗",
+    "鐲",
+    "鑒",
+    "鑰",
+    "鑽",
+    "閭",
+    "闋",
+    "闐",
+    "阜",
+    "陋",
+    "降",
+    "隆",
+    "隧",
+    "隨",
+    "雋",
+    "雍",
+    "雙",
+    "雛",
+    "雪",
+    "霧",
+    "靄",
+    "靡",
+    "靦",
+    "靨",
+    "鞣",
+    "韃",
+    "韆",
+    "韭",
+    "預",
+    "領",
+    "頹",
+    "頤",
+    "颺",
+    "颼",
+    "飄",
+    "飛",
+    "餽",
+    "饑",
+    "首",
+    "馭",
+    "馳",
+    "馱",
+    "馴",
+    "駟",
+    "騖",
+    "騫",
+    "騰",
+    "驃",
+    "驀",
+    "騾",
+    "驚",
+    "驟",
+    "驪",
+    "骯",
+    "髒",
+    "髓",
+    "鬢",
+    "鬱",
+    "鬲",
+    "魔",
+    "魘",
+    "鯽",
+    "鰥",
+    "鴒",
+    "鷥",
+    "鸚",
+    "鹹",
+    "鹼",
+    "鹽",
+    "麥",
+    "麩",
+    "麴",
+    "麵",
+    "麾",
+    "黴",
+    "鼇",
+    "鼎",
+    "鼬",
+    "鼴",
+    "齬",
+    "齲",
+    "龔",
+    "龜"
+  ],
+  "total": 10942,
+  "moeReferenceTotal": 4808,
+  "moeMissingBefore": 625,
+  "moeMissingAfter": 0,
+  "importedOriginalContours": [
+    "櫝",
+    "汙",
+    "餽",
+    "驃",
+    "鼇",
+    "啣",
+    "嚶",
+    "囁",
+    "壙",
+    "媼",
+    "慇",
+    "勗",
+    "枴",
+    "櫂",
+    "歿",
+    "犖",
+    "獰",
+    "獺",
+    "瘍",
+    "瘉",
+    "祐",
+    "簑",
+    "簍",
+    "籐",
+    "絃",
+    "綰",
+    "緇",
+    "縲",
+    "菴",
+    "萵",
+    "蓆",
+    "蘗",
+    "誥",
+    "諍",
+    "跼",
+    "迺",
+    "鏗",
+    "靄",
+    "靨"
+  ],
+  "compositionPlans": {
+    "莒": {
+      "method": "replace_existing_slot",
+      "reference": "莒",
+      "retainedStrokeIndices": [
+        0,
+        1,
+        2
+      ],
+      "originalComponent": "吕",
+      "replacement": "呂",
+      "bounds": [
+        258.27777777777777,
+        -17.714285714285715,
+        775.6176470588235,
+        561.0625
+      ]
+    },
+    "鋁": {
+      "method": "replace_existing_slot",
+      "reference": "鋁",
+      "retainedStrokeIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "originalComponent": "吕",
+      "replacement": "呂",
+      "bounds": [
+        485.9375,
+        54.91891891891892,
+        914.0277777777778,
+        729.2666666666667
+      ]
+    },
+    "閭": {
+      "method": "replace_existing_slot",
+      "reference": "閭",
+      "retainedStrokeIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "originalComponent": "吕",
+      "replacement": "呂",
+      "bounds": [
+        358.54545454545456,
+        75.17241379310344,
+        673.6538461538462,
+        460.0
+      ]
+    },
+    "誤": {
+      "method": "replace_existing_slot",
+      "reference": "誤",
+      "retainedStrokeIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "originalComponent": "吴",
+      "replacement": "吳",
+      "bounds": [
+        333.32,
+        2.8846153846153846,
+        989.0,
+        791.7058823529412
+      ]
+    },
+    "諺": {
+      "method": "replace_existing_slot",
+      "reference": "諺",
+      "retainedStrokeIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "originalComponent": "彦",
+      "replacement": "彥",
+      "bounds": [
+        305.0,
+        -93.0,
+        895.9,
+        867.5
+      ]
+    },
+    "鈞": {
+      "method": "replace_existing_slot",
+      "reference": "鈞",
+      "retainedStrokeIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "originalComponent": "匀",
+      "replacement": "勻",
+      "bounds": [
+        472.5,
+        -38.470588235294116,
+        921.7142857142857,
+        796.2222222222222
+      ]
+    },
+    "鏟": {
+      "method": "replace_existing_slot",
+      "reference": "鏟",
+      "retainedStrokeIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "originalComponent": "産",
+      "replacement": "產",
+      "bounds": [
+        335.8888888888889,
+        -2.828571428571429,
+        946.8888888888889,
+        832.5
+      ]
+    },
+    "沿": {
+      "method": "replace_existing_slot",
+      "reference": "沿",
+      "retainedStrokeIndices": [
+        0,
+        1,
+        2,
+        5,
+        6,
+        7
+      ],
+      "originalComponent": "几",
+      "replacement": "八",
+      "bounds": [
+        336.23809523809524,
+        335.0,
+        920.24,
+        760.0
+      ],
+      "replacementIndices": [
+        3,
+        4
+      ]
+    },
+    "船": {
+      "method": "replace_existing_slot",
+      "reference": "船",
+      "retainedStrokeIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        8,
+        9,
+        10
+      ],
+      "originalComponent": "几",
+      "replacement": "八",
+      "bounds": [
+        506.90909090909093,
+        336.55555555555554,
+        971.047619047619,
+        698.25
+      ],
+      "replacementIndices": [
+        6,
+        7
+      ]
+    },
+    "鉛": {
+      "method": "replace_existing_slot",
+      "reference": "鉛",
+      "retainedStrokeIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        10,
+        11,
+        12
+      ],
+      "originalComponent": "几",
+      "replacement": "八",
+      "bounds": [
+        482.90909090909093,
+        328.85714285714283,
+        968.8461538461538,
+        713.1176470588235
+      ],
+      "replacementIndices": [
+        8,
+        9
+      ]
+    },
+    "犛": {
+      "method": "replace_existing_slot",
+      "reference": "釐",
+      "retainedStrokeIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "replacement": "牛",
+      "bounds": [
+        240.9189189189189,
+        -51.45454545454545,
+        862.6363636363636,
+        365.57894736842104
+      ]
+    },
+    "偺": {
+      "method": "same_font_components",
+      "decomposition": "⿰亻昝",
+      "components": [
+        {
+          "character": "亻",
+          "bounds": [
+            65,
+            10.182,
+            421.573,
+            812.0
+          ]
+        },
+        {
+          "character": "昝",
+          "bounds": [
+            433.573,
+            25.0,
+            960,
+            825.0
+          ]
+        }
+      ]
+    },
+    "儐": {
+      "method": "same_font_components",
+      "decomposition": "⿰亻賓",
+      "components": [
+        {
+          "character": "亻",
+          "bounds": [
+            65,
+            10.182,
+            389.981,
+            812.0
+          ]
+        },
+        {
+          "character": "賓",
+          "bounds": [
+            401.981,
+            -70.091,
+            960,
+            861.0
+          ]
+        }
+      ]
+    },
+    "塭": {
+      "method": "same_font_components",
+      "decomposition": "⿰土𥁕",
+      "components": [
+        {
+          "character": "土",
+          "bounds": [
+            65,
+            166.48,
+            413.417,
+            771.75
+          ]
+        },
+        {
+          "character": "𥁕",
+          "bounds": [
+            425.417,
+            25.0,
+            960,
+            825.0
+          ]
+        }
+      ]
+    },
+    "嬝": {
+      "method": "same_font_components",
+      "decomposition": "⿰女裊",
+      "components": [
+        {
+          "character": "女",
+          "bounds": [
+            65,
+            71.917,
+            449.547,
+            797.551
+          ]
+        },
+        {
+          "character": "裊",
+          "bounds": [
+            461.547,
+            25.0,
+            960,
+            825.0
+          ]
+        }
+      ]
+    },
+    "崁": {
+      "method": "same_font_components",
+      "decomposition": "⿱山坎",
+      "components": [
+        {
+          "character": "山",
+          "bounds": [
+            70,
+            624.0,
+            950,
+            840
+          ]
+        },
+        {
+          "character": "坎",
+          "bounds": [
+            70,
+            30,
+            950,
+            612.0
+          ]
+        }
+      ]
+    },
+    "灤": {
+      "method": "same_font_components",
+      "decomposition": "⿰氵欒",
+      "components": [
+        {
+          "character": "氵",
+          "bounds": [
+            65,
+            36.545,
+            335.371,
+            757.0
+          ]
+        },
+        {
+          "character": "欒",
+          "bounds": [
+            347.371,
+            25.0,
+            960,
+            825.0
+          ]
+        }
+      ]
+    },
+    "玀": {
+      "method": "same_font_components",
+      "decomposition": "⿰犭羅",
+      "components": [
+        {
+          "character": "犭",
+          "bounds": [
+            65,
+            -3.056,
+            359.685,
+            781.114
+          ]
+        },
+        {
+          "character": "羅",
+          "bounds": [
+            371.685,
+            -46.083,
+            960,
+            810.375
+          ]
+        }
+      ]
+    },
+    "篛": {
+      "method": "same_font_components",
+      "decomposition": "⿱⺮弱",
+      "components": [
+        {
+          "character": "⺮",
+          "bounds": [
+            70,
+            656.0,
+            950,
+            840
+          ]
+        },
+        {
+          "character": "弱",
+          "bounds": [
+            70,
+            30,
+            950,
+            644.0
+          ]
+        }
+      ]
+    },
+    "綑": {
+      "method": "same_font_components",
+      "decomposition": "⿰糹困",
+      "components": [
+        {
+          "character": "糹",
+          "bounds": [
+            65,
+            48.328,
+            420.568,
+            805.135
+          ]
+        },
+        {
+          "character": "困",
+          "bounds": [
+            432.568,
+            21.209,
+            960,
+            712.254
+          ]
+        }
+      ]
+    },
+    "綞": {
+      "method": "same_font_components",
+      "decomposition": "⿰糹垂",
+      "components": [
+        {
+          "character": "糹",
+          "bounds": [
+            65,
+            50.582,
+            379.9,
+            807.389
+          ]
+        },
+        {
+          "character": "垂",
+          "bounds": [
+            391.9,
+            22.0,
+            960,
+            797.9
+          ]
+        }
+      ]
+    },
+    "縑": {
+      "method": "same_font_components",
+      "decomposition": "⿰糹兼",
+      "components": [
+        {
+          "character": "糹",
+          "bounds": [
+            65,
+            50.582,
+            354.357,
+            807.389
+          ]
+        },
+        {
+          "character": "兼",
+          "bounds": [
+            366.357,
+            -55.054,
+            960,
+            858.296
+          ]
+        }
+      ]
+    },
+    "繅": {
+      "method": "same_font_components",
+      "decomposition": "⿰糹巢",
+      "components": [
+        {
+          "character": "糹",
+          "bounds": [
+            65,
+            50.582,
+            413.39,
+            807.389
+          ]
+        },
+        {
+          "character": "巢",
+          "bounds": [
+            425.39,
+            25.0,
+            960,
+            825.0
+          ]
+        }
+      ]
+    },
+    "臏": {
+      "method": "same_font_components",
+      "decomposition": "⿰月賓",
+      "components": [
+        {
+          "character": "月",
+          "bounds": [
+            65,
+            33.01,
+            393.253,
+            757.47
+          ]
+        },
+        {
+          "character": "賓",
+          "bounds": [
+            405.253,
+            -70.091,
+            960,
+            861.0
+          ]
+        }
+      ]
+    },
+    "蓀": {
+      "method": "same_font_components",
+      "decomposition": "⿱艹孫",
+      "components": [
+        {
+          "character": "艹",
+          "bounds": [
+            70,
+            688.0,
+            950,
+            840
+          ]
+        },
+        {
+          "character": "孫",
+          "bounds": [
+            70,
+            30,
+            950,
+            676.0
+          ]
+        }
+      ]
+    },
+    "踫": {
+      "method": "same_font_components",
+      "decomposition": "⿰足並",
+      "components": [
+        {
+          "character": "足",
+          "bounds": [
+            65,
+            102.075,
+            391.543,
+            738.14
+          ]
+        },
+        {
+          "character": "並",
+          "bounds": [
+            403.543,
+            37.545,
+            960,
+            820.667
+          ]
+        }
+      ]
+    },
+    "迆": {
+      "method": "same_font_components",
+      "decomposition": "⿺辶也",
+      "components": [
+        {
+          "character": "辶",
+          "bounds": [
+            35,
+            0,
+            955,
+            800
+          ]
+        },
+        {
+          "character": "也",
+          "bounds": [
+            270,
+            180,
+            890,
+            800
+          ]
+        }
+      ]
+    },
+    "邐": {
+      "method": "same_font_components",
+      "decomposition": "⿺辶麗",
+      "components": [
+        {
+          "character": "辶",
+          "bounds": [
+            35,
+            0,
+            955,
+            800
+          ]
+        },
+        {
+          "character": "麗",
+          "bounds": [
+            270,
+            180,
+            890,
+            800
+          ]
+        }
+      ]
+    },
+    "闋": {
+      "method": "same_font_components",
+      "decomposition": "⿵門癸",
+      "components": [
+        {
+          "character": "門",
+          "bounds": [
+            65,
+            15,
+            960,
+            850
+          ]
+        },
+        {
+          "character": "癸",
+          "bounds": [
+            240,
+            170,
+            785,
+            650
+          ]
+        }
+      ]
+    },
+    "闐": {
+      "method": "same_font_components",
+      "decomposition": "⿵門真",
+      "components": [
+        {
+          "character": "門",
+          "bounds": [
+            65,
+            15,
+            960,
+            850
+          ]
+        },
+        {
+          "character": "真",
+          "bounds": [
+            240,
+            170,
+            785,
+            650
+          ]
+        }
+      ]
+    },
+    "颺": {
+      "method": "same_font_components",
+      "decomposition": "⿰風昜",
+      "components": [
+        {
+          "character": "風",
+          "bounds": [
+            65,
+            25.0,
+            488.696,
+            825.0
+          ]
+        },
+        {
+          "character": "昜",
+          "bounds": [
+            500.696,
+            -24.585,
+            960,
+            784.559
+          ]
+        }
+      ]
+    },
+    "鷥": {
+      "method": "same_font_components",
+      "decomposition": "⿱絲鳥",
+      "components": [
+        {
+          "character": "絲",
+          "bounds": [
+            70,
+            456.0,
+            950,
+            840
+          ]
+        },
+        {
+          "character": "鳥",
+          "bounds": [
+            70,
+            30,
+            950,
+            444.0
+          ]
+        }
+      ]
+    }
+  },
+  "correctedContourVariants": [
+    "沿",
+    "船",
+    "莒",
+    "誤",
+    "諺",
+    "鈞",
+    "鉛",
+    "鋁",
+    "鏟",
+    "閭"
+  ],
+  "characters": [
+    {
+      "char": "丈",
+      "unicode": "U+4E08",
+      "code": "jk",
+      "contours": "existing_original",
+      "strokes": 3
+    },
+    {
+      "char": "丐",
+      "unicode": "U+4E10",
+      "code": "myvs",
+      "contours": "existing_original",
+      "strokes": 4
+    },
+    {
+      "char": "串",
+      "unicode": "U+4E32",
+      "code": "ll",
+      "contours": "existing_original",
+      "strokes": 7
+    },
+    {
+      "char": "尹",
+      "unicode": "U+5C39",
+      "code": "sk",
+      "contours": "existing_original",
+      "strokes": 4
+    },
+    {
+      "char": "互",
+      "unicode": "U+4E92",
+      "code": "mvnm",
+      "contours": "existing_original",
+      "strokes": 4
+    },
+    {
+      "char": "仗",
+      "unicode": "U+4ED7",
+      "code": "ojk",
+      "contours": "existing_original",
+      "strokes": 5
+    },
+    {
+      "char": "仰",
+      "unicode": "U+4EF0",
+      "code": "ohvl",
+      "contours": "existing_original",
+      "strokes": 6
+    },
+    {
+      "char": "侃",
+      "unicode": "U+4F83",
+      "code": "orhu",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "侵",
+      "unicode": "U+4FB5",
+      "code": "osme",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "俸",
+      "unicode": "U+4FF8",
+      "code": "oqkq",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "偺",
+      "unicode": "U+507A",
+      "code": "ohoa",
+      "contours": "reconstructed",
+      "strokes": 11
+    },
+    {
+      "char": "倏",
+      "unicode": "U+500F",
+      "code": "olhk",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "備",
+      "unicode": "U+5099",
+      "code": "othb",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "傘",
+      "unicode": "U+5098",
+      "code": "oooj",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "傭",
+      "unicode": "U+50AD",
+      "code": "oilb",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "傷",
+      "unicode": "U+50B7",
+      "code": "ooah",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "僭",
+      "unicode": "U+50ED",
+      "code": "omua",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "儘",
+      "unicode": "U+5118",
+      "code": "olmt",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "儐",
+      "unicode": "U+5110",
+      "code": "ojmc",
+      "contours": "reconstructed",
+      "strokes": 16
+    },
+    {
+      "char": "償",
+      "unicode": "U+511F",
+      "code": "ofbc",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "儷",
+      "unicode": "U+5137",
+      "code": "ommp",
+      "contours": "existing_original",
+      "strokes": 21
+    },
+    {
+      "char": "兕",
+      "unicode": "U+5155",
+      "code": "ssuu",
+      "contours": "existing_original",
+      "strokes": 7
+    },
+    {
+      "char": "具",
+      "unicode": "U+5177",
+      "code": "bmmc",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "凹",
+      "unicode": "U+51F9",
+      "code": "ssu",
+      "contours": "existing_original",
+      "strokes": 5
+    },
+    {
+      "char": "凸",
+      "unicode": "U+51F8",
+      "code": "bss",
+      "contours": "existing_original",
+      "strokes": 5
+    },
+    {
+      "char": "刁",
+      "unicode": "U+5201",
+      "code": "sm",
+      "contours": "existing_original",
+      "strokes": 2
+    },
+    {
+      "char": "制",
+      "unicode": "U+5236",
+      "code": "hbln",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "剎",
+      "unicode": "U+524E",
+      "code": "kcln",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "割",
+      "unicode": "U+5272",
+      "code": "jrln",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "剷",
+      "unicode": "U+5277",
+      "code": "ymln",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "剽",
+      "unicode": "U+527D",
+      "code": "mfln",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "勝",
+      "unicode": "U+52DD",
+      "code": "bfqs",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "勸",
+      "unicode": "U+52F8",
+      "code": "tgks",
+      "contours": "existing_original",
+      "strokes": 20
+    },
+    {
+      "char": "匆",
+      "unicode": "U+5306",
+      "code": "pkk",
+      "contours": "existing_original",
+      "strokes": 5
+    },
+    {
+      "char": "升",
+      "unicode": "U+5347",
+      "code": "ht",
+      "contours": "existing_original",
+      "strokes": 4
+    },
+    {
+      "char": "卅",
+      "unicode": "U+5345",
+      "code": "tj",
+      "contours": "existing_original",
+      "strokes": 4
+    },
+    {
+      "char": "協",
+      "unicode": "U+5354",
+      "code": "jkss",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "南",
+      "unicode": "U+5357",
+      "code": "jbtj",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "卮",
+      "unicode": "U+536E",
+      "code": "hmsu",
+      "contours": "existing_original",
+      "strokes": 5
+    },
+    {
+      "char": "印",
+      "unicode": "U+5370",
+      "code": "hpsl",
+      "contours": "existing_original",
+      "strokes": 5
+    },
+    {
+      "char": "即",
+      "unicode": "U+5373",
+      "code": "aisl",
+      "contours": "existing_original",
+      "strokes": 7
+    },
+    {
+      "char": "卵",
+      "unicode": "U+5375",
+      "code": "hhsli",
+      "contours": "existing_original",
+      "strokes": 7
+    },
+    {
+      "char": "卸",
+      "unicode": "U+5378",
+      "code": "omsl",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "卿",
+      "unicode": "U+537F",
+      "code": "hhail",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "叢",
+      "unicode": "U+53E2",
+      "code": "tcte",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "叼",
+      "unicode": "U+53FC",
+      "code": "rsm",
+      "contours": "existing_original",
+      "strokes": 5
+    },
+    {
+      "char": "叫",
+      "unicode": "U+53EB",
+      "code": "rvl",
+      "contours": "existing_original",
+      "strokes": 5
+    },
+    {
+      "char": "吏",
+      "unicode": "U+540F",
+      "code": "jlk",
+      "contours": "existing_original",
+      "strokes": 6
+    },
+    {
+      "char": "后",
+      "unicode": "U+540E",
+      "code": "hmr",
+      "contours": "existing_original",
+      "strokes": 6
+    },
+    {
+      "char": "君",
+      "unicode": "U+541B",
+      "code": "skr",
+      "contours": "existing_original",
+      "strokes": 7
+    },
+    {
+      "char": "命",
+      "unicode": "U+547D",
+      "code": "omrl",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "咎",
+      "unicode": "U+548E",
+      "code": "hor",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "哀",
+      "unicode": "U+54C0",
+      "code": "yrhv",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "哉",
+      "unicode": "U+54C9",
+      "code": "jir",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "唧",
+      "unicode": "U+5527",
+      "code": "rail",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "啣",
+      "unicode": "U+5563",
+      "code": "roml",
+      "contours": "AnimCJK",
+      "strokes": 12
+    },
+    {
+      "char": "啻",
+      "unicode": "U+557B",
+      "code": "ybr",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "喚",
+      "unicode": "U+559A",
+      "code": "rnbk",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "嗇",
+      "unicode": "U+55C7",
+      "code": "gowr",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "嗚",
+      "unicode": "U+55DA",
+      "code": "rhrf",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "嗡",
+      "unicode": "U+55E1",
+      "code": "rcim",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "嘩",
+      "unicode": "U+5629",
+      "code": "rtmj",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "嘰",
+      "unicode": "U+5630",
+      "code": "rvii",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "噢",
+      "unicode": "U+5662",
+      "code": "rhbk",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "嚎",
+      "unicode": "U+568E",
+      "code": "ryro",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "嚮",
+      "unicode": "U+56AE",
+      "code": "vlhbr",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "嚶",
+      "unicode": "U+56B6",
+      "code": "rbcv",
+      "contours": "AnimCJK",
+      "strokes": 20
+    },
+    {
+      "char": "嚼",
+      "unicode": "U+56BC",
+      "code": "rbwi",
+      "contours": "existing_original",
+      "strokes": 20
+    },
+    {
+      "char": "囁",
+      "unicode": "U+56C1",
+      "code": "rsjj",
+      "contours": "AnimCJK",
+      "strokes": 21
+    },
+    {
+      "char": "囪",
+      "unicode": "U+56EA",
+      "code": "hwkk",
+      "contours": "existing_original",
+      "strokes": 7
+    },
+    {
+      "char": "坼",
+      "unicode": "U+577C",
+      "code": "ghmy",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "垢",
+      "unicode": "U+57A2",
+      "code": "ghmr",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "埠",
+      "unicode": "U+57E0",
+      "code": "ghrj",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "塞",
+      "unicode": "U+585E",
+      "code": "jtcg",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "塌",
+      "unicode": "U+584C",
+      "code": "gasm",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "塭",
+      "unicode": "U+586D",
+      "code": "gwot",
+      "contours": "reconstructed",
+      "strokes": 13
+    },
+    {
+      "char": "塊",
+      "unicode": "U+584A",
+      "code": "ghui",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "塢",
+      "unicode": "U+5862",
+      "code": "ghrf",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "墅",
+      "unicode": "U+5885",
+      "code": "wng",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "墀",
+      "unicode": "U+5880",
+      "code": "gseq",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "壕",
+      "unicode": "U+58D5",
+      "code": "gyro",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "壑",
+      "unicode": "U+58D1",
+      "code": "yeg",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "壙",
+      "unicode": "U+58D9",
+      "code": "gitc",
+      "contours": "AnimCJK",
+      "strokes": 18
+    },
+    {
+      "char": "壞",
+      "unicode": "U+58DE",
+      "code": "gywv",
+      "contours": "existing_original",
+      "strokes": 19
+    },
+    {
+      "char": "壺",
+      "unicode": "U+58FA",
+      "code": "gblm",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "夔",
+      "unicode": "U+5914",
+      "code": "tche",
+      "contours": "existing_original",
+      "strokes": 21
+    },
+    {
+      "char": "奉",
+      "unicode": "U+5949",
+      "code": "qkq",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "奏",
+      "unicode": "U+594F",
+      "code": "qkhk",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "奐",
+      "unicode": "U+5950",
+      "code": "nbk",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "套",
+      "unicode": "U+5957",
+      "code": "ksmi",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "姊",
+      "unicode": "U+59CA",
+      "code": "vlxh",
+      "contours": "existing_original",
+      "strokes": 7
+    },
+    {
+      "char": "姬",
+      "unicode": "U+59EC",
+      "code": "vsll",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "婦",
+      "unicode": "U+5A66",
+      "code": "vsmb",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "媼",
+      "unicode": "U+5ABC",
+      "code": "vwot",
+      "contours": "AnimCJK",
+      "strokes": 13
+    },
+    {
+      "char": "媲",
+      "unicode": "U+5AB2",
+      "code": "vhwp",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "嬝",
+      "unicode": "U+5B1D",
+      "code": "vhav",
+      "contours": "reconstructed",
+      "strokes": 16
+    },
+    {
+      "char": "嬴",
+      "unicode": "U+5B34",
+      "code": "ynv",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "嬰",
+      "unicode": "U+5B30",
+      "code": "bcv",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "嬪",
+      "unicode": "U+5B2A",
+      "code": "vjmc",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "孀",
+      "unicode": "U+5B40",
+      "code": "vmbu",
+      "contours": "existing_original",
+      "strokes": 20
+    },
+    {
+      "char": "孑",
+      "unicode": "U+5B51",
+      "code": "nnm",
+      "contours": "existing_original",
+      "strokes": 3
+    },
+    {
+      "char": "孓",
+      "unicode": "U+5B53",
+      "code": "nno",
+      "contours": "existing_original",
+      "strokes": 3
+    },
+    {
+      "char": "存",
+      "unicode": "U+5B58",
+      "code": "klnd",
+      "contours": "existing_original",
+      "strokes": 6
+    },
+    {
+      "char": "孱",
+      "unicode": "U+5B71",
+      "code": "sndd",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "孵",
+      "unicode": "U+5B75",
+      "code": "hhsld",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "宏",
+      "unicode": "U+5B8F",
+      "code": "jki",
+      "contours": "existing_original",
+      "strokes": 7
+    },
+    {
+      "char": "宛",
+      "unicode": "U+5B9B",
+      "code": "jeiu",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "寒",
+      "unicode": "U+5BD2",
+      "code": "jtcy",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "寨",
+      "unicode": "U+5BE8",
+      "code": "jtcd",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "尋",
+      "unicode": "U+5C0B",
+      "code": "smmri",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "屏",
+      "unicode": "U+5C4F",
+      "code": "stt",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "岡",
+      "unicode": "U+5CA1",
+      "code": "btu",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "崁",
+      "unicode": "U+5D01",
+      "code": "ugno",
+      "contours": "reconstructed",
+      "strokes": 10
+    },
+    {
+      "char": "嶺",
+      "unicode": "U+5DBA",
+      "code": "uoic",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "州",
+      "unicode": "U+5DDE",
+      "code": "ilil",
+      "contours": "existing_original",
+      "strokes": 6
+    },
+    {
+      "char": "巽",
+      "unicode": "U+5DFD",
+      "code": "rutc",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "帚",
+      "unicode": "U+5E1A",
+      "code": "smblb",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "帥",
+      "unicode": "U+5E25",
+      "code": "hrlb",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "帶",
+      "unicode": "U+5E36",
+      "code": "kpblb",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "幻",
+      "unicode": "U+5E7B",
+      "code": "vis",
+      "contours": "existing_original",
+      "strokes": 4
+    },
+    {
+      "char": "幾",
+      "unicode": "U+5E7E",
+      "code": "vihi",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "庚",
+      "unicode": "U+5E9A",
+      "code": "ilo",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "庸",
+      "unicode": "U+5EB8",
+      "code": "ilb",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "廊",
+      "unicode": "U+5ECA",
+      "code": "iiil",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "弄",
+      "unicode": "U+5F04",
+      "code": "mgt",
+      "contours": "existing_original",
+      "strokes": 7
+    },
+    {
+      "char": "弒",
+      "unicode": "U+5F12",
+      "code": "kcipm",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "彌",
+      "unicode": "U+5F4C",
+      "code": "nmfb",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "往",
+      "unicode": "U+5F80",
+      "code": "hoyg",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "徙",
+      "unicode": "U+5F99",
+      "code": "hoylo",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "循",
+      "unicode": "U+5FAA",
+      "code": "hohju",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "忝",
+      "unicode": "U+5FDD",
+      "code": "hkp",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "怵",
+      "unicode": "U+6035",
+      "code": "pid",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "恭",
+      "unicode": "U+606D",
+      "code": "tcp",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "患",
+      "unicode": "U+60A3",
+      "code": "llp",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "悠",
+      "unicode": "U+60A0",
+      "code": "okp",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "悽",
+      "unicode": "U+60BD",
+      "code": "pjlv",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "惠",
+      "unicode": "U+60E0",
+      "code": "jip",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "慌",
+      "unicode": "U+614C",
+      "code": "ptyu",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "慇",
+      "unicode": "U+6147",
+      "code": "hep",
+      "contours": "AnimCJK",
+      "strokes": 14
+    },
+    {
+      "char": "慣",
+      "unicode": "U+6163",
+      "code": "pwjc",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "慶",
+      "unicode": "U+6176",
+      "code": "ixe",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "慕",
+      "unicode": "U+6155",
+      "code": "takp",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "憩",
+      "unicode": "U+61A9",
+      "code": "hup",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "憊",
+      "unicode": "U+618A",
+      "code": "obp",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "懊",
+      "unicode": "U+61CA",
+      "code": "phbk",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "懲",
+      "unicode": "U+61F2",
+      "code": "hkp",
+      "contours": "existing_original",
+      "strokes": 19
+    },
+    {
+      "char": "懷",
+      "unicode": "U+61F7",
+      "code": "pywv",
+      "contours": "existing_original",
+      "strokes": 19
+    },
+    {
+      "char": "懸",
+      "unicode": "U+61F8",
+      "code": "bfp",
+      "contours": "existing_original",
+      "strokes": 20
+    },
+    {
+      "char": "懼",
+      "unicode": "U+61FC",
+      "code": "pbug",
+      "contours": "existing_original",
+      "strokes": 21
+    },
+    {
+      "char": "戎",
+      "unicode": "U+620E",
+      "code": "ij",
+      "contours": "existing_original",
+      "strokes": 6
+    },
+    {
+      "char": "戢",
+      "unicode": "U+6222",
+      "code": "rji",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "截",
+      "unicode": "U+622A",
+      "code": "jiog",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "戴",
+      "unicode": "U+6234",
+      "code": "jiwtc",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "戳",
+      "unicode": "U+6233",
+      "code": "sgi",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "抑",
+      "unicode": "U+6291",
+      "code": "qhvl",
+      "contours": "existing_original",
+      "strokes": 7
+    },
+    {
+      "char": "拔",
+      "unicode": "U+62D4",
+      "code": "qike",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "拆",
+      "unicode": "U+62C6",
+      "code": "qhmy",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "拜",
+      "unicode": "U+62DC",
+      "code": "hqmqj",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "拽",
+      "unicode": "U+62FD",
+      "code": "qlwp",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "掖",
+      "unicode": "U+6396",
+      "code": "qyok",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "捷",
+      "unicode": "U+6377",
+      "code": "qjlo",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "捧",
+      "unicode": "U+6367",
+      "code": "qqkq",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "掃",
+      "unicode": "U+6383",
+      "code": "qsmb",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "捨",
+      "unicode": "U+6368",
+      "code": "qomr",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "掣",
+      "unicode": "U+63A3",
+      "code": "hnq",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "揉",
+      "unicode": "U+63C9",
+      "code": "qnhd",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "揆",
+      "unicode": "U+63C6",
+      "code": "qnok",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "揍",
+      "unicode": "U+63CD",
+      "code": "qqkk",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "換",
+      "unicode": "U+63DB",
+      "code": "qnbk",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "摒",
+      "unicode": "U+6452",
+      "code": "qstt",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "搗",
+      "unicode": "U+6417",
+      "code": "qhau",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "摩",
+      "unicode": "U+6469",
+      "code": "icq",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "撰",
+      "unicode": "U+64B0",
+      "code": "qruc",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "撒",
+      "unicode": "U+6492",
+      "code": "qtbk",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "撬",
+      "unicode": "U+64AC",
+      "code": "qhuu",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "撻",
+      "unicode": "U+64BB",
+      "code": "qygq",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "攆",
+      "unicode": "U+6506",
+      "code": "qqoj",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "攫",
+      "unicode": "U+652B",
+      "code": "qbue",
+      "contours": "existing_original",
+      "strokes": 23
+    },
+    {
+      "char": "攪",
+      "unicode": "U+652A",
+      "code": "qhbu",
+      "contours": "existing_original",
+      "strokes": 23
+    },
+    {
+      "char": "散",
+      "unicode": "U+6563",
+      "code": "tbok",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "斥",
+      "unicode": "U+65A5",
+      "code": "hmy",
+      "contours": "existing_original",
+      "strokes": 5
+    },
+    {
+      "char": "斷",
+      "unicode": "U+65B7",
+      "code": "vihml",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "旅",
+      "unicode": "U+65C5",
+      "code": "ysohv",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "族",
+      "unicode": "U+65CF",
+      "code": "ysook",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "旋",
+      "unicode": "U+65CB",
+      "code": "ysono",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "旌",
+      "unicode": "U+65CC",
+      "code": "ysohm",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "旎",
+      "unicode": "U+65CE",
+      "code": "ysosp",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "旗",
+      "unicode": "U+65D7",
+      "code": "ysotc",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "旖",
+      "unicode": "U+65D6",
+      "code": "ysokr",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "昂",
+      "unicode": "U+6602",
+      "code": "ahvl",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "晝",
+      "unicode": "U+665D",
+      "code": "lgam",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "曳",
+      "unicode": "U+66F3",
+      "code": "lwp",
+      "contours": "existing_original",
+      "strokes": 6
+    },
+    {
+      "char": "勗",
+      "unicode": "U+52D7",
+      "code": "abms",
+      "contours": "AnimCJK",
+      "strokes": 11
+    },
+    {
+      "char": "替",
+      "unicode": "U+66FF",
+      "code": "qoa",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "朗",
+      "unicode": "U+6717",
+      "code": "iib",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "朮",
+      "unicode": "U+672E",
+      "code": "ijc",
+      "contours": "existing_original",
+      "strokes": 5
+    },
+    {
+      "char": "杖",
+      "unicode": "U+6756",
+      "code": "djk",
+      "contours": "existing_original",
+      "strokes": 7
+    },
+    {
+      "char": "柔",
+      "unicode": "U+67D4",
+      "code": "nhd",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "枴",
+      "unicode": "U+67B4",
+      "code": "drsh",
+      "contours": "AnimCJK",
+      "strokes": 9
+    },
+    {
+      "char": "梳",
+      "unicode": "U+68B3",
+      "code": "dyiu",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "桌",
+      "unicode": "U+684C",
+      "code": "yad",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "栽",
+      "unicode": "U+683D",
+      "code": "jid",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "梔",
+      "unicode": "U+6894",
+      "code": "dhmu",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "條",
+      "unicode": "U+689D",
+      "code": "olod",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "梟",
+      "unicode": "U+689F",
+      "code": "hayd",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "棒",
+      "unicode": "U+68D2",
+      "code": "dqkq",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "棲",
+      "unicode": "U+68F2",
+      "code": "djlv",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "榔",
+      "unicode": "U+6994",
+      "code": "diil",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "榛",
+      "unicode": "U+699B",
+      "code": "dqkd",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "榷",
+      "unicode": "U+69B7",
+      "code": "dobg",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "榻",
+      "unicode": "U+69BB",
+      "code": "dasm",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "槌",
+      "unicode": "U+69CC",
+      "code": "dyhr",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "樁",
+      "unicode": "U+6A01",
+      "code": "dqkx",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "樺",
+      "unicode": "U+6A3A",
+      "code": "dtmj",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "橘",
+      "unicode": "U+6A58",
+      "code": "dnhb",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "橇",
+      "unicode": "U+6A47",
+      "code": "dhuu",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "檄",
+      "unicode": "U+6A84",
+      "code": "dhsk",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "櫛",
+      "unicode": "U+6ADB",
+      "code": "dhal",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "檳",
+      "unicode": "U+6AB3",
+      "code": "djmc",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "櫂",
+      "unicode": "U+6AC2",
+      "code": "dsmg",
+      "contours": "AnimCJK",
+      "strokes": 18
+    },
+    {
+      "char": "櫝",
+      "unicode": "U+6ADD",
+      "code": "dgwc",
+      "contours": "AnimCJK",
+      "strokes": 19
+    },
+    {
+      "char": "櫻",
+      "unicode": "U+6AFB",
+      "code": "dbcv",
+      "contours": "existing_original",
+      "strokes": 21
+    },
+    {
+      "char": "權",
+      "unicode": "U+6B0A",
+      "code": "dtrg",
+      "contours": "existing_original",
+      "strokes": 22
+    },
+    {
+      "char": "欖",
+      "unicode": "U+6B16",
+      "code": "dswu",
+      "contours": "existing_original",
+      "strokes": 25
+    },
+    {
+      "char": "歌",
+      "unicode": "U+6B4C",
+      "code": "mrno",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "歡",
+      "unicode": "U+6B61",
+      "code": "tgno",
+      "contours": "existing_original",
+      "strokes": 22
+    },
+    {
+      "char": "歲",
+      "unicode": "U+6B72",
+      "code": "ymihh",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "歸",
+      "unicode": "U+6B78",
+      "code": "hmsmb",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "歿",
+      "unicode": "U+6B7F",
+      "code": "mnne",
+      "contours": "AnimCJK",
+      "strokes": 8
+    },
+    {
+      "char": "殤",
+      "unicode": "U+6BA4",
+      "code": "mnoah",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "殯",
+      "unicode": "U+6BAF",
+      "code": "mnjmc",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "段",
+      "unicode": "U+6BB5",
+      "code": "hjhne",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "殷",
+      "unicode": "U+6BB7",
+      "code": "hshne",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "殺",
+      "unicode": "U+6BBA",
+      "code": "kchne",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "殼",
+      "unicode": "U+6BBC",
+      "code": "gnhne",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "毅",
+      "unicode": "U+6BC5",
+      "code": "yohne",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "毋",
+      "unicode": "U+6BCB",
+      "code": "wjh",
+      "contours": "existing_original",
+      "strokes": 4
+    },
+    {
+      "char": "毓",
+      "unicode": "U+6BD3",
+      "code": "oyyiu",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "氾",
+      "unicode": "U+6C3E",
+      "code": "esu",
+      "contours": "existing_original",
+      "strokes": 5
+    },
+    {
+      "char": "汙",
+      "unicode": "U+6C59",
+      "code": "emd",
+      "contours": "AnimCJK",
+      "strokes": 6
+    },
+    {
+      "char": "沛",
+      "unicode": "U+6C9B",
+      "code": "ejb",
+      "contours": "existing_original",
+      "strokes": 7
+    },
+    {
+      "char": "沿",
+      "unicode": "U+6CBF",
+      "code": "ecr",
+      "contours": "reconstructed",
+      "strokes": 8
+    },
+    {
+      "char": "泰",
+      "unicode": "U+6CF0",
+      "code": "qke",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "洲",
+      "unicode": "U+6D32",
+      "code": "eill",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "流",
+      "unicode": "U+6D41",
+      "code": "eyiu",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "派",
+      "unicode": "U+6D3E",
+      "code": "ehhv",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "浸",
+      "unicode": "U+6D78",
+      "code": "esme",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "液",
+      "unicode": "U+6DB2",
+      "code": "eyok",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "添",
+      "unicode": "U+6DFB",
+      "code": "ehkp",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "淵",
+      "unicode": "U+6DF5",
+      "code": "elxl",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "淒",
+      "unicode": "U+6DD2",
+      "code": "ejlv",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "涵",
+      "unicode": "U+6DB5",
+      "code": "eune",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "湊",
+      "unicode": "U+6E4A",
+      "code": "eqkk",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "湃",
+      "unicode": "U+6E43",
+      "code": "ehqj",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "渙",
+      "unicode": "U+6E19",
+      "code": "enbk",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "滾",
+      "unicode": "U+6EFE",
+      "code": "eycv",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "漢",
+      "unicode": "U+6F22",
+      "code": "etlo",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "滯",
+      "unicode": "U+6EEF",
+      "code": "ekpb",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "滌",
+      "unicode": "U+6ECC",
+      "code": "eold",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "潛",
+      "unicode": "U+6F5B",
+      "code": "emua",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "潺",
+      "unicode": "U+6F7A",
+      "code": "esnd",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "濁",
+      "unicode": "U+6FC1",
+      "code": "ewli",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "澳",
+      "unicode": "U+6FB3",
+      "code": "ehbk",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "激",
+      "unicode": "U+6FC0",
+      "code": "ehsk",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "濱",
+      "unicode": "U+6FF1",
+      "code": "ejmc",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "濠",
+      "unicode": "U+6FE0",
+      "code": "eyro",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "濛",
+      "unicode": "U+6FDB",
+      "code": "etbo",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "濯",
+      "unicode": "U+6FEF",
+      "code": "esmg",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "澀",
+      "unicode": "U+6F80",
+      "code": "esim",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "瀚",
+      "unicode": "U+701A",
+      "code": "ejjm",
+      "contours": "existing_original",
+      "strokes": 19
+    },
+    {
+      "char": "瀰",
+      "unicode": "U+7030",
+      "code": "enmb",
+      "contours": "existing_original",
+      "strokes": 20
+    },
+    {
+      "char": "灌",
+      "unicode": "U+704C",
+      "code": "etrg",
+      "contours": "existing_original",
+      "strokes": 20
+    },
+    {
+      "char": "灑",
+      "unicode": "U+7051",
+      "code": "emmp",
+      "contours": "existing_original",
+      "strokes": 22
+    },
+    {
+      "char": "灤",
+      "unicode": "U+7064",
+      "code": "evfd",
+      "contours": "reconstructed",
+      "strokes": 26
+    },
+    {
+      "char": "烈",
+      "unicode": "U+70C8",
+      "code": "mnf",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "烏",
+      "unicode": "U+70CF",
+      "code": "hryf",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "煥",
+      "unicode": "U+7165",
+      "code": "fnbk",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "熙",
+      "unicode": "U+7199",
+      "code": "suf",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "燧",
+      "unicode": "U+71E7",
+      "code": "fyto",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "燭",
+      "unicode": "U+71ED",
+      "code": "fwli",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "燬",
+      "unicode": "U+71EC",
+      "code": "fhge",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "燻",
+      "unicode": "U+71FB",
+      "code": "fhgf",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "爨",
+      "unicode": "U+7228",
+      "code": "hbddf",
+      "contours": "existing_original",
+      "strokes": 30
+    },
+    {
+      "char": "爵",
+      "unicode": "U+7235",
+      "code": "bwli",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "牆",
+      "unicode": "U+7246",
+      "code": "vmgow",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "犀",
+      "unicode": "U+7280",
+      "code": "sehq",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "犖",
+      "unicode": "U+7296",
+      "code": "ffbhq",
+      "contours": "AnimCJK",
+      "strokes": 14
+    },
+    {
+      "char": "犛",
+      "unicode": "U+729B",
+      "code": "jkmhq",
+      "contours": "reconstructed",
+      "strokes": 15
+    },
+    {
+      "char": "獅",
+      "unicode": "U+7345",
+      "code": "khhrb",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "獰",
+      "unicode": "U+7370",
+      "code": "khjpn",
+      "contours": "AnimCJK",
+      "strokes": 17
+    },
+    {
+      "char": "獺",
+      "unicode": "U+737A",
+      "code": "khdlc",
+      "contours": "AnimCJK",
+      "strokes": 19
+    },
+    {
+      "char": "玀",
+      "unicode": "U+7380",
+      "code": "khwlg",
+      "contours": "reconstructed",
+      "strokes": 22
+    },
+    {
+      "char": "率",
+      "unicode": "U+7387",
+      "code": "yioj",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "班",
+      "unicode": "U+73ED",
+      "code": "mgilg",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "琉",
+      "unicode": "U+7409",
+      "code": "mgyiu",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "琵",
+      "unicode": "U+7435",
+      "code": "mgpp",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "琶",
+      "unicode": "U+7436",
+      "code": "mgau",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "琴",
+      "unicode": "U+7434",
+      "code": "mgoin",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "瑯",
+      "unicode": "U+746F",
+      "code": "mgiil",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "璣",
+      "unicode": "U+74A3",
+      "code": "mgvii",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "璽",
+      "unicode": "U+74BD",
+      "code": "mbmgi",
+      "contours": "existing_original",
+      "strokes": 19
+    },
+    {
+      "char": "瓊",
+      "unicode": "U+74CA",
+      "code": "mgnbe",
+      "contours": "existing_original",
+      "strokes": 19
+    },
+    {
+      "char": "瓢",
+      "unicode": "U+74E2",
+      "code": "mfhvo",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "甩",
+      "unicode": "U+7529",
+      "code": "bqu",
+      "contours": "existing_original",
+      "strokes": 5
+    },
+    {
+      "char": "畢",
+      "unicode": "U+7562",
+      "code": "wtj",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "疏",
+      "unicode": "U+758F",
+      "code": "nmyiu",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "疑",
+      "unicode": "U+7591",
+      "code": "pknio",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "痲",
+      "unicode": "U+75F2",
+      "code": "kjcc",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "瘧",
+      "unicode": "U+7627",
+      "code": "kypm",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "瘍",
+      "unicode": "U+760D",
+      "code": "kamh",
+      "contours": "AnimCJK",
+      "strokes": 14
+    },
+    {
+      "char": "瘉",
+      "unicode": "U+7609",
+      "code": "komn",
+      "contours": "AnimCJK",
+      "strokes": 14
+    },
+    {
+      "char": "瘓",
+      "unicode": "U+7613",
+      "code": "knbk",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "瘠",
+      "unicode": "U+7620",
+      "code": "kfcb",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "癸",
+      "unicode": "U+7678",
+      "code": "nomk",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "皺",
+      "unicode": "U+76BA",
+      "code": "pudhe",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "盥",
+      "unicode": "U+76E5",
+      "code": "hxbt",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "睫",
+      "unicode": "U+776B",
+      "code": "bujlo",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "睽",
+      "unicode": "U+777D",
+      "code": "bunok",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "瞿",
+      "unicode": "U+77BF",
+      "code": "buog",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "矇",
+      "unicode": "U+77C7",
+      "code": "butbo",
+      "contours": "existing_original",
+      "strokes": 19
+    },
+    {
+      "char": "矜",
+      "unicode": "U+77DC",
+      "code": "nhoin",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "硫",
+      "unicode": "U+786B",
+      "code": "mryiu",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "碘",
+      "unicode": "U+7898",
+      "code": "mrtbc",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "確",
+      "unicode": "U+78BA",
+      "code": "mrobg",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "磐",
+      "unicode": "U+78D0",
+      "code": "hemr",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "磨",
+      "unicode": "U+78E8",
+      "code": "icmr",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "磯",
+      "unicode": "U+78EF",
+      "code": "mrvii",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "祐",
+      "unicode": "U+7950",
+      "code": "ifkr",
+      "contours": "AnimCJK",
+      "strokes": 9
+    },
+    {
+      "char": "禦",
+      "unicode": "U+79A6",
+      "code": "hlmmf",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "禹",
+      "unicode": "U+79B9",
+      "code": "hlbi",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "秉",
+      "unicode": "U+79C9",
+      "code": "hdl",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "秦",
+      "unicode": "U+79E6",
+      "code": "qkhd",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "穗",
+      "unicode": "U+7A57",
+      "code": "hdjip",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "穡",
+      "unicode": "U+7A61",
+      "code": "hdgow",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "窘",
+      "unicode": "U+7A98",
+      "code": "jcskr",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "窗",
+      "unicode": "U+7A97",
+      "code": "jchwe",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "竄",
+      "unicode": "U+7AC4",
+      "code": "jchxv",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "竅",
+      "unicode": "U+7AC5",
+      "code": "jchsk",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "竊",
+      "unicode": "U+7ACA",
+      "code": "jchdb",
+      "contours": "existing_original",
+      "strokes": 22
+    },
+    {
+      "char": "算",
+      "unicode": "U+7B97",
+      "code": "hbut",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "範",
+      "unicode": "U+7BC4",
+      "code": "hjju",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "簑",
+      "unicode": "U+7C11",
+      "code": "hywv",
+      "contours": "AnimCJK",
+      "strokes": 16
+    },
+    {
+      "char": "篛",
+      "unicode": "U+7BDB",
+      "code": "hnmm",
+      "contours": "reconstructed",
+      "strokes": 16
+    },
+    {
+      "char": "篩",
+      "unicode": "U+7BE9",
+      "code": "hhrb",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "簍",
+      "unicode": "U+7C0D",
+      "code": "hllv",
+      "contours": "AnimCJK",
+      "strokes": 17
+    },
+    {
+      "char": "篾",
+      "unicode": "U+7BFE",
+      "code": "hwli",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "簪",
+      "unicode": "U+7C2A",
+      "code": "hmua",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "籐",
+      "unicode": "U+7C50",
+      "code": "hbfe",
+      "contours": "AnimCJK",
+      "strokes": 21
+    },
+    {
+      "char": "粵",
+      "unicode": "U+7CB5",
+      "code": "hwmvs",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "糜",
+      "unicode": "U+7CDC",
+      "code": "icfd",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "糢",
+      "unicode": "U+7CE2",
+      "code": "fdtak",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "糾",
+      "unicode": "U+7CFE",
+      "code": "vfvl",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "絃",
+      "unicode": "U+7D43",
+      "code": "vfyvi",
+      "contours": "AnimCJK",
+      "strokes": 11
+    },
+    {
+      "char": "絨",
+      "unicode": "U+7D68",
+      "code": "vfij",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "綑",
+      "unicode": "U+7D91",
+      "code": "vfwd",
+      "contours": "reconstructed",
+      "strokes": 13
+    },
+    {
+      "char": "綰",
+      "unicode": "U+7DB0",
+      "code": "vfjrr",
+      "contours": "AnimCJK",
+      "strokes": 14
+    },
+    {
+      "char": "綱",
+      "unicode": "U+7DB1",
+      "code": "vfbtu",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "緇",
+      "unicode": "U+7DC7",
+      "code": "vfvvw",
+      "contours": "AnimCJK",
+      "strokes": 14
+    },
+    {
+      "char": "緬",
+      "unicode": "U+7DEC",
+      "code": "vfmwl",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "緞",
+      "unicode": "U+7DDE",
+      "code": "vfhje",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "綞",
+      "unicode": "U+7D9E",
+      "code": "vfhjm",
+      "contours": "reconstructed",
+      "strokes": 14
+    },
+    {
+      "char": "縑",
+      "unicode": "U+7E11",
+      "code": "vftxc",
+      "contours": "reconstructed",
+      "strokes": 16
+    },
+    {
+      "char": "縲",
+      "unicode": "U+7E32",
+      "code": "vfwvf",
+      "contours": "AnimCJK",
+      "strokes": 17
+    },
+    {
+      "char": "繅",
+      "unicode": "U+7E45",
+      "code": "vfvvd",
+      "contours": "reconstructed",
+      "strokes": 17
+    },
+    {
+      "char": "繁",
+      "unicode": "U+7E41",
+      "code": "okvif",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "繫",
+      "unicode": "U+7E6B",
+      "code": "jevif",
+      "contours": "existing_original",
+      "strokes": 19
+    },
+    {
+      "char": "繩",
+      "unicode": "U+7E69",
+      "code": "vfrxu",
+      "contours": "existing_original",
+      "strokes": 19
+    },
+    {
+      "char": "繽",
+      "unicode": "U+7E7D",
+      "code": "vfjmc",
+      "contours": "existing_original",
+      "strokes": 20
+    },
+    {
+      "char": "纓",
+      "unicode": "U+7E93",
+      "code": "vfbcv",
+      "contours": "existing_original",
+      "strokes": 23
+    },
+    {
+      "char": "罐",
+      "unicode": "U+7F50",
+      "code": "outrg",
+      "contours": "existing_original",
+      "strokes": 23
+    },
+    {
+      "char": "羌",
+      "unicode": "U+7F8C",
+      "code": "tghu",
+      "contours": "existing_original",
+      "strokes": 7
+    },
+    {
+      "char": "羋",
+      "unicode": "U+7F8B",
+      "code": "tlq",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "善",
+      "unicode": "U+5584",
+      "code": "tgtr",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "羸",
+      "unicode": "U+7FB8",
+      "code": "yntq",
+      "contours": "existing_original",
+      "strokes": 19
+    },
+    {
+      "char": "羿",
+      "unicode": "U+7FBF",
+      "code": "smt",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "翁",
+      "unicode": "U+7FC1",
+      "code": "cism",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "翌",
+      "unicode": "U+7FCC",
+      "code": "smyt",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "翎",
+      "unicode": "U+7FCE",
+      "code": "oismm",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "翠",
+      "unicode": "U+7FE0",
+      "code": "smyoj",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "翟",
+      "unicode": "U+7FDF",
+      "code": "smog",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "翰",
+      "unicode": "U+7FF0",
+      "code": "jjosm",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "翼",
+      "unicode": "U+7FFC",
+      "code": "smwtc",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "耀",
+      "unicode": "U+8000",
+      "code": "fusmg",
+      "contours": "existing_original",
+      "strokes": 20
+    },
+    {
+      "char": "耜",
+      "unicode": "U+801C",
+      "code": "qdrlr",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "聚",
+      "unicode": "U+805A",
+      "code": "sehho",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "聾",
+      "unicode": "U+807E",
+      "code": "ypsj",
+      "contours": "existing_original",
+      "strokes": 22
+    },
+    {
+      "char": "肉",
+      "unicode": "U+8089",
+      "code": "obo",
+      "contours": "existing_original",
+      "strokes": 6
+    },
+    {
+      "char": "肱",
+      "unicode": "U+80B1",
+      "code": "bki",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "胤",
+      "unicode": "U+80E4",
+      "code": "lvbu",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "脈",
+      "unicode": "U+8108",
+      "code": "bhhv",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "脊",
+      "unicode": "U+810A",
+      "code": "fcb",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "腋",
+      "unicode": "U+814B",
+      "code": "byok",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "腎",
+      "unicode": "U+814E",
+      "code": "seb",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "腆",
+      "unicode": "U+8146",
+      "code": "btbc",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "臏",
+      "unicode": "U+81CF",
+      "code": "bjmc",
+      "contours": "reconstructed",
+      "strokes": 18
+    },
+    {
+      "char": "臥",
+      "unicode": "U+81E5",
+      "code": "slo",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "臧",
+      "unicode": "U+81E7",
+      "code": "imsll",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "臨",
+      "unicode": "U+81E8",
+      "code": "slorr",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "臻",
+      "unicode": "U+81FB",
+      "code": "mgqkd",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "舂",
+      "unicode": "U+8202",
+      "code": "qkhx",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "舔",
+      "unicode": "U+8214",
+      "code": "hrhkp",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "舞",
+      "unicode": "U+821E",
+      "code": "otniq",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "船",
+      "unicode": "U+8239",
+      "code": "hycr",
+      "contours": "reconstructed",
+      "strokes": 11
+    },
+    {
+      "char": "艱",
+      "unicode": "U+8271",
+      "code": "toav",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "范",
+      "unicode": "U+8303",
+      "code": "tesu",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "荒",
+      "unicode": "U+8352",
+      "code": "tyvu",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "荔",
+      "unicode": "U+8354",
+      "code": "tkss",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "荐",
+      "unicode": "U+8350",
+      "code": "tkld",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "莒",
+      "unicode": "U+8392",
+      "code": "trhr",
+      "contours": "reconstructed",
+      "strokes": 10
+    },
+    {
+      "char": "萋",
+      "unicode": "U+840B",
+      "code": "tjlv",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "華",
+      "unicode": "U+83EF",
+      "code": "tmtj",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "菴",
+      "unicode": "U+83F4",
+      "code": "tklu",
+      "contours": "AnimCJK",
+      "strokes": 11
+    },
+    {
+      "char": "葵",
+      "unicode": "U+8475",
+      "code": "tnok",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "萵",
+      "unicode": "U+8435",
+      "code": "tbbr",
+      "contours": "AnimCJK",
+      "strokes": 12
+    },
+    {
+      "char": "蓆",
+      "unicode": "U+84C6",
+      "code": "titb",
+      "contours": "AnimCJK",
+      "strokes": 13
+    },
+    {
+      "char": "蓀",
+      "unicode": "U+84C0",
+      "code": "tndf",
+      "contours": "reconstructed",
+      "strokes": 13
+    },
+    {
+      "char": "蒐",
+      "unicode": "U+8490",
+      "code": "thui",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "蔬",
+      "unicode": "U+852C",
+      "code": "tnmu",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "蔑",
+      "unicode": "U+8511",
+      "code": "twli",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "蕙",
+      "unicode": "U+8559",
+      "code": "tjip",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "薔",
+      "unicode": "U+8594",
+      "code": "tgow",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "薛",
+      "unicode": "U+859B",
+      "code": "thrj",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "薰",
+      "unicode": "U+85B0",
+      "code": "thgf",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "藤",
+      "unicode": "U+85E4",
+      "code": "tbfe",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "蘑",
+      "unicode": "U+8611",
+      "code": "ticr",
+      "contours": "existing_original",
+      "strokes": 19
+    },
+    {
+      "char": "蘗",
+      "unicode": "U+8617",
+      "code": "tsjd",
+      "contours": "AnimCJK",
+      "strokes": 20
+    },
+    {
+      "char": "虐",
+      "unicode": "U+8650",
+      "code": "ypsm",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "虱",
+      "unicode": "U+8671",
+      "code": "nhli",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "螂",
+      "unicode": "U+8782",
+      "code": "liiil",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "蠅",
+      "unicode": "U+8805",
+      "code": "lirxu",
+      "contours": "existing_original",
+      "strokes": 19
+    },
+    {
+      "char": "蠔",
+      "unicode": "U+8814",
+      "code": "liyro",
+      "contours": "existing_original",
+      "strokes": 20
+    },
+    {
+      "char": "蠶",
+      "unicode": "U+8836",
+      "code": "muali",
+      "contours": "existing_original",
+      "strokes": 24
+    },
+    {
+      "char": "蠹",
+      "unicode": "U+8839",
+      "code": "jbmri",
+      "contours": "existing_original",
+      "strokes": 24
+    },
+    {
+      "char": "衍",
+      "unicode": "U+884D",
+      "code": "hoemn",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "術",
+      "unicode": "U+8853",
+      "code": "hoicn",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "街",
+      "unicode": "U+8857",
+      "code": "hoggn",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "衙",
+      "unicode": "U+8859",
+      "code": "homrn",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "衝",
+      "unicode": "U+885D",
+      "code": "hohgn",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "衢",
+      "unicode": "U+8862",
+      "code": "hobgn",
+      "contours": "existing_original",
+      "strokes": 24
+    },
+    {
+      "char": "衰",
+      "unicode": "U+8870",
+      "code": "ywmv",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "衷",
+      "unicode": "U+8877",
+      "code": "ylhv",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "袁",
+      "unicode": "U+8881",
+      "code": "grhv",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "袞",
+      "unicode": "U+889E",
+      "code": "ycrhv",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "裂",
+      "unicode": "U+88C2",
+      "code": "mnyhv",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "裙",
+      "unicode": "U+88D9",
+      "code": "lskr",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "裊",
+      "unicode": "U+88CA",
+      "code": "hayv",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "裹",
+      "unicode": "U+88F9",
+      "code": "ywdv",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "製",
+      "unicode": "U+88FD",
+      "code": "hnyhv",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "褒",
+      "unicode": "U+8912",
+      "code": "yodv",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "褫",
+      "unicode": "U+892B",
+      "code": "lhyn",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "褻",
+      "unicode": "U+893B",
+      "code": "ygiv",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "襖",
+      "unicode": "U+8956",
+      "code": "lhbk",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "襪",
+      "unicode": "U+896A",
+      "code": "ltwi",
+      "contours": "existing_original",
+      "strokes": 20
+    },
+    {
+      "char": "覺",
+      "unicode": "U+89BA",
+      "code": "hbbuu",
+      "contours": "existing_original",
+      "strokes": 20
+    },
+    {
+      "char": "觴",
+      "unicode": "U+89F4",
+      "code": "nboah",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "觸",
+      "unicode": "U+89F8",
+      "code": "nbwli",
+      "contours": "existing_original",
+      "strokes": 20
+    },
+    {
+      "char": "訴",
+      "unicode": "U+8A34",
+      "code": "yrhmy",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "詬",
+      "unicode": "U+8A6C",
+      "code": "yrhmr",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "誤",
+      "unicode": "U+8AA4",
+      "code": "yrrvk",
+      "contours": "reconstructed",
+      "strokes": 14
+    },
+    {
+      "char": "誥",
+      "unicode": "U+8AA5",
+      "code": "yrhgr",
+      "contours": "AnimCJK",
+      "strokes": 14
+    },
+    {
+      "char": "諍",
+      "unicode": "U+8ACD",
+      "code": "yrbsd",
+      "contours": "AnimCJK",
+      "strokes": 15
+    },
+    {
+      "char": "諺",
+      "unicode": "U+8AFA",
+      "code": "yrykh",
+      "contours": "reconstructed",
+      "strokes": 16
+    },
+    {
+      "char": "謊",
+      "unicode": "U+8B0A",
+      "code": "yrtyu",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "謄",
+      "unicode": "U+8B04",
+      "code": "bfqr",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "謨",
+      "unicode": "U+8B28",
+      "code": "yrtak",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "譎",
+      "unicode": "U+8B4E",
+      "code": "yrnhb",
+      "contours": "existing_original",
+      "strokes": 19
+    },
+    {
+      "char": "譏",
+      "unicode": "U+8B4F",
+      "code": "yrvii",
+      "contours": "existing_original",
+      "strokes": 19
+    },
+    {
+      "char": "譴",
+      "unicode": "U+8B74",
+      "code": "yrylr",
+      "contours": "existing_original",
+      "strokes": 20
+    },
+    {
+      "char": "讚",
+      "unicode": "U+8B9A",
+      "code": "yrhuc",
+      "contours": "existing_original",
+      "strokes": 26
+    },
+    {
+      "char": "豁",
+      "unicode": "U+8C41",
+      "code": "jrcor",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "豎",
+      "unicode": "U+8C4E",
+      "code": "semrt",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "豐",
+      "unicode": "U+8C50",
+      "code": "ujmrt",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "豪",
+      "unicode": "U+8C6A",
+      "code": "yrbo",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "貓",
+      "unicode": "U+8C93",
+      "code": "bhtw",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "貫",
+      "unicode": "U+8CAB",
+      "code": "wjbuc",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "賊",
+      "unicode": "U+8CCA",
+      "code": "bcij",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "賓",
+      "unicode": "U+8CD3",
+      "code": "jmhc",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "賢",
+      "unicode": "U+8CE2",
+      "code": "sebuc",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "質",
+      "unicode": "U+8CEA",
+      "code": "hlbuc",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "賴",
+      "unicode": "U+8CF4",
+      "code": "dlshc",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "賽",
+      "unicode": "U+8CFD",
+      "code": "jtcc",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "贅",
+      "unicode": "U+8D05",
+      "code": "gkbuc",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "贊",
+      "unicode": "U+8D0A",
+      "code": "hubuc",
+      "contours": "existing_original",
+      "strokes": 19
+    },
+    {
+      "char": "贓",
+      "unicode": "U+8D13",
+      "code": "bcims",
+      "contours": "existing_original",
+      "strokes": 21
+    },
+    {
+      "char": "赧",
+      "unicode": "U+8D67",
+      "code": "gcsle",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "赳",
+      "unicode": "U+8D73",
+      "code": "govl",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "越",
+      "unicode": "U+8D8A",
+      "code": "goiv",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "跋",
+      "unicode": "U+8DCB",
+      "code": "rmike",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "跼",
+      "unicode": "U+8DFC",
+      "code": "rmssr",
+      "contours": "AnimCJK",
+      "strokes": 14
+    },
+    {
+      "char": "踫",
+      "unicode": "U+8E2B",
+      "code": "rmttc",
+      "contours": "reconstructed",
+      "strokes": 15
+    },
+    {
+      "char": "蹂",
+      "unicode": "U+8E42",
+      "code": "rmnhd",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "蹋",
+      "unicode": "U+8E4B",
+      "code": "rmasm",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "躅",
+      "unicode": "U+8E85",
+      "code": "rmwli",
+      "contours": "existing_original",
+      "strokes": 20
+    },
+    {
+      "char": "躂",
+      "unicode": "U+8E82",
+      "code": "rmygq",
+      "contours": "existing_original",
+      "strokes": 19
+    },
+    {
+      "char": "載",
+      "unicode": "U+8F09",
+      "code": "jijwj",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "輦",
+      "unicode": "U+8F26",
+      "code": "qojwj",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "轂",
+      "unicode": "U+8F42",
+      "code": "gjhne",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "轅",
+      "unicode": "U+8F45",
+      "code": "jjgrv",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "輿",
+      "unicode": "U+8F3F",
+      "code": "hxjc",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "轟",
+      "unicode": "U+8F5F",
+      "code": "jjjjj",
+      "contours": "existing_original",
+      "strokes": 21
+    },
+    {
+      "char": "轡",
+      "unicode": "U+8F61",
+      "code": "vfr",
+      "contours": "existing_original",
+      "strokes": 22
+    },
+    {
+      "char": "辨",
+      "unicode": "U+8FA8",
+      "code": "yjilj",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "迆",
+      "unicode": "U+8FC6",
+      "code": "ypd",
+      "contours": "reconstructed",
+      "strokes": 6
+    },
+    {
+      "char": "迎",
+      "unicode": "U+8FCE",
+      "code": "yhvl",
+      "contours": "existing_original",
+      "strokes": 7
+    },
+    {
+      "char": "述",
+      "unicode": "U+8FF0",
+      "code": "yid",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "迺",
+      "unicode": "U+8FFA",
+      "code": "ymcw",
+      "contours": "AnimCJK",
+      "strokes": 10
+    },
+    {
+      "char": "追",
+      "unicode": "U+8FFD",
+      "code": "yhrr",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "逅",
+      "unicode": "U+9005",
+      "code": "yhmr",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "遂",
+      "unicode": "U+9042",
+      "code": "ytpo",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "達",
+      "unicode": "U+9054",
+      "code": "ygtq",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "遁",
+      "unicode": "U+9041",
+      "code": "yhju",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "遠",
+      "unicode": "U+9060",
+      "code": "ygrv",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "遣",
+      "unicode": "U+9063",
+      "code": "ylmr",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "遞",
+      "unicode": "U+905E",
+      "code": "yhyu",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "遷",
+      "unicode": "U+9077",
+      "code": "ymwu",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "遲",
+      "unicode": "U+9072",
+      "code": "yseq",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "邀",
+      "unicode": "U+9080",
+      "code": "yhsk",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "邇",
+      "unicode": "U+9087",
+      "code": "ymfb",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "邐",
+      "unicode": "U+9090",
+      "code": "ymmp",
+      "contours": "reconstructed",
+      "strokes": 22
+    },
+    {
+      "char": "邸",
+      "unicode": "U+90B8",
+      "code": "hinl",
+      "contours": "existing_original",
+      "strokes": 7
+    },
+    {
+      "char": "郎",
+      "unicode": "U+90CE",
+      "code": "iinl",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "鄉",
+      "unicode": "U+9109",
+      "code": "vhiil",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "鄒",
+      "unicode": "U+9112",
+      "code": "punl",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "鄹",
+      "unicode": "U+9139",
+      "code": "sonl",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "酉",
+      "unicode": "U+9149",
+      "code": "mcwm",
+      "contours": "existing_original",
+      "strokes": 7
+    },
+    {
+      "char": "酬",
+      "unicode": "U+916C",
+      "code": "mwill",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "醜",
+      "unicode": "U+919C",
+      "code": "mwhui",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "醺",
+      "unicode": "U+91BA",
+      "code": "mwhgf",
+      "contours": "existing_original",
+      "strokes": 21
+    },
+    {
+      "char": "釁",
+      "unicode": "U+91C1",
+      "code": "hbmch",
+      "contours": "existing_original",
+      "strokes": 25
+    },
+    {
+      "char": "釐",
+      "unicode": "U+91D0",
+      "code": "jkmwg",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "釜",
+      "unicode": "U+91DC",
+      "code": "ckmgc",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "鈣",
+      "unicode": "U+9223",
+      "code": "cmys",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "鈞",
+      "unicode": "U+921E",
+      "code": "cpmm",
+      "contours": "reconstructed",
+      "strokes": 12
+    },
+    {
+      "char": "鉛",
+      "unicode": "U+925B",
+      "code": "ccr",
+      "contours": "reconstructed",
+      "strokes": 13
+    },
+    {
+      "char": "銜",
+      "unicode": "U+929C",
+      "code": "hocmn",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "鋁",
+      "unicode": "U+92C1",
+      "code": "crhr",
+      "contours": "reconstructed",
+      "strokes": 15
+    },
+    {
+      "char": "鋼",
+      "unicode": "U+92FC",
+      "code": "cbtu",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "錚",
+      "unicode": "U+931A",
+      "code": "cbsd",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "錨",
+      "unicode": "U+9328",
+      "code": "ctw",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "鍛",
+      "unicode": "U+935B",
+      "code": "chje",
+      "contours": "existing_original",
+      "strokes": 17
+    },
+    {
+      "char": "鎢",
+      "unicode": "U+93A2",
+      "code": "chrf",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "鏟",
+      "unicode": "U+93DF",
+      "code": "cykm",
+      "contours": "reconstructed",
+      "strokes": 19
+    },
+    {
+      "char": "鏗",
+      "unicode": "U+93D7",
+      "code": "cseg",
+      "contours": "AnimCJK",
+      "strokes": 20
+    },
+    {
+      "char": "鐲",
+      "unicode": "U+9432",
+      "code": "cwli",
+      "contours": "existing_original",
+      "strokes": 21
+    },
+    {
+      "char": "鑒",
+      "unicode": "U+9452",
+      "code": "swc",
+      "contours": "existing_original",
+      "strokes": 22
+    },
+    {
+      "char": "鑰",
+      "unicode": "U+9470",
+      "code": "comb",
+      "contours": "existing_original",
+      "strokes": 25
+    },
+    {
+      "char": "鑽",
+      "unicode": "U+947D",
+      "code": "chuc",
+      "contours": "existing_original",
+      "strokes": 26
+    },
+    {
+      "char": "閭",
+      "unicode": "U+95AD",
+      "code": "anrhr",
+      "contours": "reconstructed",
+      "strokes": 15
+    },
+    {
+      "char": "闋",
+      "unicode": "U+95CB",
+      "code": "annok",
+      "contours": "reconstructed",
+      "strokes": 17
+    },
+    {
+      "char": "闐",
+      "unicode": "U+95D0",
+      "code": "anjbc",
+      "contours": "reconstructed",
+      "strokes": 18
+    },
+    {
+      "char": "阜",
+      "unicode": "U+961C",
+      "code": "hrj",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "陋",
+      "unicode": "U+964B",
+      "code": "nlmbv",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "降",
+      "unicode": "U+964D",
+      "code": "nlheq",
+      "contours": "existing_original",
+      "strokes": 8
+    },
+    {
+      "char": "隆",
+      "unicode": "U+9686",
+      "code": "nlhem",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "隧",
+      "unicode": "U+96A7",
+      "code": "nlyto",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "隨",
+      "unicode": "U+96A8",
+      "code": "nlykb",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "雋",
+      "unicode": "U+96CB",
+      "code": "oglms",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "雍",
+      "unicode": "U+96CD",
+      "code": "yvhg",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "雙",
+      "unicode": "U+96D9",
+      "code": "oge",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "雛",
+      "unicode": "U+96DB",
+      "code": "puog",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "雪",
+      "unicode": "U+96EA",
+      "code": "mbsm",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "霧",
+      "unicode": "U+9727",
+      "code": "mbnhs",
+      "contours": "existing_original",
+      "strokes": 19
+    },
+    {
+      "char": "靄",
+      "unicode": "U+9744",
+      "code": "mbyrv",
+      "contours": "AnimCJK",
+      "strokes": 24
+    },
+    {
+      "char": "靡",
+      "unicode": "U+9761",
+      "code": "iclmy",
+      "contours": "existing_original",
+      "strokes": 19
+    },
+    {
+      "char": "靦",
+      "unicode": "U+9766",
+      "code": "mwbuu",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "靨",
+      "unicode": "U+9768",
+      "code": "mkmwl",
+      "contours": "AnimCJK",
+      "strokes": 23
+    },
+    {
+      "char": "鞣",
+      "unicode": "U+97A3",
+      "code": "tjnhd",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "韃",
+      "unicode": "U+97C3",
+      "code": "tjygq",
+      "contours": "existing_original",
+      "strokes": 21
+    },
+    {
+      "char": "韆",
+      "unicode": "U+97C6",
+      "code": "tjymu",
+      "contours": "existing_original",
+      "strokes": 23
+    },
+    {
+      "char": "韭",
+      "unicode": "U+97ED",
+      "code": "lsmm",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "預",
+      "unicode": "U+9810",
+      "code": "nnmbc",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "領",
+      "unicode": "U+9818",
+      "code": "oimbc",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "頹",
+      "unicode": "U+9839",
+      "code": "humbc",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "頤",
+      "unicode": "U+9824",
+      "code": "slmbc",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "颺",
+      "unicode": "U+98BA",
+      "code": "hnamh",
+      "contours": "reconstructed",
+      "strokes": 18
+    },
+    {
+      "char": "颼",
+      "unicode": "U+98BC",
+      "code": "hnhxe",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "飄",
+      "unicode": "U+98C4",
+      "code": "mfhni",
+      "contours": "existing_original",
+      "strokes": 20
+    },
+    {
+      "char": "飛",
+      "unicode": "U+98DB",
+      "code": "nohto",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "餽",
+      "unicode": "U+993D",
+      "code": "oihui",
+      "contours": "AnimCJK",
+      "strokes": 18
+    },
+    {
+      "char": "饑",
+      "unicode": "U+9951",
+      "code": "oivii",
+      "contours": "existing_original",
+      "strokes": 20
+    },
+    {
+      "char": "首",
+      "unicode": "U+9996",
+      "code": "thbu",
+      "contours": "existing_original",
+      "strokes": 9
+    },
+    {
+      "char": "馭",
+      "unicode": "U+99AD",
+      "code": "sfe",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "馳",
+      "unicode": "U+99B3",
+      "code": "sfpd",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "馱",
+      "unicode": "U+99B1",
+      "code": "sfk",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "馴",
+      "unicode": "U+99B4",
+      "code": "sflll",
+      "contours": "existing_original",
+      "strokes": 13
+    },
+    {
+      "char": "駟",
+      "unicode": "U+99DF",
+      "code": "sfwc",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "騖",
+      "unicode": "U+9A16",
+      "code": "nksqf",
+      "contours": "existing_original",
+      "strokes": 19
+    },
+    {
+      "char": "騫",
+      "unicode": "U+9A2B",
+      "code": "jtcf",
+      "contours": "existing_original",
+      "strokes": 20
+    },
+    {
+      "char": "騰",
+      "unicode": "U+9A30",
+      "code": "bfqf",
+      "contours": "existing_original",
+      "strokes": 20
+    },
+    {
+      "char": "驃",
+      "unicode": "U+9A43",
+      "code": "sfmwf",
+      "contours": "AnimCJK",
+      "strokes": 21
+    },
+    {
+      "char": "驀",
+      "unicode": "U+9A40",
+      "code": "takf",
+      "contours": "existing_original",
+      "strokes": 21
+    },
+    {
+      "char": "騾",
+      "unicode": "U+9A3E",
+      "code": "sfwvf",
+      "contours": "existing_original",
+      "strokes": 21
+    },
+    {
+      "char": "驚",
+      "unicode": "U+9A5A",
+      "code": "tksqf",
+      "contours": "existing_original",
+      "strokes": 23
+    },
+    {
+      "char": "驟",
+      "unicode": "U+9A5F",
+      "code": "sfseo",
+      "contours": "existing_original",
+      "strokes": 24
+    },
+    {
+      "char": "驪",
+      "unicode": "U+9A6A",
+      "code": "sfmmp",
+      "contours": "existing_original",
+      "strokes": 29
+    },
+    {
+      "char": "骯",
+      "unicode": "U+9AAF",
+      "code": "bbyhn",
+      "contours": "existing_original",
+      "strokes": 14
+    },
+    {
+      "char": "髒",
+      "unicode": "U+9AD2",
+      "code": "bbtmt",
+      "contours": "existing_original",
+      "strokes": 23
+    },
+    {
+      "char": "髓",
+      "unicode": "U+9AD3",
+      "code": "bbykb",
+      "contours": "existing_original",
+      "strokes": 21
+    },
+    {
+      "char": "鬢",
+      "unicode": "U+9B22",
+      "code": "shjmc",
+      "contours": "existing_original",
+      "strokes": 24
+    },
+    {
+      "char": "鬱",
+      "unicode": "U+9B31",
+      "code": "ddbuh",
+      "contours": "existing_original",
+      "strokes": 29
+    },
+    {
+      "char": "鬲",
+      "unicode": "U+9B32",
+      "code": "mrbl",
+      "contours": "existing_original",
+      "strokes": 10
+    },
+    {
+      "char": "魔",
+      "unicode": "U+9B54",
+      "code": "ichui",
+      "contours": "existing_original",
+      "strokes": 20
+    },
+    {
+      "char": "魘",
+      "unicode": "U+9B58",
+      "code": "mkhui",
+      "contours": "existing_original",
+      "strokes": 24
+    },
+    {
+      "char": "鯽",
+      "unicode": "U+9BFD",
+      "code": "nfail",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "鰥",
+      "unicode": "U+9C25",
+      "code": "nfwle",
+      "contours": "existing_original",
+      "strokes": 21
+    },
+    {
+      "char": "鴒",
+      "unicode": "U+9D12",
+      "code": "oihaf",
+      "contours": "existing_original",
+      "strokes": 16
+    },
+    {
+      "char": "鷥",
+      "unicode": "U+9DE5",
+      "code": "vfhaf",
+      "contours": "reconstructed",
+      "strokes": 23
+    },
+    {
+      "char": "鸚",
+      "unicode": "U+9E1A",
+      "code": "bvhaf",
+      "contours": "existing_original",
+      "strokes": 28
+    },
+    {
+      "char": "鹹",
+      "unicode": "U+9E79",
+      "code": "ywihr",
+      "contours": "existing_original",
+      "strokes": 20
+    },
+    {
+      "char": "鹼",
+      "unicode": "U+9E7C",
+      "code": "ywomo",
+      "contours": "existing_original",
+      "strokes": 24
+    },
+    {
+      "char": "鹽",
+      "unicode": "U+9E7D",
+      "code": "swbt",
+      "contours": "existing_original",
+      "strokes": 24
+    },
+    {
+      "char": "麥",
+      "unicode": "U+9EA5",
+      "code": "joni",
+      "contours": "existing_original",
+      "strokes": 11
+    },
+    {
+      "char": "麩",
+      "unicode": "U+9EA9",
+      "code": "jeqo",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "麴",
+      "unicode": "U+9EB4",
+      "code": "jepfd",
+      "contours": "existing_original",
+      "strokes": 19
+    },
+    {
+      "char": "麵",
+      "unicode": "U+9EB5",
+      "code": "jemwl",
+      "contours": "existing_original",
+      "strokes": 20
+    },
+    {
+      "char": "麾",
+      "unicode": "U+9EBE",
+      "code": "ichqu",
+      "contours": "existing_original",
+      "strokes": 15
+    },
+    {
+      "char": "黴",
+      "unicode": "U+9EF4",
+      "code": "houfk",
+      "contours": "existing_original",
+      "strokes": 23
+    },
+    {
+      "char": "鼇",
+      "unicode": "U+9F07",
+      "code": "gkrxu",
+      "contours": "AnimCJK",
+      "strokes": 24
+    },
+    {
+      "char": "鼎",
+      "unicode": "U+9F0E",
+      "code": "buvml",
+      "contours": "existing_original",
+      "strokes": 12
+    },
+    {
+      "char": "鼬",
+      "unicode": "U+9F2C",
+      "code": "hvlw",
+      "contours": "existing_original",
+      "strokes": 18
+    },
+    {
+      "char": "鼴",
+      "unicode": "U+9F34",
+      "code": "hvsav",
+      "contours": "existing_original",
+      "strokes": 22
+    },
+    {
+      "char": "齬",
+      "unicode": "U+9F6C",
+      "code": "yummr",
+      "contours": "existing_original",
+      "strokes": 22
+    },
+    {
+      "char": "齲",
+      "unicode": "U+9F72",
+      "code": "yuhlb",
+      "contours": "existing_original",
+      "strokes": 24
+    },
+    {
+      "char": "龔",
+      "unicode": "U+9F94",
+      "code": "yptc",
+      "contours": "existing_original",
+      "strokes": 22
+    },
+    {
+      "char": "龜",
+      "unicode": "U+9F9C",
+      "code": "nxu",
+      "contours": "existing_original",
+      "strokes": 18
+    }
+  ]
+}

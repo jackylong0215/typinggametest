@@ -29,7 +29,7 @@ https://github.com/chanind/hanzi-writer-data/tree/68d10a4b21150cae5e1ebbd223eed2
 
 ## 生成字庫與 IDS 對應
 
-`colour-library.js` 提供 10,201 個生成模型，與原有示範合計 10,317 字。大部分輪廓來源如下；2026-10-22 新來源與重組字形另列於下節。來源：Make Me A Hanzi（https://github.com/skishore/makemeahanzi），2026-10-21 取得的 dictionary.txt／graphics.txt；完整來源檔 SHA-256 記錄於 `data/colour-source.json` 的 source 欄位。保留輪廓，只增加部件分組及 SVG 裁切標色。
+`colour-library.js` 提供 10,826 個生成模型，與原有示範合計 10,942 字。大部分輪廓來源如下；2026-10-22 新來源與重組字形另列於下節。來源：Make Me A Hanzi（https://github.com/skishore/makemeahanzi），2026-10-21 取得的 dictionary.txt／graphics.txt；完整來源檔 SHA-256 記錄於 `data/colour-source.json` 的 source 欄位。保留輪廓，只增加部件分組及 SVG 裁切標色。
 
 修改後的必要字形子集、IDS 結構與筆畫對應保存在 `data/colour-source.json`。dictionary.txt 衍生資料採 LGPL 3.0 或更新版本；graphics.txt 由 Arphic PL KaitiM GB／Arphic PL UKai 衍生，採 Arphic Public License。上游來源聲明、LGPL、GPL 與 Arphic 完整授權分別保留在 `licenses/MAKE_ME_A_HANZI.txt`、`licenses/LGPL-3.0.txt`、`licenses/GPL-3.0.txt`、`licenses/ARPHICPL.TXT`。生成腳本與部件對應可在本專案中取得。
 
@@ -85,3 +85,12 @@ Copyright (c) 2014–2017 CJKVI Database. Based on CHISE IDS Database. 這些結
 2026-10-23 第七批：對既有 2,310 個重製左右字調整部件寬度、間距及垂直對齊，仍使用原有 Make Me A Hanzi／Arphic 部件輪廓作仿射轉換，並非新取得的完整原字輪廓。來源部件與目標座標保留於 `data/component-compositions.json`；改前、改後座標與輪廓雜湊另記於 `data/colour-layout-review-20261023.json`。噉保留原本 11 筆敢部件來源，與獨立敢的 12 筆 AnimCJK 字形分開記錄。新增參考字與同結構字均沿用既有凍結來源，沒有新增外部筆畫來源。
 
 2026-10-26：新偽標色模型使用與使用者點字頭參考相符的 AnimCJK 原筆畫（11 筆），來源 https://github.com/parsimonhi/animCJK/blob/master/svgsJa/20605.svg 。原檔保留於 `data/reference-sources/animcjk-20605.svg`，內含 AnimCJK 2016–2026 FM-SH 版權與 Arphic Public License 聲明，授權全文見 `licenses/ARPHICPL.TXT`。僅作 y→900−y 座標轉換；原檔 SHA-256、轉換與舊14筆爫頭資料備份保存在 `data/colour-source.json`。其他新增模型沿用既有凍結原字筆畫，既有模型輪廓與重製字排版不變。
+
+
+## 教育部 4,808 常用字補齊（2026-10-26）
+
+新增 625 個五代模型，覆蓋《常用國字標準字體表》的 4,808 字。字元與字號順序記於 `data/moe-common-4808.json`，來源是 irvin/moe-common-phrases-of-zhtw 的固定版本 `08977555e16c27f5d198551dc99e9395810a3e77`，並與 TraditionalChinese/TW-ABCN 固定版本 `39e40cedd439de994a0344b6ac996011b5783c24` 甲表逐字核對一致。教育部字表只用作核對字元收錄；不作為本站 SVG 輪廓來源，亦未宣稱取得教育部字體授權。
+
+其中 39 字補用 AnimCJK 固定版本 `3e1253b341cc7be14c3540bb3c045e6163557777` 的完整原筆畫；原 SVG（含 FM-SH 2016–2026 版權及 Arphic Public License 聲明）保存於 `data/reference-sources/moe-20261026/`，逐字來源目錄、SHA-256 與 y→900−y 座標轉換記於 `additional_graphics_sources`。來源含 svgsZhHant 與 svgsJa，逐字檢查其所需漢字部件及筆畫。
+
+22 字由現有同字體部件重組；另有 10 個未發佈的原始候選字修正字形部件，如呂中間一撇、吳、彥、勻、產及㕣的八形。重組、替換前原輪廓、原部件、目標邊界與方法記於 `moe_completion_20261026.compositionPlans` 及 `moe_original_graphics`。這些屬修改後的 Arphic 衍生學習字形；其餘字沿用既有完整原字筆畫。所有原有 10,317 個公開模型、字碼、輪廓及標色均按雜湊保留。
