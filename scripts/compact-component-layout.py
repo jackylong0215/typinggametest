@@ -74,6 +74,7 @@ def transform_template(template,matches,old,new):
  for cut in template.get('splitStrokes',[]):
   side=matches[cut['stroke']][0];cut['boundary']=map_value(cut['boundary'],cut.get('axis','y'),old[side],new[side])
   if 'floor'in cut:cut['floor']=map_value(cut['floor'],'y',old[side],new[side])
+  if 'ceiling'in cut:cut['ceiling']=map_value(cut['ceiling'],'y',old[side],new[side])
   if 'xLimit'in cut:cut['xLimit']=map_value(cut['xLimit'],'x',old[side],new[side])
  for cut in template.get('strokeRegions',[]):
   side=matches[cut['stroke']][0]
@@ -107,7 +108,8 @@ for c,r in DATA['characters'].items():
    out=[stroke,map_value(lo,axis,old_boxes[side],boxes[side]),map_value(hi,axis,old_boxes[side],boxes[side])]
    if len(region)>3:out.append(axis)
    if len(region)>4:out.append(map_value(region[4],'y',old_boxes[side],boxes[side])if region[4]is not None else None)
-   if len(region)>5:out.append(map_value(region[5],'x',old_boxes[side],boxes[side]))
+   if len(region)>5:out.append(map_value(region[5],'x',old_boxes[side],boxes[side])if region[5]is not None else None)
+   if len(region)>6:out.append(map_value(region[6],'y',old_boxes[side],boxes[side])if region[6]is not None else None)
    mapped.append(out)
   atom['regions']=mapped
  for group in ['standalone_templates','templates']:

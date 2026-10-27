@@ -110,3 +110,5 @@ https://github.com/BYVoid/OpenCC/blob/a806b775d038f9fa7c061f50d270115e7ad7da5b/d
 2,331 個既有重組學習字形改用同一批已凍結 Make Me A Hanzi／Arphic 字形中的實際偏旁形態，仍採 Arphic Public License。來源字、原筆畫索引、筆順差異對應及仿射位置逐筆保存在 `data/component-compositions.json` 及 `moe_completion_20261026.compositionPlans`。其中 4,362 個部件取自完整原字的相同結構位置，300 個罕見部件保留可追溯的同字體後備來源。全部屬本專案修改後的衍生學習字形，沒有宣稱取得完整原字輪廓；沒有新增外部輪廓或字型來源。舊輪廓雜湊及原排版記錄另存於 `data/colour-context-review-20261027.json`，並保留原有 CJKVI／CHISE 結構歸屬及授權。
 
 2026-10-27 取碼字形核對：鎮等八字的真部件按使用者參考改為十頭、平直底橫形，取自既有镇、颠、癫及真筆畫，沿用前述 Make Me A Hanzi／Arphic Public License。這些仍屬本專案修改後的衍生字形，原字體變體完整保留於 `semantic_reference_original_graphics`，來源筆畫及仿射變換記於 `semantic_contour_corrections_20261027`。蠹只核正標色對應，不改筆畫輪廓。
+
+同日追加飛、透、起參考：飛與透只調整既有筆畫的取碼裁切；起的右部使用既有祀字右側三筆巳形，按原右部範圍縮放，原起字形保留於 `semantic_reference_original_graphics`。三字均沿用已列明的 Make Me A Hanzi／Arphic 來源；起的來源筆畫索引及變換記於 `semantic_contour_corrections_20261027`。

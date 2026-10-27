@@ -10,7 +10,7 @@ test('22個真部件取J均有可見且相交的橫、直十頭',()=>{
 });
 test('鎮依參考取CJBC：十頭、目上部、八分色；目末內橫及底橫留灰',()=>{
  const v=lib.v['鎮'];assert.equal(v.parts.map(p=>p[1]).join(''),'cjbc');assert.deepEqual(Array.from(v.parts[1][2]),[8,9]);assert.deepEqual(Array.from(v.parts[2][2]),[10,11,12,13]);assert.deepEqual(Array.from(v.parts[3][2]),[16,17]);assert.deepEqual(Array.from(v.ignored),[14,15]);
- for(const[c,p]of Object.entries(source.semantic_contour_corrections_20261027)){const before=source.semantic_reference_original_graphics[c],after=graphic(c),changed=new Set(p.targetStrokeIndices);assert.equal(direction(after.medians[Math.min(...p.targetStrokeIndices)+7]),'h',c+' straight base');for(let i=0;i<before.strokes.length;i++)if(!changed.has(i))assert.equal(after.strokes[i],before.strokes[i],c+' body '+i)}
+ for(const[c,p]of Object.entries(source.semantic_contour_corrections_20261027)){if(!source.semantic_shape_review_20261027.correctedHeads.includes(c))continue;const before=source.semantic_reference_original_graphics[c],after=graphic(c),changed=new Set(p.targetStrokeIndices);assert.equal(direction(after.medians[Math.min(...p.targetStrokeIndices)+7]),'h',c+' straight base');for(let i=0;i<before.strokes.length;i++)if(!changed.has(i))assert.equal(after.strokes[i],before.strokes[i],c+' body '+i)}
 });
 test('蠹的J、冖、厂及口採實際對應筆畫，十的中豎不再引用橫畫',()=>{
  const v=lib.v['蠹'];assert.deepEqual(Array.from(v.parts,p=>Array.from(p[2])),[[0,2],[4,6],[8,10],[7,9,11],[23]]);

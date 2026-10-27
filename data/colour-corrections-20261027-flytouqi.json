@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-27",
+  "previousCommit": "cc6de73",
+  "reason": "Three user references: 飛 keeps only the 廿 crossbar, 透 keeps the whole 尸 upper fold, 起 uses a closed 口 above 山.",
+  "characters": {
+    "透": {
+      "code": "yhds",
+      "geometrySha256": "d2a2314b572d211f2ef252d45bdd0bf81ab38c7a332306c60df13fd3540766c2",
+      "visualSha256": "b0645bb7ce1ea020974331019b24001f5cc770c8e1d67d8cd8b8f6102ea0624d",
+      "previousVisualSha256": "41bf69bbdce980ad0bf0ecfa195dd50182d493526d091d613a9c9e1a4a622ddb"
+    },
+    "起": {
+      "code": "goru",
+      "geometrySha256": "b7b8ffa32718daf9d7b40b7fb3a217d699a71c292fe5066e3bc99021592a07c0",
+      "visualSha256": "1eda2dca38459f20279e629344f2e1ebab8c89ec1d22bc384eafeb032609a840",
+      "previousVisualSha256": "f0085f2784f4adfdd592b48a024a8ed322e9a4159eb5e01fcfc3c5c9bf30cd48",
+      "strokesSha256": "68ed077c63585b40f8e49b6f7aaa3e63d1207ee7d4098f27b364b6dda07f7842",
+      "previousStrokesSha256": "fc5474cfe07c1c35e9256d72238f3dda7373dddb3b065f8372aa03736fe304ba"
+    },
+    "飛": {
+      "code": "nohto",
+      "geometrySha256": "467c24689790c82a1d9d8dc2098dc1fe72f9d8995a014491b572eaa72bb56f71",
+      "visualSha256": "f4a0d25542009b62ea34db7d6334074bed44a61dbea9cf038ba424dbd66a3c0c",
+      "previousVisualSha256": "12d6f70e18aeed1b94d8d95efe2b38f46d824e4bd063c973aed26322b961f37f"
+    }
+  }
+}

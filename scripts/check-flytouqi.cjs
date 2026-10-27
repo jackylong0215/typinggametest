@@ -1,0 +1,14 @@
+const fs=require('fs'),path=require('path'),assert=require('assert/strict');
+const {chromium}=require('/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+(async()=>{const root=path.resolve(__dirname,'..'),browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']});try{
+ const p=await browser.newPage({viewport:{width:1100,height:550},reducedMotion:'reduce'}),errors=[];p.on('pageerror',e=>errors.push(e.message));await p.route('http://flytouqi.test/',r=>r.fulfill({contentType:'text/html',body:fs.readFileSync(path.join(root,'dist/倉頡小島試玩.html'),'utf8')}));await p.goto('http://flytouqi.test/');
+ const result=await p.evaluate(async()=>{
+  const board=document.createElement('section');board.id='flytouqi-review';board.style='position:absolute;inset:0 auto auto 0;width:1060px;z-index:999999;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;background:#edf2f8;padding:12px';const results=[];
+  const samples={飛:[[450,420,3],[600,460,3],[620,300,-1],[800,20,-1]],透:[[715,315,3],[650,420,-1]],起:[[590,570,2],[700,240,3]]};
+  for(const c of ['飛','透','起']){start('colour',{char:c});animateSplit();stopDemo();const v=splitVisual(c);for(let i=0;i<v.parts.length;i++){showDemoStep(i);if(!document.querySelector('#split-animation .active-stroke'))throw Error(c+' missing step '+i)}showDemoStep(-1);const holder=document.createElement('div');holder.innerHTML=colourThumb(c);const svg=holder.firstElementChild;svg.setAttribute('xmlns','http://www.w3.org/2000/svg');const img=new Image();img.src='data:image/svg+xml;base64,'+btoa(unescape(encodeURIComponent(new XMLSerializer().serializeToString(svg))));await img.decode();const canvas=document.createElement('canvas');canvas.width=canvas.height=1024;const ctx=canvas.getContext('2d');ctx.drawImage(img,0,0,1024,1024);const pixels=[];
+   for(const[x,y,part]of samples[c]){const rgb=ctx.getImageData(x,900-y,1,1).data,actual='#'+Array.from(rgb).slice(0,3).map(n=>n.toString(16).padStart(2,'0')).join(''),expected=part<0?'#d5dbd0':PART_COLOURS[part];if(actual!==expected)throw Error(`${c} pixel ${x},${y}: ${actual} expected ${expected}`);pixels.push({x,y,part,actual})}
+   const card=document.createElement('article');card.style='text-align:center;background:white;padding:12px';card.innerHTML=`<b>${c} · ${item.code.toUpperCase()}</b>`;svg.style='width:300px;height:300px';card.append(svg);board.append(card);results.push({char:c,steps:v.parts.length,pixels});
+  }close();document.body.append(board);return results;
+ });
+ fs.mkdirSync(path.join(root,'dist/colour-review'),{recursive:true});await p.locator('#flytouqi-review').screenshot({path:path.join(root,'dist/colour-review/flytouqi.png')});assert.deepEqual(errors,[]);console.log(JSON.stringify({pass:true,results:result,errors},null,2));
+ }finally{await browser.close()}})().catch(e=>{console.error(e);process.exit(1)});
