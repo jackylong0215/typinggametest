@@ -14,7 +14,8 @@ if DATA['source'].get('layoutVersion')=='contextual-20261027':
   paths=[];medians=[]
   for part in r['components']:
    ps,ms=b.component_strokes(part);paths.extend(ps);medians.extend(ms)
-  assert paths==r['graphics']['strokes'] and medians==r['graphics']['medians'],c
+  checked=b.apply_semantic_contours(c,{'strokes':paths,'medians':medians})
+  assert checked['strokes']==r['graphics']['strokes'] and checked['medians']==r['graphics']['medians'],c
  print('Checked '+str(len(DATA['characters']))+' frozen contextual component layouts')
  sys.exit(0)
 hash_json=lambda x:hashlib.sha256(json.dumps(x,ensure_ascii=False,separators=(',',':')).encode()).hexdigest()

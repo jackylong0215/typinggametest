@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-27",
+  "previousCommit": "f65bdb0",
+  "reason": "Match J to a visible 十 head in 真 and correct literal 冖/石/十 stroke selections in 蠹.",
+  "characters": {
+    "鎮": {
+      "code": "cjbc",
+      "geometrySha256": "a2d6bec9d243c3d0ed875632e18f9cbbfd0e0dabe46441ce594ae39a2e6d875a",
+      "visualSha256": "37662bedbd7134f0e532ed4c001c18ed6ab370ce67403d77e17cd4c072cbe70a",
+      "previousVisualSha256": "37662bedbd7134f0e532ed4c001c18ed6ab370ce67403d77e17cd4c072cbe70a",
+      "strokesSha256": "ebea5e04f2741a7b85562c3b99212b71a791f28365a473b5feeed2c1c59f3367",
+      "previousStrokesSha256": "bf74912ad5474c8c3fb4970e33c127aaafe2707dc76aa577be929522f9cfb504"
+    },
+    "顛": {
+      "code": "jcmbc",
+      "geometrySha256": "d032a05ffd303ed50145634d33647b2ea7475d4f9627c0f91fa991023e075f85",
+      "visualSha256": "56d551466ebbaea237d5fe18e70825979b1b74c2acf3c32854422e7a374b7b4b",
+      "previousVisualSha256": "56d551466ebbaea237d5fe18e70825979b1b74c2acf3c32854422e7a374b7b4b",
+      "strokesSha256": "c6de9bc7ad83f56ad83964a629f630319185fadb595d30eff44d084277d48d88",
+      "previousStrokesSha256": "0711ec9736186a557f87a74e44d60ae9ea9d4efea19ddb9b896c9d394a0a23ed"
+    },
+    "癲": {
+      "code": "kjcc",
+      "geometrySha256": "de9a89e875c6cc48cad3d12cee96506e20373da477bf20443002338d56984019",
+      "visualSha256": "bfad36e70912a152c4c817a493e32159fe576bcdc8f8bbf9ac394e10defbd052",
+      "previousVisualSha256": "bfad36e70912a152c4c817a493e32159fe576bcdc8f8bbf9ac394e10defbd052",
+      "strokesSha256": "b2d87d57eb7309043322b0e1e2b6e35da6f6915591510bc727cfc824d68d26d5",
+      "previousStrokesSha256": "6b3a3cefb9489ed0bfe5068dfdca50761958b553420e8751b73148c564b6bbe0"
+    },
+    "禛": {
+      "code": "ifjbc",
+      "geometrySha256": "107134e8810ecfef2181e945de7ad473d8820d7106fda7169c8e7586477ae8ac",
+      "visualSha256": "aaf13be3ae66807fe4f4a813256de0b35d453a5bddaeb67c621f9e240f72391a",
+      "previousVisualSha256": "aaf13be3ae66807fe4f4a813256de0b35d453a5bddaeb67c621f9e240f72391a",
+      "strokesSha256": "589d4db18da3d5626647a86eb546fc4a1a0112acbaac96e3502aaf3f66bf3583",
+      "previousStrokesSha256": "b47e4f39c76bc34a944acba2c845b41e43a6b960545eecf76a47b2b721c6bd14"
+    },
+    "瞋": {
+      "code": "bujbc",
+      "geometrySha256": "0a43bfc1bf50e8d82da3edd75b23dae3972db3ca8c2fc5edb5ff0c99c7663f73",
+      "visualSha256": "856d45d63ab664e91fa1d41e4507d3fdade7aac136af91fb316180b7d3d8f8e0",
+      "previousVisualSha256": "856d45d63ab664e91fa1d41e4507d3fdade7aac136af91fb316180b7d3d8f8e0",
+      "strokesSha256": "7aa637fa7d4616fafebb26206ed424548274b358be768d7de56794123772ad03",
+      "previousStrokesSha256": "ce2ec43937df74bd54bcf93e113dfa547582c852ed2b9ae0f0141bf130c6e622"
+    },
+    "槙": {
+      "code": "djbc",
+      "geometrySha256": "8c50466ac2ff59c05ea442c08026f8089eadfcb2b43369ccd4da675022f76ff7",
+      "visualSha256": "ebdd632a4216d3d715c93e17c99524f16e6a3cd4095b82abe1847933776c0d8d",
+      "previousVisualSha256": "ebdd632a4216d3d715c93e17c99524f16e6a3cd4095b82abe1847933776c0d8d",
+      "strokesSha256": "ca0830a1c2cc7eca9bae587c0190e7fa6573d6e302048272327c9d4cac0834b9",
+      "previousStrokesSha256": "0db0331febf1ec543685618809101d73b1a312cbbbd8e1ccd16ec17f38016436"
+    },
+    "瑱": {
+      "code": "mgjbc",
+      "geometrySha256": "7c3a83a7f9392d9ba8b61864506206c6ffae2615afd433a1191c3baf2bdd6e9f",
+      "visualSha256": "8e177a558a9dddb63e088b704991f770d25ad7cab33e6b92caebc17ae715f108",
+      "previousVisualSha256": "8e177a558a9dddb63e088b704991f770d25ad7cab33e6b92caebc17ae715f108",
+      "strokesSha256": "35b2c8afbf9add9b9becaa34b119c7e02408f58567e587187edca59155347c1c",
+      "previousStrokesSha256": "3d0f52eb49a210f7862d5c4210ec064d2f4cf326ab4c097b33d214c9317be5c7"
+    },
+    "鬒": {
+      "code": "shjbc",
+      "geometrySha256": "45c5d275f535529c0542422231d170c98e02768ab5db261e6185aefdfe530331",
+      "visualSha256": "102ef88013f0fec713972abd6e4c70860aad5ebb452436c9eee5ef0d309c0452",
+      "previousVisualSha256": "102ef88013f0fec713972abd6e4c70860aad5ebb452436c9eee5ef0d309c0452",
+      "strokesSha256": "60464bc12dd4b1f07c510a893eea454576899723c4f01d315101880613daac48",
+      "previousStrokesSha256": "abedd3b40ff8badc65a5b642c3c88e707d78ae8762ee386c4104c59b5883f10a"
+    },
+    "蠹": {
+      "code": "jbmri",
+      "geometrySha256": "d2d88ab9732013f163a4c1883a89ca08de9d5d3a2b15ce1b13074ad61e490578",
+      "visualSha256": "cb9c5e824cdbe89de1c6ff30aed1dfe979caf865aaef43a109d12110fe8e348a",
+      "previousVisualSha256": "c71616a120a9a862e25b750801ef9d820703f25a4e5f978a05f734ef69114241"
+    }
+  }
+}

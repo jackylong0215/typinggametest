@@ -1,12 +1,12 @@
 {
   "date": "2026-10-26",
-  "dataRevisionSha256": "92b2da36bf59cf1a78f8adc4aed6a253b4e853f3bd5d3ad7ebbd40d3510f8db9",
+  "dataRevisionSha256": "5ea401a8d27b6d422a124683eb4cbccc6a2302437b4d49d183d9fa2a093f5be2",
   "inputHashes": {
     "code-data.js": "a070421d802e07d9a54b7ba38d4e0e3e3461e632f673cb2358111061f7f91e2a",
     "stroke-data.js": "7a01190a660c31651fe6d79337d2a4e10a3adc0ebeebed874863f5f75bf020bf",
     "learning.js": "c10cf16cd378f96e91a8286472a59e8e8b81985d29f043475e89dbe7670aa4e7",
     "extra-colours.js": "3cece3fd9687175cc83f58f260b946184898fabc90be2afac759f262b544e03d",
-    "colour-library.js": "92b2da36bf59cf1a78f8adc4aed6a253b4e853f3bd5d3ad7ebbd40d3510f8db9"
+    "colour-library.js": "5ea401a8d27b6d422a124683eb4cbccc6a2302437b4d49d183d9fa2a093f5be2"
   },
   "source": {
     "title": "教育部《常用國字標準字體表》：民國71年9月1日公告，4808字",

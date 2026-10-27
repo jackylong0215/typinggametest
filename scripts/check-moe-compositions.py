@@ -34,6 +34,8 @@ for char, plan in completion['compositionPlans'].items():
         else:
             paths = [original['strokes'][i] for i in plan['retainedStrokeIndices']] + ps
             medians = [original['medians'][i] for i in plan['retainedStrokeIndices']] + ms
+    checked = geometry.apply_semantic_contours(char, {'strokes': paths, 'medians': medians})
+    paths, medians = checked['strokes'], checked['medians']
     actual = source['graphics'][char]
     assert paths == actual['strokes'] and medians == actual['medians'], char
 
@@ -62,3 +64,9 @@ for char, plan in revision.get('contourPlans', {}).items():
     for i, p, m in zip(plan['targetStrokeIndices'], paths, medians):
         assert actual['strokes'][i] == p and actual['medians'][i] == m, char
 print(f"PASS {len(revision.get('contourPlans', {}))} latest reference contour adaptations")
+
+for char in source.get('semantic_contour_corrections_20261027', {}):
+    actual = source['graphics'].get(char, geometry.data['characters'].get(char, {}).get('graphics'))
+    expected = geometry.apply_semantic_contours(char, {'strokes': list(actual['strokes']), 'medians': list(actual['medians'])})
+    assert expected == {'strokes': actual['strokes'], 'medians': actual['medians']}, char
+print(f"PASS {len(source.get('semantic_contour_corrections_20261027', {}))} semantic glyph variants")

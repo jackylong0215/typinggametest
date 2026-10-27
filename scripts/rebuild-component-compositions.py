@@ -24,13 +24,26 @@ def component_graphics(part):
     """Frozen donor indices preserve canonical stroke roles, including side-form order."""
     donor=part.get('donor')
     if donor:
-        graphic=source['reference_original_graphics'][donor['character']] if donor.get('sourceVariant')=='reference_original_graphics' else G[donor['character']]
+        variant=donor.get('sourceVariant','graphics')
+        assert variant in ('graphics','reference_original_graphics','semantic_reference_original_graphics')
+        graphic=source[variant][donor['character']]
         indices=donor['strokeIndices']
         assert len(indices)==len(set(indices)) and all(0<=i<len(graphic['strokes']) for i in indices)
         return {'strokes':[graphic['strokes'][i] for i in indices],'medians':[graphic['medians'][i] for i in indices]}
     return source['reference_original_graphics'][part['character']] if part.get('sourceVariant')=='reference_original_graphics' else G[part['character']]
 def component_strokes(part):
     return fit(part['character'],part['bounds'],component_graphics(part))
+def apply_semantic_contours(char,graphic):
+    """Apply reviewed glyph variants that visibly match the retained Cangjie roots."""
+    plan=source.get('semantic_contour_corrections_20261027',{}).get(char)
+    if not plan:return graphic
+    donor=G[plan['sourceCharacter']];matrix=plan['transform'];sx,_,_,sy,tx,ty=matrix
+    for src,dst in zip(plan['sourceStrokeIndices'],plan['targetStrokeIndices']):
+        pen=SVGPathPen(None,ntos=lambda v:f'{v:.2f}'.rstrip('0').rstrip('.'))
+        parse_path(donor['strokes'][src],TransformPen(pen,matrix))
+        graphic['strokes'][dst]=pen.getCommands()
+        graphic['medians'][dst]=[[round(x*sx+tx,3),round(y*sy+ty,3)]for x,y in donor['medians'][src]]
+    return graphic
 def main():
     if '--place' in sys.argv:
      subprocess.run([sys.executable,str(ROOT/'scripts/compact-component-layout.py'),'--apply'],check=True);return
@@ -38,7 +51,7 @@ def main():
      paths=[];medians=[];matches=[]
      for side,part in enumerate(record['components']):
       strokes,ms=component_strokes(part);paths+=strokes;medians+=ms;matches += [[side]]*len(strokes)
-     graphics={'character':c,'strokes':paths,'medians':medians}
+     graphics=apply_semantic_contours(c,{'character':c,'strokes':paths,'medians':medians})
      if '--check' in sys.argv:assert graphics==record['graphics'] and matches==record['dictionary']['matches'],c
      else:record['graphics']=graphics;record['dictionary']['matches']=matches
     if '--check' not in sys.argv:

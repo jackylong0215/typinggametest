@@ -8,7 +8,7 @@ test('2331字偏旁來源逐筆可追溯；4362個偏旁取自原字同一結構
  for(const[c,r]of Object.entries(records)){
   const op=(r.dictionary||source.dictionary[c]).decomposition[0];
   for(let side=0;side<2;side++){
-   const part=r.components[side],d=part.donor,g=(d.sourceVariant==='reference_original_graphics'?source.reference_original_graphics:source.graphics)[d.character],ids=d.strokeIndices;
+   const part=r.components[side],d=part.donor,g=source[d.sourceVariant||'graphics'][d.character],ids=d.strokeIndices;
    assert.ok(!records[d.character],c+' donor must be original');assert.equal(new Set(ids).size,ids.length,c);assert.ok(ids.every(i=>g.strokes[i]&&g.medians[i]),c);
    if(part.native){
     native++;const dict=source.dictionary[d.character],decomp=[...dict.decomposition];assert.equal(decomp.length,3,c);assert.equal(decomp[0],op,c);
@@ -23,9 +23,11 @@ test('原生偏旁保留自然長寬比例，不再把獨立字橫壓成左右�
  for(const[c,r]of Object.entries(records)){
   let offset=0;const graphic=r.graphics||source.graphics[c];
   for(const part of r.components){
-   const d=part.donor,ix=d.strokeIndices,base=(d.sourceVariant==='reference_original_graphics'?source.reference_original_graphics:source.graphics)[d.character];
+   const d=part.donor,ix=d.strokeIndices,base=source[d.sourceVariant||'graphics'][d.character];
    if(part.native){
-    const a=extent(ix.map(i=>base.medians[i])),b=extent(graphic.medians.slice(offset,offset+ix.length));
+    const omitted=new Set(source.semantic_contour_corrections_20261027?.[c]?.targetStrokeIndices||[]),keep=ix.map((_,i)=>i).filter(i=>!omitted.has(offset+i));
+    if(!keep.length){const plan=source.semantic_contour_corrections_20261027[c];assert.equal(plan.sourceStrokeIndices.length,ix.length,c);offset+=ix.length;continue}
+    const a=extent(keep.map(i=>base.medians[ix[i]])),b=extent(keep.map(i=>graphic.medians[offset+i]));
     const sx=(b[2]-b[0])/(a[2]-a[0]),sy=(b[3]-b[1])/(a[3]-a[1]);assert.ok(Math.abs(sx-sy)<0.0001,c+part.character);
    }
    offset+=ix.length;

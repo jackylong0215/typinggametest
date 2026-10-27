@@ -348,3 +348,11 @@ RPG 斬擊、五色連擊、結界、反擊及傷害數字都在上方原有角�
 可執行 `python3 scripts/rebuild-component-compositions.py --check`、`python3 scripts/compact-component-layout.py --check` 及 `python3 scripts/check-moe-compositions.py` 重現核對凍結來源方案；一般網站建置仍只使用既有凍結 JS 資料。`node scripts/check-contextual-layouts.cjs` 核對逐步標色、實際筆形與左右偏旁像素碰撞，並輸出對照圖。
 
 驗證：116 項單元測試通過；2,331 字全部取碼部件通過實際像素可見性檢查；9,332 個逐碼步驟通過瀏覽器檢查，2,310 字左右偏旁通過像素碰撞檢查。原字來源方案及裁切對應均核對通過。
+
+## 字形與取碼一致性核對（2026-10-27）
+
+依鎮的使用者參考，鎮、顛、癲、禛、瞋、槙、瑱、鬒的真部件改用十字頭、平直底橫的完整真形。來源選用既有同字體镇、颠、癫的相同位置真部件；鬒的下部使用既有真形。真部件以外的原筆畫保留；鎮仍取 CJBC，末內橫與底橫留灰。逐筆來源、目標索引及變換記於 `semantic_contour_corrections_20261027`，修改前完整筆形保留於 `semantic_reference_original_graphics`。
+
+同時核對 364 組明確標示為十形的部件，包含 22 個真頭；蝨的卂保留橫豎相交、竪尾帶撇的原形。蠹改用實際中豎作頂十，並核正冖、石厂及石口的筆畫歸屬。逐字修正雜湊見 `data/colour-corrections-20261027-semantic.json`。重組字的凍結來源可保留修改前變體，重播時再套用明訂的取碼字形修正，避免來源變更悄悄影響其他部件。
+
+驗證：120 項測試通過，含真頭橫豎相交、平直底橫、筆畫來源、標色歸屬及外部原筆畫保留檢查。九個修正字的每碼均通過像素可見性檢查及 42 個逐碼步驟。`node scripts/check-semantic-shapes.cjs` 輸出實際標色對照圖；原有重建及來源核對腳本同時驗證這些字形變體。
