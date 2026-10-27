@@ -3,7 +3,7 @@ const root=path.join(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'
 const context=vm.createContext({});
 const helper=read('app.js').split('function splitVisual(char)')[1].split('function glyphPaths')[0];
 vm.runInContext(['code-data.js','stroke-data.js','learning.js','extra-colours.js','colour-library.js'].map(read).join('\n')+'\nlet currentVersion="5";let item;function splitVisual(char)'+helper+'\nglobalThis.library={SPLIT_VISUALS,STROKE_DATA,CODE_TABLES,COLOUR_ORDER,visualFor:(char,version)=>{currentVersion=version;return splitVisual(char)},questionFor:(word,version)=>{currentVersion=version;item=word;return questionVisual()}}',context);
-const corrections={...JSON.parse(read('data/colour-corrections-20261023.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch2.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch3.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch4.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch5.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch6.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch7.json')).characters,...JSON.parse(read('data/colour-corrections-20261026.json')).characters,...JSON.parse(read('data/colour-corrections-20261026-batch2.json')).characters,...JSON.parse(read('data/colour-corrections-20261026-shared.json')).characters};
+const corrections={...JSON.parse(read('data/colour-corrections-20261023.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch2.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch3.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch4.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch5.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch6.json')).characters,...JSON.parse(read('data/colour-corrections-20261023-batch7.json')).characters,...JSON.parse(read('data/colour-corrections-20261026.json')).characters,...JSON.parse(read('data/colour-corrections-20261026-batch2.json')).characters,...JSON.parse(read('data/colour-corrections-20261026-shared.json')).characters,...JSON.parse(read('data/colour-corrections-20261027-context.json')).characters};
 const lib=context.library,source=JSON.parse(read('data/colour-source.json')),audit=JSON.parse(read('data/colour-audit.json'));
 test('五代標色教室恰好10942個不同字，包含常用字及所有既有修正',()=>{
  assert.equal(Object.keys(lib.SPLIT_VISUALS).length,10942);assert.equal(new Set(lib.COLOUR_ORDER).size,10942);assert.equal(audit.total,10942);assert.equal(Object.keys(audit.characters).length,10826);
@@ -242,8 +242,7 @@ test('重製字形只使用有來源的左右兩部件，筆畫對應完整且�
   assert.equal(r.components.length,2,c);assert.equal(r.dictionary.matches.length,r.graphics.strokes.length,c);
   for(const part of r.components)assert.ok(source.graphics[part.character],c+part.character);
   assert.deepEqual(Array.from(lib.STROKE_DATA[c]),r.graphics.strokes,c);
-  const [a,b]=r.components.map(x=>x.bounds);
-  assert.ok(r.dictionary.decomposition[0]==='⿰'?a[2]<b[0]:a[1]>b[3],c);
+  assert.ok(r.components.every(p=>p.donor&&p.donor.strokeIndices.length),c);
  }
 });
 
@@ -453,36 +452,36 @@ test('第七批21個參考與46個同結構新字可查碼及練習',()=>{
  for(const c of ['券','拳','卷','圈','倦','捲','蜷']){const v=lib.visualFor(c,'5');assert.ok(v.sharedStrokeGuides,c);assert.equal(v.parts[v.sharedStrokeGuides[0].part][1],'q',c)}
  for(const c of '穫鑊蠟臘邋錶裱婊優擾惘魍')assert.ok(lib.visualFor(c,'5'),c);
 });
-test('全部2310個重製字控制間距、部件比例與上下對齊',()=>{
- const records=JSON.parse(read('data/component-compositions.json')).characters,review=JSON.parse(read('data/colour-layout-review-20261023.json')).characters;
- assert.equal(Object.keys(records).length,2310);assert.equal(Object.keys(review).length,2310);
+test('全部2310個重製字使用偏旁原形，天然比例及高低不再受等高字格限制',()=>{
+ const records=JSON.parse(read('data/component-compositions.json')).characters,review=JSON.parse(read('data/colour-context-review-20261027.json')).characters;
+ assert.equal(Object.keys(records).length,2310);assert.equal(Object.keys(review).length,2331);
  for(const [c,r]of Object.entries(records)){
-  const [a,b]=r.components.map(p=>p.bounds),centre=x=>(x[1]+x[3])/2;
-  assert.ok(Math.abs(b[0]-a[2]-12)<.02,c);assert.ok(Math.abs(centre(a)-centre(b))<=80.02,c);
-  const ratio=(a[2]-a[0])/883;assert.ok(ratio>=.2199&&ratio<=.5801,c);
-  const height=Math.max(a[3],b[3])-Math.min(a[1],b[1]);assert.ok(height>=450&&height<=870,c);
   assert.deepEqual(r.components.map(p=>p.bounds),review[c].newBounds,c);
+  for(const p of r.components){assert.ok(p.bounds[0]<p.bounds[2]&&p.bounds[1]<p.bounds[3],c);assert.ok(p.bounds[0]>=50&&p.bounds[2]<=974,c)}
+  assert.ok(r.contextLayout.finalMinimumInkGap>=0,c);
  }
- const [mouth,ground]=records['哋'].components.map(p=>p.bounds);assert.ok(mouth[2]-mouth[0]<300);assert.ok(ground[2]-ground[0]>590);
- const [mountain,blade]=records['屻'].components.map(p=>p.bounds);assert.ok(Math.abs((mountain[1]+mountain[3]-blade[1]-blade[3])/2)<80.02);
- for(const c of ['孖','吅','幵']){const [a,b]=records[c].components.map(p=>p.bounds);assert.equal(a[1],b[1],c);assert.equal(a[3],b[3],c)}
+ const [mountain,blade]=records['屻'].components;assert.ok(mountain.native&&blade.native);assert.notEqual(mountain.donor.character,'山');assert.notEqual(blade.donor.character,'刃');
+ const [metal,divination]=records['釙'].components;assert.equal(metal.donor.character,'針');assert.ok(divination.native);
+ for(const c of ['孖','吅','幵']){const[a,b]=records[c].components.map(p=>p.bounds);assert.equal(a[1],b[1],c);assert.equal(a[3],b[3],c)}
 });
 test('排版只改有重製來源的輪廓，原形雜湊及敢變體版本保留',()=>{
  const crypto=require('node:crypto'),hash=x=>crypto.createHash('sha256').update(JSON.stringify(x)).digest('hex');
- const records=JSON.parse(read('data/component-compositions.json')).characters,review=JSON.parse(read('data/colour-layout-review-20261023.json')).characters,baseline=JSON.parse(read('data/colour-baseline-8212.json'));
- const contourChanges=Object.keys(corrections).filter(c=>corrections[c].strokesSha256);assert.equal(contourChanges.length,2314);
- for(const c of contourChanges)assert.ok(c==='敢'||review[c]||['戶','侵','浸'].includes(c),c);
+ const records=JSON.parse(read('data/component-compositions.json')).characters,review=JSON.parse(read('data/colour-layout-review-20261023.json')).characters,baseline=JSON.parse(read('data/colour-baseline-8212.json')),contextReview=JSON.parse(read('data/colour-context-review-20261027.json')).characters;
+ const contourChanges=Object.keys(corrections).filter(c=>corrections[c].strokesSha256);assert.equal(contourChanges.length,2335);
+ for(const c of contourChanges)assert.ok(c==='敢'||review[c]||contextReview[c]||['戶','侵','浸'].includes(c),c);
  for(const [c,r]of Object.entries(review)){
-  assert.equal(hash(lib.STROKE_DATA[c]),r.newContoursSha256,c);assert.equal(corrections[c].strokesSha256,r.newContoursSha256,c);
+  assert.equal(contextReview[c].previousContoursSha256,r.newContoursSha256,c);assert.equal(hash(lib.STROKE_DATA[c]),contextReview[c].newContoursSha256,c);assert.equal(corrections[c].strokesSha256,contextReview[c].newContoursSha256,c);
   if(baseline[c])assert.equal(r.oldContoursSha256,baseline[c].strokesSha256,c);
   const parts=records[c].components;const expected=parts.reduce((n,p)=>n+(p.sourceVariant==='reference_original_graphics'?source.reference_original_graphics[p.character]:source.graphics[p.character]).strokes.length,0);
   assert.equal(lib.STROKE_DATA[c].length,expected,c);
  }
  assert.equal(records['噉'].components[1].sourceVariant,'reference_original_graphics');assert.equal(lib.STROKE_DATA['噉'].length,14);
 });
-test('鏤的分色界線隨婁部排版作同一仿射變換',()=>{
- const review=JSON.parse(read('data/colour-layout-review-20261023.json')).characters['鏤'],old=review.oldBounds[1],next=review.newBounds[1];
- const expected=Math.round((next[1]+(734-old[1])*(next[3]-next[1])/(old[3]-old[1]))*100)/100;
+test('鏤的分色界線隨實際中豎筆畫位置映射，哋與屻字碼保留',()=>{
+ const review=JSON.parse(read('data/colour-context-review-20261027.json')).characters['鏤'];
+ const previous=JSON.parse(read('data/colour-layout-review-20261023.json')).characters['鏤'],a=previous.oldBounds[1],b=previous.newBounds[1];
+ const before=Math.round((b[1]+(734-a[1])*(b[3]-b[1])/(a[3]-a[1]))*100)/100;
+ const old=review.oldStrokeBounds[15],next=review.newStrokeBounds[15],expected=Math.round((next[1]+(before-old[1])*(next[3]-next[1])/(old[3]-old[1]))*100)/100;
  assert.equal(lib.visualFor('鏤','5').splitStrokes.find(s=>s.stroke===15).boundary,expected);
  assert.equal(source.standalone_templates['鏤'].splitStrokes[0].boundary,expected);
  assert.equal(lib.CODE_TABLES['5']['哋'],'rgpd');assert.equal(lib.CODE_TABLES['5']['屻'],'ushi');
@@ -496,7 +495,7 @@ test('10月26日十二張參考與22個新增模型可查碼練習',()=>{
 });
 test('哋在中豎交界分P/D，整保留完整木豎，會中框只取外框',()=>{
  const d=lib.visualFor('哋','5'),cut=d.splitStrokes.find(s=>s.stroke===6);
- assert.equal(cut.axis,'x');assert.equal(cut.below,2);assert.equal(cut.above,3);assert.ok(cut.boundary>700&&cut.boundary<735);
+ assert.equal(cut.axis,'x');assert.equal(cut.below,2);assert.equal(cut.above,3);const review=JSON.parse(read('data/colour-context-review-20261027.json')).characters['哋'],bounds=review.newStrokeBounds[6];assert.ok(cut.boundary>bounds[0]&&cut.boundary<bounds[2]);
  const z=lib.visualFor('整','5');assert.ok(z.parts[0][2].includes(4));assert.ok(!(z.splitStrokes||[]).some(s=>s.stroke===4));assert.ok(!(z.strokeRegions||[]).some(s=>s.stroke===4));
  const h=lib.visualFor('會','5');assert.deepEqual(Array.from(h.parts[2][2]),[3,4,8]);assert.ok([5,6,7].every(i=>h.ignored.includes(i)));
  for(const [c,atoms]of Object.entries(audit.characters))for(const a of atoms.filter(a=>a.component==='束'&&a.key==='d')){assert.equal(a.regions.length,4,c);for(const r of a.regions){assert.equal(r[1],-200,c);assert.equal(r[2],1200,c)}}
@@ -516,4 +515,12 @@ test('新偽使用點字頭11筆原SVG，與舊14筆來源分開保存',()=>{
  assert.equal(lib.STROKE_DATA['偽'].length,11);assert.equal(source.reference_original_graphics['偽'].strokes.length,14);
  assert.deepEqual(Array.from(lib.visualFor('偽','5').parts[1][2]),[2]);assert.deepEqual(Array.from(lib.visualFor('偽','5').parts[3][2]),[7,8,9,10]);
  const cut=lib.visualFor('偽','5').splitStrokes.find(s=>s.stroke===4);assert.equal(cut.below,2);assert.equal(cut.above,-1);assert.equal(cut.axis,'x');assert.ok(cut.floor>0);
+});
+
+test('2331字只更換筆形及座標，原有取碼順序與每筆歸屬完整保留',()=>{
+ const crypto=require('crypto'),h=v=>crypto.createHash('sha256').update(JSON.stringify(v)).digest('hex'),changes=JSON.parse(read('data/colour-corrections-20261027-context.json')).characters;
+ for(const[c,e]of Object.entries(changes)){
+  const v=lib.SPLIT_VISUALS[c],owners={parts:v.parts.map(p=>[p[1],p[2]]),ignored:v.ignored||[],splits:(v.splitStrokes||[]).map(r=>[r.stroke,r.above,r.below,r.axis||'y']),regions:(v.strokeRegions||[]).map(r=>[r.stroke,r.axis||'y',r.segments.map(s=>s[2])]),guides:(v.sharedStrokeGuides||[]).map(r=>[r.stroke,r.part])};
+  assert.equal(h(owners),e.ownerSignatureSha256,c);assert.equal(v.parts.map(p=>p[1]).join(''),e.code,c);
+ }
 });

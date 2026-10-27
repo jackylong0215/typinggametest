@@ -17,10 +17,10 @@ geometry = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(geometry)
 
 for char, plan in completion['compositionPlans'].items():
-    if plan['method'] == 'same_font_components':
+    if plan['method'] in ('same_font_components', 'contextual_components'):
         paths, medians = [], []
         for part in plan['components']:
-            ps, ms = geometry.fit(part['character'], part['bounds'], source['graphics'][part['character']])
+            ps, ms = geometry.component_strokes(part)
             paths.extend(ps)
             medians.extend(ms)
     else:

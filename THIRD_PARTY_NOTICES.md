@@ -104,3 +104,7 @@ OpenCC（Open Chinese Convert）`STCharacters.txt`，Apache License 2.0，固定
 https://github.com/BYVoid/OpenCC/blob/a806b775d038f9fa7c061f50d270115e7ad7da5b/data/dictionary/STCharacters.txt
 
 原表保存在 `data/reference-sources/opencc/STCharacters.txt`，授權全文見 `licenses/OPENCC-LICENSE.txt`。`script-preferences.js` 是本專案修改、篩選後的抽題用清單：從簡體鍵排除所有繁體候選字與教育部常用字，只降低隨機抽題權重，不轉換使用者輸入或題目文字。來源 SHA-256 與篩選方式記於 `data/script-preferences.json`。
+
+## 合成字偏旁筆形修正（2026-10-27）
+
+2,331 個既有重組學習字形改用同一批已凍結 Make Me A Hanzi／Arphic 字形中的實際偏旁形態，仍採 Arphic Public License。來源字、原筆畫索引、筆順差異對應及仿射位置逐筆保存在 `data/component-compositions.json` 及 `moe_completion_20261026.compositionPlans`。其中 4,362 個部件取自完整原字的相同結構位置，300 個罕見部件保留可追溯的同字體後備來源。全部屬本專案修改後的衍生學習字形，沒有宣稱取得完整原字輪廓；沒有新增外部輪廓或字型來源。舊輪廓雜湊及原排版記錄另存於 `data/colour-context-review-20261027.json`，並保留原有 CJKVI／CHISE 結構歸屬及授權。

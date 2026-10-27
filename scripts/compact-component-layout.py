@@ -7,6 +7,16 @@ ROOT=pathlib.Path(__file__).resolve().parent.parent
 sp=importlib.util.spec_from_file_location('composition_builder',ROOT/'scripts/rebuild-component-compositions.py')
 b=importlib.util.module_from_spec(sp);sp.loader.exec_module(b)
 S=b.source;DATA=b.data;OLD=copy.deepcopy(DATA);stats=collections.defaultdict(list)
+if DATA['source'].get('layoutVersion')=='contextual-20261027':
+ # Native side forms have their own height and can interleave horizontally.
+ # The frozen donor plans supersede the former independent-character cell grid.
+ for c,r in DATA['characters'].items():
+  paths=[];medians=[]
+  for part in r['components']:
+   ps,ms=b.component_strokes(part);paths.extend(ps);medians.extend(ms)
+  assert paths==r['graphics']['strokes'] and medians==r['graphics']['medians'],c
+ print('Checked '+str(len(DATA['characters']))+' frozen contextual component layouts')
+ sys.exit(0)
 hash_json=lambda x:hashlib.sha256(json.dumps(x,ensure_ascii=False,separators=(',',':')).encode()).hexdigest()
 # Learn actual ink bounds, not just median endpoints. Exclude every reconstructed glyph.
 for c,d in S['dictionary'].items():
